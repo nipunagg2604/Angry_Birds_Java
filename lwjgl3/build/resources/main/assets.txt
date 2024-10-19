@@ -1,5 +1,21 @@
+INGAME_BLOCKS_WOOD_1.webp
+pauseBackground.png
+pauseMenu.jpeg
+levelBackground.jpg
+crossButton.png
+level1.png
 m_button.png
+PC Computer - Angry Birds Rio - Blocks & Objects.png
+emm.png
+pauseButton.png
+restart.png
+exitButton.png
+background.jpg
 Loadingscreen/background.jpg
+Mobile - Angry Birds - Poached Eggs Theme 1.png
+resume.png
+restartButton.png
+resumeButton.png
 Homescreen/exit_button.png
 Homescreen/help_button.png
 Homescreen/music_button.png
@@ -12,3 +28,8 @@ Homescreen/play_button.png
 Homescreen/text.png
 Homescreen/image.png
 libgdx.png
+level-1.tmx
+Tilesets/INGAME_BLOCKS_WOOD_1.webp
+Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
+Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Tilesets/level-1.tmx

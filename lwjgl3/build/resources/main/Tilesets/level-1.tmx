@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.90" orientation="orthogonal" renderorder="right-down" width="60" height="18" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="49">
+ <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
+  <image source="Documents/GitHub/Angry_Birds_Java/assets/Tile sets/Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+ </tileset>
+ <layer id="3" name="sky" width="60" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzt1dk21WEcx+G/YZ8ZUkI3QSlpI1LdBCkZchOKNN+EJtmDMuUCaJK9yRBugubJaY+LaFlv6/9d6zn8nLzvwW++IIoWeMVr3vCWdyzyniVy5FlmhflAu9rCKKrjOCeo5ySnaOA0jZwhSRPNheF2ozzkEY95wlPGeMY4KdJkyDIRcFdSFEWllFHOISo4zBEqOUoV1dRwrCjcbpDr3GCIYW4ywi1uc4e73OM+DwLudtjlE5/5wle+8Z0f/OQXv/nDXsBdR3EUdXKJLi5zhW6u0kMvffRzjYHicLuDfu/4f/9tt0SOPMus8IFV1lhng49sssV2wF1jwo0mSRPNtHCWVto4RzvnucDFRLhdijQZskzwnBdMMsU0M8zykrmAu/07Fvt/xYsXL9z9BYplzYw=
+  </data>
+ </layer>
+ <layer id="7" name="ground" width="60" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztysURAlEQANGB3Q0Dl1hwSQNbJA1cYsElDVzSQDsGjr+mq96tRTRN0zRN0zTt/3yWiB8BBBFCGBFEEUPcMudro4MueuhjgCFGGGNi0PfEC2988IXYIh54YcG2zflKKKOCKmpwUUcDTbQM+vY44IgTzrjgihvueBj0JRyRJFJII4MscsijgKJjzjfFDHMssMQKa2ywxc6g7wewSNm9
+  </data>
+ </layer>
+ <layer id="9" name="trees" width="60" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzty8VNRVEAQMGXfP4GdygCdygCd2gEdygCdygCd2gEd1gzZfCSe5JZnigKhUKheNSciKIWWmmjnQ466aKbHnrpo58BBhPxfA845IhjTjjljHMuuOSKa2645S6mb0lKFJVSRjkVVFJFNTXUUkc9DTTSlBLPd5EllllhlTXW2WCTLbbZYZc99mP6piajKI10Msgki2xyyCWPfAoopIjiZDzfIYYZYZQxxplgkimmmWGWOeZZiOl7zwOPPPHMC6+88c4Hn3zxzQ+/MX1DoVAo9D/7A1Y41JU=
+  </data>
+ </layer>
+ <layer id="8" name="grass" width="60" height="18">
+  <data encoding="base64" compression="zlib">
+   eJzty7cNwDAUxNDfaELnrFmds1cyh3BhAUfglTRTSimllFJfFjmzGAlSZMhRoESFGg1adPAu3K/HgBETZixYsWHHgRMXbjwBf0oppf7ZC96gRik=
+  </data>
+ </layer>
+ <objectgroup id="10" name="ground">
+  <object id="5" x="0" y="380.849" width="1918.75" height="192.238"/>
+ </objectgroup>
+ <objectgroup id="11" name="wooden">
+  <object id="15" x="804.775" y="326.545" width="9.83146" height="26.6854"/>
+  <object id="16" x="972.612" y="326.545" width="9.83146" height="27.3876"/>
+  <object id="22" x="853.933" y="253.511" width="10.5337" height="101.124"/>
+  <object id="23" x="919.242" y="255.596" width="11.9382" height="98.3369"/>
+  <object id="24" x="844.854" y="242.978" width="96.7763" height="11.236"/>
+  <object id="25" x="875" y="232.444" width="30.1966" height="9.83146"/>
+  <object id="34" x="853.949" y="177.669" width="11.2192" height="65.309"/>
+  <object id="40" x="855.337" y="160.815" width="68.8202" height="16.1517"/>
+  <object id="42" x="914.32" y="178.371" width="11.2192" height="64.6067"/>
+  <object id="43" x="885.534" y="127.809" width="9.12921" height="32.3034"/>
+  <object id="44" x="875.536" y="340.129" width="34.3348" height="11.8026"/>
+  <object id="47" x="878.755" y="295.064" width="30.0429" height="13.9485"/>
+ </objectgroup>
+ <objectgroup id="15" name="base">
+  <object id="11" x="801.628" y="353.844" width="194.144" height="26.6166"/>
+ </objectgroup>
+ <objectgroup id="13" name="glass">
+  <object id="45" x="878.755" y="309.013" width="9.65665" height="32.1888"/>
+  <object id="46" x="899.142" y="310.086" width="8.58369" height="28.97"/>
+ </objectgroup>
+ <objectgroup id="14" name="slingshot"/>
+</map>

@@ -28,7 +28,7 @@ public class PauseScreen implements Screen{
     private Button exitButton;
     private ImageButton resume;
 
-    public PauseScreen(final Core game, GameScreen old) {
+    public PauseScreen(final Core game, io.github.angrybirdsjava.GameScreen old) {
         this.game = game;
 
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
@@ -100,7 +100,7 @@ public class PauseScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
