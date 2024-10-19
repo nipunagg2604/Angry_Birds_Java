@@ -1,7 +1,11 @@
 INGAME_BLOCKS_WOOD_1.webp
+nn.webp
+final.jpg
 pauseBackground.png
 pauseMenu.jpeg
+block_wooden.webp
 levelBackground.jpg
+bl2.webp
 crossButton.png
 level1.png
 m_button.png
@@ -29,6 +33,12 @@ Homescreen/text.png
 Homescreen/image.png
 libgdx.png
 level-1.tmx
+final2.png
+bl2.jpg
+bl2.png
+ver.jpg
+block_wooden.jpg
+hor.jpg
 Tilesets/INGAME_BLOCKS_WOOD_1.webp
 Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
 Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png

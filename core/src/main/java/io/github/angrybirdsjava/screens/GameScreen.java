@@ -20,6 +20,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
@@ -36,12 +37,17 @@ public class GameScreen implements Screen {
     private TmxMapLoader mapLoader;
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
+    private Array<Rectangle> rectangles_ver;
+    private Array<Rectangle> rectangles_hor;
+    private Texture wooden_ver;
+    private Texture wooden_hor;
     public GameScreen(final Core game) {
         this.game = game;
 
         background = new Texture(Gdx.files.internal("background.jpg"));
         batch = new SpriteBatch();
-
+        wooden_hor=new Texture(Gdx.files.internal("hor.jpg"));
+        wooden_ver=new Texture(Gdx.files.internal("ver.jpg"));
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 960, 496);
 
@@ -84,13 +90,14 @@ public class GameScreen implements Screen {
                 game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, GameScreen.this));
             }
         });
+        world = new World(new Vector2(0, 0), true);
+        b2dr = new Box2DDebugRenderer();
         BodyDef bodyDef = new BodyDef();
         PolygonShape shape = new PolygonShape();
         FixtureDef fixtureDef = new FixtureDef();
         Body body;
-        world = new World(new Vector2(0, 0), true);
-        b2dr = new Box2DDebugRenderer();
-
+        rectangles_ver=new Array<>();
+        rectangles_hor=new Array<>();
         for (MapObject object: tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect=((RectangleMapObject) object).getRectangle();
 
@@ -102,6 +109,31 @@ public class GameScreen implements Screen {
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
         }
+        for (MapObject object: tiledMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rect=((RectangleMapObject) object).getRectangle();
+
+            bodyDef.type = BodyDef.BodyType.StaticBody;
+            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+            body=world.createBody(bodyDef);
+
+            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+            fixtureDef.shape = shape;
+            body.createFixture(fixtureDef);
+            rectangles_hor.add(rect);
+        }
+        for (MapObject object: tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rect=((RectangleMapObject) object).getRectangle();
+
+            bodyDef.type = BodyDef.BodyType.StaticBody;
+            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+            body=world.createBody(bodyDef);
+
+            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+            fixtureDef.shape = shape;
+            body.createFixture(fixtureDef);
+            rectangles_ver.add(rect);
+        }
+
         stage.addActor(button);
 }
     @Override
@@ -111,9 +143,15 @@ public class GameScreen implements Screen {
         camera.update();
         renderer.setView(camera);
         renderer.render();
-//        b2dr.render(world,camera.combined);
+        b2dr.render(world,camera.combined);
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
+        for (Rectangle rectangle: rectangles_ver) {
+            game.batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        }
+        for (Rectangle rectangle: rectangles_hor) {
+            game.batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        }
         //game.batch.draw(background, 0, 0, 800, 450);
         game.batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
