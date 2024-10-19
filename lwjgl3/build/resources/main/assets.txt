@@ -1,1 +1,14 @@
+m_button.png
+Loadingscreen/background.jpg
+Homescreen/exit_button.png
+Homescreen/help_button.png
+Homescreen/music_button.png
+Homescreen/setting_button.png
+Homescreen/home_screen_bg.jpg
+Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
+Homescreen/stop_image.jpg
+Homescreen/sound_button.png
+Homescreen/play_button.png
+Homescreen/text.png
+Homescreen/image.png
 libgdx.png
