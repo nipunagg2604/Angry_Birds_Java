@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import io.github.angrybirdsjava.screens.EndScreen;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
 
@@ -16,7 +17,8 @@ public class Core extends Game {
     @Override
     public void create() {
         batch = new SpriteBatch();
-        setScreen(new io.github.angrybirdsjava.LoadingScreen(this));
+        //setScreen(new io.github.angrybirdsjava.LoadingScreen(this));
+        setScreen(new EndScreen(this));
     }
 
     @Override
