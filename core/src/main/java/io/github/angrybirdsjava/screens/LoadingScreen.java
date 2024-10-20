@@ -65,6 +65,7 @@ public class LoadingScreen implements Screen {
             progressBar.setValue(progress);
         } else {
             game.setScreen(new HomeScreen(game));
+            dispose();
         }
 
         stage.act(Gdx.graphics.getDeltaTime());

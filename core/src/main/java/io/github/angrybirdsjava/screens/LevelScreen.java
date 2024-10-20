@@ -51,6 +51,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -64,6 +65,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -77,6 +79,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -90,6 +93,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -104,6 +108,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -117,6 +122,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -130,6 +136,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -143,6 +150,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -157,6 +165,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                dispose();
             }
         });
 
@@ -189,6 +198,7 @@ public class LevelScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new HomeScreen(game));
+                dispose();
             }
         });
 
