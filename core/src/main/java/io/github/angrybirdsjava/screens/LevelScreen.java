@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class LevelScreen implements Screen{
     private Texture background;
@@ -22,7 +23,7 @@ public class LevelScreen implements Screen{
     private Stage stage;
     private Button backButton;
 
-    public LevelScreen(final Core game) {
+    public LevelScreen(final Core game, HomeScreen home) {
         this.game = game;
 
         background = new Texture(Gdx.files.internal("levelBackground.jpg"));
@@ -49,7 +50,7 @@ public class LevelScreen implements Screen{
         imgb.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -62,7 +63,7 @@ public class LevelScreen implements Screen{
         imgb2.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -75,7 +76,7 @@ public class LevelScreen implements Screen{
         imgb3.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -88,7 +89,7 @@ public class LevelScreen implements Screen{
         imgb4.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -102,7 +103,7 @@ public class LevelScreen implements Screen{
         imgb5.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -115,7 +116,7 @@ public class LevelScreen implements Screen{
         imgb6.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -128,7 +129,7 @@ public class LevelScreen implements Screen{
         imgb7.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -141,7 +142,7 @@ public class LevelScreen implements Screen{
         imgb8.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -155,7 +156,7 @@ public class LevelScreen implements Screen{
         imgb9.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
             }
         });
 
@@ -183,6 +184,13 @@ public class LevelScreen implements Screen{
 
         imgb13.setSize(50, 50);
         imgb13.setPosition(2, camera.viewportHeight - imgb13.getWidth());
+
+        imgb13.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new HomeScreen(game));
+            }
+        });
 
         stage.addActor(imgb13);
     }

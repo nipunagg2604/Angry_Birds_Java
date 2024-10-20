@@ -1,0 +1,34 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000737299ea4790, pid=127614, tid=127618
+#
+# JRE version: OpenJDK Runtime Environment (23.0+37) (build 23+37-2369)
+# Java VM: OpenJDK 64-Bit Server VM (23+37-2369, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0xa4790]
+[timeout occurred during error reporting in step "printing problematic frame"] after 30 s.
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E" (or dumping to /home/acer/git_test/Angry_Birds_Java/assets/core.127614)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Duser.country=IN -Duser.language=en -Duser.variant io.github.angrybirdsjava.lwjgl3.Lwjgl3Launcher
+
+Host: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 
+[timeout occurred during error reporting in step "printing summary machine and OS info"] after 30 s.
+Time: Sun Oct 20 16:31:27 2024 IST elapsed time: 109.780872 seconds (0d 0h 1m 49s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000073729402c7e0):  JavaThread "main"             [_thread_in_native, id=127618, stack(0x0000737298700000,0x0000737298800000) (1024K)]
+
+Stack: [0x0000737298700000,0x0000737298800000],  sp=0x00007372987fda30,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0xa4790]
+------ Timeout during error reporting after 120 s. ------

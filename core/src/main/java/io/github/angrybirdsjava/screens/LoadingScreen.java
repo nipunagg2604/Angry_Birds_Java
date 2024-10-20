@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class LoadingScreen implements Screen {
     private Texture background;
@@ -60,10 +61,10 @@ public class LoadingScreen implements Screen {
         game.batch.end();
 
         if (progress < 1) {
-            progress += Gdx.graphics.getDeltaTime() * 0.1f;  // Simulating progress
+            progress += Gdx.graphics.getDeltaTime() * 0.1f;
             progressBar.setValue(progress);
         } else {
-            game.setScreen(new GameScreen(game));
+            game.setScreen(new HomeScreen(game));
         }
 
         stage.act(Gdx.graphics.getDeltaTime());

@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.Core;
+import io.github.angrybirdsjava.LevelScreen;
 
 public class HomeScreen implements Screen {
     final Core game;
@@ -79,7 +80,7 @@ public class HomeScreen implements Screen {
         });
         playButtton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                game.setScreen(new LoadingScreen(game));
+                game.setScreen(new LevelScreen(game, HomeScreen.this));
                 dispose();
             }
         });
@@ -117,6 +118,10 @@ public class HomeScreen implements Screen {
         game.batch.end();
         stage.draw();
         stage.act(delta); // Update the stage
+    }
+
+    public Stage getStage() {
+        return stage;
     }
 
     @Override

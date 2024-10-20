@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class PauseScreen implements Screen{
     private Texture pauseMenu;
@@ -78,7 +79,6 @@ public class PauseScreen implements Screen{
         resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                System.out.println(camera.viewportWidth);
                 Gdx.input.setInputProcessor(old.getStage());
                 game.setScreen(old);
             }
@@ -122,8 +122,7 @@ public class PauseScreen implements Screen{
         exitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(old.getStage());
-                game.setScreen(old);
+                game.setScreen(new HomeScreen(game));
             }
         });
 
