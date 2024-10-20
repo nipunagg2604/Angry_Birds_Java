@@ -34,7 +34,7 @@ public class HomeScreen implements Screen {
         this.game = core;
         this.camera = new OrthographicCamera();
         this.issettingsopen = false;
-        camera.setToOrtho(false, 800, 450);
+        camera.setToOrtho(false, 960, 496);
         this.background=new Texture(Gdx.files.internal("Homescreen/home_screen_bg.jpg"));
         this.stage = new Stage(new ScreenViewport());
         //stage.getViewport().setCamera(camera);
@@ -91,12 +91,12 @@ public class HomeScreen implements Screen {
                 (settingsButton.getY()));
         music_button.setPosition((settingsButton.getX())+240, settingsButton.getY());
         sound_button.setPosition((settingsButton.getX())+320, settingsButton.getY());
-        playButtton.setPosition((400- (playButtton.getWidth()) / 2),
-                160-(playButtton.getHeight()/ 2));
-        text.setPosition((400 - (text.getWidth()) / 2),
-                350-(text.getHeight()/ 2));
-        image.setPosition((327 - (playButtton.getWidth()) / 2),
-                120);
+        playButtton.setPosition((472- (playButtton.getWidth()) / 2),
+                180-(playButtton.getHeight()/ 2));
+        text.setPosition((470 - (text.getWidth()) / 2),
+                370-(text.getHeight()/ 2));
+        image.setPosition((400 - (playButtton.getWidth()) / 2),
+                140);
         stage.addActor(settingsButton);
         stage.addActor(image);
         stage.addActor(playButtton);
@@ -113,7 +113,7 @@ public class HomeScreen implements Screen {
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.batch.draw(background, 0, 0, 800, 450);
+        game.batch.draw(background, 0, 0, 960, 496);
         game.batch.end();
         stage.draw();
         stage.act(delta); // Update the stage
