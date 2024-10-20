@@ -29,25 +29,25 @@
  <objectgroup id="11" name="wooden_vertical">
   <object id="15" x="708.775" y="326.545" width="9.83146" height="26.6854"/>
   <object id="16" x="876.612" y="326.545" width="9.83146" height="27.3876"/>
-  <object id="22" x="754.478" y="253.511" width="13.9891" height="101.124"/>
-  <object id="23" x="823.242" y="253.819" width="11.9382" height="100.114"/>
+  <object id="22" x="754.478" y="254.867" width="13.9891" height="99.0905"/>
+  <object id="23" x="823.242" y="253.819" width="12.2771" height="100.114"/>
   <object id="34" x="757.949" y="177.669" width="11.2192" height="65.309"/>
   <object id="42" x="818.32" y="178.371" width="11.2192" height="64.6067"/>
   <object id="43" x="789.534" y="127.809" width="9.12921" height="32.3034"/>
  </objectgroup>
  <objectgroup id="16" name="wooden_horizontal">
   <object id="47" x="782.755" y="295.064" width="30.0429" height="13.9485"/>
-  <object id="44" x="779.536" y="340.129" width="34.3348" height="11.8026"/>
+  <object id="44" x="779.536" y="340.129" width="34.3348" height="13.8361"/>
   <object id="25" x="779" y="232.444" width="30.1966" height="9.83146"/>
   <object id="40" x="759.337" y="160.815" width="68.8202" height="16.1517"/>
   <object id="24" x="748.854" y="242.978" width="96.7763" height="11.236"/>
  </objectgroup>
  <objectgroup id="15" name="base">
-  <object id="11" x="705.628" y="353.844" width="194.144" height="29.2827"/>
+  <object id="11" x="680.317" y="353.844" width="238.163" height="29.2827"/>
  </objectgroup>
  <objectgroup id="13" name="glass">
-  <object id="45" x="782.755" y="309.013" width="9.65665" height="32.1888"/>
-  <object id="46" x="803.142" y="310.086" width="8.58369" height="28.97"/>
+  <object id="45" x="803.09" y="309.408" width="9.65665" height="30.4942"/>
+  <object id="46" x="782.755" y="309.408" width="9.65665" height="30.4942"/>
  </objectgroup>
  <objectgroup id="14" name="slingshot"/>
 </map>
