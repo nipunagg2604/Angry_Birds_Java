@@ -35,7 +35,7 @@ public class PauseScreen implements Screen{
         pauseMenu = new Texture(Gdx.files.internal("pauseMenu.jpeg"));
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 800, 450);
+        camera.setToOrtho(false, 960, 496);
 
 
         stage = new Stage(new ScreenViewport(camera));
@@ -51,7 +51,7 @@ public class PauseScreen implements Screen{
 
         button = new Button(buttonStyle);
         button.setSize(40, 40);
-        button.setPosition(612 - button.getWidth(), 360 - button.getWidth());
+        button.setPosition(720 - button.getWidth(), 405 - button.getWidth());
 
         button.addListener(new ClickListener() {
             @Override
@@ -73,11 +73,12 @@ public class PauseScreen implements Screen{
 
         resumeButton = new Button(buttonStyle2);
         resumeButton.setSize(40, 40);
-        resumeButton.setPosition(280 - resumeButton.getWidth(), 310 - resumeButton.getWidth());
+        resumeButton.setPosition(335 - resumeButton.getWidth(), 355 - resumeButton.getWidth());
 
         resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                System.out.println(camera.viewportWidth);
                 Gdx.input.setInputProcessor(old.getStage());
                 game.setScreen(old);
             }
@@ -95,7 +96,7 @@ public class PauseScreen implements Screen{
 
         restartButton = new Button(buttonStyle3);
         restartButton.setSize(40, 40);
-        restartButton.setPosition(280 - restartButton.getWidth(), 247.5f - restartButton.getWidth());
+        restartButton.setPosition(335 - restartButton.getWidth(), 285 - restartButton.getWidth());
 
         restartButton.addListener(new ClickListener() {
             @Override
@@ -116,7 +117,7 @@ public class PauseScreen implements Screen{
 
         exitButton = new Button(buttonStyle4);
         exitButton.setSize(40, 40);
-        exitButton.setPosition(280 - exitButton.getWidth(), 185 - exitButton.getWidth());
+        exitButton.setPosition(335 - exitButton.getWidth(), 220 - exitButton.getWidth());
 
         exitButton.addListener(new ClickListener() {
             @Override
@@ -152,11 +153,8 @@ public class PauseScreen implements Screen{
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.batch.draw(blurBackground, 0, 0, 800, 450);
-        game.batch.draw(pauseMenu, 200, 100, 400, 250);  // Draw the background image (adjust size if needed)
-        //game.font.draw(game.batch, "Resume", 305, 296);
-        //game.font.draw(game.batch, "Restart", 305, 234.5f);
-        //game.font.draw(game.batch, "Exit to Main Menu", 305, 172);
+        game.batch.draw(blurBackground, 0, 0, 960, 496);
+        game.batch.draw(pauseMenu, 250, 130, 460, 270);  // Draw the background image (adjust size if needed)
         game.batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());
