@@ -44,7 +44,7 @@ public class LoadingScreen implements Screen {
         progressBar = new ProgressBar(0f, 1f, 0.01f, false, skin4);
         progressBar.setSize(820, 40);
         progressBar.setPosition(Gdx.graphics.getWidth() / 2f - 410, Gdx.graphics.getHeight() / 2f - 220);
-        progressBar.setColor(Color.CYAN);
+        progressBar.setColor(Color.GOLD);
 
         stage.addActor(progressBar);
     }
