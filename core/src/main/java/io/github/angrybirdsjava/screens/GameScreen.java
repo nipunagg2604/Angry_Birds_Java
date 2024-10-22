@@ -61,12 +61,11 @@ public class GameScreen implements Screen {
     ShapeRenderer s=new ShapeRenderer();
     public GameScreen(final Core game) {
         this.game = game;
-
         background = new Texture(Gdx.files.internal("background.jpg"));
         batch = new SpriteBatch();
-        wooden_hor=new Texture(Gdx.files.internal("hor.jpg"));
-        wooden_ver=new Texture(Gdx.files.internal("ver.jpg"));
-        base=new Texture(Gdx.files.internal("base.png"));
+        wooden_hor=new Texture(Gdx.files.internal("wood2.png"));
+        wooden_ver=new Texture(Gdx.files.internal("wood3.png"));
+        base=new Texture(Gdx.files.internal("base3.png"));
         glass_block=new Texture(Gdx.files.internal("glass_block2.png"));
         sling=new Texture(Gdx.files.internal("sling2.png"));
         red_bird=new Texture(Gdx.files.internal("birds/redbird.png"));
@@ -182,33 +181,33 @@ public class GameScreen implements Screen {
         renderer.setView(camera);
         renderer.render();
         b2dr.render(world,camera.combined);
-        game.batch.setProjectionMatrix(camera.combined);
-        game.batch.begin();
-        font.draw(game.batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+        font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
 
         for (Rectangle rectangle: rectangles_ver) {
-            game.batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
         for (Rectangle rectangle: rectangles_hor) {
-            game.batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
         for (Rectangle rectangle: base_objetcs) {
-            game.batch.draw(base, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            batch.draw(base, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
         for (Rectangle rectangle: glass_blocks) {
-            game.batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
-        game.batch.draw(sling,57,128,185,90);
-        game.batch.draw(red_bird,87,130,30,30);
-        game.batch.draw(yellow_bird,47,130,45,45);
-        game.batch.draw(black_bird,17,130,35,35);
-        game.batch.draw(crown_pig,778,280,30,30);
+        batch.draw(sling,57,128,185,90);
+        batch.draw(red_bird,87,130,30,30);
+        batch.draw(yellow_bird,47,130,45,45);
+        batch.draw(black_bird,17,130,35,35);
+        batch.draw(crown_pig,778,280,30,30);
 //        for (MapObject object: tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
 //            Rectangle rect=((RectangleMapObject) object).getRectangle();
-//            game.batch.draw(base, rect.getX(), rect.getY(),rect.getWidth(),rect.getHeight());
+//            batch.draw(base, rect.getX(), rect.getY(),rect.getWidth(),rect.getHeight());
 //        }
 
-        game.batch.end();
+        batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
     }

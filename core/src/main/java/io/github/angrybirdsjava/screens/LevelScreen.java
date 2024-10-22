@@ -244,5 +244,6 @@ public class LevelScreen implements Screen{
     @Override
     public void dispose() {
         stage.dispose();
+        background.dispose();
     }
 }

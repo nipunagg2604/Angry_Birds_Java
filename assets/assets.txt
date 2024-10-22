@@ -22,6 +22,7 @@ PC Computer - Angry Birds Rio - Blocks & Objects.png
 emm.png
 glass_block.png
 wooden3.png
+base2.gif
 skin1/font-title-export.fnt
 skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas
@@ -38,7 +39,6 @@ wooden5.png
 hs_err_pid127614.log
 exitButton.png
 loadingBackground.jpg
-background.jpg
 Loadingscreen/background.jpg
 Mobile - Angry Birds - Poached Eggs Theme 1.png
 wooden4.png
@@ -55,12 +55,15 @@ Homescreen/music_button.png
 Homescreen/setting_button.png
 Homescreen/home_screen_bg.jpg
 Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
+Homescreen/background.jpg
 Homescreen/stop_image.jpg
 Homescreen/sound_button.png
 Homescreen/play_button.png
 Homescreen/text.png
 Homescreen/image.png
 libgdx.png
+wood3.png
+wood2.png
 base.png
 gameOver.png
 sling.png
@@ -86,9 +89,11 @@ skin3/neon-ui.atlas
 stars4.png
 ver.jpg
 level9.png
+base2.png
 block_wooden.jpg
 glass.png
 ver_wooden.png
+base3.png
 skin2/neon-ui.json
 skin2/font-pressed-export.fnt
 skin2/neon-ui.png

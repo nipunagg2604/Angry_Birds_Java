@@ -185,8 +185,8 @@ public class PauseScreen implements Screen{
 
     @Override
     public void dispose() {
-        pauseMenu.dispose(); // Dispose pause menu texture
-        blurBackground.dispose(); // Dispose blur background texture
+        pauseMenu.dispose();
+        blurBackground.dispose();
         stage.dispose();
     }
 }

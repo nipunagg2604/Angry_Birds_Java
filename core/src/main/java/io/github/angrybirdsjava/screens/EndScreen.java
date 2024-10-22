@@ -134,8 +134,8 @@ public class EndScreen implements Screen{
 
     @Override
     public void dispose() {
-        endMenu.dispose(); // Dispose pause menu texture
-        blurBackground.dispose(); // Dispose blur background texture
+        endMenu.dispose();
+        blurBackground.dispose();
         stage.dispose();
     }
 }

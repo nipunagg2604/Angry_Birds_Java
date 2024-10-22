@@ -30,6 +30,10 @@ public class HomeScreen implements Screen {
     ImageButton exit_button;
     ImageButton music_button;
     ImageButton sound_button;
+    private float bgX1;
+    private float bgX2; // Positions for two background images
+    private float bgSpeed = 50;
+
 
     public HomeScreen(Core core) {
         this.game = core;
@@ -38,6 +42,8 @@ public class HomeScreen implements Screen {
         camera.setToOrtho(false, 960, 496);
         this.background=new Texture(Gdx.files.internal("Homescreen/home_screen_bg.jpg"));
         this.stage = new Stage(new ScreenViewport());
+        bgX1=0;
+        bgX2=960;
         //stage.getViewport().setCamera(camera);
         this.settingsButton=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/setting_button.png"))));
         this.playButtton=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/play_button.png"))));
@@ -67,6 +73,7 @@ public class HomeScreen implements Screen {
         this.help_button.setVisible(false);
         this.music_button.setVisible(false);
         this.sound_button.setVisible(false);
+
         settingsButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 issettingsopen=!issettingsopen;
@@ -113,8 +120,19 @@ public class HomeScreen implements Screen {
         ScreenUtils.clear(0, 0, 0f, 1);
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
+        bgX1 -= bgSpeed * delta;
+        bgX2 -= bgSpeed * delta;
+
+        if (bgX1 + 960 <= 0) {
+            bgX1 = bgX2 + 960;
+        }
+        if (bgX2 + 960 <= 0) {
+            bgX2 = bgX1 +960;
+        }
         game.batch.begin();
-        game.batch.draw(background, 0, 0, 960, 496);
+        game.batch.draw(background, bgX1, 0,960,496); // Draw first background
+        game.batch.draw(background, bgX2, 0,960,496);
+//        game.batch.draw(background, 0, 0, 960, 496);
         game.batch.end();
         stage.draw();
         stage.act(delta); // Update the stage
