@@ -87,7 +87,7 @@ public class HomeScreen implements Screen {
         });
         playButtton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                game.setScreen(new LevelScreen(game, HomeScreen.this));
+                game.setScreen(new LevelScreen(game));
                 dispose();
             }
         });

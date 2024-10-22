@@ -1,5 +1,9 @@
 INGAME_BLOCKS_WOOD_1.webp
 level3.png
+Blocks/Wooden Blocks/wooden_base_type_2.png
+Blocks/Wooden Blocks/wooden_base_type_1.png
+Blocks/Glass Blocks/glass_block_type_1.png
+Blocks/Glass Blocks/glass_block_type_2.png
 prevLevel.png
 pauseBackground.png
 pauseMenu.jpg
@@ -14,37 +18,30 @@ pigs/crownpig.png
 sling2.png
 level1.png
 level5.png
+backbutton.png
 level4.png
 level6.png
 m_button.png
 level7.png
 PC Computer - Angry Birds Rio - Blocks & Objects.png
 emm.png
-glass_block.png
-wooden3.png
-base2.gif
 skin1/font-title-export.fnt
 skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas
 skin1/biological-attack-ui.png
 skin1/font-export.fnt
 wooden2.png
-wooden6.png
 pauseButton.png
 levelLocked.png
-wooden7.png
 nextLevel.png
 restart.png
-wooden5.png
 hs_err_pid127614.log
 exitButton.png
 loadingBackground.jpg
 Loadingscreen/background.jpg
 Mobile - Angry Birds - Poached Eggs Theme 1.png
-wooden4.png
 resume.png
 restartButton.png
-glass_block2.png
 slingshot2.png
 elementGlass032.png
 hor_wooden.png
@@ -55,7 +52,6 @@ Homescreen/music_button.png
 Homescreen/setting_button.png
 Homescreen/home_screen_bg.jpg
 Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
-Homescreen/background.jpg
 Homescreen/stop_image.jpg
 Homescreen/sound_button.png
 Homescreen/play_button.png
@@ -64,7 +60,6 @@ Homescreen/image.png
 libgdx.png
 wood3.png
 wood2.png
-base.png
 gameOver.png
 sling.png
 level-1.tmx
@@ -89,11 +84,9 @@ skin3/neon-ui.atlas
 stars4.png
 ver.jpg
 level9.png
-base2.png
 block_wooden.jpg
 glass.png
 ver_wooden.png
-base3.png
 skin2/neon-ui.json
 skin2/font-pressed-export.fnt
 skin2/neon-ui.png
@@ -114,4 +107,5 @@ Tilesets/INGAME_BLOCKS_WOOD_1.webp
 Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
 Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
 Tilesets/level-1.tmx
+Gamescreen/background.jpg
 stars2.png

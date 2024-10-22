@@ -22,12 +22,14 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import io.github.angrybirdsjava.screens.EndScreen;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
 //import java.util.stream.GathererOp;
@@ -61,12 +63,12 @@ public class GameScreen implements Screen {
     ShapeRenderer s=new ShapeRenderer();
     public GameScreen(final Core game) {
         this.game = game;
-        background = new Texture(Gdx.files.internal("background.jpg"));
+        background = new Texture(Gdx.files.internal("Gamescreen/background.jpg"));
         batch = new SpriteBatch();
         wooden_hor=new Texture(Gdx.files.internal("wood2.png"));
         wooden_ver=new Texture(Gdx.files.internal("wood3.png"));
-        base=new Texture(Gdx.files.internal("base3.png"));
-        glass_block=new Texture(Gdx.files.internal("glass_block2.png"));
+        base=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/wooden_base_type_2.png"));
+        glass_block=new Texture(Gdx.files.internal("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("sling2.png"));
         red_bird=new Texture(Gdx.files.internal("birds/redbird.png"));
         yellow_bird=new Texture(Gdx.files.internal("birds/yellow.png"));
@@ -171,7 +173,21 @@ public class GameScreen implements Screen {
         }
 
         stage.addActor(button);
-}
+
+        ImageButton end = new ImageButton(new TextureRegionDrawable(new Texture("nextLevel.png")));
+        end.setSize(50, 50);
+        end.setPosition(905, 440);
+
+        end.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new EndScreen(game));
+                dispose();
+            }
+        });
+
+        stage.addActor(end);
+    }
     @Override
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);

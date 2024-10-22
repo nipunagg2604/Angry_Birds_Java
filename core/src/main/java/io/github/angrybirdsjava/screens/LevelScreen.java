@@ -23,7 +23,7 @@ public class LevelScreen implements Screen{
     private Stage stage;
     private Button backButton;
 
-    public LevelScreen(final Core game, HomeScreen home) {
+    public LevelScreen(final Core game) {
         this.game = game;
 
         background = new Texture(Gdx.files.internal("levelBackground.jpg"));
@@ -189,10 +189,10 @@ public class LevelScreen implements Screen{
 
         root.add(imgb12);
 
-        ImageButton imgb13 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("restartButton.png"))));
+        ImageButton imgb13 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("backbutton.png"))));
 
         imgb13.setSize(50, 50);
-        imgb13.setPosition(2, camera.viewportHeight - imgb13.getWidth());
+        imgb13.setPosition(4, camera.viewportHeight - imgb13.getWidth()-6);
 
         imgb13.addListener(new ClickListener() {
             @Override

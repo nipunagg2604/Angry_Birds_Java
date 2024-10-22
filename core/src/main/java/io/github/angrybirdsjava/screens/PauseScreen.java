@@ -59,6 +59,7 @@ public class PauseScreen implements Screen{
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.input.setInputProcessor(old.getStage());
                 game.setScreen(old);
+                dispose();
             }
         });
 
@@ -81,6 +82,7 @@ public class PauseScreen implements Screen{
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.input.setInputProcessor(old.getStage());
                 game.setScreen(old);
+                dispose();
             }
         });
 
@@ -102,6 +104,7 @@ public class PauseScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                old.dispose();
                 dispose();
             }
         });
@@ -124,6 +127,7 @@ public class PauseScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new HomeScreen(game));
+                old.dispose();
                 dispose();
             }
         });
