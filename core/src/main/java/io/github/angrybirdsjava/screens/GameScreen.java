@@ -78,7 +78,7 @@ public class GameScreen implements Screen {
         wooden_ver=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/wooden_base_type_2.png"));
         glass_block=new Texture(Gdx.files.internal("Blocks/Glass Blocks/glass_block_type_2.png"));
-        sling=new Texture(Gdx.files.internal("sling2.png"));
+        sling=new Texture(Gdx.files.internal("Slings/sling2.png"));
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 

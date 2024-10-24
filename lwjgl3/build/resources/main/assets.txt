@@ -12,13 +12,11 @@ pauseMenu.jpg
 level2.png
 pauseMenu.jpeg
 levelBackground.jpg
-sling3.png
 crossButton.png
 pigs/Mucchad_pig.jpg
 pigs/crownpig.jpg
 pigs/crownpig.png
 pigs/normal_pig.jpg
-sling2.png
 level1.png
 level5.png
 backbutton.png
@@ -45,8 +43,11 @@ loadingBackground.jpg
 Loadingscreen/background.jpg
 resume.png
 restartButton.png
-slingshot2.png
 elementGlass032.png
+Slings/sling3.png
+Slings/sling2.png
+Slings/slingshot2.png
+Slings/sling.png
 resumeButton.png
 Homescreen/exit_button.png
 Homescreen/help_button.png
@@ -61,7 +62,6 @@ Homescreen/text.png
 Homescreen/image.png
 libgdx.png
 gameOver.png
-sling.png
 stars5.png
 skin4/clean-crispy-ui.json
 skin4/clean-crispy-ui.atlas
