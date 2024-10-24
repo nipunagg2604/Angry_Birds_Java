@@ -16,6 +16,8 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class LoadingScreen implements Screen {
+    private int height=Gdx.graphics.getHeight();
+    private int width=Gdx.graphics.getWidth();
     private Texture background;
     private OrthographicCamera camera;
     private final Core game;
@@ -29,7 +31,7 @@ public class LoadingScreen implements Screen {
         background = new Texture(Gdx.files.internal("loadingBackground.jpg"));
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 960, 496);
+        camera.setToOrtho(false, width, height);
 
 
         stage = new Stage(new ScreenViewport(camera));
@@ -53,11 +55,12 @@ public class LoadingScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 0.5f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+//        System.out.println(Gdx.graphics.getWidth());
+//        System.out.println(Gdx.graphics.getHeight());
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.batch.draw(background, 0, 0, 960, 496);
+        game.batch.draw(background, 0, 0, width, height);
         game.batch.end();
 
         if (progress < 1) {

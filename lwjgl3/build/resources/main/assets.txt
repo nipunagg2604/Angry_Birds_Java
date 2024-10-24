@@ -1,7 +1,9 @@
 INGAME_BLOCKS_WOOD_1.webp
 level3.png
+Blocks/Wooden Blocks/vertical_wood.png
 Blocks/Wooden Blocks/wooden_base_type_2.png
 Blocks/Wooden Blocks/wooden_base_type_1.png
+Blocks/Wooden Blocks/horiontal_wood.png
 Blocks/Glass Blocks/glass_block_type_1.png
 Blocks/Glass Blocks/glass_block_type_2.png
 prevLevel.png
@@ -12,9 +14,10 @@ pauseMenu.jpeg
 levelBackground.jpg
 sling3.png
 crossButton.png
-pigs/crownpig.webp
+pigs/Mucchad_pig.jpg
 pigs/crownpig.jpg
 pigs/crownpig.png
+pigs/normal_pig.jpg
 sling2.png
 level1.png
 level5.png
@@ -25,12 +28,13 @@ m_button.png
 level7.png
 PC Computer - Angry Birds Rio - Blocks & Objects.png
 emm.png
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Level_tmx_files/level-1.tmx
 skin1/font-title-export.fnt
 skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas
 skin1/biological-attack-ui.png
 skin1/font-export.fnt
-wooden2.png
 pauseButton.png
 levelLocked.png
 nextLevel.png
@@ -39,12 +43,10 @@ hs_err_pid127614.log
 exitButton.png
 loadingBackground.jpg
 Loadingscreen/background.jpg
-Mobile - Angry Birds - Poached Eggs Theme 1.png
 resume.png
 restartButton.png
 slingshot2.png
 elementGlass032.png
-hor_wooden.png
 resumeButton.png
 Homescreen/exit_button.png
 Homescreen/help_button.png
@@ -58,11 +60,8 @@ Homescreen/play_button.png
 Homescreen/text.png
 Homescreen/image.png
 libgdx.png
-wood3.png
-wood2.png
 gameOver.png
 sling.png
-level-1.tmx
 stars5.png
 skin4/clean-crispy-ui.json
 skin4/clean-crispy-ui.atlas
@@ -70,11 +69,10 @@ skin4/clean-crispy-ui.png
 skin4/font-export.fnt
 birds/yellow.png
 birds/yellow.jpg
-birds/redbird.webp
 birds/black.png
+birds/bluebird.jpg
 birds/redbird.png
 birds/redbird.jpg
-birds/yelow.webp
 skin3/neon-ui.json
 skin3/font-pressed-export.fnt
 skin3/neon-ui.png
@@ -82,11 +80,8 @@ skin3/font-over-export.fnt
 skin3/font-export.fnt
 skin3/neon-ui.atlas
 stars4.png
-ver.jpg
 level9.png
-block_wooden.jpg
 glass.png
-ver_wooden.png
 skin2/neon-ui.json
 skin2/font-pressed-export.fnt
 skin2/neon-ui.png
@@ -101,7 +96,6 @@ skin5/level-plane-ui.atlas
 skin5/level-plane-ui.json
 skin5/font-subtitle-export.fnt
 skin5/font-export.fnt
-hor.jpg
 stars3.png
 Tilesets/INGAME_BLOCKS_WOOD_1.webp
 Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png

@@ -2,7 +2,6 @@ package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -12,9 +11,7 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
@@ -29,8 +26,14 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import io.github.angrybirdsjava.birds.Black_Bird;
+import io.github.angrybirdsjava.birds.Yellow_Bird;
+import io.github.angrybirdsjava.blocks.Structures;
+import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.EndScreen;
-import io.github.angrybirdsjava.screens.HomeScreen;
+import io.github.angrybirdsjava.birds.Red_Bird;
+
+import java.util.ArrayList;
 
 //import java.util.stream.GathererOp;
 
@@ -38,44 +41,46 @@ public class GameScreen implements Screen {
     private Texture background;
     private SpriteBatch batch;
     private OrthographicCamera camera;
-    private final Core game;
+    private Core game;
     private Stage stage;
     private Button button;
-    private World world;
     private BitmapFont font;
     private Box2DDebugRenderer b2dr;
     private TmxMapLoader mapLoader;
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
-    private Array<Rectangle> rectangles_ver;
-    private Array<Rectangle> rectangles_hor;
-    private Array<Rectangle> base_objetcs;
-    private Array<Rectangle> glass_blocks;
+    private ArrayList<Rectangle> rectangles_ver=new Structures("wooden_vertical").return_array();
+    private ArrayList<Rectangle> rectangles_hor=new Structures("wooden_horizontal").return_array();;
+    private ArrayList<Rectangle> base_objetcs=new Structures("wooden_base").return_array();;
+    private ArrayList<Rectangle> glass_blocks=new Structures("glass_vertical").return_array();;
     private Texture wooden_ver;
     private Texture wooden_hor;
     private Texture glass_block;
     private Texture base;
     private Texture sling;
-    private Texture red_bird;
-    private Texture yellow_bird;
-    private Texture black_bird;
-    private Texture crown_pig;
+    private int width=Gdx.graphics.getWidth();
+    private int height=Gdx.graphics.getHeight();
+    private Red_Bird redbird=new Red_Bird();
+    private Black_Bird blackbird=new Black_Bird();
+    private Yellow_Bird yellowbird=new Yellow_Bird();
+    private Crown_Pig crown_pig=new Crown_Pig();
+    private BodyDef bodyDef = new BodyDef();
+    private PolygonShape shape = new PolygonShape();
+    private FixtureDef fixtureDef = new FixtureDef();
+    private World world=new World(new Vector2(0, 0), true);
+    private Body body;
     ShapeRenderer s=new ShapeRenderer();
     public GameScreen(final Core game) {
         this.game = game;
         background = new Texture(Gdx.files.internal("Gamescreen/background.jpg"));
         batch = new SpriteBatch();
-        wooden_hor=new Texture(Gdx.files.internal("wood2.png"));
-        wooden_ver=new Texture(Gdx.files.internal("wood3.png"));
+        wooden_hor=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/horiontal_wood.png"));
+        wooden_ver=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/wooden_base_type_2.png"));
         glass_block=new Texture(Gdx.files.internal("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("sling2.png"));
-        red_bird=new Texture(Gdx.files.internal("birds/redbird.png"));
-        yellow_bird=new Texture(Gdx.files.internal("birds/yellow.png"));
-        black_bird=new Texture(Gdx.files.internal("birds/black.png"));
-        crown_pig=new Texture(Gdx.files.internal("pigs/crownpig.jpg"));
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 960, 496);
+        camera.setToOrtho(false, width, height);
 
         stage = new Stage(new ScreenViewport(camera));
         Gdx.input.setInputProcessor(stage);
@@ -87,7 +92,7 @@ public class GameScreen implements Screen {
         buttonStyle.up = buttonDrawable;
         buttonStyle.down = buttonDrawable;
         mapLoader=new TmxMapLoader();
-        tiledMap = mapLoader.load("level-1.tmx");
+        tiledMap = mapLoader.load("Level_tmx_files/level-1.tmx");
         renderer = new OrthogonalTiledMapRenderer(tiledMap);
 
         button = new Button(buttonStyle);
@@ -101,16 +106,9 @@ public class GameScreen implements Screen {
                 game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, GameScreen.this));
             }
         });
-        world = new World(new Vector2(0, 0), true);
+
         b2dr = new Box2DDebugRenderer();
-        BodyDef bodyDef = new BodyDef();
-        PolygonShape shape = new PolygonShape();
-        FixtureDef fixtureDef = new FixtureDef();
-        Body body;
-        rectangles_ver=new Array<>();
-        rectangles_hor=new Array<>();
-        base_objetcs=new Array<>();
-        glass_blocks=new Array<>();
+
         font=new BitmapFont();
         for (MapObject object: tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect=((RectangleMapObject) object).getRectangle();
@@ -122,54 +120,6 @@ public class GameScreen implements Screen {
             shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
-        }
-        for (MapObject object: tiledMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
-            Rectangle rect=((RectangleMapObject) object).getRectangle();
-
-            bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
-            body=world.createBody(bodyDef);
-
-            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
-            fixtureDef.shape = shape;
-            body.createFixture(fixtureDef);
-            rectangles_hor.add(rect);
-        }
-        for (MapObject object: tiledMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
-            Rectangle rect=((RectangleMapObject) object).getRectangle();
-
-            bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
-            body=world.createBody(bodyDef);
-
-            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
-            fixtureDef.shape = shape;
-            body.createFixture(fixtureDef);
-            rectangles_ver.add(rect);
-        }
-        for (MapObject object: tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
-            Rectangle rect=((RectangleMapObject) object).getRectangle();
-
-            bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
-            body=world.createBody(bodyDef);
-
-            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
-            fixtureDef.shape = shape;
-            body.createFixture(fixtureDef);
-            base_objetcs.add(rect);
-        }
-        for (MapObject object: tiledMap.getLayers().get(8).getObjects().getByType(RectangleMapObject.class)) {
-            Rectangle rect=((RectangleMapObject) object).getRectangle();
-
-            bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
-            body=world.createBody(bodyDef);
-
-            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
-            fixtureDef.shape = shape;
-            body.createFixture(fixtureDef);
-            glass_blocks.add(rect);
         }
 
         stage.addActor(button);
@@ -214,10 +164,15 @@ public class GameScreen implements Screen {
             batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
         batch.draw(sling,57,128,185,90);
-        batch.draw(red_bird,87,130,30,30);
-        batch.draw(yellow_bird,47,130,45,45);
-        batch.draw(black_bird,17,130,35,35);
-        batch.draw(crown_pig,778,280,30,30);
+
+        //Birds
+        batch.draw(redbird.getRedBird(),87,130,30,30);
+        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
+        batch.draw(blackbird.getblackBird(),17,130,35,35);
+
+        //Pigs
+        batch.draw(crown_pig.getcrownpig(),778,280,30,30);
+
 //        for (MapObject object: tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
 //            Rectangle rect=((RectangleMapObject) object).getRectangle();
 //            batch.draw(base, rect.getX(), rect.getY(),rect.getWidth(),rect.getHeight());

@@ -22,6 +22,8 @@ public class LevelScreen implements Screen{
     private final Core game;
     private Stage stage;
     private Button backButton;
+    private int height=Gdx.graphics.getHeight();
+    private int width=Gdx.graphics.getWidth();
 
     public LevelScreen(final Core game) {
         this.game = game;
@@ -29,7 +31,7 @@ public class LevelScreen implements Screen{
         background = new Texture(Gdx.files.internal("levelBackground.jpg"));
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 960, 496);
+        camera.setToOrtho(false, width, height);
 
 
         stage = new Stage(new ScreenViewport(camera));
@@ -213,7 +215,7 @@ public class LevelScreen implements Screen{
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.batch.draw(background, 0, 0, 960, 496);
+        game.batch.draw(background, 0, 0, width, height);
         game.batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());

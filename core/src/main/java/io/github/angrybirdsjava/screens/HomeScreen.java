@@ -16,8 +16,8 @@ import io.github.angrybirdsjava.LevelScreen;
 
 public class HomeScreen implements Screen {
     final Core game;
-    int winwidth=Gdx.graphics.getWidth();
-    int winheight=Gdx.graphics.getHeight();
+    int width=Gdx.graphics.getWidth();
+    int height=Gdx.graphics.getHeight();
     private OrthographicCamera camera;
     private Texture background;
     private Stage stage;
@@ -39,11 +39,11 @@ public class HomeScreen implements Screen {
         this.game = core;
         this.camera = new OrthographicCamera();
         this.issettingsopen = false;
-        camera.setToOrtho(false, 960, 496);
+        camera.setToOrtho(false, width, height);
         this.background=new Texture(Gdx.files.internal("Homescreen/home_screen_bg.jpg"));
         this.stage = new Stage(new ScreenViewport());
         bgX1=0;
-        bgX2=960;
+        bgX2=width;
         //stage.getViewport().setCamera(camera);
         this.settingsButton=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/setting_button.png"))));
         this.playButtton=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/play_button.png"))));
@@ -123,15 +123,15 @@ public class HomeScreen implements Screen {
         bgX1 -= bgSpeed * delta;
         bgX2 -= bgSpeed * delta;
 
-        if (bgX1 + 960 <= 0) {
-            bgX1 = bgX2 + 960;
+        if (bgX1 + width <= 0) {
+            bgX1 = bgX2 + width;
         }
-        if (bgX2 + 960 <= 0) {
-            bgX2 = bgX1 +960;
+        if (bgX2 + width <= 0) {
+            bgX2 = bgX1 +width;
         }
         game.batch.begin();
-        game.batch.draw(background, bgX1, 0,960,496); // Draw first background
-        game.batch.draw(background, bgX2, 0,960,496);
+        game.batch.draw(background, bgX1, 0,width,height); // Draw first background
+        game.batch.draw(background, bgX2, 0,width,height);
 //        game.batch.draw(background, 0, 0, 960, 496);
         game.batch.end();
         stage.draw();
