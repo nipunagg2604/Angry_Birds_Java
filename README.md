@@ -6,6 +6,12 @@
 # Project Outline  <br>
 In this project, we built our game using the LibGDX framework. We utilized the Screen interface and Game class provided by LibGDX to implement various game screens. Additionally, we incorporated a range of classes from Scene2D, such as Texture, ImageButton, SpriteBatch, and Stage, to design the user interface and GUI elements for the game. For the physics engine, we integrated the Box2D library to create elements like blocks, ground, and other structures that behave according to real-world physics. We also used the Tiled map editor to design our level maps, leveraging object layers to position blocks and other items within the maps.
 
+# Steps to run <br>
+In IDEA Studio: <br>
+* Extend the Gradle tab on the right side of your window. <br>
+* Expand the tasks of your project and then select: lwjgl3 -> Tasks -> application -> run: <br>
+
+
 # Online resources  <br> 
 1.) https://libgdx.com/wiki/
 <br>
