@@ -1,11 +1,12 @@
-Members - <br>
+# Members  <br>
 1.) Nipun Aggarwal
 <br>
 2.) Ashwin Singh
 
+# Project Outline  <br>
 In this project, we built our game using the LibGDX framework. We utilized the Screen interface and Game class provided by LibGDX to implement various game screens. Additionally, we incorporated a range of classes from Scene2D, such as Texture, ImageButton, SpriteBatch, and Stage, to design the user interface and GUI elements for the game. For the physics engine, we integrated the Box2D library to create elements like blocks, ground, and other structures that behave according to real-world physics. We also used the Tiled map editor to design our level maps, leveraging object layers to position blocks and other items within the maps.
 
-Online resources - <br> 
+# Online resources  <br> 
 1.) https://libgdx.com/wiki/
 <br>
 2.) https://www.youtube.com/watch?v=a8MPxzkwBwo&list=PLZm85UZQLd2SXQzsF-a0-pPF6IWDDdrXt
