@@ -29,9 +29,6 @@ import io.github.angrybirdsjava.birds.Black_Bird;
 import io.github.angrybirdsjava.birds.Red_Bird;
 import io.github.angrybirdsjava.birds.Yellow_Bird;
 import io.github.angrybirdsjava.blocks.Structures;
-import io.github.angrybirdsjava.levels.Level1;
-import io.github.angrybirdsjava.levels.Level2;
-import io.github.angrybirdsjava.levels.Level3;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.EndScreen;
 
