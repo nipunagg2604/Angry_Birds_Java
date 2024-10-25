@@ -1,19 +1,16 @@
 package io.github.angrybirdsjava;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
@@ -29,7 +26,7 @@ public class PauseScreen implements Screen{
     private Button exitButton;
     private ImageButton resume;
 
-    public PauseScreen(final Core game, io.github.angrybirdsjava.GameScreen old) {
+    public PauseScreen(final Core game, Screen old, Stage old_stage) {
         this.game = game;
 
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
@@ -57,7 +54,7 @@ public class PauseScreen implements Screen{
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(old.getStage());
+                Gdx.input.setInputProcessor(old_stage);
                 game.setScreen(old);
                 dispose();
             }
@@ -80,7 +77,7 @@ public class PauseScreen implements Screen{
         resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(old.getStage());
+                Gdx.input.setInputProcessor(old_stage);
                 game.setScreen(old);
                 dispose();
             }
@@ -103,7 +100,7 @@ public class PauseScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 old.dispose();
                 dispose();
             }

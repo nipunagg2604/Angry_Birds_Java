@@ -5,7 +5,6 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -52,7 +51,7 @@ public class LevelScreen implements Screen{
         imgb.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -66,7 +65,7 @@ public class LevelScreen implements Screen{
         imgb2.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -80,7 +79,7 @@ public class LevelScreen implements Screen{
         imgb3.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -94,7 +93,7 @@ public class LevelScreen implements Screen{
         imgb4.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -109,7 +108,7 @@ public class LevelScreen implements Screen{
         imgb5.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -123,7 +122,7 @@ public class LevelScreen implements Screen{
         imgb6.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -137,7 +136,7 @@ public class LevelScreen implements Screen{
         imgb7.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -151,7 +150,7 @@ public class LevelScreen implements Screen{
         imgb8.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -166,7 +165,7 @@ public class LevelScreen implements Screen{
         imgb9.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.GameScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
