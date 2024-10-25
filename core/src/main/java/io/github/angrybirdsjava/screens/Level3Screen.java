@@ -68,12 +68,17 @@ public class Level3Screen implements Screen{
     private World world=new World(new Vector2(0, 0), true);
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
-    private Level1 level1 = new Level1();
-    private Level2 level2 = new Level2();
-    private Level3 level3 = new Level3();
+    private Red_Bird redbird;
+    private Black_Bird blackbird;
+    private Yellow_Bird yellowbird;
+    private Crown_Pig crown_pig;
     public Level3Screen(final Core game) {
         this.game = game;
-        background = level1.getBackground();
+        background = new Texture("Gamescreen/background.jpg");
+        redbird=new Red_Bird();
+        blackbird=new Black_Bird();
+        yellowbird=new Yellow_Bird();
+        crown_pig=new Crown_Pig();
         batch = new SpriteBatch();
         wooden_hor=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/horiontal_wood.png"));
         wooden_ver=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/vertical_wood.png"));
@@ -167,12 +172,12 @@ public class Level3Screen implements Screen{
         batch.draw(sling,57,128,185,90);
 
         //Birds
-        batch.draw(level1.getRedbird().getRedBird(),87,130,30,30);
-        batch.draw(level1.getYellowbird().getyellowBird(),47,130,45,45);
-        batch.draw(level1.getBlackbird().getblackBird(),17,130,35,35);
+        batch.draw(redbird.getRedBird(),87,130,30,30);
+        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
+        batch.draw(blackbird.getblackBird(),17,130,35,35);
 
         //Pigs
-        batch.draw(level1.getCrown_pig().getcrownpig(),778,280,30,30);
+        batch.draw(crown_pig.getcrownpig(),778,280,30,30);
 
 //        for (MapObject object: tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
 //            Rectangle rect=((RectangleMapObject) object).getRectangle();
