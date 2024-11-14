@@ -1,17 +1,21 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
@@ -33,10 +37,11 @@ import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.EndScreen;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 //import java.util.stream.GathererOp;
 
-public class Level1Screen implements Screen {
+public class Level1Screen implements Screen, InputProcessor {
     private Texture background;
     private SpriteBatch batch;
     private OrthographicCamera camera;
@@ -48,21 +53,21 @@ public class Level1Screen implements Screen {
     private TmxMapLoader mapLoader;
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
-    private ArrayList<Rectangle> rectangles_ver=new Structures("wooden_vertical").return_array();
-    private ArrayList<Rectangle> rectangles_hor=new Structures("wooden_horizontal").return_array();;
-    private ArrayList<Rectangle> base_objetcs=new Structures("wooden_base").return_array();;
-    private ArrayList<Rectangle> glass_blocks=new Structures("glass_vertical").return_array();;
-    private Texture wooden_ver;
-    private Texture wooden_hor;
-    private Texture glass_block;
-    private Texture base;
+    private World world=new World(new Vector2(0, -10f), false);
+    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world).return_array();
+    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
+    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
+    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
+    private TextureRegion wooden_ver;
+    private TextureRegion wooden_hor;
+    private TextureRegion glass_block;
+    private TextureRegion base;
     private Texture sling;
     private int width=Gdx.graphics.getWidth();
     private int height=Gdx.graphics.getHeight();
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
-    private World world=new World(new Vector2(0, 0), true);
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
     private Red_Bird redbird;
@@ -77,16 +82,21 @@ public class Level1Screen implements Screen {
         yellowbird=new Yellow_Bird();
         crown_pig=new Crown_Pig();
         batch = new SpriteBatch();
-        wooden_hor=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/horiontal_wood.png"));
-        wooden_ver=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/vertical_wood.png"));
-        base=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/wooden_base_type_2.png"));
-        glass_block=new Texture(Gdx.files.internal("Blocks/Glass Blocks/glass_block_type_2.png"));
+        wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
+        wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
+        base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
+        glass_block=new TextureRegion(new Texture("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("Slings/sling2.png"));
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
+
+        InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
-        Gdx.input.setInputProcessor(stage);
+        inputMultiplexer.addProcessor(this);
+//        inputMultiplexer.addProcessor(stage);
+
+        Gdx.input.setInputProcessor(inputMultiplexer);
 
         Texture buttonTexture = new Texture(Gdx.files.internal("pauseButton.png"));
         TextureRegionDrawable buttonDrawable = new TextureRegionDrawable(buttonTexture);
@@ -150,21 +160,41 @@ public class Level1Screen implements Screen {
         renderer.setView(camera);
         renderer.render();
         b2dr.render(world,camera.combined);
+        world.step(1 / 20f, 6, 2);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
-
-        for (Rectangle rectangle: rectangles_ver) {
-            batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        for (Body rectangle : rectangles_ver) {
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            a = (ArrayList<Float>) rectangle.getUserData();
+            Vector2 v = new Vector2();
+            v = (Vector2) rectangle.getPosition();
+            batch.draw(wooden_ver, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
-        for (Rectangle rectangle: rectangles_hor) {
-            batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        for (Body rectangle : rectangles_hor) {
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            a = (ArrayList<Float>) rectangle.getUserData();
+            Vector2 v = new Vector2();
+            v = (Vector2) rectangle.getPosition();
+            batch.draw(wooden_hor, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
-        for (Rectangle rectangle: base_objetcs) {
-            batch.draw(base, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        for (Body rectangle : base_objetcs) {
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            a = (ArrayList<Float>) rectangle.getUserData();
+            Vector2 v = new Vector2();
+            v = (Vector2) rectangle.getPosition();
+            batch.draw(base, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
-        for (Rectangle rectangle: glass_blocks) {
-            batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        for (Body rectangle : glass_blocks) {
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            a = (ArrayList<Float>) rectangle.getUserData();
+            Vector2 v = new Vector2();
+            v = (Vector2) rectangle.getPosition();
+            batch.draw(glass_block, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         batch.draw(sling,57,128,185,90);
 
@@ -219,5 +249,87 @@ public class Level1Screen implements Screen {
         tiledMap.dispose();
         world.dispose();
         b2dr.dispose();
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        return false;
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        return false;
+    }
+
+    @Override
+    public boolean keyTyped(char character) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        Vector3 worldcoor =camera.unproject(new Vector3(screenX,screenY,0));
+        for (Body i: rectangles_ver) {
+            for (Fixture f:i.getFixtureList()) {
+                if (f.testPoint(worldcoor.x, worldcoor.y)) {
+                    world.destroyBody(i);
+                    rectangles_ver.remove(i);
+                    return true;
+                }
+            }
+        }
+        for (Body i: rectangles_hor) {
+            for (Fixture f:i.getFixtureList()) {
+                if (f.testPoint(worldcoor.x, worldcoor.y)) {
+                    world.destroyBody(i);
+                    rectangles_hor.remove(i);
+                    return true;
+                }
+            }
+        }
+        for (Body i: base_objetcs) {
+            for (Fixture f:i.getFixtureList()) {
+                if (f.testPoint(worldcoor.x, worldcoor.y)) {
+                    world.destroyBody(i);
+                    base_objetcs.remove(i);
+                    return true;
+                }
+            }
+        }
+        for (Body i: glass_blocks) {
+            for (Fixture f:i.getFixtureList()) {
+                if (f.testPoint(worldcoor.x, worldcoor.y)) {
+                    world.destroyBody(i);
+                    glass_blocks.remove(i);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    @Override
+    public boolean touchCancelled(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
+    }
+
+    @Override
+    public boolean mouseMoved(int screenX, int screenY) {
+        return false;
+    }
+
+    @Override
+    public boolean scrolled(float amountX, float amountY) {
+        return false;
     }
 }

@@ -48,10 +48,11 @@ public class Level2Screen implements Screen {
     private TmxMapLoader mapLoader;
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
-    private ArrayList<Rectangle> rectangles_ver=new Structures("wooden_vertical").return_array();
-    private ArrayList<Rectangle> rectangles_hor=new Structures("wooden_horizontal").return_array();;
-    private ArrayList<Rectangle> base_objetcs=new Structures("wooden_base").return_array();;
-    private ArrayList<Rectangle> glass_blocks=new Structures("glass_vertical").return_array();;
+    private World world=new World(new Vector2(0, -9.8f), true);
+    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world).return_array();
+    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
+    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
+    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
     private Texture wooden_ver;
     private Texture wooden_hor;
     private Texture glass_block;
@@ -62,7 +63,6 @@ public class Level2Screen implements Screen {
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
-    private World world=new World(new Vector2(0, 0), true);
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
     private Red_Bird redbird;
@@ -154,18 +154,18 @@ public class Level2Screen implements Screen {
         batch.begin();
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
 
-        for (Rectangle rectangle: rectangles_ver) {
-            batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-        }
-        for (Rectangle rectangle: rectangles_hor) {
-            batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-        }
-        for (Rectangle rectangle: base_objetcs) {
-            batch.draw(base, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-        }
-        for (Rectangle rectangle: glass_blocks) {
-            batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-        }
+//        for (Body rectangle: rectangles_ver) {
+//            batch.draw(wooden_ver, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        }
+//        for (Body rectangle: rectangles_hor) {
+//            batch.draw(wooden_hor, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        }
+//        for (Body rectangle: base_objetcs) {
+//            batch.draw(base, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        }
+//        for (Body rectangle: glass_blocks) {
+//            batch.draw(glass_block, rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        }
         batch.draw(sling,57,128,185,90);
 
         //Birds

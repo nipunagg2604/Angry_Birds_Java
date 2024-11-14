@@ -10,13 +10,14 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Structures {
     private String block_type;
     private TmxMapLoader tileloader;
     private TiledMap tileMap;
-    private World world=new World(new Vector2(0, 0), true);
+    private World world;
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
@@ -24,69 +25,108 @@ public class Structures {
     private int index_in_tmx;
 
 
-    public Structures(String block_type) {
+    public Structures(String block_type,World world) {
         this.block_type = block_type;
         tileloader = new TmxMapLoader();
+        this.world = world;
         this.tileMap = tileloader.load(String.valueOf(Gdx.files.internal("Level_tmx_files/level-1.tmx")));
     }
-    public ArrayList<Rectangle> return_array() {
-        ArrayList<Rectangle> rectangles = new ArrayList<>();
+    public ArrayList<Body> return_array() {
+        ArrayList<Body> rectangles = new ArrayList<>();
         if (block_type.equals("wooden_vertical")) {
             for (MapObject object: tileMap.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
-                bodyDef.type = BodyDef.BodyType.StaticBody;
+                bodyDef.type = BodyDef.BodyType.DynamicBody;
                 bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
                 body=world.createBody(bodyDef);
-
+                ArrayList<Float> a=new ArrayList();
+                a.add(rect.getX());
+                a.add(rect.getY());
+                a.add(rect.getWidth()/2);
+                a.add(rect.getHeight()/2);
                 shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
                 fixtureDef.shape = shape;
+                fixtureDef.friction = 0.5f;  // Moderate friction
+                fixtureDef.restitution = 0.3f;
+                fixtureDef.density = 1f;
+                body.setLinearDamping(0);
+                body.setUserData(a);
                 body.createFixture(fixtureDef);
-                rectangles.add(rect);
+                rectangles.add(body);
             }
         }
         else if (block_type.equals("wooden_horizontal")) {
             for (MapObject object: tileMap.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
-                bodyDef.type = BodyDef.BodyType.StaticBody;
+                bodyDef.type = BodyDef.BodyType.DynamicBody;
                 bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
                 body=world.createBody(bodyDef);
 
+                ArrayList<Float> a=new ArrayList();
+                a.add(rect.getX());
+                a.add(rect.getY());
+                a.add(rect.getWidth()/2);
+                a.add(rect.getHeight()/2);
                 shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
                 fixtureDef.shape = shape;
+                fixtureDef.friction = 0.5f;  // Moderate friction
+                fixtureDef.restitution = 0.3f;
+                fixtureDef.density = 1f;
+                body.setLinearDamping(0);
+                body.setUserData(a);
                 body.createFixture(fixtureDef);
-                rectangles.add(rect);
+                rectangles.add(body);
             }
         }
         else if (block_type.equals("wooden_base")) {
             for (MapObject object: tileMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
-                bodyDef.type = BodyDef.BodyType.StaticBody;
+                bodyDef.type = BodyDef.BodyType.DynamicBody;
                 bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
                 body=world.createBody(bodyDef);
-
+                ArrayList<Float> a=new ArrayList();
+                a.add(rect.getX());
+                a.add(rect.getY());
+                a.add(rect.getWidth()/2);
+                a.add(rect.getHeight()/2);
                 shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
                 fixtureDef.shape = shape;
+                fixtureDef.friction = 0.5f;  // Moderate friction
+                fixtureDef.restitution = 0.3f;
+                fixtureDef.density = 1f;
+                body.setLinearDamping(0);
+                body.setUserData(a);
                 body.createFixture(fixtureDef);
-                rectangles.add(rect);
+                rectangles.add(body);
             }
         }
         else if (block_type.equals("glass_vertical")) {
             for (MapObject object: tileMap.getLayers().get(8).getObjects().getByType(RectangleMapObject.class)) {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
-                bodyDef.type = BodyDef.BodyType.StaticBody;
+                bodyDef.type = BodyDef.BodyType.DynamicBody;
                 bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
                 body=world.createBody(bodyDef);
-
+                ArrayList<Float> a=new ArrayList();
+                a.add(rect.getX());
+                a.add(rect.getY());
+                a.add(rect.getWidth()/2);
+                a.add(rect.getHeight()/2);
                 shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
                 fixtureDef.shape = shape;
+                fixtureDef.friction = 0.5f;  // Moderate friction
+                fixtureDef.restitution = 0.3f;
+                fixtureDef.density = 1f;
+                body.setLinearDamping(0);
+                body.setUserData(a);
                 body.createFixture(fixtureDef);
-                rectangles.add(rect);
+                rectangles.add(body);
             }
-        }return rectangles;
+        }
+        return rectangles;
     }
 
 }
