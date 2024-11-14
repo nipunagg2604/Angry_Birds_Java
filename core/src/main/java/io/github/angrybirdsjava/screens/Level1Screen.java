@@ -62,6 +62,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private TextureRegion wooden_hor;
     private TextureRegion glass_block;
     private TextureRegion base;
+    private TextureRegion crownpig;
+
     private Texture sling;
     private int width=Gdx.graphics.getWidth();
     private int height=Gdx.graphics.getHeight();
@@ -73,18 +75,19 @@ public class Level1Screen implements Screen, InputProcessor {
     private Red_Bird redbird;
     private Black_Bird blackbird;
     private Yellow_Bird yellowbird;
-    private Crown_Pig crown_pig;
+    private Body crown_pig;
     public Level1Screen(final Core game) {
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
         redbird=new Red_Bird();
         blackbird=new Black_Bird();
         yellowbird=new Yellow_Bird();
-        crown_pig=new Crown_Pig();
+        crown_pig=Crown_Pig.addpig(world,793,305,15);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
+        crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
         glass_block=new TextureRegion(new Texture("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("Slings/sling2.png"));
         camera = new OrthographicCamera();
@@ -94,7 +97,7 @@ public class Level1Screen implements Screen, InputProcessor {
         InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
         inputMultiplexer.addProcessor(this);
-//        inputMultiplexer.addProcessor(stage);
+        inputMultiplexer.addProcessor(stage);
 
         Gdx.input.setInputProcessor(inputMultiplexer);
 
@@ -198,13 +201,15 @@ public class Level1Screen implements Screen, InputProcessor {
         }
         batch.draw(sling,57,128,185,90);
 
-        //Birds
+        Vector2 v = (Vector2) crown_pig.getPosition();
+        float angle = MathUtils.radiansToDegrees * crown_pig.getAngle();
+        batch.draw(crownpig, v.x -15, v.y - 15, 15, 15, 30, 30, 1, 1, angle);
         batch.draw(redbird.getRedBird(),87,130,30,30);
         batch.draw(yellowbird.getyellowBird(),47,130,45,45);
         batch.draw(blackbird.getblackBird(),17,130,35,35);
 
         //Pigs
-        batch.draw(crown_pig.getcrownpig(),778,280,30,30);
+//        batch.draw(crown_pig.getcrownpig(),778,280,30,30);
 
 //        for (MapObject object: tiledMap.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)) {
 //            Rectangle rect=((RectangleMapObject) object).getRectangle();

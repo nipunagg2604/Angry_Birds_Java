@@ -75,7 +75,7 @@ public class Level2Screen implements Screen {
         redbird=new Red_Bird();
         blackbird=new Black_Bird();
         yellowbird=new Yellow_Bird();
-        crown_pig=new Crown_Pig();
+//        crown_pig=new Crown_Pig();
         batch = new SpriteBatch();
         wooden_hor=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/horiontal_wood.png"));
         wooden_ver=new Texture(Gdx.files.internal("Blocks/Wooden Blocks/vertical_wood.png"));
