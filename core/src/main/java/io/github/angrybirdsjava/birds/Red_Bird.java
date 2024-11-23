@@ -25,13 +25,15 @@ public class Red_Bird {
 
         Body body = world.createBody(bodyDef);
 
+
         CircleShape shape = new CircleShape();
         shape.setRadius(radius/ppm);
 
         fixtureDef.shape = shape;
         fixtureDef.density = 0.5f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
-        body.createFixture(fixtureDef);
+        Fixture f=body.createFixture(fixtureDef);
+        f.setUserData("bird");
         shape.dispose();
 
         return body;

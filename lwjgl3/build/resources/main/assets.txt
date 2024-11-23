@@ -49,6 +49,8 @@ Slings/sling3.png
 Slings/sling2.png
 Slings/slingshot2.png
 Slings/sling.png
+Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Level_tmx_files copy/level-1.tmx
 resumeButton.png
 Homescreen/exit_button.png
 Homescreen/help_button.png

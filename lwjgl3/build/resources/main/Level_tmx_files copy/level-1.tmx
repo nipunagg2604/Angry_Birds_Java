@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.90" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="21" nextobjectid="50">
+ <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
+  <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+ </tileset>
+ <tileset firstgid="2443" name="soil" tilewidth="1" tileheight="1" tilecount="0" columns="0"/>
+ <tileset firstgid="2443" name="finalsoil" tilewidth="111" tileheight="114" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0" x="0" y="3" width="111" height="114">
+   <image source="../../../../../Downloads/finalsoil.png" width="114" height="114"/>
+  </tile>
+ </tileset>
+ <layer id="3" name="sky" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzt1Vs2FWAYx+GPvd0lopJJiJxVFE2iklOYBKVzTUKF2uwtOhgAOW6nlMMkqHRQ3XoG0AS+tfa71nP5u/pfvLN5IczxkXkWWGSJZVbIssoa62wwG0lXlR/CBaqpoZY66mmgkSYuUsF5KvPj6V4ywihjvOI1KcaZIE2GYZ7zIqKuKBFCMacooZTTnOEsZZyjnBMUcjIRT3eXIe5xnwc85BGPecJTnjHAIHci6r7xnUN+8JNf/OaIP/zlH/sc8DWirj0Zwi066KSLbnq4TS999HOdG9xMxtPFskNuv/9362ywySe2+MwXttlhlz2yrLIWUddU4Cdyics008IVrtJKG9eop4HGgni6NBkmecMU07zlHe/5wAwpxpmIqBtK5MQsd3HfMWjKr6g=
+  </data>
+ </layer>
+ <layer id="7" name="ground" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztytcRgmAUROGLP22YQ3EqBmzDiFCcigHaMJ4yvDN7Zr6XnTVTSimllFL/VCeYddFDHwMMMUITLbSD398OexyQ4YgcBdbYYOv498EXFptFaCAgxpP9hbfjX4IZ5lhgiRQrjDHB1PGvxBU33PFAhRonnHFx/PsB6yWOaA==
+  </data>
+ </layer>
+ <layer id="9" name="trees" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzty0cuRmEAQNEv4Z/onUXonUXonY3onUXonUXonY3onbGzCZGXvJuc4Q0hLi4u7m9qTQqhjXY66KSLbnropY9+BmiimZakaLxHHHPCKWecc8ElV1xzwy37HHAYkbcsOYRyKqikimpqqKWOehpopJgSSpOj8S6zwiprrLPBJltss8MueyywyFJE3vRECBlkkkU2OeSSRz4FFFJECqmkJaLxjjDKGONMMMkU08wwyxzzDDLEcETeR5545oVX3njng0+++OaHO+55iMgbFxf3f/0CuJHGtg==
+  </data>
+ </layer>
+ <layer id="8" name="grass" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzty8cNgFAQxNC9/ArJmVrJmZZwF2ilsfSONlNKKaWU8lUazDLkKFCiQo0GLTr0iBAjCX6+GQtWbNhx4MSFGw9eDBgxOfqUUv/1ARw7QaE=
+  </data>
+ </layer>
+ <objectgroup id="10" name="ground">
+  <object id="5" x="3.0099" y="380.849" width="1785.71" height="133.451"/>
+ </objectgroup>
+ <objectgroup id="11" name="wooden_vertical">
+  <object id="15" x="708.775" y="326.545" width="9.83146" height="26.6854"/>
+  <object id="16" x="876.612" y="326.545" width="9.83146" height="27.3876"/>
+  <object id="22" x="754" y="254" width="14" height="98.5"/>
+  <object id="23" x="823.242" y="254" width="14" height="98.5"/>
+  <object id="34" x="757" y="177" width="11.2" height="65.3"/>
+  <object id="42" x="818.32" y="177" width="11.2" height="65.3"/>
+  <object id="43" x="789.534" y="127.809" width="9.12921" height="32.3034"/>
+ </objectgroup>
+ <objectgroup id="16" name="wooden_horizontal">
+  <object id="47" x="782.755" y="295.064" width="30.0429" height="13.9485"/>
+  <object id="44" x="779.536" y="340.129" width="34.3348" height="13.8361"/>
+  <object id="25" x="779" y="232.444" width="30.1966" height="9.83146"/>
+  <object id="40" x="759.337" y="160.815" width="68.8202" height="16.1517"/>
+  <object id="24" x="748.854" y="242.978" width="96.7763" height="11.236"/>
+ </objectgroup>
+ <objectgroup id="15" name="base">
+  <object id="11" x="680.317" y="353.844" width="238.163" height="29.2827"/>
+ </objectgroup>
+ <objectgroup id="13" name="glass">
+  <object id="45" x="803.09" y="309.408" width="9.65665" height="30.4942"/>
+  <object id="46" x="782.755" y="309.408" width="9.65665" height="30.4942"/>
+ </objectgroup>
+ <objectgroup id="14" name="slingshot"/>
+ <objectgroup id="20" name="soil">
+  <object id="49" gid="2443" x="1194.5" y="387.283" width="543.418" height="161.752"/>
+ </objectgroup>
+</map>

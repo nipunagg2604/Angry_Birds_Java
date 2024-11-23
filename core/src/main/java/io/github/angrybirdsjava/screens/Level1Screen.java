@@ -32,6 +32,7 @@ import io.github.angrybirdsjava.birds.Red_Bird;
 import io.github.angrybirdsjava.birds.Yellow_Bird;
 import io.github.angrybirdsjava.blocks.Structures;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
+import io.github.angrybirdsjava.screens.ContactDetect;
 import io.github.angrybirdsjava.screens.EndScreen;
 
 import java.util.ArrayList;
@@ -62,7 +63,9 @@ public class Level1Screen implements Screen, InputProcessor {
     private TextureRegion base;
     private TextureRegion crownpig;
     private TextureRegion redbird;
-
+    private TextureRegion yellowbird;
+    private TextureRegion blackbird;
+    private boolean birdinactive=false;
     private Texture sling;
     private int width=Gdx.graphics.getWidth();
     private int height=Gdx.graphics.getHeight();
@@ -72,22 +75,25 @@ public class Level1Screen implements Screen, InputProcessor {
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
 //    private Red_Bird redbird;
-    private Black_Bird blackbird;
-    private Yellow_Bird yellowbird;
+//    private Black_Bird blackbird;
+//    private Yellow_Bird yellowbird;
     private Body crown_pig;
 //    private Vector2 slingorigin=new Vector2(114,203);
     private static float ppm=13f;
     private Body slingbody;
     private Body redbirdbody;
+    private Body yellowirdbody;
+    private Body blackbirdbody;
+    private String currentbird="null";
+    private ContactDetect detect=new ContactDetect();
+    private ArrayList<Body> birds=new ArrayList<>();
+    private ArrayList<Boolean> inactive=new ArrayList<>();
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
     public Level1Screen(final Core game) {
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-//        redbird=new Red_Bird();
-        blackbird=new Black_Bird();
-        yellowbird=new Yellow_Bird();
         crown_pig=Crown_Pig.addpig(world,793,305,15);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
@@ -95,12 +101,23 @@ public class Level1Screen implements Screen, InputProcessor {
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
         crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
+        yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
+        blackbird=new TextureRegion(new Texture("birds/black.png"));
         glass_block=new TextureRegion(new Texture("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("Slings/slingshot2.png"));
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
         redbirdbody=Red_Bird.createbird(world,114,203,15);
+        blackbirdbody=Black_Bird.createbird(world,60,160,17.5f);
+        yellowirdbody=Yellow_Bird.createbird(world,89,152,22.5f);
+
+        birds.add(redbirdbody);
+        birds.add(yellowirdbody);
+        birds.add(blackbirdbody);
+        inactive.add(false);
+        inactive.add(false);
+        world.setContactListener(detect);
         InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
         inputMultiplexer.addProcessor(this);
@@ -109,6 +126,7 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public boolean touchDragged(int screenX, int screenY, int pointer) {
                 if (!isLaunched) {
+                    Body bird=birds.get(0);
                     isDragging = true;
                     Vector3 touchPos = new Vector3(screenX, screenY, 0);
                     camera.unproject(touchPos);
@@ -120,7 +138,7 @@ public class Level1Screen implements Screen, InputProcessor {
 
                     }
 
-                    redbirdbody.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
+                    bird.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
                     return true;
                 }
                 return false;
@@ -133,15 +151,19 @@ public class Level1Screen implements Screen, InputProcessor {
                     isLaunched = true;
 
                     // Calculate launch force
-                    Vector2 birdPosition = redbirdbody.getPosition();
+                    Body bird=birds.get(0);
+                    currentbird=bird.getFixtureList().get(0).getUserData().toString();
+//                    System.out.println(currentbird);
+                    Vector2 birdPosition = bird.getPosition();
                     birdPosition.x=(birdPosition.x)*ppm;
                     birdPosition.y=(birdPosition.y)*ppm;
-                    System.out.println("before : "+slingOrigin);
+//                    System.out.println("before : "+slingOrigin);
                     Vector2 v=slingOrigin.cpy();
                     Vector2 launchForce = v.sub(birdPosition).scl(4);
-                    System.out.println("after : "+slingOrigin);
-                    redbirdbody.setType(BodyDef.BodyType.DynamicBody);
-                    redbirdbody.applyLinearImpulse(launchForce, redbirdbody.getWorldCenter(), true);
+//                    System.out.println("after : "+slingOrigin);
+
+                    bird.setType(BodyDef.BodyType.DynamicBody);
+                    bird.applyLinearImpulse(launchForce, bird.getWorldCenter(), true);
                 }
                 return true;
             }
@@ -202,6 +224,37 @@ public class Level1Screen implements Screen, InputProcessor {
 
         stage.addActor(end);
     }
+    public void checkbird(){
+        if (birds.size()<1) {
+            isLaunched=true;
+            return;
+        }
+        Body bird=birds.get(0);
+        Vector2 birdPosition = bird.getPosition();
+        birdPosition.x=(birdPosition.x)*ppm;
+        birdPosition.y=(birdPosition.y)*ppm;
+        if (currentbird=="null"){
+            return;
+        }
+        boolean isOffScreen = birdPosition.x < 0 || birdPosition.x > Gdx.graphics.getWidth()
+                || birdPosition.y < 0 || birdPosition.y > Gdx.graphics.getHeight();
+
+        if (!birdinactive){
+            if (detect.hasBirdCollided() || isOffScreen) {
+                bird=birds.get(0);
+                bird.getFixtureList().get(0).setUserData("null");
+                birds.remove(0);
+                if (birds.size()!=0){
+                    bird=birds.get(0);
+                    bird.setTransform(114/ppm,203/ppm,0);
+                }detect.birdCollided=false;
+                currentbird="null";
+                isLaunched=false;
+                isDragging=false;
+            }
+        }
+
+    }
     @Override
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
@@ -247,6 +300,7 @@ public class Level1Screen implements Screen, InputProcessor {
             v = (Vector2) rectangle.getPosition();
             batch.draw(glass_block, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
+
         batch.draw(sling,57,128,185,90);
         slingbody=createsling(151,171,20,45);
         Vector2 v = (Vector2) crown_pig.getPosition();
@@ -257,8 +311,16 @@ public class Level1Screen implements Screen, InputProcessor {
         angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
         batch.draw(redbird, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
 
-        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
-        batch.draw(blackbird.getblackBird(),17,130,35,35);
+        v=(Vector2) yellowirdbody.getPosition();
+        angle=MathUtils.radiansToDegrees * yellowirdbody.getAngle();
+        batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm - 22.5f, 22.5f, 22.5f, 45, 45, 1, 1, angle);
+
+        v=(Vector2) blackbirdbody.getPosition();
+        angle=MathUtils.radiansToDegrees * blackbirdbody.getAngle();
+        batch.draw(blackbird, (v.x)*ppm -25, (v.y)*ppm - 30, 17.5f, 17.5f, 35, 35, 1, 1, angle);
+        checkbird();
+//        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
+//        batch.draw(blackbird.getblackBird(),17,130,35,35);
 //        if (isLaunched==false){
 //            s.setProjectionMatrix(camera.combined);
 //            s.begin(ShapeRenderer.ShapeType.Line);

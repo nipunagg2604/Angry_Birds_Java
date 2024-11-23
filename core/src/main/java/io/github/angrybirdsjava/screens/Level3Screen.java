@@ -170,8 +170,8 @@ public class Level3Screen implements Screen{
 
         //Birds
         batch.draw(redbird.getRedBird(),87,130,30,30);
-        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
-        batch.draw(blackbird.getblackBird(),17,130,35,35);
+//        batch.draw(yellowbird.getyellowBird(),47,130,45,45);
+//        batch.draw(blackbird.getblackBird(),17,130,35,35);
 
         //Pigs
         batch.draw(crown_pig.getcrownpig(),778,280,30,30);
