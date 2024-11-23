@@ -24,6 +24,7 @@ public class Structures {
     private Body body;
     private int index_in_tmx;
 
+    private static float ppm=13f;
 
     public Structures(String block_type,World world) {
         this.block_type = block_type;
@@ -38,14 +39,14 @@ public class Structures {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
                 bodyDef.type = BodyDef.BodyType.DynamicBody;
-                bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+                bodyDef.position.set((rect.getX()+rect.getWidth()/2)/ppm, (rect.getY()+rect.getHeight()/2)/ppm);
                 body=world.createBody(bodyDef);
                 ArrayList<Float> a=new ArrayList();
                 a.add(rect.getX());
                 a.add(rect.getY());
                 a.add(rect.getWidth()/2);
                 a.add(rect.getHeight()/2);
-                shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+                shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
                 fixtureDef.shape = shape;
                 fixtureDef.friction = 0.5f;  // Moderate friction
                 fixtureDef.restitution = 0.3f;
@@ -61,7 +62,7 @@ public class Structures {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
                 bodyDef.type = BodyDef.BodyType.DynamicBody;
-                bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+                bodyDef.position.set((rect.getX()+rect.getWidth()/2)/ppm, (rect.getY()+rect.getHeight()/2)/ppm);
                 body=world.createBody(bodyDef);
 
                 ArrayList<Float> a=new ArrayList();
@@ -69,7 +70,7 @@ public class Structures {
                 a.add(rect.getY());
                 a.add(rect.getWidth()/2);
                 a.add(rect.getHeight()/2);
-                shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+                shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
                 fixtureDef.shape = shape;
                 fixtureDef.friction = 0.5f;  // Moderate friction
                 fixtureDef.restitution = 0.3f;
@@ -85,14 +86,14 @@ public class Structures {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
                 bodyDef.type = BodyDef.BodyType.DynamicBody;
-                bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+                bodyDef.position.set((rect.getX()+rect.getWidth()/2)/ppm, (rect.getY()+rect.getHeight()/2)/ppm);
                 body=world.createBody(bodyDef);
                 ArrayList<Float> a=new ArrayList();
                 a.add(rect.getX());
                 a.add(rect.getY());
                 a.add(rect.getWidth()/2);
                 a.add(rect.getHeight()/2);
-                shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+                shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
                 fixtureDef.shape = shape;
                 fixtureDef.friction = 0.5f;  // Moderate friction
                 fixtureDef.restitution = 0.3f;
@@ -108,14 +109,14 @@ public class Structures {
                 com.badlogic.gdx.math.Rectangle rect=((RectangleMapObject) object).getRectangle();
 
                 bodyDef.type = BodyDef.BodyType.DynamicBody;
-                bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+                bodyDef.position.set((rect.getX()+rect.getWidth()/2)/ppm, (rect.getY()+rect.getHeight()/2)/ppm);
                 body=world.createBody(bodyDef);
                 ArrayList<Float> a=new ArrayList();
                 a.add(rect.getX());
                 a.add(rect.getY());
                 a.add(rect.getWidth()/2);
                 a.add(rect.getHeight()/2);
-                shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+                shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
                 fixtureDef.shape = shape;
                 fixtureDef.friction = 0.5f;  // Moderate friction
                 fixtureDef.restitution = 0.3f;

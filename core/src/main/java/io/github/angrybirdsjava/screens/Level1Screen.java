@@ -1,9 +1,7 @@
 package io.github.angrybirdsjava;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -63,6 +61,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private TextureRegion glass_block;
     private TextureRegion base;
     private TextureRegion crownpig;
+    private TextureRegion redbird;
 
     private Texture sling;
     private int width=Gdx.graphics.getWidth();
@@ -72,14 +71,21 @@ public class Level1Screen implements Screen, InputProcessor {
     private FixtureDef fixtureDef = new FixtureDef();
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
-    private Red_Bird redbird;
+//    private Red_Bird redbird;
     private Black_Bird blackbird;
     private Yellow_Bird yellowbird;
     private Body crown_pig;
+//    private Vector2 slingorigin=new Vector2(114,203);
+    private static float ppm=13f;
+    private Body slingbody;
+    private Body redbirdbody;
+    private Vector2 slingOrigin=new Vector2(114,203);
+    private boolean isDragging;
+    private boolean isLaunched;
     public Level1Screen(final Core game) {
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        redbird=new Red_Bird();
+//        redbird=new Red_Bird();
         blackbird=new Black_Bird();
         yellowbird=new Yellow_Bird();
         crown_pig=Crown_Pig.addpig(world,793,305,15);
@@ -88,16 +94,58 @@ public class Level1Screen implements Screen, InputProcessor {
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
         crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
+        redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         glass_block=new TextureRegion(new Texture("Blocks/Glass Blocks/glass_block_type_2.png"));
-        sling=new Texture(Gdx.files.internal("Slings/sling2.png"));
+        sling=new Texture(Gdx.files.internal("Slings/slingshot2.png"));
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
-
+        redbirdbody=Red_Bird.createbird(world,114,203,15);
         InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
         inputMultiplexer.addProcessor(this);
         inputMultiplexer.addProcessor(stage);
+        inputMultiplexer.addProcessor(new InputAdapter(){
+            @Override
+            public boolean touchDragged(int screenX, int screenY, int pointer) {
+                if (!isLaunched) {
+                    isDragging = true;
+                    Vector3 touchPos = new Vector3(screenX, screenY, 0);
+                    camera.unproject(touchPos);
+
+//                    // Limit the drag distance (optional)
+                    Vector2 dragPosition = new Vector2(touchPos.x, touchPos.y);
+                    if (dragPosition.dst(slingOrigin) >20) {
+                        dragPosition.sub(slingOrigin).nor().scl(20).add(slingOrigin);
+
+                    }
+
+                    redbirdbody.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
+                    return true;
+                }
+                return false;
+            }
+
+            @Override
+            public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+                if (isDragging && !isLaunched) {
+                    isDragging = false;
+                    isLaunched = true;
+
+                    // Calculate launch force
+                    Vector2 birdPosition = redbirdbody.getPosition();
+                    birdPosition.x=(birdPosition.x)*ppm;
+                    birdPosition.y=(birdPosition.y)*ppm;
+                    System.out.println("before : "+slingOrigin);
+                    Vector2 v=slingOrigin.cpy();
+                    Vector2 launchForce = v.sub(birdPosition).scl(4);
+                    System.out.println("after : "+slingOrigin);
+                    redbirdbody.setType(BodyDef.BodyType.DynamicBody);
+                    redbirdbody.applyLinearImpulse(launchForce, redbirdbody.getWorldCenter(), true);
+                }
+                return true;
+            }
+        });
 
         Gdx.input.setInputProcessor(inputMultiplexer);
 
@@ -130,10 +178,10 @@ public class Level1Screen implements Screen, InputProcessor {
             Rectangle rect=((RectangleMapObject) object).getRectangle();
 
             bodyDef.type = BodyDef.BodyType.StaticBody;
-            bodyDef.position.set(rect.getX()+rect.getWidth()/2, rect.getY()+rect.getHeight()/2);
+            bodyDef.position.set((rect.getX()+rect.getWidth()/2)/ppm, (rect.getY()+rect.getHeight()/2)/ppm);
             body=world.createBody(bodyDef);
 
-            shape.setAsBox(rect.getWidth()/2, rect.getHeight()/2);
+            shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
             body.createFixture(fixtureDef);
         }
@@ -162,8 +210,8 @@ public class Level1Screen implements Screen, InputProcessor {
         camera.update();
         renderer.setView(camera);
         renderer.render();
+        world.step(1/60f, 6, 2);
         b2dr.render(world,camera.combined);
-        world.step(1 / 20f, 6, 2);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
@@ -173,7 +221,7 @@ public class Level1Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(wooden_ver, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(wooden_ver, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : rectangles_hor) {
             ArrayList<Float> a = new ArrayList();
@@ -181,7 +229,7 @@ public class Level1Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(wooden_hor, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(wooden_hor, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : base_objetcs) {
             ArrayList<Float> a = new ArrayList();
@@ -189,7 +237,7 @@ public class Level1Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(base, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(base, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : glass_blocks) {
             ArrayList<Float> a = new ArrayList();
@@ -197,17 +245,30 @@ public class Level1Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(glass_block, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(glass_block, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         batch.draw(sling,57,128,185,90);
-
+        slingbody=createsling(151,171,20,45);
         Vector2 v = (Vector2) crown_pig.getPosition();
         float angle = MathUtils.radiansToDegrees * crown_pig.getAngle();
-        batch.draw(crownpig, v.x -15, v.y - 15, 15, 15, 30, 30, 1, 1, angle);
-        batch.draw(redbird.getRedBird(),87,130,30,30);
+        batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
+
+        v=(Vector2) redbirdbody.getPosition();
+        angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
+        batch.draw(redbird, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
+
         batch.draw(yellowbird.getyellowBird(),47,130,45,45);
         batch.draw(blackbird.getblackBird(),17,130,35,35);
+//        if (isLaunched==false){
+//            s.setProjectionMatrix(camera.combined);
+//            s.begin(ShapeRenderer.ShapeType.Line);
+//            s.setColor(Color.BLACK);
+//            s.line(150,205, (redbirdbody.getPosition().x)*ppm, (redbirdbody.getPosition().y)*ppm);
+//        }
+//        s.end();
 
+//        System.out.println("sling : "+slingOrigin);
+//        System.out.println("bird : "+new Vector2((redbirdbody.getPosition().x)*ppm, (redbirdbody.getPosition().y)*ppm));
         //Pigs
 //        batch.draw(crown_pig.getcrownpig(),778,280,30,30);
 
@@ -220,7 +281,25 @@ public class Level1Screen implements Screen, InputProcessor {
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
     }
+    public Body createsling (int x,int y,float width,float height) {
+        BodyDef baseDef = new BodyDef();
+        baseDef.type = BodyDef.BodyType.StaticBody;
+        baseDef.position.set(x/ppm, y/ppm); // Adjust position as needed
+        Body base = world.createBody(baseDef);
 
+        PolygonShape baseShape = new PolygonShape();
+        baseShape.setAsBox(width/ppm, height/ppm); // Size of the base
+
+        FixtureDef baseFixture = new FixtureDef();
+        baseFixture.filter.maskBits = 0;
+        baseFixture.shape = baseShape;
+        baseFixture.density = 1f;
+        baseFixture.friction = 0.5f;
+
+        base.createFixture(baseFixture);
+        baseShape.dispose();
+        return base;
+    }
     public Stage getStage() {
         return stage;
     }
