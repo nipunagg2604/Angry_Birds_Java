@@ -12,7 +12,7 @@ public class Red_Bird {
     static private PolygonShape shape = new PolygonShape();
     static private FixtureDef fixtureDef = new FixtureDef();
     static private Body body;
-    static private float ppm=13f;
+    static private float ppm=10f;
     public Red_Bird() {
         red_bird=new Texture(Gdx.files.internal("birds/redbird.jpg"));
     }
@@ -33,6 +33,7 @@ public class Red_Bird {
         fixtureDef.density = 0.5f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
         Fixture f=body.createFixture(fixtureDef);
+        body.setLinearDamping(0f);
         f.setUserData("bird");
         shape.dispose();
 

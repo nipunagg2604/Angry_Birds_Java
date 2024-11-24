@@ -34,6 +34,7 @@ skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas
 skin1/biological-attack-ui.png
 skin1/font-export.fnt
+PathPoint.png
 pauseButton.png
 levelLocked.png
 nextLevel.png
@@ -82,6 +83,7 @@ skin3/neon-ui.png
 skin3/font-over-export.fnt
 skin3/font-export.fnt
 skin3/neon-ui.atlas
+blackdot.png
 stars4.png
 level9.png
 glass.png
