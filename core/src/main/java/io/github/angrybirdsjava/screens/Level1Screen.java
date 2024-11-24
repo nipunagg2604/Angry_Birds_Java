@@ -53,10 +53,10 @@ public class Level1Screen implements Screen, InputProcessor {
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
     private World world=new World(new Vector2(0, -10f), true);
-    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world).return_array();
-    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
-    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
-    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
+    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6,0).return_array();
+    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6,0).return_array();;
+    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0).return_array();;
+    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0).return_array();;
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("blackdot.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
@@ -84,7 +84,7 @@ public class Level1Screen implements Screen, InputProcessor {
 //    private Yellow_Bird yellowbird;
     private Body crown_pig;
 //    private Vector2 slingorigin=new Vector2(114,203);
-    private static float ppm=13f;
+    private static float ppm=Constants.ppm;
     private Body slingbody;
     private Body redbirdbody;
     private Body yellowirdbody;
@@ -115,9 +115,9 @@ public class Level1Screen implements Screen, InputProcessor {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
-        redbirdbody=Red_Bird.createbird(world,114,203,15);
-        blackbirdbody=Black_Bird.createbird(world,60,160,17.5f);
-        yellowirdbody=Yellow_Bird.createbird(world,89,152,22.5f);
+        redbirdbody=(new Red_Bird()).createbird(world,114,203,15);
+        blackbirdbody=(new Black_Bird()).createbird(world,60,160,17.5f);
+        yellowirdbody=(new Yellow_Bird()).createbird(world,89,152,22.5f);
 
         birds.add(redbirdbody);
         birds.add(yellowirdbody);
@@ -218,6 +218,8 @@ public class Level1Screen implements Screen, InputProcessor {
 
             shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
+            fixtureDef.filter.categoryBits=Constants.BIT_GROUND;
+            fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
             body.createFixture(fixtureDef);
         }
 
@@ -255,7 +257,9 @@ public class Level1Screen implements Screen, InputProcessor {
         if (!birdinactive){
             if (detect.hasBirdCollided() || isOffScreen) {
                 bird=birds.get(0);
-                bird.getFixtureList().get(0).setUserData("null");
+                ArrayList a=(ArrayList) bird.getFixtureList().get(0).getUserData();
+                a.remove(0);
+                a.add(0,"null");
                 birds.remove(0);
                 if (birds.size()!=0){
                     bird=birds.get(0);
@@ -282,6 +286,8 @@ public class Level1Screen implements Screen, InputProcessor {
         batch.begin();
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
         for (Body rectangle : rectangles_ver) {
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
             ArrayList<Float> a = new ArrayList();
             float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
             a = (ArrayList<Float>) rectangle.getUserData();
@@ -290,6 +296,8 @@ public class Level1Screen implements Screen, InputProcessor {
             batch.draw(wooden_ver, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : rectangles_hor) {
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
             ArrayList<Float> a = new ArrayList();
             float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
             a = (ArrayList<Float>) rectangle.getUserData();
@@ -298,6 +306,8 @@ public class Level1Screen implements Screen, InputProcessor {
             batch.draw(wooden_hor, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : base_objetcs) {
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
             ArrayList<Float> a = new ArrayList();
             float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
             a = (ArrayList<Float>) rectangle.getUserData();
@@ -306,6 +316,8 @@ public class Level1Screen implements Screen, InputProcessor {
             batch.draw(base, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : glass_blocks) {
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
             ArrayList<Float> a = new ArrayList();
             float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
             a = (ArrayList<Float>) rectangle.getUserData();
@@ -328,13 +340,13 @@ public class Level1Screen implements Screen, InputProcessor {
             actualtrajectory.add(v.cpy().scl(ppm));
             actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
         }
-        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
-            System.out.println("points : "+actualtrajectory);
-            System.out.println("calculated : "+trajectory);
-            System.out.println("actual velocity : "+actualvelocity);
-            System.out.println("cal velocity : "+calvel);
-            cnt++;
-        }
+//        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
+//            System.out.println("points : "+actualtrajectory);
+//            System.out.println("calculated : "+trajectory);
+//            System.out.println("actual velocity : "+actualvelocity);
+//            System.out.println("cal velocity : "+calvel);
+//            cnt++;
+//        }
 
         for (Vector2 p: actualtrajectory) {
             batch.draw(blackpoint,p.x,p.y,10f,10f);

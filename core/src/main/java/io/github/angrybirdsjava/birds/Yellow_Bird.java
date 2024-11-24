@@ -3,6 +3,9 @@ package io.github.angrybirdsjava.birds;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.*;
+import io.github.angrybirdsjava.Constants;
+
+import java.util.ArrayList;
 
 public class Yellow_Bird {
 
@@ -11,11 +14,17 @@ public class Yellow_Bird {
     static private PolygonShape shape = new PolygonShape();
     static private FixtureDef fixtureDef = new FixtureDef();
     static private Body body;
-    static private float ppm=13f;
+    private String category="bird";
+    private String type="yellowbird";
+    public float damage=0.8f;
+    public World world;
+
+    private static float ppm= Constants.ppm;;
     public Yellow_Bird() {
         yellow_bird=new Texture(Gdx.files.internal("birds/redbird.jpg"));
     }
-    public static Body createbird(World world, float x, float y, float radius) {
+    public Body createbird(World world, float x, float y, float radius) {
+        this.world=world;
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(x/ppm, y/ppm);
 
@@ -27,9 +36,14 @@ public class Yellow_Bird {
         fixtureDef.shape = shape;
         fixtureDef.density = 0.2f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
+        fixtureDef.filter.categoryBits=Constants.BIT_BIRD;
+        fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
-        f.setUserData("bird");
+        ArrayList a=new ArrayList();
+        a.add("bird");
+        a.add(this);
+        f.setUserData(a);
         shape.dispose();
 
         return body;

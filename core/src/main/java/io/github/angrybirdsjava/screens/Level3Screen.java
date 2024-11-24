@@ -49,10 +49,10 @@ public class Level3Screen implements Screen{
     private World world=new World(new Vector2(0, -9.8f), true);
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
-    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world).return_array();
-    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
-    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
-    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
+//    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world).return_array();
+//    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
+//    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
+//    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
     private Texture wooden_ver;
     private Texture wooden_hor;
     private Texture glass_block;

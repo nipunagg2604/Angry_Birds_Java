@@ -3,6 +3,7 @@ package io.github.angrybirdsjava.pigs;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.*;
+import io.github.angrybirdsjava.Constants;
 
 public abstract class Crown_Pig {
     private static Texture crown_pig;
@@ -11,7 +12,7 @@ public abstract class Crown_Pig {
     private static CircleShape shape = new CircleShape();
     private static FixtureDef fixtureDef = new FixtureDef();
     private static Body body;
-    private static float ppm=13f;
+    private static float ppm= Constants.ppm;;
     public Crown_Pig(World world) {
         this.world=world;
         crown_pig=new Texture(Gdx.files.internal("pigs/crownpig.png"));
