@@ -17,13 +17,16 @@ public class Black_Bird {
     private String type="blackbird";
     public float damage=1.8f;
     static private Body body;
-    private static float ppm= Constants.ppm;;
+    private static float ppm= Constants.ppm;
+    public float radius;
+
     public Black_Bird() {
         black_bird =new Texture(Gdx.files.internal("birds/redbird.jpg"));
     }
 
     public Body createbird(World world, float x, float y, float radius) {
         this.world = world;
+        this.radius = radius;
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(x/ppm, y/ppm);
 
@@ -40,6 +43,7 @@ public class Black_Bird {
         ArrayList a=new ArrayList();
         a.add("bird");
         a.add(this);
+        a.add(radius);
         f.setUserData(a);
         shape.dispose();
 

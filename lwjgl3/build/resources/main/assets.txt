@@ -50,8 +50,11 @@ elementGlass032.png
 trail.webp
 Slings/sling3.png
 Slings/sling2.png
+Slings/rect.png
 Slings/slingshot2.png
 Slings/sling.png
+Slings/slinghalf1.png
+Slings/slinghalf2.png
 Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
 Level_tmx_files copy/level-1.tmx
 resumeButton.png

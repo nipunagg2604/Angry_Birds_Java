@@ -20,6 +20,7 @@ public class Red_Bird {
     private String type="redbird";
     public float damage=1f;
     public World world;
+    public float radius;
     public Red_Bird() {
         red_bird=new Texture(Gdx.files.internal("birds/redbird.jpg"));
     }
@@ -28,6 +29,7 @@ public class Red_Bird {
     }
     public Body createbird(World world,float x, float y, float radius) {
         this.world=world;
+        this.radius=radius;
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(x/ppm, y/ppm);
 
@@ -47,6 +49,7 @@ public class Red_Bird {
         ArrayList a=new ArrayList();
         a.add("bird");
         a.add(this);
+        a.add(radius);
         f.setUserData(a);
         shape.dispose();
 

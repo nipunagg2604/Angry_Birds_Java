@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -74,6 +75,9 @@ public class Level1Screen implements Screen, InputProcessor {
     private ArrayList<Vector2> array=new ArrayList();
     private boolean birdinactive=false;
     private Texture sling;
+    private Texture slinghalf1;
+    private Texture slinghalf2;
+    private TextureRegion slingrubber;
     private int width=Gdx.graphics.getWidth();
     private int height=Gdx.graphics.getHeight();
     private BodyDef bodyDef = new BodyDef();
@@ -85,7 +89,9 @@ public class Level1Screen implements Screen, InputProcessor {
 //    private Black_Bird blackbird;
 //    private Yellow_Bird yellowbird;
     private Body crown_pig;
-//    private Vector2 slingorigin=new Vector2(114,203);
+    private Vector2 slinghalf1pos=new Vector2(182,210);
+    private Vector2 slinghalf2pos=new Vector2(147,210);
+
     private static float ppm=Constants.ppm;
     private Body slingbody;
     private Body redbirdbody;
@@ -100,6 +106,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private boolean isLaunched;
     int cnt=1;
     private ArrayList<Vector2> calvel=new ArrayList<>();
+    private Vector2 dragPositionglobal=new Vector2(103,190);
+
     public Level1Screen(final Core game) {
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
@@ -114,12 +122,17 @@ public class Level1Screen implements Screen, InputProcessor {
         blackbird=new TextureRegion(new Texture("birds/black.png"));
         glass_block=new TextureRegion(new Texture("Blocks/Glass Blocks/glass_block_type_2.png"));
         sling=new Texture(Gdx.files.internal("Slings/slingshot2.png"));
+        slinghalf1=new Texture(Gdx.files.internal("Slings/slinghalf1.png"));
+        slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
+        slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
+
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
         redbirdbody=(new Red_Bird()).createbird(world,114,203,15);
         blackbirdbody=(new Black_Bird()).createbird(world,60,160,17.5f);
         yellowirdbody=(new Yellow_Bird()).createbird(world,89,152,15f);
+
 
         birds.add(redbirdbody);
         birds.add(yellowirdbody);
@@ -146,6 +159,7 @@ public class Level1Screen implements Screen, InputProcessor {
                     if (dragPosition.dst(slingOrigin) >20) {
                         dragPosition.sub(slingOrigin).nor().scl(20).add(slingOrigin);
                     }
+
                     Vector2 dis=new Vector2(slingOrigin.cpy()).sub(dragPosition).scl(40);
                     bird.setType(BodyDef.BodyType.DynamicBody);
                     Vector2 velocity=dis.cpy().scl(1/bird.getMass());
@@ -154,6 +168,8 @@ public class Level1Screen implements Screen, InputProcessor {
                     System.out.println("drag : "+dragPosition);
                     trajectory=calculateTrajectory(dragPosition,velocity,0.1f,100);
                     bird.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
+                    float radius=((float)((ArrayList)(bird.getFixtureList().get(0).getUserData())).get(2));
+                    dragPositionglobal=bird.getPosition().scl(ppm).cpy().sub(radius/1.5f,radius/1.5f);
                     return true;
                 }
                 return false;
@@ -330,23 +346,58 @@ public class Level1Screen implements Screen, InputProcessor {
             batch.draw(glass_block, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
 
-        batch.draw(sling,57,128,185,90);
+//        batch.draw(sling,57,128,185,90);
+        batch.draw(slinghalf1,157,128,35,110);
+
+
         slingbody=createsling(151,171,20,45);
         Vector2 v = (Vector2) crown_pig.getPosition();
         float angle = MathUtils.radiansToDegrees * crown_pig.getAngle();
         batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
-
+        float length = slinghalf1pos.cpy().dst(dragPositionglobal);
+        float angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf1pos.cpy().y, dragPositionglobal.x - slinghalf1pos.cpy().x) * MathUtils.radiansToDegrees;;
+//        if (angleprint>0){
+//            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;
+//        }
+//        System.out.println(angleprint);
+        if (dragPositionglobal.y > slinghalf1pos.y) {
+            batch.draw(
+                    slingrubber,
+                    slinghalf1pos.x,
+                    slinghalf1pos.y,
+                    0,
+                    slingrubber.getTexture().getHeight() / 2,
+                    length,
+                    slingrubber.getTexture().getHeight()/2,
+                    1,
+                    -1, // Flip vertically
+                    angleprint
+            );
+        }else{
+            batch.draw(
+                    slingrubber,                 // The texture for the sling
+                    slinghalf1pos.x,                 // X-coordinate of the anchor
+                    slinghalf1pos.y,                 // Y-coordinate of the anchor
+                    0,                            // Origin X (anchor point is the left edge)
+                    slingrubber.getTexture().getHeight() / 2, // Origin Y (center vertically)
+                    length,                       // Width (stretch the texture horizontally)
+                    slingrubber.getTexture().getHeight()/2,     // Height (constant vertical size)
+                    1,                            // Scale X
+                    1,                            // Scale Y
+                    angleprint                         // Rotation angle in degrees
+            );
+        }
 
         v=(Vector2) redbirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
         batch.draw(redbird, (v.x)*ppm-15 , (v.y)*ppm-15 , 15, 15, 30, 30, 1, 1, angle);
-//        if (isLaunched){
-//            ArrayList a=(ArrayList) redbirdbody.getFixtureList().get(0).getUserData();
-//            if (a.get(0)!="null") {
-//                actualtrajectory.add(v.cpy().scl(ppm));
-//                actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
-//            }
-//        }
+        if (isLaunched){
+            ArrayList a=(ArrayList) redbirdbody.getFixtureList().get(0).getUserData();
+            if (a.get(0)!="null") {
+                actualtrajectory.add(v.cpy().scl(ppm));
+                actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
+            }
+        }
 //        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
 //            System.out.println("points : "+actualtrajectory);
 //            System.out.println("calculated : "+trajectory);
@@ -354,43 +405,79 @@ public class Level1Screen implements Screen, InputProcessor {
 //            System.out.println("cal velocity : "+calvel);
 //            cnt++;
 //        }
-//        for (Vector2 q:array){
-//            batch.draw(blackpoint,q.x,q.y,6f,6f);
-//        }
-//        for (Vector2 p: actualtrajectory) {
-//            cnt2++;
-//
-//            if (cnt2%3!=0){
-//
-//                continue;
-//            }array.add(p.cpy());
-//
-//        }
+        for (Vector2 q:array){
+            batch.draw(blackpoint,q.x,q.y,6f,6f);
+        }
+        for (Vector2 p: actualtrajectory) {
+            cnt2++;
+
+            if (cnt2%3!=0){
+
+                continue;
+            }array.add(p.cpy());
+
+        }
 
 
         v=(Vector2) yellowirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * yellowirdbody.getAngle();
         batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm-22.5f , 15f, 15f, 45, 45, 1, 1, angle);
 
-//        if (isLaunched){
-//            ArrayList a=(ArrayList) yellowirdbody.getFixtureList().get(0).getUserData();
-//            if (a.get(0)!="null") {
-//                actualtrajectory.add(v.cpy().scl(ppm));
-//                actualvelocity.add(yellowirdbody.getLinearVelocity().cpy().scl(ppm));
-//            }
-//        }
+        if (isLaunched){
+            ArrayList a=(ArrayList) yellowirdbody.getFixtureList().get(0).getUserData();
+            if (a.get(0)!="null") {
+                actualtrajectory.add(v.cpy().scl(ppm));
+                actualvelocity.add(yellowirdbody.getLinearVelocity().cpy().scl(ppm));
+            }
+        }
         v=(Vector2) blackbirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * blackbirdbody.getAngle();
         batch.draw(blackbird, (v.x)*ppm -25, (v.y)*ppm - 30, 17.5f, 17.5f, 35, 35, 1, 1, angle);
 
-//        if (isLaunched){
-//            ArrayList a=(ArrayList) blackbirdbody.getFixtureList().get(0).getUserData();
-//            if (a.get(0)!="null") {
-//                actualtrajectory.add(v.cpy().scl(ppm));
-//                actualvelocity.add(blackbirdbody.getLinearVelocity().cpy().scl(ppm));
-//            }
+        if (isLaunched){
+            ArrayList a=(ArrayList) blackbirdbody.getFixtureList().get(0).getUserData();
+            if (a.get(0)!="null") {
+                actualtrajectory.add(v.cpy().scl(ppm));
+                actualvelocity.add(blackbirdbody.getLinearVelocity().cpy().scl(ppm));
+            }
+        }length = slinghalf2pos.cpy().dst(dragPositionglobal);
+        angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf2pos.cpy().y, dragPositionglobal.x - slinghalf2pos.cpy().x) * MathUtils.radiansToDegrees;;
+//        if (angleprint>0){
+//            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;
 //        }
+        batch.draw(slinghalf2,137,174,30,65);
+//        System.out.println(angleprint);
+        if (dragPositionglobal.y > slinghalf2pos.y) {
+            batch.draw(
+                    slingrubber,
+                    slinghalf2pos.x,
+                    slinghalf2pos.y,
+                    0,
+                    slingrubber.getTexture().getHeight() / 2,
+                    length,
+                    slingrubber.getTexture().getHeight()/2,
+                    1,
+                    -1, // Flip vertically
+                    angleprint
+            );
+        }else{
+            batch.draw(
+                    slingrubber,                 // The texture for the sling
+                    slinghalf2pos.x,                 // X-coordinate of the anchor
+                    slinghalf2pos.y,                 // Y-coordinate of the anchor
+                    0,                            // Origin X (anchor point is the left edge)
+                    slingrubber.getTexture().getHeight() / 2, // Origin Y (center vertically)
+                    length,                       // Width (stretch the texture horizontally)
+                    slingrubber.getTexture().getHeight()/2,     // Height (constant vertical size)
+                    1,                            // Scale X
+                    1,                            // Scale Y
+                    angleprint                         // Rotation angle in degrees
+            );
+        }
+
+
         if (isDragging==true){
+
             for (Vector2 point : trajectory) {
                 batch.draw(pathpoint, point.x, point.y, 6f, 6f); // Center and scale the dots
             }
