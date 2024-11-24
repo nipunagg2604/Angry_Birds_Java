@@ -57,7 +57,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world).return_array();;
     private ArrayList<Body> base_objetcs=new Structures("wooden_base",world).return_array();;
     private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world).return_array();;
-    private Texture pathpoint=new Texture("PathPoint.png");
+    private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("blackdot.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
     private ArrayList<Vector2> actualtrajectory=new ArrayList();
@@ -84,7 +84,7 @@ public class Level1Screen implements Screen, InputProcessor {
 //    private Yellow_Bird yellowbird;
     private Body crown_pig;
 //    private Vector2 slingorigin=new Vector2(114,203);
-    private static float ppm=10f;
+    private static float ppm=13f;
     private Body slingbody;
     private Body redbirdbody;
     private Body yellowirdbody;
@@ -150,7 +150,7 @@ public class Level1Screen implements Screen, InputProcessor {
 
                     bird.setType(BodyDef.BodyType.KinematicBody);
                     System.out.println("drag : "+dragPosition);
-                    trajectory=calculateTrajectory(dragPosition,velocity,1/50f,1000);
+                    trajectory=calculateTrajectory(dragPosition,velocity,0.1f,100);
                     bird.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
                     return true;
                 }
@@ -336,9 +336,9 @@ public class Level1Screen implements Screen, InputProcessor {
             cnt++;
         }
 
-//        for (Vector2 p: actualtrajectory) {
-//            batch.draw(blackpoint,p.x,p.y,10f,10f);
-//        }
+        for (Vector2 p: actualtrajectory) {
+            batch.draw(blackpoint,p.x,p.y,10f,10f);
+        }
 
 
         v=(Vector2) yellowirdbody.getPosition();
@@ -351,7 +351,7 @@ public class Level1Screen implements Screen, InputProcessor {
 
         if (isDragging==true){
             for (Vector2 point : trajectory) {
-                batch.draw(pathpoint, point.x, point.y, 5f, 5f); // Center and scale the dots
+                batch.draw(pathpoint, point.x, point.y, 6f, 6f); // Center and scale the dots
             }
         }
         checkbird();
@@ -390,7 +390,7 @@ public class Level1Screen implements Screen, InputProcessor {
         ArrayList<Vector2> trajectoryPoints = new ArrayList<>();
         calvel.clear();
         System.out.println("mm"+initialVelocity);
-        float gravity = -10f; // Gravity in Box2D units
+        float gravity = -10f * ppm; // Gravity in Box2D units
 //        Vector2 copy=initialVelocity.cpy().scl(ppm);
 //        System.out.println("copy"+copy);
         for (int i = 0; i < steps; i++) {

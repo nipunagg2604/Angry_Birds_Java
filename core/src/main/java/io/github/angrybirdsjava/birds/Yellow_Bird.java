@@ -11,7 +11,7 @@ public class Yellow_Bird {
     static private PolygonShape shape = new PolygonShape();
     static private FixtureDef fixtureDef = new FixtureDef();
     static private Body body;
-    static private float ppm=10f;
+    static private float ppm=13f;
     public Yellow_Bird() {
         yellow_bird=new Texture(Gdx.files.internal("birds/redbird.jpg"));
     }

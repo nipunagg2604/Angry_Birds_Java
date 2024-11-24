@@ -24,7 +24,7 @@ public class Structures {
     private Body body;
     private int index_in_tmx;
 
-    private static float ppm=10f;
+    private static float ppm=13f;
 
     public Structures(String block_type,World world) {
         this.block_type = block_type;

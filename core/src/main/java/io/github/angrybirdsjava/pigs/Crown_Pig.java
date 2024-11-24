@@ -11,7 +11,7 @@ public abstract class Crown_Pig {
     private static CircleShape shape = new CircleShape();
     private static FixtureDef fixtureDef = new FixtureDef();
     private static Body body;
-    private static float ppm=10f;
+    private static float ppm=13f;
     public Crown_Pig(World world) {
         this.world=world;
         crown_pig=new Texture(Gdx.files.internal("pigs/crownpig.png"));
