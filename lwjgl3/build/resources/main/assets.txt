@@ -9,6 +9,7 @@ Blocks/Glass Blocks/glass_block_type_1.png
 Blocks/Glass Blocks/glass_block_type_2.png
 prevLevel.png
 pauseBackground.png
+trail.png
 pauseMenu.jpg
 level2.png
 pauseMenu.jpeg
@@ -46,6 +47,7 @@ Loadingscreen/background.jpg
 resume.png
 restartButton.png
 elementGlass032.png
+trail.webp
 Slings/sling3.png
 Slings/sling2.png
 Slings/slingshot2.png

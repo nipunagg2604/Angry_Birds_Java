@@ -58,7 +58,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0).return_array();;
     private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0).return_array();;
     private Texture pathpoint=new Texture("lightGrayDot.png");
-    private Texture blackpoint=new Texture("blackdot.png");
+    private Texture blackpoint=new Texture("trail.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
     private ArrayList<Vector2> actualtrajectory=new ArrayList();
     private ArrayList<Vector2> actualvelocity=new ArrayList();
@@ -70,6 +70,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private TextureRegion redbird;
     private TextureRegion yellowbird;
     private TextureRegion blackbird;
+    private int cnt2=0;
+    private ArrayList<Vector2> array=new ArrayList();
     private boolean birdinactive=false;
     private Texture sling;
     private int width=Gdx.graphics.getWidth();
@@ -117,7 +119,7 @@ public class Level1Screen implements Screen, InputProcessor {
 
         redbirdbody=(new Red_Bird()).createbird(world,114,203,15);
         blackbirdbody=(new Black_Bird()).createbird(world,60,160,17.5f);
-        yellowirdbody=(new Yellow_Bird()).createbird(world,89,152,22.5f);
+        yellowirdbody=(new Yellow_Bird()).createbird(world,89,152,15f);
 
         birds.add(redbirdbody);
         birds.add(yellowirdbody);
@@ -267,6 +269,8 @@ public class Level1Screen implements Screen, InputProcessor {
                 }detect.birdCollided=false;
                 currentbird="null";
                 isLaunched=false;
+                array.clear();
+                actualtrajectory.clear();
                 isDragging=false;
             }
         }
@@ -336,10 +340,13 @@ public class Level1Screen implements Screen, InputProcessor {
         v=(Vector2) redbirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
         batch.draw(redbird, (v.x)*ppm-15 , (v.y)*ppm-15 , 15, 15, 30, 30, 1, 1, angle);
-        if (isLaunched){
-            actualtrajectory.add(v.cpy().scl(ppm));
-            actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
-        }
+//        if (isLaunched){
+//            ArrayList a=(ArrayList) redbirdbody.getFixtureList().get(0).getUserData();
+//            if (a.get(0)!="null") {
+//                actualtrajectory.add(v.cpy().scl(ppm));
+//                actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
+//            }
+//        }
 //        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
 //            System.out.println("points : "+actualtrajectory);
 //            System.out.println("calculated : "+trajectory);
@@ -347,20 +354,42 @@ public class Level1Screen implements Screen, InputProcessor {
 //            System.out.println("cal velocity : "+calvel);
 //            cnt++;
 //        }
-
-        for (Vector2 p: actualtrajectory) {
-            batch.draw(blackpoint,p.x,p.y,10f,10f);
-        }
+//        for (Vector2 q:array){
+//            batch.draw(blackpoint,q.x,q.y,6f,6f);
+//        }
+//        for (Vector2 p: actualtrajectory) {
+//            cnt2++;
+//
+//            if (cnt2%3!=0){
+//
+//                continue;
+//            }array.add(p.cpy());
+//
+//        }
 
 
         v=(Vector2) yellowirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * yellowirdbody.getAngle();
-        batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm - 22.5f, 22.5f, 22.5f, 45, 45, 1, 1, angle);
+        batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm-22.5f , 15f, 15f, 45, 45, 1, 1, angle);
 
+//        if (isLaunched){
+//            ArrayList a=(ArrayList) yellowirdbody.getFixtureList().get(0).getUserData();
+//            if (a.get(0)!="null") {
+//                actualtrajectory.add(v.cpy().scl(ppm));
+//                actualvelocity.add(yellowirdbody.getLinearVelocity().cpy().scl(ppm));
+//            }
+//        }
         v=(Vector2) blackbirdbody.getPosition();
         angle=MathUtils.radiansToDegrees * blackbirdbody.getAngle();
         batch.draw(blackbird, (v.x)*ppm -25, (v.y)*ppm - 30, 17.5f, 17.5f, 35, 35, 1, 1, angle);
 
+//        if (isLaunched){
+//            ArrayList a=(ArrayList) blackbirdbody.getFixtureList().get(0).getUserData();
+//            if (a.get(0)!="null") {
+//                actualtrajectory.add(v.cpy().scl(ppm));
+//                actualvelocity.add(blackbirdbody.getLinearVelocity().cpy().scl(ppm));
+//            }
+//        }
         if (isDragging==true){
             for (Vector2 point : trajectory) {
                 batch.draw(pathpoint, point.x, point.y, 6f, 6f); // Center and scale the dots
