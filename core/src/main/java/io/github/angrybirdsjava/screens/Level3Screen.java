@@ -129,9 +129,9 @@ public class Level3Screen implements Screen, InputProcessor {
         blackbird=new TextureRegion(new Texture("birds/black.png"));
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        crown_pig=Crown_Pig.addpig(world,498,377,15);
-        crown_pig2=Crown_Pig.addpig(world,682,319,15);
-        crown_pig3=Crown_Pig.addpig(world,906,272,15);
+        crown_pig=(new Crown_Pig(world)).addpig(world,498,377,15);
+        crown_pig2=(new Crown_Pig(world)).addpig(world,682,319,15);
+        crown_pig3=(new Crown_Pig(world)).addpig(world,906,272,15);
         pigs.add(crown_pig);
         pigs.add(crown_pig2);
         pigs.add(crown_pig3);
@@ -436,7 +436,7 @@ public class Level3Screen implements Screen, InputProcessor {
         for (Body b:glass_verticals){
             ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
             if (a.size()<3) continue;
-            if (((String)(a.get(2))).equals("glass") && ((String)(a.get(1))).equals("false")){
+            if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
                 b.getFixtureList().get(0).setUserData(a);
                 particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);

@@ -11,12 +11,14 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
 import io.github.angrybirdsjava.Constants;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Structures {
+public class Structures implements Serializable {
     private String block_type;
     private TmxMapLoader tileloader;
     private TiledMap tileMap;
@@ -46,12 +48,22 @@ public class Structures {
         return damage >= strength;
     }
     public void applyDamage(float amount,Fixture fixture) {
-        damage += amount;
+        ArrayList<Float> prop=(ArrayList<Float>) (((ArrayList)(fixture.getUserData())).get(3));
+        float damage = prop.get(0);
+        float strength = prop.get(1);
+        System.out.println(damage);
+        damage+= amount;
         if (damage > strength) {
             damage = strength; // Cap damage to avoid overflow;
             if (block_type.equals("glass_vertical") || block_type.equals("glass_horizontal")) {
                 ArrayList a=new ArrayList();
                 a=((ArrayList) (fixture.getUserData()));
+                a.remove(3);
+                prop.clear();
+                prop.add(damage);
+                prop.add(strength);
+                a.add(3,prop);
+
                 a.remove(1);
                 a.add(1,"false");
 
@@ -69,6 +81,14 @@ public class Structures {
                 filter.maskBits=Constants.BIT_GROUND;
                 fixture.setFilterData(filter);
             }
+        }else{
+            prop.clear();
+            prop.add(damage);
+            prop.add(strength);
+            ArrayList a=(ArrayList) (fixture.getUserData());
+            a.remove(3);
+            a.add(prop);
+
         }
     }
     public World returnworld(){
@@ -119,7 +139,11 @@ public class Structures {
             ArrayList b = new ArrayList<>();
             b.add(this);
             b.add("true");
-            if(block_type.equals("glass_horizontal") || block_type.equals("glass_vertical")) b.add("glass");
+            b.add("flag");
+            ArrayList<Float> prop=new ArrayList<>();
+            prop.add(damage);
+            prop.add(strength);
+            b.add(prop);
             Filter filter = new Filter();
             filter.categoryBits = Constants.BIT_BLOCKS;
             filter.maskBits = (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND | Constants.BIT_BIRD | Constants.BIT_PIG);

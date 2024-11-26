@@ -19,7 +19,6 @@ public class Red_Bird {
     private String category="bird";
     private String type="redbird";
     public float damage=1f;
-    public World world;
     public float radius;
     public Red_Bird() {
         red_bird=new Texture(Gdx.files.internal("birds/redbird.jpg"));
@@ -28,7 +27,6 @@ public class Red_Bird {
         return red_bird;
     }
     public Body createbird(World world,float x, float y, float radius) {
-        this.world=world;
         this.radius=radius;
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(x/ppm, y/ppm);
@@ -44,7 +42,7 @@ public class Red_Bird {
         fixtureDef.restitution = 0.5f; // Make it bouncy
         Filter filter=new Filter();
         filter.categoryBits=Constants.BIT_BIRD;
-        filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
+        filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND | Constants.BIT_PIG);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
         body.setUserData("redbird");

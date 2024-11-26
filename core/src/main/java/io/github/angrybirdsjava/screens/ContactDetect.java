@@ -20,8 +20,10 @@ public class ContactDetect implements ContactListener {
 
         // Check if the bird collided with a relevant object
         if (isBirdFixture(fixtureA,fixtureB)) {
+            System.out.println("hellowww");
             birdCollided = true;
         } else if (isBirdFixture(fixtureB,fixtureA)) {
+            System.out.println("hellowww");
             birdCollided = true;
         }
     }

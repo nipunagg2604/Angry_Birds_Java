@@ -1,10 +1,12 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.*;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
-        import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -15,7 +17,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
-        import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -31,8 +33,10 @@ import io.github.angrybirdsjava.blocks.Structures;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.ContactDetect;
 import io.github.angrybirdsjava.screens.EndScreen;
+import io.github.angrybirdsjava.screens.ShowMessage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 //import java.util.stream.GathererOp;
 
@@ -87,6 +91,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private Body crown_pig;
     private Vector2 slinghalf1pos=new Vector2(142,210);
     private Vector2 slinghalf2pos=new Vector2(107,210);
+    private ArrayList<ShowMessage> showmessages=new ArrayList<>();
 
     private static float ppm=Constants.ppm;
     private Body slingbody;
@@ -105,10 +110,11 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 dragPositionglobal=new Vector2(103,190);
 
     public Level1Screen(final Core game){
+
         Constants.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        crown_pig=Crown_Pig.addpig(world,793,305,15);
+        crown_pig=(new Crown_Pig(world)).addpig(world,793,305,15);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
@@ -366,7 +372,8 @@ public class Level1Screen implements Screen, InputProcessor {
         b2dr.render(world,camera.combined);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        particleEffectblast.draw(batch,delta);
+//        Constants.angryfont.draw(batch, "2400", 100, 100);
+//        particleEffectblast.draw(batch,delta);
         if (currentbirdbody!=null &&  (((String)(currentbirdbody.getUserData())).equals("black")
                 || ((String)(currentbirdbody.getUserData())).equals("blackbird"))){
             particleEffectsmoke.setPosition(currentbirdbody.getPosition().cpy().scl(ppm).x-20,currentbirdbody.getPosition().cpy().scl(ppm).y-20);
@@ -379,13 +386,62 @@ public class Level1Screen implements Screen, InputProcessor {
         for (Body b:glass_blocks){
             ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
             if (a.size()<3) continue;
-            if (((String)(a.get(2))).equals("glass") && ((String)(a.get(1))).equals("false")){
+            if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
+                a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
+                Constants.lev1_total+=100;
+                ShowMessage show=new ShowMessage("glass","100",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                showmessages.add(show);
                 particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
                 particleEffectglass.start();
             }
-        }particleEffectglass.draw(batch,delta);
+        }
+        for (Body b:rectangles_ver){
+            ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+            if (a.size()<3) continue;
+            if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
+                a.remove(2);
+                a.add(2,"null");
+                b.getFixtureList().get(0).setUserData(a);
+                Constants.lev1_total+=300;
+                ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                showmessages.add(show);
+                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
+                particleEffectglass.start();
+            }
+        }
+        for (Body b:rectangles_hor){
+            ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+            if (a.size()<3) continue;
+            if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
+                a.remove(2);
+                a.add(2,"null");
+                b.getFixtureList().get(0).setUserData(a);
+                Constants.lev1_total+=300;
+                ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                showmessages.add(show);
+                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
+                particleEffectglass.start();
+            }
+        }
+        for (Body b:base_objetcs){
+            ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+            if (a.size()<3) continue;
+            if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
+                a.remove(2);
+                a.add(2,"null");
+                b.getFixtureList().get(0).setUserData(a);
+                Constants.lev1_total+=300;
+                ShowMessage show=new ShowMessage("wood","1000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                showmessages.add(show);
+                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
+                particleEffectglass.start();
+            }
+        }
+
+
+        particleEffectglass.draw(batch,delta);
 
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
         for (Body rectangle : rectangles_ver) {
@@ -569,7 +625,21 @@ public class Level1Screen implements Screen, InputProcessor {
 //            Rectangle rect=((RectangleMapObject) object).getRectangle();
 //            batch.draw(base, rect.getX(), rect.getY(),rect.getWidth(),rect.getHeight());
 //        }
-
+        Iterator<ShowMessage> i=showmessages.iterator();
+        while (i.hasNext()) {
+            ShowMessage show=i.next();
+            show.update(delta);
+            if (show.isFinished()==false){
+                if (show.type.equals("glass")){
+                    Constants.glass_font.draw(batch,show.message,show.position.x,show.position.y);
+                }else if (show.type.equals("wood")){
+                    Constants.wooden_font.draw(batch,show.message,show.position.x,show.position.y);
+                }
+            }else {
+                i.remove();
+            }
+        }
+        Constants.score_font.draw(batch,"Score : "+Integer.toString(Constants.lev1_total),390,470);
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();

@@ -115,7 +115,7 @@ public class Level2Screen implements Screen, InputProcessor {
     public Level2Screen(final Core game){
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        crown_pig=Crown_Pig.addpig(world,498,377,15);
+        crown_pig=(new Crown_Pig(world)).addpig(world,498,377,15);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         stone_ver = new TextureRegion(new Texture("Blocks/Stone Blocks/stone_vertical.png"));

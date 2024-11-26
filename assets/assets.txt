@@ -665,8 +665,11 @@ skin3/font-export.fnt
 skin3/neon-ui.atlas
 blackdot.png
 stars4.png
+assets 2.txt
 level9.png
 glass.png
+Fonts/angrybirds-regular.bmp
+Fonts/angrybirds-regular.ttf
 effects/explosion.p
 effects/particle.png
 skin2/neon-ui.json

@@ -8,7 +8,6 @@ import io.github.angrybirdsjava.Constants;
 import java.util.ArrayList;
 
 public class Black_Bird {
-    public World world;
     private Texture black_bird;
     static private BodyDef bodyDef = new BodyDef();
     static private PolygonShape shape = new PolygonShape();
@@ -25,7 +24,6 @@ public class Black_Bird {
     }
 
     public Body createbird(World world, float x, float y, float radius) {
-        this.world = world;
         this.radius = radius;
         bodyDef.type = BodyDef.BodyType.KinematicBody;
         bodyDef.position.set(x/ppm, y/ppm);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="29" nextobjectid="51">
+<map version="1.10" tiledversion="1.11.90" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="29" nextobjectid="52">
  <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
   <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
  </tileset>
@@ -46,6 +46,7 @@
  <objectgroup id="23" name="glass_vertical">
   <object id="45" x="803.09" y="309.408" width="9.65665" height="30.4942"/>
   <object id="46" x="782.755" y="309.408" width="9.65665" height="30.4942"/>
+  <object id="51" x="597.314" y="350.479" width="9.65665" height="30.4942"/>
  </objectgroup>
  <objectgroup id="24" name="glass_horizontal"/>
  <objectgroup id="26" name="stone_vertical"/>
