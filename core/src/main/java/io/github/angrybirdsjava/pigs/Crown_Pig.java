@@ -27,12 +27,17 @@ public abstract class Crown_Pig {
         shape.setRadius(radius/ppm);
 
         fixtureDef.shape = shape;
-        fixtureDef.density = 1.0f;  // Adjust density for mass
+        fixtureDef.density = 2.0f;  // Adjust density for mass
         fixtureDef.friction = 0.5f; // Adjust friction as needed
         fixtureDef.restitution = 0.2f; // Bounciness
         body.setLinearDamping(0);
+        Filter filter=new Filter();
+        filter.categoryBits=Constants.BIT_PIG;
+        filter.maskBits=(short) (Constants.BIT_PIG | Constants.BIT_GROUND | Constants.BIT_BIRD | Constants.BIT_BLOCKS);
         // Create the fixture on the body
-        body.createFixture(fixtureDef);
+        Fixture f= body.createFixture(fixtureDef);
+        f.setFilterData(filter);
+
         return body;
     }
     public Texture getcrownpig() {

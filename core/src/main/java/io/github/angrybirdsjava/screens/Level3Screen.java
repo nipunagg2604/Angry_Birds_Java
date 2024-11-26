@@ -116,7 +116,7 @@ public class Level3Screen implements Screen, InputProcessor {
     private Body currentbirdbody=null;
     private ContactDetect detect=new ContactDetect();
     private ArrayList<Body> birds=new ArrayList<>();
-
+    private ArrayList<Body> pigs=new ArrayList<>();
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
@@ -132,6 +132,10 @@ public class Level3Screen implements Screen, InputProcessor {
         crown_pig=Crown_Pig.addpig(world,498,377,15);
         crown_pig2=Crown_Pig.addpig(world,682,319,15);
         crown_pig3=Crown_Pig.addpig(world,906,272,15);
+        pigs.add(crown_pig);
+        pigs.add(crown_pig2);
+        pigs.add(crown_pig3);
+
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
@@ -247,60 +251,68 @@ public class Level3Screen implements Screen, InputProcessor {
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                     impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-//                    float torque = 80f; // Adjust for desired rotation effect
-//                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
                 }
                 for (Body b:rectangles_ver){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_verticals){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_horizontals){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:base_objetcs){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:stone_squares){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                    System.out.println(impulse);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-//                    float torque = 80f; // Adjust for desired rotation effect
-//                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:wooden_squares){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:thick_hor){
-                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
-//                particleEffectsmoke.dispose();
+                for (Body b:pigs){
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                }
+
                 particleEffectblast.start();
                 return true;
             }

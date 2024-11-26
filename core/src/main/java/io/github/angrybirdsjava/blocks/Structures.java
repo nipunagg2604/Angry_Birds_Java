@@ -109,9 +109,10 @@ public class Structures {
             fixtureDef.shape = shape;
             fixtureDef.friction = 0.5f;  // Moderate friction
             fixtureDef.restitution = 0.3f;
-            if(block_type.equals("stone_square") || block_type.equals("stone_horizontal") || block_type.equals("stone_vertical")) fixtureDef.density = 2.5f;
+            if(block_type.equals("stone_square") || block_type.equals("stone_horizontal") || block_type.equals("stone_vertical")) fixtureDef.density = 3f;
             if(block_type.equals("glass_horizontal") || block_type.equals("glass_vertical")) fixtureDef.density = 1.2f;
-            if(block_type.equals("wooden_horizontal") || block_type.equals("wooden_vertical") || block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square") fixtureDef.density = 1.8f;
+            if(block_type.equals("wooden_horizontal") || block_type.equals("wooden_vertical")  )fixtureDef.density = 1.8f;
+            if (block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square")) fixtureDef.density = 2f;
             if(block_type.equals("wooden_base") || block_type.equals("soil") || block_type.equals("trisoil")) fixtureDef.density = 10f;
             body.setLinearDamping(0);
             body.setUserData(a);

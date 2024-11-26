@@ -289,7 +289,7 @@ public class Level2Screen implements Screen, InputProcessor {
             shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
             fixtureDef.filter.categoryBits=Constants.BIT_GROUND;
-            fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
+            fixtureDef.filter.maskBits= (short) (Constants.BIT_PIG| Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
             body.createFixture(fixtureDef);
         }
 

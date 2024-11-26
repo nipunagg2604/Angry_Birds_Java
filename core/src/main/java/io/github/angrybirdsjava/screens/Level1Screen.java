@@ -222,39 +222,45 @@ public class Level1Screen implements Screen, InputProcessor {
 
                 particleEffectblast.setPosition(x,y);
                 Vector2 impulse=new Vector2();
-                float s=0.02f;
+                float s=2000f;
 
                 for (Body b:rectangles_hor){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
-
                 }
                 for (Body b:rectangles_ver){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_blocks){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:base_objetcs){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
-//                particleEffectsmoke.dispose();
+                Body b=crown_pig;
+                impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                float torque = 80f; // Adjust for desired rotation effect
+                b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+
+
                 particleEffectblast.start();
                 return true;
             }
@@ -297,7 +303,7 @@ public class Level1Screen implements Screen, InputProcessor {
             shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
             fixtureDef.filter.categoryBits=Constants.BIT_GROUND;
-            fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
+            fixtureDef.filter.maskBits= (short) (Constants.BIT_PIG| Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
             body.createFixture(fixtureDef);
         }
 

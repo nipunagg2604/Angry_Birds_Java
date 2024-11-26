@@ -37,8 +37,9 @@ public class Yellow_Bird {
         fixtureDef.shape = shape;
         fixtureDef.density = 0.5f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
-        fixtureDef.filter.categoryBits=Constants.BIT_BIRD;
-        fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
+        Filter filter=new Filter();
+        filter.categoryBits=Constants.BIT_BIRD;
+        filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
         body.setAngularDamping(0f);
@@ -48,6 +49,7 @@ public class Yellow_Bird {
         a.add(this);
         a.add(radius);
         f.setUserData(a);
+        f.setFilterData(filter);
         shape.dispose();
 
         return body;
