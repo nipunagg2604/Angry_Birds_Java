@@ -18,7 +18,7 @@ public class Red_Bird {
     private static float ppm= Constants.ppm;;
     private String category="bird";
     private String type="redbird";
-    public float damage=10f;
+    public float damage=1f;
     public World world;
     public float radius;
     public Red_Bird() {

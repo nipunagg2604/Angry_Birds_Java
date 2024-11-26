@@ -37,6 +37,8 @@ public class Blue_Bird {
         fixtureDef.shape = shape;
         fixtureDef.density = 0.5f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
+        fixtureDef.filter.categoryBits=Constants.BIT_BIRD;
+        fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
         ArrayList a=new ArrayList();

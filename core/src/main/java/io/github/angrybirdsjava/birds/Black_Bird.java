@@ -15,7 +15,7 @@ public class Black_Bird {
     static private FixtureDef fixtureDef = new FixtureDef();
     private String category="bird";
     private String type="blackbird";
-    public float damage=5f;
+    public float damage=1.8f;
     static private Body body;
     private static float ppm= Constants.ppm;
     public float radius;
@@ -38,6 +38,8 @@ public class Black_Bird {
         fixtureDef.shape = shape;
         fixtureDef.density = 0.3f;
         fixtureDef.restitution = 0.5f; // Make it bouncy
+        fixtureDef.filter.categoryBits=Constants.BIT_BIRD;
+        fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
         ArrayList a=new ArrayList();

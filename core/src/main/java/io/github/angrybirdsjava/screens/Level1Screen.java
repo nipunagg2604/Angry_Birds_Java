@@ -222,27 +222,37 @@ public class Level1Screen implements Screen, InputProcessor {
 
                 particleEffectblast.setPosition(x,y);
                 Vector2 impulse=new Vector2();
-                float s=0.01f;
+                float s=0.02f;
 
                 for (Body b:rectangles_hor){
                     impulse.x=x-b.getPosition().x;
                     impulse.y=y-b.getPosition().y;
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+
+
                 }
                 for (Body b:rectangles_ver){
                     impulse.x=x-b.getPosition().x;
                     impulse.y=y-b.getPosition().y;
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_blocks){
                     impulse.x=x-b.getPosition().x;
                     impulse.y=y-b.getPosition().y;
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:base_objetcs){
                     impulse.x=x-b.getPosition().x;
                     impulse.y=y-b.getPosition().y;
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
 //                particleEffectsmoke.dispose();
                 particleEffectblast.start();
