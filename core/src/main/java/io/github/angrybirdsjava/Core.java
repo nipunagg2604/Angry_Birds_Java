@@ -17,8 +17,8 @@ public class Core extends Game {
     @Override
     public void create() {
         batch = new SpriteBatch();
-//        setScreen(new io.github.angrybirdsjava.LoadingScreen(this));
-        setScreen(new io.github.angrybirdsjava.Level1Screen(this));
+//        setScreen(new HomeScreen(this));
+        setScreen(new io.github.angrybirdsjava.Level2Screen(this));
 //        dispose();
     }
 

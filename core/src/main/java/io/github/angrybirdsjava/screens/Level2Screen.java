@@ -109,7 +109,7 @@ public class Level2Screen implements Screen, InputProcessor {
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
-    int cnt=1;
+
     private ArrayList<Vector2> calvel=new ArrayList<>();
     private Vector2 dragPositionglobal=new Vector2(103,190);
     public Level2Screen(final Core game){
@@ -120,8 +120,11 @@ public class Level2Screen implements Screen, InputProcessor {
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         stone_ver = new TextureRegion(new Texture("Blocks/Stone Blocks/stone_vertical.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
+        redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
+        yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
+        blackbird=new TextureRegion(new Texture("birds/black.png"));
         crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
-        soil = new TextureRegion(new Texture("Blocks/Soil/lastsoil.png"));
+        soil = new TextureRegion(new Texture("Blocks/Soil/lastsoil2.png"));
         trisoil = new TextureRegion(new Texture("Blocks/Soil/finalsoil.png"));
         sling=new Texture(Gdx.files.internal("Slings/slingshot2.png"));
         slinghalf1=new Texture(Gdx.files.internal("Slings/slinghalf1.png"));
@@ -366,28 +369,6 @@ public class Level2Screen implements Screen, InputProcessor {
         }
 
 
-
-        //for (Body b:glass_verticals){
-        //    ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
-        //    if (a.size()<3) continue;
-        //    if (((String)(a.get(2))).equals("glass") && ((String)(a.get(1))).equals("false")){
-        //        a.remove(2);
-        //        b.getFixtureList().get(0).setUserData(a);
-        //        particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-        //        particleEffectglass.start();
-        //    }
-        //}particleEffectglass.draw(batch,delta);
-        //for (Body b:glass_horizontals){
-        //    ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
-        //    if (a.size()<3) continue;
-        //    if (((String)(a.get(2))).equals("glass") && ((String)(a.get(1))).equals("false")){
-        //        a.remove(2);
-        //        b.getFixtureList().get(0).setUserData(a);
-        //        particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-        //        particleEffectglass.start();
-        //    }
-        //}particleEffectglass.draw(batch,delta);
-
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
         for (Body rectangle : rectangles_ver) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -397,7 +378,7 @@ public class Level2Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(stone_ver, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(stone_ver, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : rectangles_hor) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -407,7 +388,7 @@ public class Level2Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(wooden_hor, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(wooden_hor, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : soils) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -417,25 +398,34 @@ public class Level2Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(soil, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(soil, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
-        for (Body body : trisoils) {
-            float[] localVertices = (float[]) body.getUserData();
-            Vector2 position = body.getPosition();
-            float angle = body.getAngle();
+        for (Body rectangle : trisoils) {
 
-            float[] transformedVertices = new float[localVertices.length];
-            for (int i = 0; i < localVertices.length; i += 2) {
-                float x = localVertices[i];
-                float y = localVertices[i + 1];
-
-                // Apply rotation and translation
-                float rotatedX = x * MathUtils.cos(angle) - y * MathUtils.sin(angle);
-                float rotatedY = x * MathUtils.sin(angle) + y * MathUtils.cos(angle);
-
-                transformedVertices[i] = rotatedX + position.x;
-                transformedVertices[i + 1] = rotatedY + position.y;
-            }
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            a = (ArrayList<Float>) rectangle.getUserData();
+            Vector2 v = new Vector2();
+            v = (Vector2) rectangle.getPosition();
+            batch.draw(soil, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+//            float[] localVertices = (float[]) body.getUserData();
+//            Vector2 position = body.getPosition();
+//            float angle = body.getAngle();
+//
+//            float[] transformedVertices = new float[localVertices.length];
+//            for (int i = 0; i < localVertices.length; i += 2) {
+//                float x = localVertices[i];
+//                float y = localVertices[i + 1];
+//
+//                // Apply rotation and translation
+//                float rotatedX = x * MathUtils.cos(angle) - y * MathUtils.sin(angle);
+//                float rotatedY = x * MathUtils.sin(angle) + y * MathUtils.cos(angle);
+//
+//                transformedVertices[i] = rotatedX + position.x;
+//                transformedVertices[i + 1] = rotatedY + position.y;
+//            }
 
             // Debug with ShapeRenderer
             //shapeRenderer.begin(ShapeRenderer.ShapeType.Line);

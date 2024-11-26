@@ -1,7 +1,6 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.*;
-        import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -34,7 +33,6 @@ import io.github.angrybirdsjava.screens.ContactDetect;
 import io.github.angrybirdsjava.screens.EndScreen;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 //import java.util.stream.GathererOp;
 
@@ -61,7 +59,6 @@ public class Level1Screen implements Screen, InputProcessor {
     private Texture blackpoint=new Texture("trail.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
     private ArrayList<Vector2> actualtrajectory=new ArrayList();
-    private ArrayList<Vector2> actualvelocity=new ArrayList();
     private TextureRegion wooden_ver;
     private TextureRegion wooden_hor;
     private TextureRegion glass_block;
@@ -70,9 +67,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private TextureRegion redbird;
     private TextureRegion yellowbird;
     private TextureRegion blackbird;
-    private int cnt2=0;
+    private int traj_index =0;
     private ArrayList<Vector2> array=new ArrayList();
-    private boolean birdinactive=false;
     private Texture sling;
     private Texture slinghalf1;
     private Texture slinghalf2;
@@ -88,9 +84,6 @@ public class Level1Screen implements Screen, InputProcessor {
     private ParticleEffect particleEffectsmoke=new ParticleEffect();
     private ParticleEffect particleEffectglass=new ParticleEffect();
 
-    //    private Red_Bird redbird;
-//    private Black_Bird blackbird;
-//    private Yellow_Bird yellowbird;
     private Body crown_pig;
     private Vector2 slinghalf1pos=new Vector2(142,210);
     private Vector2 slinghalf2pos=new Vector2(107,210);
@@ -108,10 +101,11 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
-    int cnt=1;
-    private ArrayList<Vector2> calvel=new ArrayList<>();
+
     private Vector2 dragPositionglobal=new Vector2(103,190);
+
     public Level1Screen(final Core game){
+        Constants.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
         crown_pig=Crown_Pig.addpig(world,793,305,15);
@@ -158,6 +152,9 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public boolean touchDragged(int screenX, int screenY, int pointer) {
                 if (!isLaunched) {
+                    if (Constants.intromusic.isPlaying()){
+                        Constants.intromusic.stop();
+                    }
                     Body bird=birds.get(0);
                     isDragging = true;
                     Vector3 touchPos = new Vector3(screenX, screenY, 0);
@@ -320,7 +317,8 @@ public class Level1Screen implements Screen, InputProcessor {
                 dispose();
             }
         });
-
+        Constants.intromusic.play();
+        Constants.intromusic.setVolume(0.8f);
         stage.addActor(end);
     }
     public void checkbird(){
@@ -338,24 +336,22 @@ public class Level1Screen implements Screen, InputProcessor {
         boolean isOffScreen = birdPosition.x < 0 || birdPosition.x > Gdx.graphics.getWidth()
                 || birdPosition.y < 0 || birdPosition.y > Gdx.graphics.getHeight();
 
-        if (!birdinactive){
-            if (detect.hasBirdCollided() || isOffScreen) {
+        if (detect.hasBirdCollided() || isOffScreen) {
+            bird=birds.get(0);
+            ArrayList a=(ArrayList) bird.getFixtureList().get(0).getUserData();
+            a.remove(0);
+            a.add(0,"null");
+            birds.remove(0);
+            if (birds.size()!=0){
                 bird=birds.get(0);
-                ArrayList a=(ArrayList) bird.getFixtureList().get(0).getUserData();
-                a.remove(0);
-                a.add(0,"null");
-                birds.remove(0);
-                if (birds.size()!=0){
-                    bird=birds.get(0);
-                    bird.setTransform(114/ppm,203/ppm,0);
-                }detect.birdCollided=false;
-                currentbird="null";
-                currentbirdbody=null;
-                isLaunched=false;
-                array.clear();
-                actualtrajectory.clear();
-                isDragging=false;
-            }
+                bird.setTransform(114/ppm,203/ppm,0);
+            }detect.birdCollided=false;
+            currentbird="null";
+            currentbirdbody=null;
+            isLaunched=false;
+            array.clear();
+            actualtrajectory.clear();
+            isDragging=false;
         }
 
     }
@@ -363,7 +359,6 @@ public class Level1Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-
         camera.update();
         renderer.setView(camera);
         renderer.render();
@@ -483,7 +478,6 @@ public class Level1Screen implements Screen, InputProcessor {
             ArrayList a=(ArrayList) redbirdbody.getFixtureList().get(0).getUserData();
             if (a.get(0)!="null") {
                 actualtrajectory.add(v.cpy().scl(ppm));
-                actualvelocity.add(redbirdbody.getLinearVelocity().cpy().scl(ppm));
             }
         }
 //        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
@@ -497,9 +491,9 @@ public class Level1Screen implements Screen, InputProcessor {
             batch.draw(blackpoint,q.x,q.y,6f,6f);
         }
         for (Vector2 p: actualtrajectory) {
-            cnt2++;
+            traj_index++;
 
-            if (cnt2%3!=0){
+            if (traj_index %3!=0){
 
                 continue;
             }array.add(p.cpy());
@@ -515,7 +509,6 @@ public class Level1Screen implements Screen, InputProcessor {
             ArrayList a=(ArrayList) yellowirdbody.getFixtureList().get(0).getUserData();
             if (a.get(0)!="null") {
                 actualtrajectory.add(v.cpy().scl(ppm));
-                actualvelocity.add(yellowirdbody.getLinearVelocity().cpy().scl(ppm));
             }
         }
         v=(Vector2) blackbirdbody.getPosition();
@@ -526,7 +519,6 @@ public class Level1Screen implements Screen, InputProcessor {
             ArrayList a=(ArrayList) blackbirdbody.getFixtureList().get(0).getUserData();
             if (a.get(0)!="null") {
                 actualtrajectory.add(v.cpy().scl(ppm));
-                actualvelocity.add(blackbirdbody.getLinearVelocity().cpy().scl(ppm));
             }
         }length = slinghalf2pos.cpy().dst(dragPositionglobal);
         angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf2pos.cpy().y, dragPositionglobal.x - slinghalf2pos.cpy().x) * MathUtils.radiansToDegrees;;
@@ -604,11 +596,9 @@ public class Level1Screen implements Screen, InputProcessor {
     public ArrayList<Vector2> calculateTrajectory(Vector2 startPosition, Vector2 initialVelocity, float timeStep, int steps) {
 
         ArrayList<Vector2> trajectoryPoints = new ArrayList<>();
-        calvel.clear();
         System.out.println("mm"+initialVelocity);
         float gravity = -10f * ppm; // Gravity in Box2D units
-//        Vector2 copy=initialVelocity.cpy().scl(ppm);
-//        System.out.println("copy"+copy);
+
         for (int i = 0; i < steps; i++) {
             float t = i * timeStep;
 
@@ -619,8 +609,7 @@ public class Level1Screen implements Screen, InputProcessor {
             float vx=initialVelocity.x;
             float vy=initialVelocity.y+gravity*t;
 
-            calvel.add(new Vector2(vx,vy));
-//            System.out.println("vel : "+new Vector2(vx,vy));
+
             trajectoryPoints.add(new Vector2(x, y));
         }
 

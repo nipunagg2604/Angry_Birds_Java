@@ -11,6 +11,7 @@ Blocks/Stone Blocks/stone_square.png
 Blocks/Stone Blocks/stone_vertical.png
 Blocks/Stone Blocks/stone_horizontal.png
 Blocks/Soil/lastsoil.png
+Blocks/Soil/lastsoil2.png
 Blocks/Soil/finalsoil.png
 Blocks/Glass Blocks/glass_horizontal.png
 Blocks/Glass Blocks/glass_block_type_1.png
@@ -19,6 +20,562 @@ prevLevel.png
 pauseBackground.png
 trail.png
 pauseMenu.jpg
+Music/music/ab_theme_rio_boss_lite5.mp3.meta
+Music/music/ab rio win.mp3
+Music/music/ambience airport.mp3.meta
+Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3.meta
+Music/music/ambience airplane.mp3.meta
+Music/music/ambience beach.mp3.meta
+Music/music/ambience carnival.mp3.meta
+Music/music/ambience jungle.mp3.meta
+Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3
+Music/music/ambience carnival.mp3
+Music/music/ambience jungle.mp3
+Music/music/ambience beach.mp3
+Music/music/ab_theme_rio_boss_lite5.mp3
+Music/music/ab rio win.mp3.meta
+Music/music/story_music.mp3
+Music/music/story_music.mp3.meta
+Music/music/ambience airport.mp3
+Music/music/ambience airplane.mp3
+Music/music/ab rio ambience warehouse.mp3.meta
+Music/music/ab rio ambience warehouse.mp3
+Music/sfx/jewel fly 3.wav.meta
+Music/sfx/bird 01 collision a1.wav.meta
+Music/sfx/jewel fly 2.wav.meta
+Music/sfx/ball_bounce.wav
+Music/sfx/rock destroyed a3.wav.meta
+Music/sfx/scaffolding_break_a1.wav.meta
+Music/sfx/rock destroyed a2.wav.meta
+Music/sfx/level_failed_monkeys.mp3
+Music/sfx/Globe_Bird_Selection_1.wav
+Music/sfx/bird 03 collision a2.wav
+Music/sfx/sardine_can_shot.mp3.meta
+Music/sfx/slingshot streched.wav
+Music/sfx/scaffolding_collision_a2.wav
+Music/sfx/special group.wav
+Music/sfx/chain collision new a3.wav
+Music/sfx/bird 01 select.wav.meta
+Music/sfx/chain collision new a2.wav
+Music/sfx/scaffolding_collision_a3.wav
+Music/sfx/plant collision a1.wav
+Music/sfx/bird cage idle 2.wav.meta
+Music/sfx/bird 03 collision a3.wav
+Music/sfx/bird cage idle 3.wav.meta
+Music/sfx/bird 02 collision a2.wav.meta
+Music/sfx/bird 02 collision a3.wav.meta
+Music/sfx/Globe_Bird_Hit_3.wav.meta
+Music/sfx/Globe_Bird_Hit_2.wav.meta
+Music/sfx/monkey dies a1.wav
+Music/sfx/luggage open.wav.meta
+Music/sfx/nigel hit edit a3.wav.meta
+Music/sfx/nigel hit edit a2.wav.meta
+Music/sfx/bird 03 collision a1.wav
+Music/sfx/bird 04 collision a4.wav.meta
+Music/sfx/scaffolding_collision_a1.wav
+Music/sfx/blue hit a4.wav.meta
+Music/sfx/blue hit a5.wav.meta
+Music/sfx/luggage open.wav
+Music/sfx/jewel fly 8.wav.meta
+Music/sfx/bird 04 select.wav
+Music/sfx/rock damage a1.wav.meta
+Music/sfx/chain collision new a1.wav
+Music/sfx/scaffolding_collision_a2.wav.meta
+Music/sfx/scaffolding_collision_a3.wav.meta
+Music/sfx/bird cage idle 8.wav.meta
+Music/sfx/bird cage idle 9.wav.meta
+Music/sfx/plant collision a2.wav
+Music/sfx/bird next military a1.wav.meta
+Music/sfx/jewel collision a4.wav.meta
+Music/sfx/rock collision a3.wav.meta
+Music/sfx/rock collision a2.wav.meta
+Music/sfx/monkey dies a2.wav
+Music/sfx/bird 01 collision a4_low.wav
+Music/sfx/bird next military a2.wav
+Music/sfx/fruit collision a5.wav.meta
+Music/sfx/fruit collision a4.wav.meta
+Music/sfx/highscore.mp3.meta
+Music/sfx/bird 03 flying.wav
+Music/sfx/bird 03 collision a4.wav
+Music/sfx/plant breaks a1.wav.meta
+Music/sfx/bounce material a5.wav.meta
+Music/sfx/bounce material a4.wav.meta
+Music/sfx/boomerang_select.wav
+Music/sfx/nigel laugh a5.wav.meta
+Music/sfx/monkeyboss hit 1.wav.meta
+Music/sfx/dog idle a1.wav.meta
+Music/sfx/bird 03 collision a1.wav.meta
+Music/sfx/bird 03 collision a5.wav
+Music/sfx/bird 01 select.wav
+Music/sfx/metal chain break a3.wav
+Music/sfx/bird cage collision a3.wav.meta
+Music/sfx/bird cage collision a2.wav.meta
+Music/sfx/bird 01 flying.wav.meta
+Music/sfx/bird next military a3.wav
+Music/sfx/balloon_pop.wav
+Music/sfx/bird shot-a1.wav.meta
+Music/sfx/bird next military a1.wav
+Music/sfx/mighty_eagle_yell.wav
+Music/sfx/dog moving loop.wav
+Music/sfx/metal chain break a1.wav
+Music/sfx/plant collision a5.wav.meta
+Music/sfx/plant collision a4.wav.meta
+Music/sfx/bigbrother_fly.wav
+Music/sfx/plant collision a5.wav
+Music/sfx/bigbrother_select.wav
+Music/sfx/dog hit a1.wav
+Music/sfx/special boost.wav.meta
+Music/sfx/wood collision a6.wav.meta
+Music/sfx/boomerang_activate.wav
+Music/sfx/lamp collision a5.wav.meta
+Music/sfx/lamp collision a4.wav.meta
+Music/sfx/fruit breaking a3.wav.meta
+Music/sfx/bird misc a1.wav.meta
+Music/sfx/fruit breaking a2.wav.meta
+Music/sfx/plant collision a4.wav
+Music/sfx/ice light collision a6.wav.meta
+Music/sfx/ice light collision a7.wav.meta
+Music/sfx/tnt box explodes.wav.meta
+Music/sfx/monkey idle a6.wav.meta
+Music/sfx/bird cage breaks 1.wav.meta
+Music/sfx/light destroyed a1.wav.meta
+Music/sfx/wood rolling.wav
+Music/sfx/bird_06_flying.wav.meta
+Music/sfx/redbird_yell02.wav.meta
+Music/sfx/redbird_yell03.wav.meta
+Music/sfx/star_3.wav
+Music/sfx/wood collision a5.wav
+Music/sfx/bird 02 collision a3.wav
+Music/sfx/ice light collision a5.wav
+Music/sfx/fruit collision a2.wav.meta
+Music/sfx/monkey idle a1.wav
+Music/sfx/Globe_Bird_Launch_3.wav
+Music/sfx/nigel laugh a2.wav.meta
+Music/sfx/nigel laugh a3.wav.meta
+Music/sfx/bird misc a7.wav
+Music/sfx/wood destroyed a1.wav.meta
+Music/sfx/jewel fly 1.wav
+Music/sfx/light destroyed a3.wav
+Music/sfx/light rolling.wav.meta
+Music/sfx/light destroyed a2.wav
+Music/sfx/Globe_Bird_Death_remove_1.wav.meta
+Music/sfx/bird misc a6.wav
+Music/sfx/cardboard box breaks a3.wav.meta
+Music/sfx/level_failed_birds.mp3.meta
+Music/sfx/bird_06_flying.wav
+Music/sfx/bird shot-a1.wav
+Music/sfx/ice light collision a4.wav
+Music/sfx/wood collision a4.wav
+Music/sfx/dog idle a1.wav
+Music/sfx/bird 02 collision a2.wav
+Music/sfx/star_2.wav
+Music/sfx/rock damage a1.wav
+Music/sfx/light damage a1.wav
+Music/sfx/mighty_eagle_fly.mp3.meta
+Music/sfx/bigbrother_select.wav.meta
+Music/sfx/lamp collision a2.wav
+Music/sfx/rock rolling.wav
+Music/sfx/light damage a3.wav
+Music/sfx/dog bark a1.wav.meta
+Music/sfx/monkeyboss laugh 1.wav.meta
+Music/sfx/blue fly loop.wav.meta
+Music/sfx/dog idle a3.wav
+Music/sfx/wood collision a6.wav
+Music/sfx/rock damage a3.wav
+Music/sfx/bird 05 collision a1.wav.meta
+Music/sfx/monkey idle a2.wav
+Music/sfx/bird cage idle 4.wav
+Music/sfx/ice light collision a6.wav
+Music/sfx/gasoline_can_explodes.wav
+Music/sfx/bird shot-a3.wav
+Music/sfx/jewel fly 2.wav
+Music/sfx/plant collision a2.wav.meta
+Music/sfx/bird misc a4.wav
+Music/sfx/bird misc a7.wav.meta
+Music/sfx/bird misc a6.wav.meta
+Music/sfx/light destroyed a1.wav
+Music/sfx/ice light collision a1.wav.meta
+Music/sfx/bird misc a5.wav
+Music/sfx/jewel fly 3.wav
+Music/sfx/wood collision a1.wav.meta
+Music/sfx/bird destroyed.wav
+Music/sfx/bird shot-a2.wav
+Music/sfx/lamp collision a2.wav.meta
+Music/sfx/monkey idle a3.wav
+Music/sfx/ice light collision a7.wav
+Music/sfx/bird cage idle 5.wav
+Music/sfx/monkey idle a1.wav.meta
+Music/sfx/bird cage breaks 6.wav.meta
+Music/sfx/star_1.wav
+Music/sfx/rock damage a2.wav
+Music/sfx/bird 02 collision a1.wav
+Music/sfx/dog idle a2.wav
+Music/sfx/light damage a2.wav
+Music/sfx/dog moving loop.wav.meta
+Music/sfx/bird misc a12.wav.meta
+Music/sfx/level clear military a1.mp3.meta
+Music/sfx/star_3.mp3.meta
+Music/sfx/monkeyboss hit 4.wav
+Music/sfx/star_2.mp3.meta
+Music/sfx/bird 04 flying.wav
+Music/sfx/wood collision a3.wav
+Music/sfx/plant breaks a2.wav
+Music/sfx/bird 02 collision a5.wav
+Music/sfx/jewel fly 4.wav.meta
+Music/sfx/jewel fly 5.wav.meta
+Music/sfx/bird cage idle 1.wav
+Music/sfx/ice light collision a3.wav
+Music/sfx/redbird_yell01.wav
+Music/sfx/bird misc a11.wav
+Music/sfx/bird 03 select.wav
+Music/sfx/monkey near falling a1.wav.meta
+Music/sfx/Globe_Bird_Launch_3.wav.meta
+Music/sfx/jewel fly 7.wav
+Music/sfx/bird misc a1.wav
+Music/sfx/special egg explosion.wav
+Music/sfx/rock destroyed a2.wav
+Music/sfx/monkey dies a2.wav.meta
+Music/sfx/cardboard box breaks a1.wav
+Music/sfx/rock destroyed a3.wav
+Music/sfx/chain collision new a3.wav.meta
+Music/sfx/light damage a1.wav.meta
+Music/sfx/chain collision new a2.wav.meta
+Music/sfx/rock rolling.wav.meta
+Music/sfx/special boost.wav
+Music/sfx/jewel fly 6.wav
+Music/sfx/bird 01 flying.wav
+Music/sfx/bird misc a10.wav
+Music/sfx/lamp breaking.wav.meta
+Music/sfx/Globe_Bird_Hit_4.wav.meta
+Music/sfx/ice light collision a2.wav
+Music/sfx/boomerang_select.wav.meta
+Music/sfx/monkey idle a6.wav
+Music/sfx/wood collision a2.wav
+Music/sfx/bird 02 collision a4.wav
+Music/sfx/plant breaks a3.wav
+Music/sfx/bird cage idle 5.wav.meta
+Music/sfx/boomerang_swish.wav.meta
+Music/sfx/bird cage idle 4.wav.meta
+Music/sfx/bird 02 collision a5.wav.meta
+Music/sfx/bird 02 collision a4.wav.meta
+Music/sfx/monkeyboss hit 1.wav
+Music/sfx/monkeyboss hit 3.wav
+Music/sfx/nigel hit edit a4.wav.meta
+Music/sfx/lamp collision a4.wav
+Music/sfx/Globe_Bird_Selection_1.wav.meta
+Music/sfx/level_failed_monkeys.mp3.meta
+Music/sfx/plant breaks a1.wav
+Music/sfx/blue special.wav
+Music/sfx/monkey idle a4.wav
+Music/sfx/bird cage idle 2.wav
+Music/sfx/redbird_yell02.wav
+Music/sfx/bigbrother_yell.wav.meta
+Music/sfx/blue hit a3.wav.meta
+Music/sfx/blue hit a2.wav.meta
+Music/sfx/metal chain break a1.wav.meta
+Music/sfx/bird misc a12.wav
+Music/sfx/bird 04 collision a3.wav.meta
+Music/sfx/bird 04 collision a2.wav.meta
+Music/sfx/level start military a1.mp3.meta
+Music/sfx/bird misc a2.wav
+Music/sfx/jewel fly 4.wav
+Music/sfx/mighty_eagle_yell.wav.meta
+Music/sfx/rock destroyed a1.wav
+Music/sfx/cardboard box breaks a3.wav
+Music/sfx/jewel fly 5.wav
+Music/sfx/bird misc a3.wav
+Music/sfx/bird 01 collision a1_low.wav.meta
+Music/sfx/wood damage a1.wav.meta
+Music/sfx/bird destroyed.wav.meta
+Music/sfx/Globe_Bird_Special_Activation_3.wav.meta
+Music/sfx/Globe_Bird_Special_Activation_2.wav.meta
+Music/sfx/rock collision a4.wav.meta
+Music/sfx/tnt box explodes.wav
+Music/sfx/rock collision a5.wav.meta
+Music/sfx/redbird_yell03.wav
+Music/sfx/monkey idle a5.wav
+Music/sfx/ice light collision a1.wav
+Music/sfx/bird cage idle 3.wav
+Music/sfx/wood collision a1.wav
+Music/sfx/star_1.wav.meta
+Music/sfx/lamp collision a5.wav
+Music/sfx/monkeyboss hit 2.wav
+Music/sfx/jewel collision a2.wav.meta
+Music/sfx/jewel collision a3.wav.meta
+Music/sfx/bird 05 collision a5.wav.meta
+Music/sfx/bird 05 collision a4.wav.meta
+Music/sfx/bird pushing egg out.wav.meta
+Music/sfx/bird shot-a2.wav.meta
+Music/sfx/bird shot-a3.wav.meta
+Music/sfx/gamescorescreen_score_count_loop.wav.meta
+Music/sfx/blue and jewel slingshot.wav
+Music/sfx/bird 02 flying.wav.meta
+Music/sfx/rock collision a2.wav
+Music/sfx/jewel collision a3.wav
+Music/sfx/scaffolding_break_a1.wav
+Music/sfx/bounce material a4.wav
+Music/sfx/bird 05 collision a4.wav
+Music/sfx/blue fly loop.wav
+Music/sfx/jewel fly 8.wav
+Music/sfx/bird 02 flying.wav
+Music/sfx/wood destroyed a3.wav
+Music/sfx/wood rolling.wav.meta
+Music/sfx/nigel hit edit a1.wav
+Music/sfx/blue hit a1.wav
+Music/sfx/wood destroyed a2.wav
+Music/sfx/wood collision a4.wav.meta
+Music/sfx/nigel defeated flying away.wav
+Music/sfx/wood collision a5.wav.meta
+Music/sfx/bird 05 collision a5.wav
+Music/sfx/bounce material a5.wav
+Music/sfx/ice light collision a5.wav.meta
+Music/sfx/ball_bounce.wav.meta
+Music/sfx/ice light collision a4.wav.meta
+Music/sfx/gamescorescreen_score_count_loop.wav
+Music/sfx/slingshot streched.wav.meta
+Music/sfx/bird misc a3.wav.meta
+Music/sfx/fruit breaking a1.wav.meta
+Music/sfx/bird misc a2.wav.meta
+Music/sfx/jewel collision a2.wav
+Music/sfx/rock collision a3.wav
+Music/sfx/level_failed_birds.mp3
+Music/sfx/bird 01 collision a1.wav
+Music/sfx/bird 01 collision a2_low.wav
+Music/sfx/monkey falling a1.wav.meta
+Music/sfx/bird cage breaks 2.wav.meta
+Music/sfx/light destroyed a2.wav.meta
+Music/sfx/monkey idle a5.wav.meta
+Music/sfx/light destroyed a3.wav.meta
+Music/sfx/special egg.wav.meta
+Music/sfx/monkey idle a4.wav.meta
+Music/sfx/monkey falling a1.wav
+Music/sfx/bird 01 collision a3.wav
+Music/sfx/plant breaks a3.wav.meta
+Music/sfx/plant breaks a2.wav.meta
+Music/sfx/rock collision a1.wav
+Music/sfx/light rolling.wav
+Music/sfx/fruit collision a2.wav
+Music/sfx/scaffolding_break_a2.wav
+Music/sfx/monkeyboss hit 2.wav.meta
+Music/sfx/monkeyboss hit 3.wav.meta
+Music/sfx/monkey near falling a4.wav
+Music/sfx/lamp breaking.wav
+Music/sfx/blue hit a3.wav
+Music/sfx/nigel hit edit a3.wav
+Music/sfx/bird 03 collision a3.wav.meta
+Music/sfx/nigel hit edit a2.wav
+Music/sfx/blue hit a2.wav
+Music/sfx/bird 03 collision a2.wav.meta
+Music/sfx/wood destroyed a1.wav
+Music/sfx/dog idle a3.wav.meta
+Music/sfx/dog idle a2.wav.meta
+Music/sfx/bird 05 select.wav.meta
+Music/sfx/scaffolding_break_a3.wav
+Music/sfx/jewel collision a1.wav
+Music/sfx/bird 01 collision a4_low.wav.meta
+Music/sfx/bird misc a9.wav.meta
+Music/sfx/bird misc a8.wav.meta
+Music/sfx/bird 01 collision a2.wav
+Music/sfx/bird 01 collision a3_low.wav.meta
+Music/sfx/plane_loop04.wav.meta
+Music/sfx/monkeyboss defeated.wav
+Music/sfx/highscore.mp3
+Music/sfx/button.wav
+Music/sfx/mighty_eagle_thump.mp3.meta
+Music/sfx/rock collision a4.wav
+Music/sfx/bird cage idle 8.wav
+Music/sfx/nigel hit edit a1.wav.meta
+Music/sfx/bird 05 collision a2.wav
+Music/sfx/bird 02 select.wav.meta
+Music/sfx/bird misc a8.wav
+Music/sfx/mighty_eagle_thump.mp3
+Music/sfx/blue slingshot.wav.meta
+Music/sfx/blue hit a6.wav
+Music/sfx/bird cage collision a2.wav
+Music/sfx/bigbrother_yell.wav
+Music/sfx/blue hit a7.wav.meta
+Music/sfx/level clear military a2.mp3
+Music/sfx/blue hit a6.wav.meta
+Music/sfx/monkey near falling a1.wav
+Music/sfx/rock damage a3.wav.meta
+Music/sfx/rock damage a2.wav.meta
+Music/sfx/blue hit a7.wav
+Music/sfx/bird cage collision a3.wav
+Music/sfx/balloon_pop.wav.meta
+Music/sfx/bird misc a9.wav
+Music/sfx/bird 05 collision a3.wav
+Music/sfx/cardboard box collision a1.wav.meta
+Music/sfx/scaffolding_collision_a1.wav.meta
+Music/sfx/bird cage idle 9.wav
+Music/sfx/rock collision a5.wav
+Music/sfx/jewel collision a4.wav
+Music/sfx/bird next military a3.wav.meta
+Music/sfx/bird next military a2.wav.meta
+Music/sfx/bigbrother_fly.wav.meta
+Music/sfx/boomerang_swish.wav
+Music/sfx/rock collision a1.wav.meta
+Music/sfx/plane_broken.mp3
+Music/sfx/bird 01 collision a3.wav.meta
+Music/sfx/jewel fly 1.wav.meta
+Music/sfx/bird 01 collision a2.wav.meta
+Music/sfx/fruit collision a4.wav
+Music/sfx/scaffolding_break_a3.wav.meta
+Music/sfx/mighty_eagle_fly.mp3
+Music/sfx/scaffolding_break_a2.wav.meta
+Music/sfx/rock destroyed a1.wav.meta
+Music/sfx/bird 05 collision a1.wav
+Music/sfx/bird 01 collision a2_low.wav.meta
+Music/sfx/monkey near falling a4.wav.meta
+Music/sfx/blue hit a5.wav
+Music/sfx/monkey near falling a2.wav
+Music/sfx/level clear military a1.mp3
+Music/sfx/monkey near falling a3.wav
+Music/sfx/blue hit a4.wav
+Music/sfx/nigel hit edit a4.wav
+Music/sfx/ice light collision a8.wav
+Music/sfx/bird 01 collision a3_low.wav
+Music/sfx/bird 05 flying.wav.meta
+Music/sfx/bird 05 select.wav
+Music/sfx/fruit collision a5.wav
+Music/sfx/monkeyboss defeated.wav.meta
+Music/sfx/bird cage idle 1.wav.meta
+Music/sfx/bird 02 collision a1.wav.meta
+Music/sfx/boomerang_activate.wav.meta
+Music/sfx/bird 01 collision a4.wav
+Music/sfx/dog moving loop.mp3
+Music/sfx/Globe_Bird_Hit_1.wav.meta
+Music/sfx/pig balloon pop.wav
+Music/sfx/flower breaking scoreitem.wav.meta
+Music/sfx/star_2.mp3
+Music/sfx/bird 02 select.wav
+Music/sfx/bird 03 select.wav.meta
+Music/sfx/metal chain break a3.wav.meta
+Music/sfx/blue hit a1.wav.meta
+Music/sfx/bird pushing egg out.wav
+Music/sfx/nigel laugh a2.wav
+Music/sfx/bird 04 collision a1.wav.meta
+Music/sfx/plane_broken.mp3.meta
+Music/sfx/level start military a2.mp3.meta
+Music/sfx/wood damage a3.wav.meta
+Music/sfx/wood damage a2.wav.meta
+Music/sfx/nigel laugh a3.wav
+Music/sfx/Globe_Bird_Special_Activation_1.wav.meta
+Music/sfx/bird 04 collision a4.wav
+Music/sfx/star_2.wav.meta
+Music/sfx/star_3.wav.meta
+Music/sfx/jewel collision a1.wav.meta
+Music/sfx/Globe_Bird_Hit_4.wav
+Music/sfx/star_3.mp3
+Music/sfx/nigel defeated flying away.wav.meta
+Music/sfx/monkeyboss laugh 1.wav
+Music/sfx/bird cage breaks 6.wav
+Music/sfx/dog moving loop.mp3.meta
+Music/sfx/special egg.wav
+Music/sfx/monkeyboss laugh 3.wav
+Music/sfx/star_1.mp3
+Music/sfx/bird cage idle 11.wav.meta
+Music/sfx/jewel fly 7.wav.meta
+Music/sfx/bird 01 collision a4.wav.meta
+Music/sfx/jewel fly 6.wav.meta
+Music/sfx/monkey near falling a3.wav.meta
+Music/sfx/monkey near falling a2.wav.meta
+Music/sfx/blue special.wav.meta
+Music/sfx/sardine_can_physics_a2.mp3
+Music/sfx/gasoline_can_explodes.wav.meta
+Music/sfx/nigel laugh a1.wav
+Music/sfx/bird 04 flying.wav.meta
+Music/sfx/nigel_evil_laugh_3.mp3
+Music/sfx/cardboard box collision a1.wav
+Music/sfx/monkey dies a1.wav.meta
+Music/sfx/bird 01 collision a1_low.wav
+Music/sfx/light damage a3.wav.meta
+Music/sfx/light damage a2.wav.meta
+Music/sfx/chain collision new a1.wav.meta
+Music/sfx/pig balloon pop.wav.meta
+Music/sfx/blue slingshot.wav
+Music/sfx/monkeyboss laugh 2.wav
+Music/sfx/bird cage breaks 1.wav
+Music/sfx/blue and jewel slingshot.wav.meta
+Music/sfx/dog bark a2.wav.meta
+Music/sfx/dog bark a1.wav
+Music/sfx/sardine_can_physics_a2.mp3.meta
+Music/sfx/Globe_Bird_Hit_3.wav
+Music/sfx/level start military a1.mp3
+Music/sfx/bird 05 collision a2.wav.meta
+Music/sfx/bird 05 collision a3.wav.meta
+Music/sfx/monkeyboss laugh 3.wav.meta
+Music/sfx/monkeyboss laugh 2.wav.meta
+Music/sfx/flower breaking scoreitem.wav
+Music/sfx/bird 04 collision a3.wav
+Music/sfx/special group.wav.meta
+Music/sfx/wood damage a2.wav
+Music/sfx/plant collision a1.wav.meta
+Music/sfx/bird 03 flying.wav.meta
+Music/sfx/dog hit a1.wav.meta
+Music/sfx/ice light collision a2.wav.meta
+Music/sfx/ice light collision a3.wav.meta
+Music/sfx/nigel_evil_laugh_3.mp3.meta
+Music/sfx/wood damage a3.wav
+Music/sfx/nigel laugh a5.wav
+Music/sfx/bird misc a4.wav.meta
+Music/sfx/fruit breaking scoreitem.wav
+Music/sfx/bird misc a5.wav.meta
+Music/sfx/wood collision a3.wav.meta
+Music/sfx/wood collision a2.wav.meta
+Music/sfx/bird 04 collision a2.wav
+Music/sfx/Globe_Bird_Special_Activation_1.wav
+Music/sfx/fruit breaking scoreitem.wav.meta
+Music/sfx/monkey idle a2.wav.meta
+Music/sfx/monkey idle a3.wav.meta
+Music/sfx/Globe_Bird_Hit_2.wav
+Music/sfx/level clear military a2.mp3.meta
+Music/sfx/star_1.mp3.meta
+Music/sfx/fruit breaking a1.wav
+Music/sfx/bird misc a10.wav.meta
+Music/sfx/bird misc a11.wav.meta
+Music/sfx/redbird_yell01.wav.meta
+Music/sfx/bird cage breaks 2.wav
+Music/sfx/bird cage idle 11.wav
+Music/sfx/fruit breaking a3.wav
+Music/sfx/dog bark a2.wav
+Music/sfx/Globe_Bird_Death_remove_1.wav
+Music/sfx/special egg explosion.wav.meta
+Music/sfx/level start military a2.mp3
+Music/sfx/Globe_Bird_Special_Activation_3.wav
+Music/sfx/nigel laugh a1.wav.meta
+Music/sfx/monkeyboss hit 4.wav.meta
+Music/sfx/sardine_can_shot.mp3
+Music/sfx/wood damage a1.wav
+Music/sfx/wood destroyed a3.wav.meta
+Music/sfx/wood destroyed a2.wav.meta
+Music/sfx/plane_loop04.wav
+Music/sfx/bird 03 collision a4.wav.meta
+Music/sfx/bird 03 collision a5.wav.meta
+Music/sfx/cardboard box breaks a1.wav.meta
+Music/sfx/bird 05 flying.wav
+Music/sfx/Globe_Bird_Special_Activation_2.wav
+Music/sfx/bird 04 collision a1.wav
+Music/sfx/bird 04 select.wav.meta
+Music/sfx/Globe_Bird_Hit_1.wav
+Music/sfx/fruit breaking a2.wav
+Music/sfx/ice light collision a8.wav.meta
+Music/stpatrics_theme.mp3.meta
+Music/Angry Birds OST/level_complete.mp3
+Music/Angry Birds OST/game_complete.mp3
+Music/Angry Birds OST/ambient_green_jungleish.mp3
+Music/Angry Birds OST/funky_theme.mp3
+Music/Angry Birds OST/title_theme.mp3
+Music/Angry Birds OST/ambient_construction.mp3
+Music/Angry Birds OST/birds_boss.mp3
+Music/Angry Birds OST/ambient_red_savannah.mp3
+Music/Angry Birds OST/ambient_city.mp3
+Music/Angry Birds OST/birds_intro.mp3
+Music/Angry Birds OST/birds_outro.mp3
+Music/Angry Birds OST/ambient_white_dryforest.mp3
+Music/title_theme.mp3
+Music/sfx.meta
+Music/stpatrics_theme.mp3
+Music/music.meta
 level2.png
 pauseMenu.jpeg
 levelBackground.jpg
@@ -87,6 +644,7 @@ Homescreen/play_button.png
 Homescreen/text.png
 Homescreen/image.png
 libgdx.png
+cross.png
 gameOver.png
 stars5.png
 skin4/clean-crispy-ui.json
