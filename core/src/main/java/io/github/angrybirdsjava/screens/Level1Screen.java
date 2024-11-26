@@ -365,7 +365,7 @@ public class Level1Screen implements Screen, InputProcessor {
         b2dr.render(world,camera.combined);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-//        particleEffectblast.draw(batch,delta);
+        particleEffectblast.draw(batch,delta);
         if (currentbirdbody!=null &&  (((String)(currentbirdbody.getUserData())).equals("black")
                 || ((String)(currentbirdbody.getUserData())).equals("blackbird"))){
             particleEffectsmoke.setPosition(currentbirdbody.getPosition().cpy().scl(ppm).x-20,currentbirdbody.getPosition().cpy().scl(ppm).y-20);
