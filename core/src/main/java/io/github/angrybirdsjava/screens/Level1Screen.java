@@ -1,11 +1,11 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.*;
-import com.badlogic.gdx.graphics.Color;
+        import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+        import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -16,7 +16,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
+        import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -52,10 +52,10 @@ public class Level1Screen implements Screen, InputProcessor {
     private OrthogonalTiledMapRenderer renderer;
     private World world=new World(new Vector2(0, -10f), true);
 
-    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6,0).return_array();
-    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6,0).return_array();;
-    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0).return_array();;
-    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0).return_array();;
+    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6,0, "Level_tmx_files/level-1.tmx").return_array();
+    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6,0, "Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0, "Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0, "Level_tmx_files/level-1.tmx").return_array();;
 
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("trail.png");
@@ -88,7 +88,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private ParticleEffect particleEffectsmoke=new ParticleEffect();
     private ParticleEffect particleEffectglass=new ParticleEffect();
 
-//    private Red_Bird redbird;
+    //    private Red_Bird redbird;
 //    private Black_Bird blackbird;
 //    private Yellow_Bird yellowbird;
     private Body crown_pig;
@@ -287,7 +287,7 @@ public class Level1Screen implements Screen, InputProcessor {
         b2dr = new Box2DDebugRenderer();
 
         font=new BitmapFont();
-        for (MapObject object: tiledMap.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
+        for (MapObject object: tiledMap.getLayers().get(3).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect=((RectangleMapObject) object).getRectangle();
 
             bodyDef.type = BodyDef.BodyType.StaticBody;
