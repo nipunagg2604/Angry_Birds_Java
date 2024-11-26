@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="31" nextobjectid="84">
+ <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
+  <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+ </tileset>
+ <tileset firstgid="2443" source="finalsoil.tsx"/>
+ <tileset firstgid="2443" name="soilsoil" tilewidth="250" tileheight="245" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="finalsoil.png" width="114" height="114"/>
+  </tile>
+  <tile id="1">
+   <image source="lastsoil.png" width="250" height="245"/>
+  </tile>
+ </tileset>
+ <layer id="3" name="sky" width="56" height="16" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1Vs2FWAYx+GPvd0lopJJiJxVFE2iklOYBKVzTUKF2uwtOhgAOW6nlMMkqHRQ3XoG0AS+tfa71nP5u/pfvLN5IczxkXkWWGSJZVbIssoa62wwG0lXlR/CBaqpoZY66mmgkSYuUsF5KvPj6V4ywihjvOI1KcaZIE2GYZ7zIqKuKBFCMacooZTTnOEsZZyjnBMUcjIRT3eXIe5xnwc85BGPecJTnjHAIHci6r7xnUN+8JNf/OaIP/zlH/sc8DWirj0Zwi066KSLbnq4TS999HOdG9xMxtPFskNuv/9362ywySe2+MwXttlhlz2yrLIWUddU4Cdyics008IVrtJKG9eop4HGgni6NBkmecMU07zlHe/5wAwpxpmIqBtK5MQsd3HfMWjKr6g=
+  </data>
+ </layer>
+ <layer id="7" name="ground" width="56" height="16" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztytcRgmAUROGLP22YQ3EqBmzDiFCcigHaMJ4yvDN7Zr6XnTVTSimllFL/VCeYddFDHwMMMUITLbSD398OexyQ4YgcBdbYYOv498EXFptFaCAgxpP9hbfjX4IZ5lhgiRQrjDHB1PGvxBU33PFAhRonnHFx/PsB6yWOaA==
+  </data>
+ </layer>
+ <layer id="9" name="trees" width="56" height="16" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzty0cuRmEAQNEv4Z/onUXonUXonY3onUXonUXonY3onbGzCZGXvJuc4Q0hLi4u7m9qTQqhjXY66KSLbnropY9+BmiimZakaLxHHHPCKWecc8ElV1xzwy37HHAYkbcsOYRyKqikimpqqKWOehpopJgSSpOj8S6zwiprrLPBJltss8MueyywyFJE3vRECBlkkkU2OeSSRz4FFFJECqmkJaLxjjDKGONMMMkU08wwyxzzDDLEcETeR5545oVX3njng0+++OaHO+55iMgbFxf3f/0CuJHGtg==
+  </data>
+ </layer>
+ <objectgroup id="10" name="ground" locked="1">
+  <object id="5" x="3.0099" y="380.849" width="1785.71" height="133.451"/>
+ </objectgroup>
+ <objectgroup id="11" name="wooden_vertical" locked="1"/>
+ <objectgroup id="16" name="wooden_horizontal" locked="1">
+  <object id="80" x="793.333" y="209.333" width="35.3333" height="6"/>
+  <object id="79" x="680" y="261.333" width="35.3333" height="6"/>
+  <object id="78" x="622.667" y="260.667" width="35.3333" height="6"/>
+  <object id="76" x="564.667" y="261.333" width="35.3333" height="6"/>
+ </objectgroup>
+ <objectgroup id="15" name="base"/>
+ <objectgroup id="25" name="stone_square"/>
+ <objectgroup id="26" name="wooden_square"/>
+ <objectgroup id="27" name="wooden_thick_horizontal"/>
+ <objectgroup id="28" name="glass_vertical"/>
+ <objectgroup id="29" name="glass_horizontal"/>
+ <objectgroup id="18" name="stone_vertical" locked="1">
+  <object id="74" x="808" y="216" width="8.66667" height="102"/>
+  <object id="73" x="694" y="268" width="8" height="50.6667"/>
+  <object id="72" x="636.667" y="267.333" width="8" height="50.6667"/>
+  <object id="71" x="578.667" y="268" width="8" height="50.6667"/>
+ </objectgroup>
+ <objectgroup id="19" name="stone_horizontal" locked="1"/>
+ <objectgroup id="23" name="soil">
+  <object id="81" x="566.667" y="320" width="398" height="64"/>
+ </objectgroup>
+ <layer id="8" name="grass" width="56" height="16" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzty8cNgFAQxNC9/ArJmVrJmZZwF2ilsfSONlNKKaWU8lUazDLkKFCiQo0GLTr0iBAjCX6+GQtWbNhx4MSFGw9eDBgxOfqUUv/1ARw7QaE=
+  </data>
+ </layer>
+ <objectgroup id="14" name="slingshot" locked="1"/>
+ <objectgroup id="30" name="trisoil" opacity="0.45">
+  <object id="83" x="963.443" y="253.333">
+   <polygon points="0,0 0.556863,64.6667 -94.1098,64.6667"/>
+  </object>
+  <object id="82" x="564.11" y="319.333">
+   <polygon points="0,0 0.556863,64.6667 -94.1098,64.6667"/>
+  </object>
+ </objectgroup>
+</map>

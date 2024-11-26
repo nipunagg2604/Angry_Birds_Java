@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="28" nextobjectid="107">
+ <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
+  <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+ </tileset>
+ <tileset firstgid="2443" source="Mobile - Angry Birds - Poached Eggs Theme 1.tsx"/>
+ <tileset firstgid="4885" name="soilsoil" tilewidth="250" tileheight="245" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="finalsoil.png" width="114" height="114"/>
+  </tile>
+  <tile id="1">
+   <image source="lastsoil.png" width="250" height="245"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="4887" name="temp" tilewidth="3554" tileheight="710" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+  </tile>
+ </tileset>
+ <layer id="3" name="sky" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzt1Vs2FWAYx+GPvd0lopJJiJxVFE2iklOYBKVzTUKF2uwtOhgAOW6nlMMkqHRQ3XoG0AS+tfa71nP5u/pfvLN5IczxkXkWWGSJZVbIssoa62wwG0lXlR/CBaqpoZY66mmgkSYuUsF5KvPj6V4ywihjvOI1KcaZIE2GYZ7zIqKuKBFCMacooZTTnOEsZZyjnBMUcjIRT3eXIe5xnwc85BGPecJTnjHAIHci6r7xnUN+8JNf/OaIP/zlH/sc8DWirj0Zwi066KSLbnq4TS999HOdG9xMxtPFskNuv/9362ywySe2+MwXttlhlz2yrLIWUddU4Cdyics008IVrtJKG9eop4HGgni6NBkmecMU07zlHe/5wAwpxpmIqBtK5MQsd3HfMWjKr6g=
+  </data>
+ </layer>
+ <layer id="7" name="ground" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztytcRgmAUROGLP22YQ3EqBmzDiFCcigHaMJ4yvDN7Zr6XnTVTSimllFL/VCeYddFDHwMMMUITLbSD398OexyQ4YgcBdbYYOv498EXFptFaCAgxpP9hbfjX4IZ5lhgiRQrjDHB1PGvxBU33PFAhRonnHFx/PsB6yWOaA==
+  </data>
+ </layer>
+ <layer id="9" name="trees" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzty0cuRmEAQNEv4Z/onUXonUXonY3onUXonUXonY3onbGzCZGXvJuc4Q0hLi4u7m9qTQqhjXY66KSLbnropY9+BmiimZakaLxHHHPCKWecc8ElV1xzwy37HHAYkbcsOYRyKqikimpqqKWOehpopJgSSpOj8S6zwiprrLPBJltss8MueyywyFJE3vRECBlkkkU2OeSSRz4FFFJECqmkJaLxjjDKGONMMMkU08wwyxzzDDLEcETeR5545oVX3njng0+++OaHO+55iMgbFxf3f/0CuJHGtg==
+  </data>
+ </layer>
+ <objectgroup id="10" name="ground">
+  <object id="5" x="3.0099" y="380.849" width="1785.71" height="133.451"/>
+ </objectgroup>
+ <objectgroup id="11" name="wooden_vertical">
+  <object id="56" x="437" y="252.667" width="12.6667" height="61.3333"/>
+  <object id="70" x="437" y="177" width="12.6667" height="64.3333"/>
+  <object id="95" x="651.541" y="161.355" width="10.6667" height="61.3333" rotation="359.766"/>
+  <object id="96" x="705.541" y="161.355" width="10.6667" height="61.3333" rotation="359.766"/>
+ </objectgroup>
+ <objectgroup id="16" name="wooden_horizontal">
+  <object id="68" x="431" y="241.333" width="133.333" height="10.6667"/>
+  <object id="73" x="431" y="160.667" width="133.333" height="10.6667"/>
+  <object id="102" x="653" y="143.334" width="59.9997" height="10.6667"/>
+  <object id="105" x="878" y="269.334" width="61.333" height="10.6667"/>
+ </objectgroup>
+ <objectgroup id="15" name="base">
+  <object id="51" x="425.667" y="346" width="144.667" height="36"/>
+  <object id="80" x="614.333" y="285.333" width="144.667" height="36"/>
+  <object id="53" x="804.667" y="346" width="144.667" height="36"/>
+ </objectgroup>
+ <objectgroup id="18" name="stone_square">
+  <object id="55" x="429" y="315.333" width="28.6667" height="29.3333"/>
+  <object id="74" x="431.666" y="130.667" width="28.6667" height="29.3333"/>
+  <object id="92" x="482.333" y="48" width="28.6667" height="29.3333"/>
+  <object id="93" x="622.333" y="193.333" width="28.6667" height="29.3333"/>
+  <object id="98" x="668.333" y="106" width="28.6667" height="29.3333"/>
+  <object id="94" x="717.667" y="194" width="28.6667" height="29.3333"/>
+  <object id="75" x="535" y="130.667" width="28.6667" height="29.3333"/>
+ </objectgroup>
+ <objectgroup id="19" name="wooden_square">
+  <object id="66" x="532.333" y="252.667" width="28.6667" height="29.3333"/>
+  <object id="89" x="722.333" y="254" width="28.6667" height="29.3333"/>
+  <object id="87" x="621.667" y="254.667" width="28.6667" height="29.3333"/>
+  <object id="84" x="879.333" y="285.333" width="28.6667" height="29.3333"/>
+  <object id="85" x="910" y="285.333" width="28.6667" height="29.3333"/>
+  <object id="71" x="528.333" y="207.333" width="32.6667" height="33.3333"/>
+  <object id="106" x="528.333" y="173.333" width="32.6667" height="33.3333"/>
+  <object id="63" x="532.333" y="315.333" width="28.6667" height="29.3333"/>
+  <object id="65" x="470.333" y="284" width="28.6667" height="29.3333"/>
+ </objectgroup>
+ <objectgroup id="20" name="wooden_thick_horizontal">
+  <object id="59" x="469.667" y="315.333" width="60.6667" height="29.3333"/>
+  <object id="81" x="812.667" y="315.333" width="60.6667" height="29.3333"/>
+  <object id="83" x="878.667" y="315.333" width="60.6667" height="29.3333"/>
+  <object id="64" x="500.333" y="284" width="60.6667" height="29.3333"/>
+  <object id="88" x="656.333" y="254" width="60.6667" height="29.3333"/>
+  <object id="90" x="621.667" y="224" width="60.6667" height="29.3333"/>
+  <object id="91" x="686.333" y="224" width="60.6667" height="29.3333"/>
+ </objectgroup>
+ <objectgroup id="21" name="glass_vertical">
+  <object id="76" x="462.333" y="99.3337" width="10.6667" height="61.3333"/>
+  <object id="78" x="522.333" y="98.0003" width="10.6667" height="61.3333"/>
+ </objectgroup>
+ <objectgroup id="22" name="glass_horizontal">
+  <object id="101" x="464.333" y="86.0003" width="65.9997" height="10.6667"/>
+ </objectgroup>
+ <objectgroup id="24" name="stone_vertical"/>
+ <objectgroup id="25" name="stone_horizontal"/>
+ <objectgroup id="23" name="soil">
+  <object id="100" gid="4886" x="646.334" y="-40.333" width="221.333" height="61"/>
+  <object id="103" x="593.667" y="322" width="188.667" height="62"/>
+ </objectgroup>
+ <layer id="8" name="grass" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzty8cNgFAQxNC9/ArJmVrJmZZwF2ilsfSONlNKKaWU8lUazDLkKFCiQo0GLTr0iBAjCX6+GQtWbNhx4MSFGw9eDBgxOfqUUv/1ARw7QaE=
+  </data>
+ </layer>
+ <objectgroup id="14" name="slingshot"/>
+ <objectgroup id="27" name="trisoil"/>
+</map>

@@ -124,6 +124,9 @@ public class Level3Screen implements Screen, InputProcessor {
     private ArrayList<Vector2> calvel=new ArrayList<>();
     private Vector2 dragPositionglobal=new Vector2(103,190);
     public Level3Screen(final Core game){
+        redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
+        yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
+        blackbird=new TextureRegion(new Texture("birds/black.png"));
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
         crown_pig=Crown_Pig.addpig(world,498,377,15);

@@ -2,9 +2,17 @@ INGAME_BLOCKS_WOOD_1.webp
 level3.png
 Blocks/Wooden Blocks/vertical_wood.png
 Blocks/Wooden Blocks/horizontal_wood.png
+Blocks/Wooden Blocks/wooden_thick.png
 Blocks/Wooden Blocks/wooden_base_type_2.png
 Blocks/Wooden Blocks/wooden_base_type_1.png
 Blocks/Wooden Blocks/hor.png
+Blocks/Wooden Blocks/wooden_square.png
+Blocks/Stone Blocks/stone_square.png
+Blocks/Stone Blocks/stone_vertical.png
+Blocks/Stone Blocks/stone_horizontal.png
+Blocks/Soil/lastsoil.png
+Blocks/Soil/finalsoil.png
+Blocks/Glass Blocks/glass_horizontal.png
 Blocks/Glass Blocks/glass_block_type_1.png
 Blocks/Glass Blocks/glass_block_type_2.png
 prevLevel.png
@@ -28,8 +36,17 @@ m_button.png
 level7.png
 PC Computer - Angry Birds Rio - Blocks & Objects.png
 emm.png
+Level_tmx_files/lastsoil.png
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.tsx
+Level_tmx_files/Mobile - Angry Birds - Poached E.png
 Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Level_tmx_files/soil.png
+Level_tmx_files/finalsoil.tsx
+Level_tmx_files/finalsoil.png
+Level_tmx_files/soil.tsx
 Level_tmx_files/level-1.tmx
+Level_tmx_files/level-2.tmx
+Level_tmx_files/level-3.tmx
 skin1/font-title-export.fnt
 skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas

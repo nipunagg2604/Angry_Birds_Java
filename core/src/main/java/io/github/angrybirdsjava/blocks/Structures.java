@@ -11,6 +11,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
+import io.github.angrybirdsjava.Constants;
 
 import java.awt.*;
 import java.util.ArrayList;
