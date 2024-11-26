@@ -4,10 +4,7 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -54,10 +51,12 @@ public class Level1Screen implements Screen, InputProcessor {
     private TiledMap tiledMap;
     private OrthogonalTiledMapRenderer renderer;
     private World world=new World(new Vector2(0, -10f), true);
+
     private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6,0).return_array();
     private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6,0).return_array();;
     private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0).return_array();;
     private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0).return_array();;
+
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("trail.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
@@ -85,12 +84,16 @@ public class Level1Screen implements Screen, InputProcessor {
     private FixtureDef fixtureDef = new FixtureDef();
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
+    private ParticleEffect particleEffectblast=new ParticleEffect();
+    private ParticleEffect particleEffectsmoke=new ParticleEffect();
+    private ParticleEffect particleEffectglass=new ParticleEffect();
+
 //    private Red_Bird redbird;
 //    private Black_Bird blackbird;
 //    private Yellow_Bird yellowbird;
     private Body crown_pig;
-    private Vector2 slinghalf1pos=new Vector2(182,210);
-    private Vector2 slinghalf2pos=new Vector2(147,210);
+    private Vector2 slinghalf1pos=new Vector2(142,210);
+    private Vector2 slinghalf2pos=new Vector2(107,210);
 
     private static float ppm=Constants.ppm;
     private Body slingbody;
@@ -98,17 +101,17 @@ public class Level1Screen implements Screen, InputProcessor {
     private Body yellowirdbody;
     private Body blackbirdbody;
     private String currentbird="nul";
+    private Body currentbirdbody=null;
     private ContactDetect detect=new ContactDetect();
     private ArrayList<Body> birds=new ArrayList<>();
-    private ArrayList<Boolean> inactive=new ArrayList<>();
+
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
     int cnt=1;
     private ArrayList<Vector2> calvel=new ArrayList<>();
     private Vector2 dragPositionglobal=new Vector2(103,190);
-
-    public Level1Screen(final Core game) {
+    public Level1Screen(final Core game){
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
         crown_pig=Crown_Pig.addpig(world,793,305,15);
@@ -126,6 +129,15 @@ public class Level1Screen implements Screen, InputProcessor {
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
 
+        particleEffectblast.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
+        particleEffectblast.scaleEffect(2);
+
+        particleEffectsmoke.load(Gdx.files.internal("effects2/effects/mysmoke.p"),Gdx.files.internal("effects2/images"));
+        particleEffectsmoke.scaleEffect(1);
+
+        particleEffectglass.load(Gdx.files.internal("effects2/effects/myglass.p"),Gdx.files.internal("effects2/images"));
+        particleEffectglass.scaleEffect(0.4f);
+
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
@@ -137,8 +149,6 @@ public class Level1Screen implements Screen, InputProcessor {
         birds.add(redbirdbody);
         birds.add(yellowirdbody);
         birds.add(blackbirdbody);
-        inactive.add(false);
-        inactive.add(false);
         world.setContactListener(detect);
         InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
@@ -169,7 +179,7 @@ public class Level1Screen implements Screen, InputProcessor {
                     trajectory=calculateTrajectory(dragPosition,velocity,0.1f,100);
                     bird.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
                     float radius=((float)((ArrayList)(bird.getFixtureList().get(0).getUserData())).get(2));
-                    dragPositionglobal=bird.getPosition().scl(ppm).cpy().sub(radius/1.5f,radius/1.5f);
+                    dragPositionglobal=bird.getPosition().scl(ppm).cpy().sub(radius/1.1f,radius/1.1f);
                     return true;
                 }
                 return false;
@@ -184,6 +194,7 @@ public class Level1Screen implements Screen, InputProcessor {
                     // Calculate launch force
                     Body bird=birds.get(0);
                     currentbird=bird.getFixtureList().get(0).getUserData().toString();
+                    currentbirdbody=bird;
 //                    System.out.println(currentbird);
                     Vector2 birdPosition = bird.getPosition();
                     birdPosition.x=(birdPosition.x)*ppm;
@@ -196,6 +207,45 @@ public class Level1Screen implements Screen, InputProcessor {
                     bird.setType(BodyDef.BodyType.DynamicBody);
                     bird.applyLinearImpulse(launchForce, bird.getWorldCenter(), true);
                 }
+                return true;
+            }
+            @Override
+            public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+                if (currentbirdbody==null){
+                    return false;
+                }
+                if (!((String)(currentbirdbody.getUserData())).equals("black")){
+                    return false;
+                }currentbirdbody.setUserData("blackbird");
+                float x=currentbirdbody.getPosition().cpy().scl(ppm).x;
+                float y=currentbirdbody.getPosition().cpy().scl(ppm).y;
+
+                particleEffectblast.setPosition(x,y);
+                Vector2 impulse=new Vector2();
+                float s=0.01f;
+
+                for (Body b:rectangles_hor){
+                    impulse.x=x-b.getPosition().x;
+                    impulse.y=y-b.getPosition().y;
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                }
+                for (Body b:rectangles_ver){
+                    impulse.x=x-b.getPosition().x;
+                    impulse.y=y-b.getPosition().y;
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                }
+                for (Body b:glass_blocks){
+                    impulse.x=x-b.getPosition().x;
+                    impulse.y=y-b.getPosition().y;
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                }
+                for (Body b:base_objetcs){
+                    impulse.x=x-b.getPosition().x;
+                    impulse.y=y-b.getPosition().y;
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                }
+//                particleEffectsmoke.dispose();
+                particleEffectblast.start();
                 return true;
             }
         });
@@ -284,6 +334,7 @@ public class Level1Screen implements Screen, InputProcessor {
                     bird.setTransform(114/ppm,203/ppm,0);
                 }detect.birdCollided=false;
                 currentbird="null";
+                currentbirdbody=null;
                 isLaunched=false;
                 array.clear();
                 actualtrajectory.clear();
@@ -304,6 +355,27 @@ public class Level1Screen implements Screen, InputProcessor {
         b2dr.render(world,camera.combined);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
+//        particleEffectblast.draw(batch,delta);
+        if (currentbirdbody!=null &&  (((String)(currentbirdbody.getUserData())).equals("black")
+                || ((String)(currentbirdbody.getUserData())).equals("blackbird"))){
+            particleEffectsmoke.setPosition(currentbirdbody.getPosition().cpy().scl(ppm).x-20,currentbirdbody.getPosition().cpy().scl(ppm).y-20);
+            particleEffectsmoke.start();
+            particleEffectsmoke.draw(batch,delta);
+        }
+
+
+
+        for (Body b:glass_blocks){
+            ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+            if (a.size()<3) continue;
+            if (((String)(a.get(2))).equals("glass") && ((String)(a.get(1))).equals("false")){
+                a.remove(2);
+                b.getFixtureList().get(0).setUserData(a);
+                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
+                particleEffectglass.start();
+            }
+        }particleEffectglass.draw(batch,delta);
+
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
         for (Body rectangle : rectangles_ver) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -347,7 +419,7 @@ public class Level1Screen implements Screen, InputProcessor {
         }
 
 //        batch.draw(sling,57,128,185,90);
-        batch.draw(slinghalf1,157,128,35,110);
+        batch.draw(slinghalf1,117,128,35,110);
 
 
         slingbody=createsling(151,171,20,45);
@@ -445,7 +517,7 @@ public class Level1Screen implements Screen, InputProcessor {
 //        if (angleprint>0){
 //            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;
 //        }
-        batch.draw(slinghalf2,137,174,30,65);
+        batch.draw(slinghalf2,97,174,30,65);
 //        System.out.println(angleprint);
         if (dragPositionglobal.y > slinghalf2pos.y) {
             batch.draw(

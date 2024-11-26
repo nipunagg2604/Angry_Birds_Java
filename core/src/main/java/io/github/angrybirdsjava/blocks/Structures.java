@@ -1,6 +1,8 @@
 package io.github.angrybirdsjava.blocks;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -26,7 +28,8 @@ public class Structures {
     private int index_in_tmx;
     private float strength;
     private float damage;
-    private static float ppm= Constants.ppm;;
+    private static float ppm= Constants.ppm;
+
 
     public Structures(String block_type,World world,int Strength,int damage) {
         this.block_type = block_type;
@@ -53,6 +56,7 @@ public class Structures {
                 a=((ArrayList) (fixture.getUserData()));
                 a.remove(1);
                 a.add(1,"false");
+
                 Filter filter=new Filter();
                 filter.categoryBits=Constants.BIT_BLOCKS;
                 filter.maskBits=Constants.BIT_GROUND;
@@ -196,6 +200,7 @@ public class Structures {
                 ArrayList b=new ArrayList<>();
                 b.add(this);
                 b.add("true");
+                b.add("glass");
                 Filter filter=new Filter();
                 filter.categoryBits=Constants.BIT_BLOCKS;
                 filter.maskBits=(short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND | Constants.BIT_BIRD);

@@ -18,7 +18,7 @@ public class Red_Bird {
     private static float ppm= Constants.ppm;;
     private String category="bird";
     private String type="redbird";
-    public float damage=1f;
+    public float damage=10f;
     public World world;
     public float radius;
     public Red_Bird() {
@@ -46,6 +46,7 @@ public class Red_Bird {
         fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
+        body.setUserData("redbird");
         ArrayList a=new ArrayList();
         a.add("bird");
         a.add(this);

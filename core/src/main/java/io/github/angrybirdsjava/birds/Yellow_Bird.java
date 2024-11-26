@@ -16,7 +16,7 @@ public class Yellow_Bird {
     static private Body body;
     private String category="bird";
     private String type="yellowbird";
-    public float damage=0.8f;
+    public float damage=10f;
     public World world;
     public float radius;
     private static float ppm= Constants.ppm;;
@@ -43,6 +43,7 @@ public class Yellow_Bird {
         body.setLinearDamping(0f);
         body.setAngularDamping(0f);
         ArrayList a=new ArrayList();
+        body.setUserData("yellowbird");
         a.add("bird");
         a.add(this);
         a.add(radius);

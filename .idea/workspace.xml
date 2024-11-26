@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b4ce246-0718-416e-ac3a-2468c4106e44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/effects2/images/particle.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Level_tmx_files/level-1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Level_tmx_files/level-1.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$3.class" afterDir="false" />
@@ -22,17 +25,19 @@
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Blue_Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Blue_Bird.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Red_Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Red_Bird.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Yellow_Bird.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/birds/Yellow_Bird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/blocks/Structures.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/blocks/Structures.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId21" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId21" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$2.class.uniqueId6" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$2.class.uniqueId6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId17" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId17" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen.class.uniqueId4" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen.class.uniqueId4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Black_Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Black_Bird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Blue_Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Blue_Bird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Red_Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Red_Bird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Yellow_Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/birds/Yellow_Bird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/blocks/Structures.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/blocks/Structures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" afterDir="false" />
     </list>
@@ -108,26 +113,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Angry_Birds_Java [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/acer/Templates/Angry_Birds_Java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Angry_Birds_Java [run].executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/nipunaggarwal/Documents/GitHub/Angry_Birds_Java/assets/effects2/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/effects2/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/Blocks/Wooden Blocks" />
       <recent name="$PROJECT_DIR$/assets/Level_tmx_files" />
@@ -165,6 +173,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -193,6 +209,7 @@
       <workItem from="1732370011407" duration="471000" />
       <workItem from="1732393202406" duration="5467000" />
       <workItem from="1732427536870" duration="6874000" />
+      <workItem from="1732601709519" duration="9298000" />
     </task>
     <servers />
   </component>

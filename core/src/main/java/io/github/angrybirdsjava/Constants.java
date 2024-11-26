@@ -7,5 +7,6 @@ public class Constants {
     public static short BIT_GROUND=2;
     public static short BIT_BLOCKS=4;
     public static short BIT_SLING=8;
+    public static short BIT_PIG=16;
 
 }
