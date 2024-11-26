@@ -241,41 +241,61 @@ public class Level3Screen implements Screen, InputProcessor {
 
                 particleEffectblast.setPosition(x,y);
                 Vector2 impulse=new Vector2();
-                float s=0.02f;
+                float s=2000f;
 
                 for (Body b:rectangles_hor){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f; // Adjust for desired rotation effect
-                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
-
+//                    float torque = 80f; // Adjust for desired rotation effect
+//                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
                 }
                 for (Body b:rectangles_ver){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_verticals){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_horizontals){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:base_objetcs){
-                    impulse.x=x-b.getPosition().x;
-                    impulse.y=y-b.getPosition().y;
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                }
+                for (Body b:stone_squares){
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+//                    float torque = 80f; // Adjust for desired rotation effect
+//                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                }
+                for (Body b:wooden_squares){
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
+                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                    float torque = 80f; // Adjust for desired rotation effect
+                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                }
+                for (Body b:thick_hor){
+                    impulse.x=1/(x-b.getPosition().scl(ppm).x);
+                    impulse.y=1/(y-b.getPosition().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
                     float torque = 80f; // Adjust for desired rotation effect
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
@@ -323,7 +343,7 @@ public class Level3Screen implements Screen, InputProcessor {
             shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
             fixtureDef.filter.categoryBits=Constants.BIT_GROUND;
-            fixtureDef.filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
+            fixtureDef.filter.maskBits= (short) (Constants.BIT_PIG| Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
             body.createFixture(fixtureDef);
         }
 
@@ -461,7 +481,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(glass_vertical, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(glass_vertical, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : glass_horizontals) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -471,7 +491,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(glass_horizontal, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(glass_horizontal, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : wooden_squares) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -481,7 +501,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(wooden_square, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(wooden_square, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : thick_hor) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -491,7 +511,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(wooden_thick, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(wooden_thick, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : stone_squares) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -501,7 +521,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(stone_square, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(stone_square, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : stone_squares) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -511,7 +531,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(stone_square, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(stone_square, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
         for (Body rectangle : soils) {
             String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
@@ -521,7 +541,7 @@ public class Level3Screen implements Screen, InputProcessor {
             a = (ArrayList<Float>) rectangle.getUserData();
             Vector2 v = new Vector2();
             v = (Vector2) rectangle.getPosition();
-            batch.draw(soil, v.x - a.get(2), v.y - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
+            batch.draw(soil, v.x*ppm - a.get(2), v.y*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
 
 //        batch.draw(sling,57,128,185,90);
