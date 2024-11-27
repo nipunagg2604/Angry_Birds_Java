@@ -54,10 +54,10 @@ public class Level1Screen implements Screen, InputProcessor {
     private OrthogonalTiledMapRenderer renderer;
     private World world=new World(new Vector2(0, -10f), true);
 
-    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6,0, "Level_tmx_files/level-1.tmx").return_array();
-    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6,0, "Level_tmx_files/level-1.tmx").return_array();;
-    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10,0, "Level_tmx_files/level-1.tmx").return_array();;
-    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2,0, "Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();
+    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,"Level_tmx_files/level-1.tmx").return_array();;
 
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("trail.png");
@@ -84,11 +84,11 @@ public class Level1Screen implements Screen, InputProcessor {
     private FixtureDef fixtureDef = new FixtureDef();
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
-    private ParticleEffect particleEffectblast=new ParticleEffect();
-    private ParticleEffect particleEffectsmoke=new ParticleEffect();
-    private ParticleEffect particleEffectglass=new ParticleEffect();
+    private ArrayList<ParticleEffect> effects=new ArrayList();
+
 
     private Body crown_pig;
+    private ArrayList<Body> pigbodies=new ArrayList();
     private Vector2 slinghalf1pos=new Vector2(142,210);
     private Vector2 slinghalf2pos=new Vector2(107,210);
     private ArrayList<ShowMessage> showmessages=new ArrayList<>();
@@ -114,7 +114,8 @@ public class Level1Screen implements Screen, InputProcessor {
         Constants.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        crown_pig=(new Crown_Pig(world)).addpig(world,793,305,15);
+        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,305,15);
+        pigbodies.add(crown_pig);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
@@ -129,14 +130,7 @@ public class Level1Screen implements Screen, InputProcessor {
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
 
-        particleEffectblast.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
-        particleEffectblast.scaleEffect(2);
 
-        particleEffectsmoke.load(Gdx.files.internal("effects2/effects/mysmoke.p"),Gdx.files.internal("effects2/images"));
-        particleEffectsmoke.scaleEffect(1);
-
-        particleEffectglass.load(Gdx.files.internal("effects2/effects/myglass.p"),Gdx.files.internal("effects2/images"));
-        particleEffectglass.scaleEffect(0.4f);
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
@@ -178,7 +172,6 @@ public class Level1Screen implements Screen, InputProcessor {
                     Vector2 velocity=dis.cpy().scl(1/bird.getMass());
 
                     bird.setType(BodyDef.BodyType.KinematicBody);
-                    System.out.println("drag : "+dragPosition);
                     trajectory=calculateTrajectory(dragPosition,velocity,0.1f,100);
                     bird.setTransform((dragPosition.x)/ppm,(dragPosition.y)/ppm, 0);
                     float radius=((float)((ArrayList)(bird.getFixtureList().get(0).getUserData())).get(2));
@@ -198,13 +191,10 @@ public class Level1Screen implements Screen, InputProcessor {
                     Body bird=birds.get(0);
                     currentbird=bird.getFixtureList().get(0).getUserData().toString();
                     currentbirdbody=bird;
-//                    System.out.println(currentbird);
                     Vector2 birdPosition = bird.getPosition();
                     birdPosition.x=(birdPosition.x)*ppm;
                     birdPosition.y=(birdPosition.y)*ppm;
-//                    System.out.println("before : "+slingOrigin);
                     Vector2 v=slingOrigin.cpy();
-//                    System.out.println("after : "+slingOrigin);
 
                     Vector2 launchForce = v.sub(birdPosition).scl(40).scl(1/ppm);
                     bird.setType(BodyDef.BodyType.DynamicBody);
@@ -222,8 +212,12 @@ public class Level1Screen implements Screen, InputProcessor {
                 }currentbirdbody.setUserData("blackbird");
                 float x=currentbirdbody.getPosition().cpy().scl(ppm).x;
                 float y=currentbirdbody.getPosition().cpy().scl(ppm).y;
-
-                particleEffectblast.setPosition(x,y);
+                ParticleEffect particleEffect=new ParticleEffect();
+                particleEffect.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
+                particleEffect.scaleEffect(2);
+                particleEffect.setPosition(x,y);
+                particleEffect.start();
+                effects.add(particleEffect);
                 Vector2 impulse=new Vector2();
                 float s=2000f;
 
@@ -231,7 +225,7 @@ public class Level1Screen implements Screen, InputProcessor {
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                     impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f; // Adjust for desired rotation effect
+                    float torque = 80f;
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
                 }
@@ -239,32 +233,31 @@ public class Level1Screen implements Screen, InputProcessor {
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                     impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f; // Adjust for desired rotation effect
+                    float torque = 80f;
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:glass_blocks){
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                     impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f; // Adjust for desired rotation effect
+                    float torque = 80f;
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 for (Body b:base_objetcs){
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                     impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                     b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f; // Adjust for desired rotation effect
+                    float torque = 80f;
                     b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
                 }
                 Body b=crown_pig;
                 impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
                 impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
                 b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                float torque = 80f; // Adjust for desired rotation effect
+                float torque = 80f;
                 b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
 
-                particleEffectblast.start();
                 return true;
             }
         });
@@ -305,9 +298,14 @@ public class Level1Screen implements Screen, InputProcessor {
 
             shape.setAsBox((rect.getWidth()/2)/ppm, (rect.getHeight()/2)/ppm);
             fixtureDef.shape = shape;
-            fixtureDef.filter.categoryBits=Constants.BIT_GROUND;
-            fixtureDef.filter.maskBits= (short) (Constants.BIT_PIG| Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
-            body.createFixture(fixtureDef);
+            Filter filter=new Filter();
+            filter.categoryBits=Constants.BIT_GROUND;
+            filter.maskBits= (short) (Constants.BIT_PIG| Constants.BIT_BLOCKS | Constants.BIT_BIRD | Constants.BIT_SLING);
+            Fixture f=body.createFixture(fixtureDef);
+            ArrayList a=new ArrayList();
+            a.add("ground");
+            f.setUserData(a);
+            f.setFilterData(filter);
         }
 
         stage.addActor(button);
@@ -376,15 +374,19 @@ public class Level1Screen implements Screen, InputProcessor {
 //        particleEffectblast.draw(batch,delta);
         if (currentbirdbody!=null &&  (((String)(currentbirdbody.getUserData())).equals("black")
                 || ((String)(currentbirdbody.getUserData())).equals("blackbird"))){
-            particleEffectsmoke.setPosition(currentbirdbody.getPosition().cpy().scl(ppm).x-20,currentbirdbody.getPosition().cpy().scl(ppm).y-20);
-            particleEffectsmoke.start();
-            particleEffectsmoke.draw(batch,delta);
-        }
+            ParticleEffect particleEffect=new ParticleEffect();
+            particleEffect.load(Gdx.files.internal("effects2/effects/mysmoke.p"),Gdx.files.internal("effects2/images"));
+            particleEffect.scaleEffect(1);
+            particleEffect.setPosition(currentbirdbody.getPosition().cpy().scl(ppm).x-20,currentbirdbody.getPosition().cpy().scl(ppm).y-20);
+            particleEffect.start();
+            effects.add(particleEffect);
 
+        }
 
 
         for (Body b:glass_blocks){
             ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+
             if (a.size()<3) continue;
             if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
@@ -393,10 +395,17 @@ public class Level1Screen implements Screen, InputProcessor {
                 Constants.lev1_total+=100;
                 ShowMessage show=new ShowMessage("glass","100",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
-                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-                particleEffectglass.start();
+                ParticleEffect particleEffect=new ParticleEffect();
+                particleEffect.load(Gdx.files.internal("effects2/effects/myglass.p"),Gdx.files.internal("effects2/images"));
+                particleEffect.scaleEffect(0.4f);
+                particleEffect.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
+                particleEffect.start();
+                effects.add(particleEffect);
+
             }
         }
+
+
         for (Body b:rectangles_ver){
             ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
             if (a.size()<3) continue;
@@ -407,8 +416,6 @@ public class Level1Screen implements Screen, InputProcessor {
                 Constants.lev1_total+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
-                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-                particleEffectglass.start();
             }
         }
         for (Body b:rectangles_hor){
@@ -421,8 +428,6 @@ public class Level1Screen implements Screen, InputProcessor {
                 Constants.lev1_total+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
-                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-                particleEffectglass.start();
             }
         }
         for (Body b:base_objetcs){
@@ -435,13 +440,33 @@ public class Level1Screen implements Screen, InputProcessor {
                 Constants.lev1_total+=300;
                 ShowMessage show=new ShowMessage("wood","1000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
-                particleEffectglass.setPosition(b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y);
-                particleEffectglass.start();
+            }
+        }
+        for (Body b:pigbodies){
+            ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
+            if (a.size()<4) continue;
+            if (((String)(a.get(3))).equals("flag") && ((String)(a.get(1))).equals("false")){
+                a.remove(3);
+                a.add(3,"null");
+                b.getFixtureList().get(0).setUserData(a);
+                Constants.lev1_total+=5000;
+                ShowMessage show=new ShowMessage("pig","5000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                showmessages.add(show);
             }
         }
 
 
-        particleEffectglass.draw(batch,delta);
+        Iterator<ParticleEffect> iterator = effects.iterator();
+        while (iterator.hasNext()) {
+            ParticleEffect effect = iterator.next();
+            effect.update(delta);
+            effect.draw(batch, delta);
+
+            if (effect.isComplete()) {
+                effect.dispose();
+                iterator.remove();
+            }
+        }
 
         font.draw(batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
         for (Body rectangle : rectangles_ver) {
@@ -484,15 +509,20 @@ public class Level1Screen implements Screen, InputProcessor {
             v = (Vector2) rectangle.getPosition();
             batch.draw(glass_block, (v.x)*ppm - a.get(2), (v.y)*ppm - a.get(3), a.get(2), a.get(3), 2 * a.get(2), 2 * a.get(3), 1, 1, angle);
         }
+        for (Body rectangle : pigbodies) {
+            String s=(String) (((ArrayList)(rectangle.getFixtureList().get(0).getUserData())).get(1));
+            if (s.equals("false")) {continue;}
+            ArrayList<Float> a = new ArrayList();
+            float angle = MathUtils.radiansToDegrees * rectangle.getAngle();
+            Vector2 v = (Vector2) rectangle.getPosition();
+            batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
+        }
 
 //        batch.draw(sling,57,128,185,90);
         batch.draw(slinghalf1,117,128,35,110);
 
 
         slingbody=createsling(151,171,20,45);
-        Vector2 v = (Vector2) crown_pig.getPosition();
-        float angle = MathUtils.radiansToDegrees * crown_pig.getAngle();
-        batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
         float length = slinghalf1pos.cpy().dst(dragPositionglobal);
         float angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf1pos.cpy().y, dragPositionglobal.x - slinghalf1pos.cpy().x) * MathUtils.radiansToDegrees;;
 //        if (angleprint>0){
@@ -527,8 +557,8 @@ public class Level1Screen implements Screen, InputProcessor {
             );
         }
 
-        v=(Vector2) redbirdbody.getPosition();
-        angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
+        Vector2 v=(Vector2) redbirdbody.getPosition();
+        float angle=MathUtils.radiansToDegrees * redbirdbody.getAngle();
         batch.draw(redbird, (v.x)*ppm-15 , (v.y)*ppm-15 , 15, 15, 30, 30, 1, 1, angle);
         if (isLaunched){
             ArrayList a=(ArrayList) redbirdbody.getFixtureList().get(0).getUserData();
@@ -618,6 +648,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 batch.draw(pathpoint, point.x, point.y, 6f, 6f); // Center and scale the dots
             }
         }
+
         checkbird();
 
 
@@ -634,11 +665,14 @@ public class Level1Screen implements Screen, InputProcessor {
                     Constants.glass_font.draw(batch,show.message,show.position.x,show.position.y);
                 }else if (show.type.equals("wood")){
                     Constants.wooden_font.draw(batch,show.message,show.position.x,show.position.y);
+                }else if (show.type.equals("pig")){
+                    Constants.pig_font.draw(batch,show.message,show.position.x,show.position.y);
                 }
             }else {
                 i.remove();
             }
         }
+
         Constants.score_font.draw(batch,"Score : "+Integer.toString(Constants.lev1_total),390,470);
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
@@ -654,12 +688,17 @@ public class Level1Screen implements Screen, InputProcessor {
         baseShape.setAsBox(width/ppm, height/ppm); // Size of the base
 
         FixtureDef baseFixture = new FixtureDef();
-        baseFixture.filter.maskBits = 0;
+        Filter filter=new Filter();
+        filter.categoryBits=Constants.BIT_SLING;
+        filter.maskBits=(short) (Constants.BIT_SLING | Constants.BIT_GROUND);
         baseFixture.shape = baseShape;
         baseFixture.density = 1f;
         baseFixture.friction = 0.5f;
-
-        base.createFixture(baseFixture);
+        ArrayList a=new ArrayList();
+        a.add("sling");
+        Fixture f=base.createFixture(baseFixture);
+        f.setFilterData(filter);
+        f.setUserData(a);
         baseShape.dispose();
         return base;
     }

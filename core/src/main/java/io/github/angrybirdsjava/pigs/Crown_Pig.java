@@ -4,7 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.*;
 import io.github.angrybirdsjava.Constants;
-
+import io.github.angrybirdsjava.blocks.Structures;
+//
 import java.beans.Transient;
 import java.util.ArrayList;
 
@@ -18,9 +19,38 @@ public class Crown_Pig {
     private float strength;
     private float damage;
     private transient World world;
-    public Crown_Pig(World world) {
+    public Crown_Pig(World world,float strength,float damage) {
         this.world = world;
+        this.strength = strength;
+        this.damage = damage;
         crown_pig=new Texture(Gdx.files.internal("pigs/crownpig.png"));
+    }
+    public void applyDamage(Fixture pig,Structures s) {
+        float dodamage = s.damage_pig;
+        damage+= dodamage;
+        if (damage > strength) {
+            damage = strength; // Cap damage to avoid overflow;
+            ArrayList a=(ArrayList) (pig.getUserData());
+            a.remove(1);
+            a.add(1,"false");
+            Filter filter=new Filter();
+            filter.categoryBits=Constants.BIT_PIG;
+            filter.maskBits=Constants.BIT_GROUND;
+            pig.setFilterData(filter);
+        }
+    }
+    public void applyDamage(Fixture pig,float dodamage) {
+        damage+= dodamage;
+        if (damage > strength) {
+            damage = strength; // Cap damage to avoid overflow;
+            ArrayList a=(ArrayList) (pig.getUserData());
+            a.remove(1);
+            a.add(1,"false");
+            Filter filter=new Filter();
+            filter.categoryBits=Constants.BIT_PIG;
+            filter.maskBits=Constants.BIT_GROUND;
+            pig.setFilterData(filter);
+        }
     }
     public Body addpig(World world, float x, float y, float radius) {
         bodyDef.type = BodyDef.BodyType.DynamicBody; // Make it dynamic
@@ -42,7 +72,9 @@ public class Crown_Pig {
         // Create the fixture on the body
         ArrayList a=new ArrayList();
         a.add(this);
+        a.add("true");
         a.add("pig");
+        a.add("flag");
         Fixture f= body.createFixture(fixtureDef);
         f.setFilterData(filter);
         f.setUserData(a);

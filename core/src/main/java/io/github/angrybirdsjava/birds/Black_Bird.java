@@ -14,7 +14,7 @@ public class Black_Bird {
     static private FixtureDef fixtureDef = new FixtureDef();
     private String category="bird";
     private String type="blackbird";
-    public float damage=1.8f;
+    public float damage=18f;
     static private Body body;
     private static float ppm= Constants.ppm;
     public float radius;

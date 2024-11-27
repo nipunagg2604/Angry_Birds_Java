@@ -46,7 +46,6 @@
  <objectgroup id="23" name="glass_vertical">
   <object id="45" x="803.09" y="309.408" width="9.65665" height="30.4942"/>
   <object id="46" x="782.755" y="309.408" width="9.65665" height="30.4942"/>
-  <object id="51" x="597.314" y="350.479" width="9.65665" height="30.4942"/>
  </objectgroup>
  <objectgroup id="24" name="glass_horizontal"/>
  <objectgroup id="26" name="stone_vertical"/>

@@ -29,6 +29,7 @@ public class Constants {
     public static BitmapFont wooden_font;
     public static BitmapFont glass_font;
     public static BitmapFont stone_font;
+    public static BitmapFont pig_font;
     public static BitmapFont score_font;
 
     public static int lev1_total=0;
@@ -39,6 +40,7 @@ public class Constants {
         wooden_font = createfont("e29126",28);
         glass_font = createfont("3490b8",28);
         stone_font = createfont("a0a0a0",28);
+        pig_font = createfont("6be248",28);
         score_font = createfont("000000",40);
     }
     public static BitmapFont createfont(String hex,int size)  {

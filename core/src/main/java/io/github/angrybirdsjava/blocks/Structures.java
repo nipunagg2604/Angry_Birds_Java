@@ -13,6 +13,7 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import io.github.angrybirdsjava.Constants;
+import io.github.angrybirdsjava.pigs.Crown_Pig;
 
 import java.awt.*;
 import java.io.Serializable;
@@ -30,15 +31,20 @@ public class Structures implements Serializable {
     private int index_in_tmx;
     private float strength;
     private float damage;
+    public float damage_pig;
+    public float intercollsion;
     private static float ppm= Constants.ppm;
 
 
-    public Structures(String block_type,World world, int Strength, int damage, String filename) {
+
+    public Structures(String block_type,World world, float Strength, float damage,float damage_pig,float intercollsion, String filename) {
         this.block_type = block_type;
         tileloader = new TmxMapLoader();
         this.world = world;
         this.strength = Strength;
         this.damage = damage;
+        this.damage_pig = damage_pig;
+        this.intercollsion = intercollsion;
         this.tileMap = tileloader.load(String.valueOf(Gdx.files.internal(filename)));
     }
     public float getStrength() {
@@ -55,32 +61,21 @@ public class Structures implements Serializable {
         damage+= amount;
         if (damage > strength) {
             damage = strength; // Cap damage to avoid overflow;
-            if (block_type.equals("glass_vertical") || block_type.equals("glass_horizontal")) {
-                ArrayList a=new ArrayList();
-                a=((ArrayList) (fixture.getUserData()));
-                a.remove(3);
-                prop.clear();
-                prop.add(damage);
-                prop.add(strength);
-                a.add(3,prop);
+            ArrayList a=new ArrayList();
+            a=((ArrayList) (fixture.getUserData()));
+            a.remove(3);
+            prop.clear();
+            prop.add(damage);
+            prop.add(strength);
+            a.add(3,prop);
 
-                a.remove(1);
-                a.add(1,"false");
+            a.remove(1);
+            a.add(1,"false");
 
-                Filter filter=new Filter();
-                filter.categoryBits=Constants.BIT_BLOCKS;
-                filter.maskBits=Constants.BIT_GROUND;
-                fixture.setFilterData(filter);
-            }else if( block_type.equals("wooden_vertical") || block_type.equals("wooden_horizontal")) {
-                ArrayList a=new ArrayList();
-                a=((ArrayList) (fixture.getUserData()));
-                a.remove(1);
-                a.add(1,"false");
-                Filter filter=new Filter();
-                filter.categoryBits=Constants.BIT_BLOCKS;
-                filter.maskBits=Constants.BIT_GROUND;
-                fixture.setFilterData(filter);
-            }
+            Filter filter=new Filter();
+            filter.categoryBits=Constants.BIT_BLOCKS;
+            filter.maskBits=Constants.BIT_GROUND;
+            fixture.setFilterData(filter);
         }else{
             prop.clear();
             prop.add(damage);
@@ -91,6 +86,7 @@ public class Structures implements Serializable {
 
         }
     }
+
     public World returnworld(){
         return world;
     }
