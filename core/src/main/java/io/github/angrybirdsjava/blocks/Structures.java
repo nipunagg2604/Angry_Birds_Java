@@ -13,6 +13,7 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import io.github.angrybirdsjava.Constants;
+import io.github.angrybirdsjava.Sounds;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
 
 import java.awt.*;
@@ -53,13 +54,22 @@ public class Structures implements Serializable {
     public boolean isDestroyed() {
         return damage >= strength;
     }
-    public void applyDamage(float amount,Fixture fixture) {
+    public void applyDamage(float amount,Fixture fixture,int flag) {
         ArrayList<Float> prop=(ArrayList<Float>) (((ArrayList)(fixture.getUserData())).get(3));
         float damage = prop.get(0);
         float strength = prop.get(1);
-        System.out.println(damage);
         damage+= amount;
         if (damage > strength) {
+            if (block_type.equals("wooden_vertical")|| block_type.equals("wooden_horizontal")
+                    || block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square") || block_type.equals("wooden_base")){
+                if (Sounds.isSound) Sounds.wood_destroy.play(0.5f);
+            }
+            else if (block_type.equals("glass_vertical") || block_type.equals("glass_horizontal")) {
+                if (Sounds.isSound) Sounds.glass_destroy.play(0.5f);
+            }
+            else if (block_type.equals("stone_vertical") || block_type.equals("stone_horizontal") || block_type.equals("stone_square")){
+                if (Sounds.isSound) Sounds.stone_destroy.play(0.5f);
+            }
             damage = strength; // Cap damage to avoid overflow;
             ArrayList a=new ArrayList();
             a=((ArrayList) (fixture.getUserData()));
@@ -77,6 +87,25 @@ public class Structures implements Serializable {
             filter.maskBits=Constants.BIT_GROUND;
             fixture.setFilterData(filter);
         }else{
+            if (flag==1 && block_type.equals("wooden_vertical")|| block_type.equals("wooden_horizontal")
+                    || block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square") || block_type.equals("wooden_base")){
+                if (Sounds.isSound) Sounds.wood_damage.play(0.1f);
+            }
+            else if (flag==1 && block_type.equals("glass_vertical") || block_type.equals("glass_horizontal")) {
+                if (Sounds.isSound) Sounds.glass_damage.play(0.1f);
+            }
+            else if (flag==1 && block_type.equals("stone_vertical") || block_type.equals("stone_horizontal") || block_type.equals("stone_square")){
+                if (Sounds.isSound) Sounds.stone_damage.play(0.1f);
+            }else if (flag==0 && block_type.equals("wooden_vertical")|| block_type.equals("wooden_horizontal")
+                    || block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square") || block_type.equals("wooden_base")){
+                if (Sounds.isSound) Sounds.wood_coll.play(0.1f);
+            }
+            else if (flag==0 && block_type.equals("glass_vertical") || block_type.equals("glass_horizontal")) {
+                if (Sounds.isSound) Sounds.glass_coll.play(0.1f);
+            }
+            else if (flag==0 && block_type.equals("stone_vertical") || block_type.equals("stone_horizontal") || block_type.equals("stone_square")){
+                if (Sounds.isSound) Sounds.stone_coll.play(0.1f);
+            }
             prop.clear();
             prop.add(damage);
             prop.add(strength);

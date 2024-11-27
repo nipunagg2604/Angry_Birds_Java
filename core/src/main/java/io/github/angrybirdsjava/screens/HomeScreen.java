@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.Constants;
 import io.github.angrybirdsjava.Core;
 import io.github.angrybirdsjava.LevelScreen;
+import io.github.angrybirdsjava.Sounds;
 
 public class HomeScreen implements Screen {
     final Core game;
@@ -58,8 +59,8 @@ public class HomeScreen implements Screen {
         this.exit_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/exit_button.png"))));
         Gdx.input.setInputProcessor(stage);
 
-        Constants.music.play();
-        Constants.music.setVolume(0.6f);
+        Sounds.music.play();
+        Sounds.music.setVolume(0.6f);
 
 
 
@@ -83,27 +84,27 @@ public class HomeScreen implements Screen {
 
         music_button.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                Constants.button_click.play(1f);
-                if (!Constants.music.isPlaying()){
-                    Constants.music.play();
-                    Constants.music.setPosition(Constants.musicplay);
+                Sounds.button_click.play(1f);
+                if (!Sounds.music.isPlaying()){
+                    Sounds.music.play();
+                    Sounds.music.setPosition(Sounds.musicplay);
                 }else{
-                    Constants.musicplay =Constants.music.getPosition();
-                    Constants.music.stop();
+                    Sounds.musicplay =Sounds.music.getPosition();
+                    Sounds.music.stop();
                 }
 
             }
         });
         sound_button.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                Constants.button_click.play(1f);
-                Constants.isSound=!Constants.isSound;
+                Sounds.button_click.play(1f);
+                Sounds.isSound=!Sounds.isSound;
 
             }
         });
         settingsButton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                Constants.button_click.play(1f);
+                Sounds.button_click.play(1f);
                 issettingsopen=!issettingsopen;
                 exit_button.setVisible(issettingsopen);
                 sound_button.setVisible(issettingsopen);
@@ -115,7 +116,7 @@ public class HomeScreen implements Screen {
         });
         playButtton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
-                Constants.button_click.play(1f);
+                Sounds.button_click.play(1f);
                 game.setScreen(new LevelScreen(game));
                 dispose();
             }
@@ -167,10 +168,10 @@ public class HomeScreen implements Screen {
         stage.draw();
         stage.act(delta);
         game.batch.begin();
-        if (!Constants.music.isPlaying() && issettingsopen){
+        if (!Sounds.music.isPlaying() && issettingsopen){
             game.batch.draw(crosstexture,settingsButton.getX()+240,settingsButton.getY(),60,60);
         }
-        if (!Constants.isSound && issettingsopen){
+        if (!Sounds.isSound && issettingsopen){
             game.batch.draw(crosstexture,settingsButton.getX()+320,settingsButton.getY(),60,60);
         }
         game.batch.end();

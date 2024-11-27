@@ -42,7 +42,7 @@ public class Yellow_Bird {
         body.setLinearDamping(0f);
         body.setAngularDamping(0f);
         ArrayList a=new ArrayList();
-        body.setUserData("yellowbird");
+        body.setUserData("yellow");
         a.add("bird");
         a.add(this);
         a.add(radius);

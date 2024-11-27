@@ -114,7 +114,7 @@ public class Level1Screen implements Screen, InputProcessor {
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
         ppm = Constants.ppm;
-        Constants.music.stop();
+        Sounds.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
         batch = new SpriteBatch();
@@ -169,10 +169,13 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public boolean touchDragged(int screenX, int screenY, int pointer) {
                 if (!isLaunched) {
-                    if (Constants.intromusic.isPlaying()){
-                        Constants.intromusic.stop();
+                    if (Sounds.intromusic.isPlaying()){
+                        Sounds.intromusic.stop();
                     }
                     Body bird=birds.get(0);
+                    if (Sounds.isSound && isDragging==false) {
+                        Sounds.Sling_Stretch.play(1f);
+                    }
                     isDragging = true;
                     Vector3 touchPos = new Vector3(screenX, screenY, 0);
                     camera.unproject(touchPos);
@@ -206,7 +209,11 @@ public class Level1Screen implements Screen, InputProcessor {
 
                     // Calculate launch force
                     Body bird=birds.get(0);
-                    currentbird=bird.getFixtureList().get(0).getUserData().toString();
+                    currentbird=bird.getUserData().toString();
+                    if (Sounds.isSound && currentbird.equals("red")) Sounds.red_yell.play(1f);
+                    if (Sounds.isSound && currentbird.equals("yellow")) Sounds.yellow_yell.play(1f);
+                    if (Sounds.isSound && currentbird.equals("black")) Sounds.black_yell.play(1f);
+                    if (Sounds.isSound && currentbird.equals("blue")) Sounds.blue_yell.play(1f);
                     currentbirdbody=bird;
                     Vector2 birdPosition = bird.getPosition();
                     birdPosition.x=(birdPosition.x)*ppm;
@@ -224,57 +231,64 @@ public class Level1Screen implements Screen, InputProcessor {
                 if (currentbirdbody==null){
                     return false;
                 }
-                if (!((String)(currentbirdbody.getUserData())).equals("black")){
-                    return false;
-                }currentbirdbody.setUserData("blackbird");
-                float x=currentbirdbody.getPosition().cpy().scl(ppm).x;
-                float y=currentbirdbody.getPosition().cpy().scl(ppm).y;
-                ParticleEffect particleEffect=new ParticleEffect();
-                particleEffect.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
-                particleEffect.scaleEffect(2);
-                particleEffect.setPosition(x,y);
-                particleEffect.start();
-                effects.add(particleEffect);
-                Vector2 impulse=new Vector2();
-                float s=1000f;
+                if (((String)(currentbirdbody.getUserData())).equals("black")){
+                    if (Sounds.isSound) Sounds.explosion.play(1f);
+                    currentbirdbody.setUserData("blackbird");
+                    float x=currentbirdbody.getPosition().cpy().scl(ppm).x;
+                    float y=currentbirdbody.getPosition().cpy().scl(ppm).y;
+                    ParticleEffect particleEffect=new ParticleEffect();
+                    particleEffect.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
+                    particleEffect.scaleEffect(2);
+                    particleEffect.setPosition(x,y);
+                    particleEffect.start();
+                    effects.add(particleEffect);
+                    Vector2 impulse=new Vector2();
+                    float s=1000f;
 
-                for (Body b:rectangles_hor){
-                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
-                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f;
-                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    for (Body b:rectangles_hor){
+                        impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                        impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                        b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                        float torque = 80f;
+                        b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
 
+                    }
+                    for (Body b:rectangles_ver){
+                        impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                        impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                        b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                        float torque = 80f;
+                        b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    }
+                    for (Body b:glass_blocks){
+                        impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                        impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                        b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                        float torque = 80f;
+                        b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    }
+                    for (Body b:base_objetcs){
+                        impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                        impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                        b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                        float torque = 80f;
+                        b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    }
+                    for (Body b:pigbodies){
+                        impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
+                        impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
+                        b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
+                        float torque = 80f;
+                        b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                    }
                 }
-                for (Body b:rectangles_ver){
-                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
-                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f;
-                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
+                if (((String)(currentbirdbody.getUserData())).equals("yellow")){
+                    if (Sounds.isSound) Sounds.explosion.play(1f);
+                    currentbirdbody.setUserData("yellowbird");
+                    Vector2 velocity=currentbirdbody.getLinearVelocity();
+                    velocity.scl(3);
+                    currentbirdbody.setLinearVelocity(velocity);
                 }
-                for (Body b:glass_blocks){
-                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
-                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f;
-                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
-                }
-                for (Body b:base_objetcs){
-                    impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
-                    impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
-                    b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                    float torque = 80f;
-                    b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
-                }
-                Body b=crown_pig;
-                impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
-                impulse.y=1/(y-b.getPosition().cpy().scl(ppm).y);
-                b.applyLinearImpulse(impulse.scl(s),b.getWorldCenter(),true);
-                float torque = 80f;
-                b.applyTorque(torque * (Math.random() > 0.5 ? 1 : -1), true);
-
-
                 return true;
             }
         });
@@ -338,8 +352,8 @@ public class Level1Screen implements Screen, InputProcessor {
                 dispose();
             }
         });
-        Constants.intromusic.play();
-        Constants.intromusic.setVolume(0.8f);
+        Sounds.intromusic.play();
+        Sounds.intromusic.setVolume(0.8f);
         stage.addActor(end);
     }
     public void checkbird(){
@@ -722,7 +736,6 @@ public class Level1Screen implements Screen, InputProcessor {
     public ArrayList<Vector2> calculateTrajectory(Vector2 startPosition, Vector2 initialVelocity, float timeStep, int steps) {
 
         ArrayList<Vector2> trajectoryPoints = new ArrayList<>();
-        System.out.println("mm"+initialVelocity);
         float gravity = -10f * ppm; // Gravity in Box2D units
 
         for (int i = 0; i < steps; i++) {

@@ -41,7 +41,7 @@ public class Blue_Bird {
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
         ArrayList a=new ArrayList();
-        body.setUserData("bluebird");
+        body.setUserData("blue");
         a.add("bird");
         a.add(this);
         a.add(radius);

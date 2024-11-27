@@ -51,7 +51,6 @@ Music/sfx/level_failed_monkeys.mp3
 Music/sfx/Globe_Bird_Selection_1.wav
 Music/sfx/bird 03 collision a2.wav
 Music/sfx/sardine_can_shot.mp3.meta
-Music/sfx/slingshot streched.wav
 Music/sfx/scaffolding_collision_a2.wav
 Music/sfx/special group.wav
 Music/sfx/chain collision new a3.wav
@@ -95,7 +94,6 @@ Music/sfx/bird next military a2.wav
 Music/sfx/fruit collision a5.wav.meta
 Music/sfx/fruit collision a4.wav.meta
 Music/sfx/highscore.mp3.meta
-Music/sfx/bird 03 flying.wav
 Music/sfx/bird 03 collision a4.wav
 Music/sfx/plant breaks a1.wav.meta
 Music/sfx/bounce material a5.wav.meta
@@ -206,6 +204,7 @@ Music/sfx/ice light collision a7.wav
 Music/sfx/bird cage idle 5.wav
 Music/sfx/monkey idle a1.wav.meta
 Music/sfx/bird cage breaks 6.wav.meta
+Music/sfx/slingshot_streched.wav
 Music/sfx/star_1.wav
 Music/sfx/rock damage a2.wav
 Music/sfx/bird 02 collision a1.wav
@@ -290,7 +289,6 @@ Music/sfx/bird destroyed.wav.meta
 Music/sfx/Globe_Bird_Special_Activation_3.wav.meta
 Music/sfx/Globe_Bird_Special_Activation_2.wav.meta
 Music/sfx/rock collision a4.wav.meta
-Music/sfx/tnt box explodes.wav
 Music/sfx/rock collision a5.wav.meta
 Music/sfx/redbird_yell03.wav
 Music/sfx/monkey idle a5.wav
@@ -302,6 +300,7 @@ Music/sfx/lamp collision a5.wav
 Music/sfx/monkeyboss hit 2.wav
 Music/sfx/jewel collision a2.wav.meta
 Music/sfx/jewel collision a3.wav.meta
+Music/sfx/yellowflying.wav
 Music/sfx/bird 05 collision a5.wav.meta
 Music/sfx/bird 05 collision a4.wav.meta
 Music/sfx/bird pushing egg out.wav.meta
@@ -319,6 +318,7 @@ Music/sfx/blue fly loop.wav
 Music/sfx/jewel fly 8.wav
 Music/sfx/bird 02 flying.wav
 Music/sfx/wood destroyed a3.wav
+Music/sfx/blackfly.wav
 Music/sfx/wood rolling.wav.meta
 Music/sfx/nigel hit edit a1.wav
 Music/sfx/blue hit a1.wav
@@ -338,6 +338,7 @@ Music/sfx/fruit breaking a1.wav.meta
 Music/sfx/bird misc a2.wav.meta
 Music/sfx/jewel collision a2.wav
 Music/sfx/rock collision a3.wav
+Music/sfx/glass break.mp3
 Music/sfx/level_failed_birds.mp3
 Music/sfx/bird 01 collision a1.wav
 Music/sfx/bird 01 collision a2_low.wav
@@ -433,6 +434,7 @@ Music/sfx/monkey near falling a3.wav
 Music/sfx/blue hit a4.wav
 Music/sfx/nigel hit edit a4.wav
 Music/sfx/ice light collision a8.wav
+Music/sfx/explosion.wav
 Music/sfx/bird 01 collision a3_low.wav
 Music/sfx/bird 05 flying.wav.meta
 Music/sfx/bird 05 select.wav
@@ -552,7 +554,6 @@ Music/sfx/plane_loop04.wav
 Music/sfx/bird 03 collision a4.wav.meta
 Music/sfx/bird 03 collision a5.wav.meta
 Music/sfx/cardboard box breaks a1.wav.meta
-Music/sfx/bird 05 flying.wav
 Music/sfx/Globe_Bird_Special_Activation_2.wav
 Music/sfx/bird 04 collision a1.wav
 Music/sfx/bird 04 select.wav.meta

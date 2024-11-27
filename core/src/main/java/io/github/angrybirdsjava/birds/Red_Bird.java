@@ -45,7 +45,7 @@ public class Red_Bird {
         filter.maskBits= (short) (Constants.BIT_BLOCKS | Constants.BIT_GROUND | Constants.BIT_PIG);
         Fixture f=body.createFixture(fixtureDef);
         body.setLinearDamping(0f);
-        body.setUserData("redbird");
+        body.setUserData("red");
         ArrayList a=new ArrayList();
         a.add("bird");
         a.add(this);

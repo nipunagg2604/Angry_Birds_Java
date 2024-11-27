@@ -2,6 +2,7 @@ package io.github.angrybirdsjava.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.*;
+import io.github.angrybirdsjava.Sounds;
 import io.github.angrybirdsjava.birds.Black_Bird;
 import io.github.angrybirdsjava.birds.Blue_Bird;
 import io.github.angrybirdsjava.birds.Red_Bird;
@@ -69,16 +70,20 @@ public class ContactDetect implements ContactListener {
                 Structures s=(Structures)arr2.get(0);
                 if (type1.equals("Black")){
                     Black_Bird birdclass=(Black_Bird) (arr1.get(1));
-                    s.applyDamage(birdclass.damage,fixtureB);
+                    if (Sounds.isSound) Sounds.black_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureB,1);
                 }else if (type1.equals("Red")){
                     Red_Bird birdclass=(Red_Bird) (arr1.get(1));
-                    s.applyDamage(birdclass.damage,fixtureB);
+                    if (Sounds.isSound) Sounds.red_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureB,1);
                 }else if (type1.equals("Yellow")){
                     Yellow_Bird birdclass=(Yellow_Bird) (arr1.get(1));
-                    s.applyDamage(birdclass.damage,fixtureB);
+                    if (Sounds.isSound) Sounds.yellow_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureB,1);
                 }else if (type1.equals("Blue")){
                     Blue_Bird birdclass=(Blue_Bird) (arr1.get(1));
-                    s.applyDamage(birdclass.damage,fixtureB);
+                    if (Sounds.isSound) Sounds.blue_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureB,1);
                 }else if (type1.equals("Crownpig")){
                     Crown_Pig pig=(Crown_Pig) (arr1.get(0));
                     pig.applyDamage(fixtureA,s);
@@ -89,27 +94,31 @@ public class ContactDetect implements ContactListener {
                     Normal_Pig pig=(Normal_Pig) (arr1.get(0));
                     pig.applyDamage(fixtureA,s);
                 }else if (type1.equals("ground")){
-                    s.applyDamage(0.1f,fixtureB);
+                    s.applyDamage(0.1f,fixtureB,0);
                 }else if (type1.equals("structure")){
                     Structures structures=(Structures)arr1.get(0);
-                    s.applyDamage(structures.intercollsion,fixtureB);
-                    structures.applyDamage(s.intercollsion,fixtureA);
+                    s.applyDamage(structures.intercollsion,fixtureB,0);
+                    structures.applyDamage(s.intercollsion,fixtureA,0);
                 }
             }
             else if (type1.equals("structure")) {
                 Structures s=(Structures)arr1.get(0);
                 if (type2.equals("Black")){
                     Black_Bird birdclass=(Black_Bird) (arr2.get(1));
-                    s.applyDamage(birdclass.damage,fixtureA);
+                    if (Sounds.isSound) Sounds.black_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureA,1);
                 }else if (type2.equals("Red")){
                     Red_Bird birdclass=(Red_Bird) (arr2.get(1));
-                    s.applyDamage(birdclass.damage,fixtureA);
+                    if (Sounds.isSound) Sounds.red_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureA,1);
                 }else if (type2.equals("Yellow")){
                     Yellow_Bird birdclass=(Yellow_Bird) (arr2.get(1));
-                    s.applyDamage(birdclass.damage,fixtureA);
+                    if (Sounds.isSound) Sounds.yellow_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureA,1);
                 }else if (type2.equals("Blue")){
                     Blue_Bird birdclass=(Blue_Bird) (arr2.get(1));
-                    s.applyDamage(birdclass.damage,fixtureA);
+                    if (Sounds.isSound) Sounds.blue_coll.play(1f);
+                    s.applyDamage(birdclass.damage,fixtureA,1);
                 }else if (type2.equals("Crownpig")){
                     Crown_Pig pig=(Crown_Pig) (arr2.get(0));
                     pig.applyDamage(fixtureB,s);
@@ -120,11 +129,10 @@ public class ContactDetect implements ContactListener {
                     Normal_Pig pig=(Normal_Pig) (arr2.get(0));
                     pig.applyDamage(fixtureB,s);
                 }else if (type2.equals("ground")){
-                    s.applyDamage(0.1f,fixtureA);
+                    s.applyDamage(0.1f,fixtureA,0);
                 }
             }
             else if (type1.equals("Crownpig")) {
-                System.out.println("hellowowww");
                 Crown_Pig pig=(Crown_Pig) arr1.get(0);
                 if (type2.equals("Black")){
                     Black_Bird birdclass=(Black_Bird) (arr2.get(1));
