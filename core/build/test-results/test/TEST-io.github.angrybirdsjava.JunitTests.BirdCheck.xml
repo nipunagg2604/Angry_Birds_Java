@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.github.angrybirdsjava.JunitTests.BirdCheck" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-27T14:01:44" hostname="Nipuns-MacBook-Air.local" time="0.014">
+  <properties/>
+  <testcase name="test" classname="io.github.angrybirdsjava.JunitTests.BirdCheck" time="0.014"/>
+  <system-out><![CDATA[false
+true
+false
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

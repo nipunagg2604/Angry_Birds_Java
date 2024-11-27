@@ -62,5 +62,8 @@ public class Constants {
         generator.dispose();
         return angryfont;
     }
+    public static boolean get(){
+        return false;
+    }
 
 }

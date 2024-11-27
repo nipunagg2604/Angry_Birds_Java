@@ -77,8 +77,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private Texture slinghalf1;
     private Texture slinghalf2;
     private TextureRegion slingrubber;
-    private int width=Gdx.graphics.getWidth();
-    private int height=Gdx.graphics.getHeight();
+    private static int width=960;
+    private static int height=496;
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
@@ -93,7 +93,7 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 slinghalf2pos=new Vector2(107,210);
     private ArrayList<ShowMessage> showmessages=new ArrayList<>();
 
-    private static float ppm=Constants.ppm;
+    private static float ppm;
     private Body slingbody;
     private Body redbirdbody;
     private Body yellowirdbody;
@@ -110,7 +110,9 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 dragPositionglobal=new Vector2(103,190);
 
     public Level1Screen(final Core game){
-
+        this.width=Gdx.graphics.getWidth();
+        this.height=Gdx.graphics.getHeight();
+        ppm=Constants.ppm;
         Constants.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
@@ -721,11 +723,23 @@ public class Level1Screen implements Screen, InputProcessor {
 
             trajectoryPoints.add(new Vector2(x, y));
         }
-
-
-
         return trajectoryPoints;
     }
+
+    public static boolean checkbird(Vector2 birdPosition,String currentbird) {
+        if (currentbird=="null"){
+            return false;
+        }
+        boolean isOffScreen = birdPosition.x < 0 || birdPosition.x > width
+                || birdPosition.y < 0 || birdPosition.y > height;
+        ContactDetect cd = new ContactDetect();
+        if (cd.hasBirdCollided() || isOffScreen) {
+            return true;
+        }
+        return false;
+    }
+
+
 
     public Stage getStage() {
         return stage;
