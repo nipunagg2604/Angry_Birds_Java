@@ -1,12 +1,11 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.*;
-import com.badlogic.gdx.graphics.Color;
+        import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+        import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -17,7 +16,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
+        import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -33,10 +32,10 @@ import io.github.angrybirdsjava.blocks.Structures;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.ContactDetect;
 import io.github.angrybirdsjava.screens.EndScreen;
-import io.github.angrybirdsjava.screens.ShowMessage;
 
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Vector;
 
 //import java.util.stream.GathererOp;
 
@@ -54,10 +53,10 @@ public class Level1Screen implements Screen, InputProcessor {
     private OrthogonalTiledMapRenderer renderer;
     private World world=new World(new Vector2(0, -10f), true);
 
-    private ArrayList<Body> rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();
-    private ArrayList<Body> rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();;
-    private ArrayList<Body> base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1.tmx").return_array();;
-    private ArrayList<Body> glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,"Level_tmx_files/level-1.tmx").return_array();;
+    private ArrayList<Body> rectangles_ver;
+    private ArrayList<Body> rectangles_hor;
+    private ArrayList<Body> base_objetcs;
+    private ArrayList<Body> glass_blocks;
 
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("trail.png");
@@ -77,8 +76,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private Texture slinghalf1;
     private Texture slinghalf2;
     private TextureRegion slingrubber;
-    private static int width=960;
-    private static int height=496;
+    private int width=960;
+    private int height=496;
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
@@ -108,21 +107,19 @@ public class Level1Screen implements Screen, InputProcessor {
     private boolean isLaunched;
 
     private Vector2 dragPositionglobal=new Vector2(103,190);
-
-    public Level1Screen(final Core game){
-        this.width=Gdx.graphics.getWidth();
-        this.height=Gdx.graphics.getHeight();
-        ppm=Constants.ppm;
+    public Level1Screen(final Core game, boolean flag){
+        width = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
+        ppm = Constants.ppm;
         Constants.music.stop();
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
-        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,305,15);
-        pigbodies.add(crown_pig);
         batch = new SpriteBatch();
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
-        crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
+        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,305,15);
+        pigbodies.add(crown_pig);
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
         blackbird=new TextureRegion(new Texture("birds/black.png"));
@@ -132,19 +129,33 @@ public class Level1Screen implements Screen, InputProcessor {
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
 
+        //particleEffectblast.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectblast.scaleEffect(2);
 
+        //particleEffectsmoke.load(Gdx.files.internal("effects2/effects/mysmoke.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectsmoke.scaleEffect(1);
+
+        //particleEffectglass.load(Gdx.files.internal("effects2/effects/myglass.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectglass.scaleEffect(0.4f);
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
-        redbirdbody=(new Red_Bird()).createbird(world,114,203,15);
-        blackbirdbody=(new Black_Bird()).createbird(world,60,160,17.5f);
-        yellowirdbody=(new Yellow_Bird()).createbird(world,89,152,15f);
+        if(flag) {
+            rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();
+            rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();;
+            base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1.tmx").return_array();;
+            glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,"Level_tmx_files/level-1.tmx").return_array();;
+            redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
+            blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
+            yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
+            crown_pig = Crown_Pig.addpig(world, 793, 305, 15);
+            birds.add(redbirdbody);
+            birds.add(yellowirdbody);
+            birds.add(blackbirdbody);
+        }
 
 
-        birds.add(redbirdbody);
-        birds.add(yellowirdbody);
-        birds.add(blackbirdbody);
         world.setContactListener(detect);
         InputMultiplexer inputMultiplexer=new InputMultiplexer();
         stage = new Stage(new ScreenViewport(camera));
@@ -723,23 +734,369 @@ public class Level1Screen implements Screen, InputProcessor {
 
             trajectoryPoints.add(new Vector2(x, y));
         }
+
+
+
         return trajectoryPoints;
     }
 
-    public static boolean checkbird(Vector2 birdPosition,String currentbird) {
-        if (currentbird=="null"){
-            return false;
+    public void saveData()
+    {
+        try {
+            FileOutputStream fout = new FileOutputStream("data.txt");
+            ObjectOutputStream oout = new ObjectOutputStream(fout);
+
+            ArrayList<ArrayList<Body>> arr = new ArrayList<>();
+            arr.add(rectangles_hor);
+            arr.add(rectangles_ver);
+            arr.add(base_objetcs);
+            arr.add(glass_blocks);
+
+            for(ArrayList<Body> a: arr) {
+                oout.writeObject(a.size());
+                for (Body b : a) {
+                    oout.writeObject(b.getPosition().x);
+                    oout.writeObject(b.getPosition().y);
+                    oout.writeObject(b.getLinearVelocity().x);
+                    oout.writeObject(b.getLinearVelocity().y);
+                    oout.writeObject(b.getAngularVelocity());
+                    oout.writeObject(b.getAngle());
+                    int type = 0;
+                    if (b.getType().equals(BodyDef.BodyType.DynamicBody)) type = 1;
+                    else if (b.getType().equals(BodyDef.BodyType.KinematicBody)) type = 2;
+                    oout.writeObject(type);
+                    oout.writeObject(b.getGravityScale());
+                    oout.writeObject(b.getFixtureList().get(0).getDensity());
+                    oout.writeObject(b.getFixtureList().get(0).getFriction());
+                    oout.writeObject(b.getFixtureList().get(0).getRestitution());
+                    oout.writeObject(b.getFixtureList().get(0).getFilterData().categoryBits);
+                    oout.writeObject(b.getFixtureList().get(0).getFilterData().maskBits);
+                    oout.writeObject(b.getFixtureList().get(0).getFilterData().groupIndex);
+                    oout.writeObject(b.isAwake());
+                    oout.writeObject(b.isSleepingAllowed());
+                    oout.writeObject(b.isFixedRotation());
+                    oout.writeObject(b.isBullet());
+                    oout.writeObject(b.getUserData());
+                    oout.writeObject(b.getFixtureList().get(0).getUserData());
+                }
+            }
+
+            ArrayList<Body> arr2 = new ArrayList<>();
+            arr2.add(crown_pig);
+            arr2.add(slingbody);
+            arr2.add(redbirdbody);
+            arr2.add(yellowirdbody);
+            arr2.add(blackbirdbody);
+            if(currentbirdbody == null) oout.writeObject(0);
+            else {
+                oout.writeObject(1);
+                arr2.add(currentbirdbody);
+            }
+
+            for (Body b : arr2) {
+                oout.writeObject(b.getPosition().x);
+                oout.writeObject(b.getPosition().y);
+                oout.writeObject(b.getLinearVelocity().x);
+                oout.writeObject(b.getLinearVelocity().y);
+                oout.writeObject(b.getAngularVelocity());
+                oout.writeObject(b.getAngle());
+                int type = 0;
+                if (b.getType().equals(BodyDef.BodyType.DynamicBody)) type = 1;
+                else if (b.getType().equals(BodyDef.BodyType.KinematicBody)) type = 2;
+                oout.writeObject(type);
+                oout.writeObject(b.getGravityScale());
+                oout.writeObject(b.getFixtureList().get(0).getShape().getRadius());
+                oout.writeObject(b.getFixtureList().get(0).getDensity());
+                oout.writeObject(b.getFixtureList().get(0).getFriction());
+                oout.writeObject(b.getFixtureList().get(0).getRestitution());
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().categoryBits);
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().maskBits);
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().groupIndex);
+                oout.writeObject(b.isAwake());
+                oout.writeObject(b.isSleepingAllowed());
+                oout.writeObject(b.isFixedRotation());
+                oout.writeObject(b.isBullet());
+                oout.writeObject(b.getUserData());
+                oout.writeObject(b.getFixtureList().get(0).getUserData());
+            }
+
+            oout.writeObject(birds.size());
+            for(Body b: birds) {
+                oout.writeObject(b.getPosition().x);
+                oout.writeObject(b.getPosition().y);
+                oout.writeObject(b.getLinearVelocity().x);
+                oout.writeObject(b.getLinearVelocity().y);
+                oout.writeObject(b.getAngularVelocity());
+                oout.writeObject(b.getAngle());
+                int type = 0;
+                if (b.getType().equals(BodyDef.BodyType.DynamicBody)) type = 1;
+                else if (b.getType().equals(BodyDef.BodyType.KinematicBody)) type = 2;
+                oout.writeObject(type);
+                oout.writeObject(b.getGravityScale());
+                oout.writeObject(b.getFixtureList().get(0).getShape().getRadius());
+                oout.writeObject(b.getFixtureList().get(0).getDensity());
+                oout.writeObject(b.getFixtureList().get(0).getFriction());
+                oout.writeObject(b.getFixtureList().get(0).getRestitution());
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().categoryBits);
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().maskBits);
+                oout.writeObject(b.getFixtureList().get(0).getFilterData().groupIndex);
+                oout.writeObject(b.isAwake());
+                oout.writeObject(b.isSleepingAllowed());
+                oout.writeObject(b.isFixedRotation());
+                oout.writeObject(b.isBullet());
+                oout.writeObject(b.getUserData());
+                oout.writeObject(b.getFixtureList().get(0).getUserData());
+            }
+
+            oout.writeObject(isDragging);
+            oout.writeObject(isLaunched);
+
+            oout.close();
+            fout.close();
+        } catch(IOException e) {
+            System.out.println("Level 1 Serialization unsuccessful!");
+            System.out.println(e.getMessage());
         }
-        boolean isOffScreen = birdPosition.x < 0 || birdPosition.x > width
-                || birdPosition.y < 0 || birdPosition.y > height;
-        ContactDetect cd = new ContactDetect();
-        if (cd.hasBirdCollided() || isOffScreen) {
-            return true;
-        }
-        return false;
     }
 
+    public void loadData()
+    {
+        try {
+            FileInputStream fin = new FileInputStream("data.txt");
+            ObjectInputStream oin = new ObjectInputStream(fin);
 
+
+            for(int i=0; i<4; i++) {
+                int num = ((int) oin.readObject());
+                ArrayList<Body> arr = new ArrayList<>();
+                for(int j=0; j<num; j++) {
+                    BodyDef bodyDef = new BodyDef();
+                    PolygonShape shape = new PolygonShape();
+                    FixtureDef fixtureDef = new FixtureDef();
+
+                    float posX = ((float) oin.readObject());
+                    float posY = ((float) oin.readObject());
+                    bodyDef.position.set(posX, posY);
+
+                    float velX = ((float) oin.readObject());
+                    float velY = ((float) oin.readObject());
+                    float ang = ((float) oin.readObject());
+                    float angle = ((float) oin.readObject());
+                    bodyDef.angle = angle;
+
+                    int type = ((int) oin.readObject());
+                    if(type == 0) bodyDef.type = BodyDef.BodyType.StaticBody;
+                    else if(type == 1) bodyDef.type = BodyDef.BodyType.DynamicBody;
+                    else bodyDef.type = BodyDef.BodyType.KinematicBody;
+                    Body b = world.createBody(bodyDef);
+                    b.setLinearVelocity(new Vector2(velX, velY));
+                    b.setAngularVelocity(ang);
+
+                    float grvScl = ((float) oin.readObject());
+                    b.setGravityScale(grvScl);
+
+
+                    float density = ((float) oin.readObject());
+                    float friction = ((float) oin.readObject());
+                    float restitution = ((float) oin.readObject());
+                    short categoryBits = ((short) oin.readObject());
+                    short maskBits = ((short) oin.readObject());
+                    short groupIndex = ((short) oin.readObject());
+                    fixtureDef.density = density;
+                    fixtureDef.friction = friction;
+                    fixtureDef.restitution = restitution;
+                    Filter filter = new Filter();
+                    filter.categoryBits = categoryBits;
+                    filter.maskBits = maskBits;
+                    filter.groupIndex = groupIndex;
+
+
+                    boolean isAwake = ((boolean) oin.readObject());
+                    b.setAwake(isAwake);
+                    boolean isSlAl = ((boolean) oin.readObject());
+                    b.setSleepingAllowed(isSlAl);
+                    boolean isFxdRotation = ((boolean) oin.readObject());
+                    b.setFixedRotation(isFxdRotation);
+                    boolean isBullet = ((boolean) oin.readObject());
+                    b.setBullet(isBullet);
+                    Object userData = ((Object) oin.readObject());
+                    ArrayList<Float> ud = ((ArrayList<Float>) userData);
+                    shape.setAsBox(ud.get(2) / ppm, ud.get(3) / ppm);
+                    b.setUserData(userData);
+
+                    Object userData2 = ((Object) oin.readObject());
+                    fixtureDef.shape = shape;
+
+                    b.setLinearDamping(0);
+                    Fixture f = b.createFixture(fixtureDef);
+                    f.setFilterData(filter);
+                    f.setUserData(userData2);
+
+                    arr.add(b);
+                }
+
+                if(i == 0) rectangles_hor = arr;
+                else if(i == 1) rectangles_ver = arr;
+                else if(i == 2) base_objetcs = arr;
+                else if(i == 3) glass_blocks = arr;
+            }
+
+            int lp = 6;
+            int cnt = ((int) oin.readObject());
+            if(cnt == 0) lp = 5;
+
+            for(int i=0; i<lp; i++) {
+                BodyDef bodyDef = new BodyDef();
+                CircleShape shape = new CircleShape();
+                FixtureDef fixtureDef = new FixtureDef();
+
+                float posX = ((float) oin.readObject());
+                float posY = ((float) oin.readObject());
+                bodyDef.position.set(posX, posY);
+
+                float velX = ((float) oin.readObject());
+                float velY = ((float) oin.readObject());
+                float ang = ((float) oin.readObject());
+                float angle = ((float) oin.readObject());
+                bodyDef.angle = angle;
+
+                int type = ((int) oin.readObject());
+                if(type == 0) bodyDef.type = BodyDef.BodyType.StaticBody;
+                else if(type == 1) bodyDef.type = BodyDef.BodyType.DynamicBody;
+                else bodyDef.type = BodyDef.BodyType.KinematicBody;
+                Body b = world.createBody(bodyDef);
+
+                float grvScl = ((float) oin.readObject());
+                b.setGravityScale(grvScl);
+                float radius = ((float) oin.readObject());
+                shape.setRadius(radius);
+
+                float density = ((float) oin.readObject());
+                float friction = ((float) oin.readObject());
+                float restitution = ((float) oin.readObject());
+                short categoryBits = ((short) oin.readObject());
+                short maskBits = ((short) oin.readObject());
+                short groupIndex = ((short) oin.readObject());
+                fixtureDef.density = density;
+                fixtureDef.friction = friction;
+                fixtureDef.restitution = restitution;
+                Filter filter = new Filter();
+                filter.categoryBits = categoryBits;
+                filter.maskBits = maskBits;
+                filter.groupIndex = groupIndex;
+
+
+                boolean isAwake = ((boolean) oin.readObject());
+                b.setAwake(isAwake);
+                boolean isSlAl = ((boolean) oin.readObject());
+                b.setSleepingAllowed(isSlAl);
+                boolean isFxdRotation = ((boolean) oin.readObject());
+                b.setFixedRotation(isFxdRotation);
+                boolean isBullet = ((boolean) oin.readObject());
+                b.setBullet(isBullet);
+                Object userData = ((Object) oin.readObject());
+                b.setUserData(userData);
+
+                Object userData2 = ((Object) oin.readObject());
+                fixtureDef.shape = shape;
+
+                b.setLinearDamping(0);
+                Fixture f = b.createFixture(fixtureDef);
+                f.setFilterData(filter);
+                f.setUserData(userData2);
+
+                b.setLinearVelocity(new Vector2(velX, velY));
+                b.setAngularVelocity(ang);
+
+                shape.dispose();
+
+                if(i==0) crown_pig = b;
+                else if(i==1) slingbody = b;
+                else if(i==2) redbirdbody = b;
+                else if(i==3) yellowirdbody = b;
+                else if(i==4) blackbirdbody = b;
+                else if(i==5) currentbirdbody = b;
+            }
+
+            birds.clear();
+            int num = ((int) oin.readObject());
+            for(int i=0; i<num; i++) {
+                BodyDef bodyDef = new BodyDef();
+                CircleShape shape = new CircleShape();
+                FixtureDef fixtureDef = new FixtureDef();
+
+                float posX = ((float) oin.readObject());
+                float posY = ((float) oin.readObject());
+                bodyDef.position.set(posX, posY);
+
+                float velX = ((float) oin.readObject());
+                float velY = ((float) oin.readObject());
+                float ang = ((float) oin.readObject());
+                float angle = ((float) oin.readObject());
+                bodyDef.angle = angle;
+
+                int type = ((int) oin.readObject());
+                if(type == 0) bodyDef.type = BodyDef.BodyType.StaticBody;
+                else if(type == 1) bodyDef.type = BodyDef.BodyType.DynamicBody;
+                else bodyDef.type = BodyDef.BodyType.KinematicBody;
+                Body b = world.createBody(bodyDef);
+                b.setLinearVelocity(new Vector2(velX, velY));
+                b.setAngularVelocity(ang);
+
+                float grvScl = ((float) oin.readObject());
+                b.setGravityScale(grvScl);
+                float radius = ((float) oin.readObject());
+                shape.setRadius(radius);
+
+                float density = ((float) oin.readObject());
+                float friction = ((float) oin.readObject());
+                float restitution = ((float) oin.readObject());
+                short categoryBits = ((short) oin.readObject());
+                short maskBits = ((short) oin.readObject());
+                short groupIndex = ((short) oin.readObject());
+                fixtureDef.density = density;
+                fixtureDef.friction = friction;
+                fixtureDef.restitution = restitution;
+                Filter filter = new Filter();
+                filter.categoryBits = categoryBits;
+                filter.maskBits = maskBits;
+                filter.groupIndex = groupIndex;
+
+
+                boolean isAwake = ((boolean) oin.readObject());
+                b.setAwake(isAwake);
+                boolean isSlAl = ((boolean) oin.readObject());
+                b.setSleepingAllowed(isSlAl);
+                boolean isFxdRotation = ((boolean) oin.readObject());
+                b.setFixedRotation(isFxdRotation);
+                boolean isBullet = ((boolean) oin.readObject());
+                b.setBullet(isBullet);
+                Object userData = ((Object) oin.readObject());
+                b.setUserData(userData);
+
+                Object userData2 = ((Object) oin.readObject());
+                fixtureDef.shape = shape;
+
+                b.setLinearDamping(0);
+                Fixture f = b.createFixture(fixtureDef);
+                f.setFilterData(filter);
+                f.setUserData(userData2);
+
+                shape.dispose();
+
+                birds.add(b);
+            }
+
+            isDragging = ((boolean) oin.readObject());
+            isLaunched = ((boolean) oin.readObject());
+
+            oin.close();
+            fin.close();
+        } catch (Exception e) {
+            System.out.println("Deserialization Error!");
+            System.out.println(e.getMessage());
+        }
+    }
 
     public Stage getStage() {
         return stage;
