@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.*;
 import io.github.angrybirdsjava.Constants;
 import io.github.angrybirdsjava.blocks.Structures;
-//
 import java.beans.Transient;
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ public class Crown_Pig {
         this.damage = damage;
         crown_pig=new Texture(Gdx.files.internal("pigs/crownpig.png"));
     }
-    public void applyDamage(Fixture pig,Structures s) {
+    public void applyDamage(Fixture pig, io.github.angrybirdsjava.blocks.Structures s) {
         float dodamage = s.damage_pig;
         damage+= dodamage;
         if (damage > strength) {
