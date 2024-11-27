@@ -686,6 +686,7 @@ skin5/level-plane-ui.atlas
 skin5/level-plane-ui.json
 skin5/font-subtitle-export.fnt
 skin5/font-export.fnt
+assets 3.txt
 stars3.png
 Tilesets/INGAME_BLOCKS_WOOD_1.webp
 Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png

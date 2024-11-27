@@ -1,0 +1,422 @@
+INGAME_BLOCKS_WOOD_1.webp
+level3.png
+Blocks/Wooden Blocks/vertical_wood.png
+Blocks/Wooden Blocks/horizontal_wood.png
+Blocks/Wooden Blocks/wooden_thick.png
+Blocks/Wooden Blocks/wooden_base_type_2.png
+Blocks/Wooden Blocks/wooden_base_type_1.png
+Blocks/Wooden Blocks/hor.png
+Blocks/Wooden Blocks/wooden_square.png
+Blocks/Stone Blocks/stone_square.png
+Blocks/Stone Blocks/stone_vertical.png
+Blocks/Stone Blocks/stone_horizontal.png
+Blocks/Soil/lastsoil.png
+Blocks/Soil/finalsoil.png
+Blocks/Glass Blocks/glass_horizontal.png
+Blocks/Glass Blocks/glass_block_type_1.png
+Blocks/Glass Blocks/glass_block_type_2.png
+prevLevel.png
+pauseBackground.png
+trail.png
+pauseMenu.jpg
+level2.png
+pauseMenu.jpeg
+levelBackground.jpg
+crossButton.png
+pigs/Mucchad_pig.jpg
+pigs/crownpig.jpg
+pigs/crownpig.png
+pigs/normal_pig.jpg
+level1.png
+level5.png
+backbutton.png
+level4.png
+level6.png
+m_button.png
+level7.png
+PC Computer - Angry Birds Rio - Blocks & Objects.png
+emm.png
+Level_tmx_files/lastsoil.png
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.tsx
+Level_tmx_files/Mobile - Angry Birds - Poached E.png
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Level_tmx_files/soil.png
+Level_tmx_files/finalsoil.tsx
+Level_tmx_files/finalsoil.png
+Level_tmx_files/soil.tsx
+Level_tmx_files/level-1.tmx
+Level_tmx_files/level-2.tmx
+Level_tmx_files/level-3.tmx
+skin1/font-title-export.fnt
+skin1/biological-attack-ui.json
+skin1/biological-attack-ui.atlas
+skin1/biological-attack-ui.png
+skin1/font-export.fnt
+PathPoint.png
+pauseButton.png
+levelLocked.png
+nextLevel.png
+restart.png
+hs_err_pid127614.log
+exitButton.png
+loadingBackground.jpg
+Loadingscreen/background.jpg
+resume.png
+restartButton.png
+elementGlass032.png
+trail.webp
+Slings/sling3.png
+Slings/sling2.png
+Slings/rect.png
+Slings/slingshot2.png
+Slings/sling.png
+Slings/slinghalf1.png
+Slings/slinghalf2.png
+Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Level_tmx_files copy/level-1.tmx
+resumeButton.png
+Homescreen/exit_button.png
+Homescreen/help_button.png
+Homescreen/music_button.png
+Homescreen/setting_button.png
+Homescreen/home_screen_bg.jpg
+Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
+Homescreen/stop_image.jpg
+Homescreen/sound_button.png
+Homescreen/play_button.png
+Homescreen/text.png
+Homescreen/image.png
+libgdx.png
+gameOver.png
+stars5.png
+skin4/clean-crispy-ui.json
+skin4/clean-crispy-ui.atlas
+skin4/clean-crispy-ui.png
+skin4/font-export.fnt
+birds/yellow.png
+birds/yellow.jpg
+birds/black.png
+birds/bluebird.jpg
+birds/redbird.png
+birds/redbird.jpg
+skin3/neon-ui.json
+skin3/font-pressed-export.fnt
+skin3/neon-ui.png
+skin3/font-over-export.fnt
+skin3/font-export.fnt
+skin3/neon-ui.atlas
+blackdot.png
+stars4.png
+level9.png
+glass.png
+effects/explosion.p
+effects/particle.png
+skin2/neon-ui.json
+skin2/font-pressed-export.fnt
+skin2/neon-ui.png
+skin2/font-over-export.fnt
+skin2/font-export.fnt
+skin2/neon-ui.atlas
+stars.png
+level8.png
+skin5/font-title-export.fnt
+skin5/level-plane-ui.png
+skin5/level-plane-ui.atlas
+skin5/level-plane-ui.json
+skin5/font-subtitle-export.fnt
+skin5/font-export.fnt
+stars3.png
+Tilesets/INGAME_BLOCKS_WOOD_1.webp
+Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
+Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
+Tilesets/level-1.tmx
+Gamescreen/background.jpg
+lightGrayDot.png
+stars2.png
+effects2/images/star_1.png
+effects2/images/note-4.png
+effects2/images/dash.png
+effects2/images/note-5.png
+effects2/images/star_2.png
+effects2/images/note-2.png
+effects2/images/note-3.png
+effects2/images/note-1.png
+effects2/images/snow-flake.png
+effects2/images/pentagram-glow.png
+effects2/images/pentagram.png
+effects2/images/spark.png
+effects2/images/rain-cinematic.png
+effects2/images/circle4.png
+effects2/images/cloud_1.png
+effects2/images/explosion-1.png
+effects2/images/circle1.png
+effects2/images/circle3.png
+effects2/images/explosion-2.png
+effects2/images/explosion-3.png
+effects2/images/rect.png
+effects2/images/circle2.png
+effects2/images/gore.png
+effects2/images/glass-4.png
+effects2/images/glass-5.png
+effects2/images/neutron-full.png
+effects2/images/blob.png
+effects2/images/glass-6.png
+effects2/images/glass-2.png
+effects2/images/glass-3.png
+effects2/images/rain-blurred.png
+effects2/images/glass-1.png
+effects2/images/diamond.png
+effects2/images/line.png
+effects2/images/particle.png
+effects2/images/neutron.png
+effects2/images/thrust-3.png
+effects2/images/spark-colored.png
+effects2/images/star-real.png
+effects2/images/thrust-2.png
+effects2/images/rain.png
+effects2/images/firework.png
+effects2/images/thrust-1.png
+effects2/packs/Particle Park Stink/Particle Park Stink License.txt
+effects2/packs/Particle Park Stink/circle2.png
+effects2/packs/Particle Park Stink/Particle Park Stink.p
+effects2/packs/Particle Park Trail/Particle Park Trail License.txt
+effects2/packs/Particle Park Trail/circle3.png
+effects2/packs/Particle Park Trail/Particle Park Trail.p
+effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel.p
+effects2/packs/Particle Park Thruster Pixel/rect.png
+effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel License.txt
+effects2/packs/Particle Park Muzzle Flash With Smoke/dash.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/circle3.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/circle2.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke License.txt
+effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke.p
+effects2/packs/Particle Park Pentagram Glitchy/pentagram.png
+effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy.p
+effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy License.txt
+effects2/packs/Particle Park Splash/Particle Park Splash License.txt
+effects2/packs/Particle Park Splash/Particle Park Splash.p
+effects2/packs/Particle Park Splash/circle1.png
+effects2/packs/Particle Park Smoke/Particle Park Smoke License.txt
+effects2/packs/Particle Park Smoke/circle2.png
+effects2/packs/Particle Park Smoke/Particle Park Smoke.p
+effects2/packs/Particle Park Dust Left/Particle Park Dust Left.p
+effects2/packs/Particle Park Dust Left/cloud_1.png
+effects2/packs/Particle Park Dust Left/Particle Park Dust Left License.txt
+effects2/packs/Particle Park Pentagram/pentagram-glow.png
+effects2/packs/Particle Park Pentagram/Particle Park Pentagram.p
+effects2/packs/Particle Park Pentagram/Particle Park Pentagram License.txt
+effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail.p
+effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail License.txt
+effects2/packs/Particle Park Smoke Trail/cloud_1.png
+effects2/packs/Particle Park Muzzle Flash/dash.png
+effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash License.txt
+effects2/packs/Particle Park Muzzle Flash/circle2.png
+effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash.p
+effects2/packs/Particle Park Burnout/cloud_1.png
+effects2/packs/Particle Park Burnout/Particle Park Burnout.p
+effects2/packs/Particle Park Burnout/Particle Park Burnout License.txt
+effects2/packs/Particle Park Starlight/Particle Park Starlight.p
+effects2/packs/Particle Park Starlight/circle2.png
+effects2/packs/Particle Park Starlight/Particle Park Starlight License.txt
+effects2/packs/Particle Park Starlight/spark-colored.png
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler.p
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler License.txt
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/firework.png
+effects2/packs/Particle Park Sparks/Particle Park Sparks License.txt
+effects2/packs/Particle Park Sparks/Particle Park Sparks.p
+effects2/packs/Particle Park Sparks/circle3.png
+effects2/packs/Particle Park Sparks/circle2.png
+effects2/packs/Particle Park Dust Right/Particle Park Dust Right License.txt
+effects2/packs/Particle Park Dust Right/Particle Park Dust Right.p
+effects2/packs/Particle Park Dust Right/cloud_1.png
+effects2/packs/Particle Park Flame Pixel/rect.png
+effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel License.txt
+effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel.p
+effects2/packs/Particle Park Blood/circle1.png
+effects2/packs/Particle Park Blood/gore.png
+effects2/packs/Particle Park Blood/blob.png
+effects2/packs/Particle Park Blood/Particle Park Blood.p
+effects2/packs/Particle Park Blood/Particle Park Blood License.txt
+effects2/packs/Particle Park Star/star_1.png
+effects2/packs/Particle Park Star/Particle Park Star License.txt
+effects2/packs/Particle Park Star/Particle Park Star.p
+effects2/packs/Particle Park Explosion/Particle Park Explosion.p
+effects2/packs/Particle Park Explosion/explosion-1.png
+effects2/packs/Particle Park Explosion/explosion-2.png
+effects2/packs/Particle Park Explosion/explosion-3.png
+effects2/packs/Particle Park Explosion/circle2.png
+effects2/packs/Particle Park Explosion/Particle Park Explosion License.txt
+effects2/packs/Particle Park Explosion Enemy/explosion-1.png
+effects2/packs/Particle Park Explosion Enemy/explosion-2.png
+effects2/packs/Particle Park Explosion Enemy/explosion-3.png
+effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy.p
+effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy License.txt
+effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small License.txt
+effects2/packs/Particle Park Explosion Small/explosion-1.png
+effects2/packs/Particle Park Explosion Small/explosion-2.png
+effects2/packs/Particle Park Explosion Small/explosion-3.png
+effects2/packs/Particle Park Explosion Small/circle2.png
+effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small.p
+effects2/packs/Particle Park Thruster/Particle Park Thruster.p
+effects2/packs/Particle Park Thruster/Particle Park Thruster License.txt
+effects2/packs/Particle Park Thruster/thrust-3.png
+effects2/packs/Particle Park Thruster/thrust-2.png
+effects2/packs/Particle Park Thruster/thrust-1.png
+effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart.p
+effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart License.txt
+effects2/packs/Particle Park Trail Fart/circle2.png
+effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic.p
+effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic License.txt
+effects2/packs/Particle Park Rain Cinematic/rain-cinematic.png
+effects2/packs/Particle Park Flame/circle4.png
+effects2/packs/Particle Park Flame/Particle Park Flame.p
+effects2/packs/Particle Park Flame/circle3.png
+effects2/packs/Particle Park Flame/Particle Park Flame License.txt
+effects2/packs/Particle Park Fireworks/Particle Park Fireworks.p
+effects2/packs/Particle Park Fireworks/Particle Park Fireworks License.txt
+effects2/packs/Particle Park Fireworks/firework.png
+effects2/packs/Particle Park Glass/Particle Park Glass License.txt
+effects2/packs/Particle Park Glass/glass-4.png
+effects2/packs/Particle Park Glass/glass-5.png
+effects2/packs/Particle Park Glass/glass-6.png
+effects2/packs/Particle Park Glass/glass-2.png
+effects2/packs/Particle Park Glass/glass-3.png
+effects2/packs/Particle Park Glass/glass-1.png
+effects2/packs/Particle Park Glass/Particle Park Glass.p
+effects2/packs/Particle Park Snow Flakes/snow-flake.png
+effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes.p
+effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes License.txt
+effects2/packs/Particle Park Splash Pixel/Particle Park Splash Pixel License.txt
+effects2/packs/Particle Park Splash Pixel/Particle Park Splash Pixel.p
+effects2/packs/Particle Park Splash Pixel/rect.png
+effects2/packs/Particle Park Smoke Train/circle1.png
+effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train License.txt
+effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train.p
+effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen License.txt
+effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen.p
+effects2/packs/Particle Park Hallucinogen/neutron-full.png
+effects2/packs/Particle Park Hallucinogen/neutron.png
+effects2/packs/Particle Park Star Trail/Particle Park Star Trail License.txt
+effects2/packs/Particle Park Star Trail/star-real.png
+effects2/packs/Particle Park Star Trail/Particle Park Star Trail.p
+effects2/packs/Particle Park Laser/circle2.png
+effects2/packs/Particle Park Laser/Particle Park Laser.p
+effects2/packs/Particle Park Laser/Particle Park Laser License.txt
+effects2/packs/Particle Park Hallucinogen Full/Particle Park Hallucinogen Full.p
+effects2/packs/Particle Park Hallucinogen Full/neutron-full.png
+effects2/packs/Particle Park Hallucinogen Full/Particle Park Hallucinogen Full License.txt
+effects2/packs/Particle Park Rain/rain-blurred.png
+effects2/packs/Particle Park Rain/Particle Park Rain License.txt
+effects2/packs/Particle Park Rain/Particle Park Rain.p
+effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue.p
+effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue License.txt
+effects2/packs/Particle Park Fireball Blue/thrust-3.png
+effects2/packs/Particle Park Fireball Blue/thrust-2.png
+effects2/packs/Particle Park Fireball Blue/thrust-1.png
+effects2/packs/Particle Park Thrust/Particle Park Thrust License.txt
+effects2/packs/Particle Park Thrust/Particle Park Thrust.p
+effects2/packs/Particle Park Thrust/thrust-3.png
+effects2/packs/Particle Park Thrust/thrust-2.png
+effects2/packs/Particle Park Thrust/thrust-1.png
+effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer License.txt
+effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer.p
+effects2/packs/Particle Park Fireworks Tracer/firework.png
+effects2/packs/Particle Park Dust/cloud_1.png
+effects2/packs/Particle Park Dust/Particle Park Dust.p
+effects2/packs/Particle Park Dust/Particle Park Dust License.txt
+effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel License.txt
+effects2/packs/Particle Park Trail Pixel/rect.png
+effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel.p
+effects2/packs/Particle Park Fireball/Particle Park Fireball License.txt
+effects2/packs/Particle Park Fireball/Particle Park Fireball.p
+effects2/packs/Particle Park Fireball/thrust-3.png
+effects2/packs/Particle Park Fireball/thrust-2.png
+effects2/packs/Particle Park Fireball/thrust-1.png
+effects2/effects/Particle Park Dust Left.p
+effects2/effects/star_1.png
+effects2/effects/note-4.png
+effects2/effects/dash.png
+effects2/effects/note-5.png
+effects2/effects/Particle Park Trail Fart.p
+effects2/effects/star_2.png
+effects2/effects/Particle Park Fireworks Tracer With Dazzler.p
+effects2/effects/Particle Park Thruster.p
+effects2/effects/Particle Park Dust Right.p
+effects2/effects/Particle Park Fireworks.p
+effects2/effects/note-2.png
+effects2/effects/Particle Park Smoke Trail.p
+effects2/effects/note-3.png
+effects2/effects/Particle Park Rain Cinematic.p
+effects2/effects/note-1.png
+effects2/effects/Particle Park Splash.p
+effects2/effects/snow-flake.png
+effects2/effects/Particle Park Thruster Pixel.p
+effects2/effects/Particle Park Sparks.p
+effects2/effects/pentagram-glow.png
+effects2/effects/Particle Park Hallucinogen Full.p
+effects2/effects/pentagram.png
+effects2/effects/spark.png
+effects2/effects/Particle Park Fireball Blue.p
+effects2/effects/rain-cinematic.png
+effects2/effects/Particle Park Explosion.p
+effects2/effects/circle4.png
+effects2/effects/cloud_1.png
+effects2/effects/Particle Park Dust.p
+effects2/effects/Particle Park Splash Pixel.p
+effects2/effects/explosion-1.png
+effects2/effects/Particle Park Starlight.p
+effects2/effects/Particle Park Flame.p
+effects2/effects/Particle Park Snow Flakes.p
+effects2/effects/circle1.png
+effects2/effects/Particle Park Fireball.p
+effects2/effects/circle3.png
+effects2/effects/explosion-2.png
+effects2/effects/Particle Park Star.p
+effects2/effects/Particle Park Fireworks Tracer.p
+effects2/effects/explosion-3.png
+effects2/effects/rect.png
+effects2/effects/circle2.png
+effects2/effects/gore.png
+effects2/effects/glass-4.png
+effects2/effects/Particle Park Trail Pixel.p
+effects2/effects/glass-5.png
+effects2/effects/myexplosion.p
+effects2/effects/Particle Park Hallucinogen.p
+effects2/effects/neutron-full.png
+effects2/effects/blob.png
+effects2/effects/glass-6.png
+effects2/effects/mysmoke.p
+effects2/effects/Particle Park Smoke.p
+effects2/effects/Particle Park Stink.p
+effects2/effects/Particle Park Explosion Enemy.p
+effects2/effects/Particle Park Pentagram.p
+effects2/effects/glass-2.png
+effects2/effects/Particle Park Smoke Train.p
+effects2/effects/Particle Park Blood.p
+effects2/effects/glass-3.png
+effects2/effects/rain-blurred.png
+effects2/effects/glass-1.png
+effects2/effects/Particle Park Explosion Small.p
+effects2/effects/Particle Park Pentagram Glitchy.p
+effects2/effects/diamond.png
+effects2/effects/myglass.p
+effects2/effects/Particle Park Glass.p
+effects2/effects/Particle Park Laser.p
+effects2/effects/Particle Park Muzzle Flash.p
+effects2/effects/Particle Park Flame Pixel.p
+effects2/effects/Particle Park Trail.p
+effects2/effects/line.png
+effects2/effects/particle.png
+effects2/effects/neutron.png
+effects2/effects/Particle Park Thrust.p
+effects2/effects/thrust-3.png
+effects2/effects/spark-colored.png
+effects2/effects/Particle Park Burnout.p
+effects2/effects/star-real.png
+effects2/effects/thrust-2.png
+effects2/effects/Particle Park Rain.p
+effects2/effects/rain.png
+effects2/effects/firework.png
+effects2/effects/Particle Park Star Trail.p
+effects2/effects/Particle Park Muzzle Flash With Smoke.p
+effects2/effects/thrust-1.png

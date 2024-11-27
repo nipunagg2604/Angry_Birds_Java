@@ -1,11 +1,11 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.*;
-        import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
-        import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -16,7 +16,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
-        import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -32,9 +32,11 @@ import io.github.angrybirdsjava.blocks.Structures;
 import io.github.angrybirdsjava.pigs.Crown_Pig;
 import io.github.angrybirdsjava.screens.ContactDetect;
 import io.github.angrybirdsjava.screens.EndScreen;
+import io.github.angrybirdsjava.screens.ShowMessage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Vector;
 
 //import java.util.stream.GathererOp;
@@ -76,8 +78,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private Texture slinghalf1;
     private Texture slinghalf2;
     private TextureRegion slingrubber;
-    private int width=960;
-    private int height=496;
+    private static int width=960;
+    private static int height=496;
     private BodyDef bodyDef = new BodyDef();
     private PolygonShape shape = new PolygonShape();
     private FixtureDef fixtureDef = new FixtureDef();
@@ -107,7 +109,8 @@ public class Level1Screen implements Screen, InputProcessor {
     private boolean isLaunched;
 
     private Vector2 dragPositionglobal=new Vector2(103,190);
-    public Level1Screen(final Core game, boolean flag){
+//    public Level1Screen(final Core game, boolean flag){
+    public Level1Screen(final Core game){
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
         ppm = Constants.ppm;
@@ -118,8 +121,8 @@ public class Level1Screen implements Screen, InputProcessor {
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
-        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,305,15);
-        pigbodies.add(crown_pig);
+//        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,315,15);
+//        pigbodies.add(crown_pig);
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
         blackbird=new TextureRegion(new Texture("birds/black.png"));
@@ -128,7 +131,7 @@ public class Level1Screen implements Screen, InputProcessor {
         slinghalf1=new Texture(Gdx.files.internal("Slings/slinghalf1.png"));
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
-
+        crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
         //particleEffectblast.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
         //particleEffectblast.scaleEffect(2);
 
@@ -141,7 +144,7 @@ public class Level1Screen implements Screen, InputProcessor {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
-        if(flag) {
+        if(true) {
             rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();
             rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();;
             base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1.tmx").return_array();;
@@ -149,7 +152,8 @@ public class Level1Screen implements Screen, InputProcessor {
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
-            crown_pig = Crown_Pig.addpig(world, 793, 305, 15);
+            crown_pig = (new Crown_Pig(world,5f,0f)).addpig(world, 793, 305, 15);
+            pigbodies.add(crown_pig);
             birds.add(redbirdbody);
             birds.add(yellowirdbody);
             birds.add(blackbirdbody);
@@ -232,7 +236,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 particleEffect.start();
                 effects.add(particleEffect);
                 Vector2 impulse=new Vector2();
-                float s=2000f;
+                float s=1000f;
 
                 for (Body b:rectangles_hor){
                     impulse.x=1/(x-b.getPosition().cpy().scl(ppm).x);
@@ -734,10 +738,19 @@ public class Level1Screen implements Screen, InputProcessor {
 
             trajectoryPoints.add(new Vector2(x, y));
         }
-
-
-
         return trajectoryPoints;
+    }
+    public static boolean checkbird(Vector2 birdPosition,String currentbird) {
+        if (currentbird=="null"){
+            return false;
+        }
+        boolean isOffScreen = birdPosition.x < 0 || birdPosition.x > width
+                || birdPosition.y < 0 || birdPosition.y > height;
+        ContactDetect cd = new ContactDetect();
+        if (cd.hasBirdCollided() || isOffScreen) {
+            return true;
+        }
+        return false;
     }
 
     public void saveData()

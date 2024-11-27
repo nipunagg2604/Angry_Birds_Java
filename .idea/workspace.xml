@@ -5,47 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b4ce246-0718-416e-ac3a-2468c4106e44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/io/github/angrybirdsjava/ShowMessageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ContactDetect.class.uniqueId20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Crown_Pig.class.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen$1.class.uniqueId21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen$3.class.uniqueId14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen.class.uniqueId25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/test/io/github/angrybirdsjava/JunitTests/BirdCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/test/io/github/angrybirdsjava/JunitTests/BirdCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/reports/tests/test/classes/io.github.angrybirdsjava.JunitTests.BirdCheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/reports/tests/test/classes/io.github.angrybirdsjava.JunitTests.BirdCheck.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/reports/tests/test/classes/io.github.angrybirdsjava.ShowMessageTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/reports/tests/test/classes/io.github.angrybirdsjava.ShowMessageTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/reports/tests/test/packages/io.github.angrybirdsjava.JunitTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/reports/tests/test/packages/io.github.angrybirdsjava.JunitTests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/reports/tests/test/packages/io.github.angrybirdsjava.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/reports/tests/test/packages/io.github.angrybirdsjava.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/test-results/test/TEST-io.github.angrybirdsjava.JunitTests.BirdCheck.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/test-results/test/TEST-io.github.angrybirdsjava.JunitTests.BirdCheck.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/test-results/test/TEST-io.github.angrybirdsjava.ShowMessageTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/test-results/test/TEST-io.github.angrybirdsjava.ShowMessageTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId21" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId21" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$2.class.uniqueId6" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$2.class.uniqueId6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId17" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId17" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen.class.uniqueId4" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen.class.uniqueId4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$10.class.uniqueId22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$2.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$3.class.uniqueId24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$4.class.uniqueId19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$6.class.uniqueId26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$7.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$9.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen$2.class.uniqueId15" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileTestJava/compileTransaction/stash-dir/ShowMessageTest.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileTestJava/compileTransaction/stash-dir/suite.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Angry_Birds_Java" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Angry_Birds_Java" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Angry_Birds_Java" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -179,8 +183,8 @@
       <recent name="$PROJECT_DIR$/assets/Homescreen" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JunitTestSuite">
-    <configuration name="Angry_Birds_Java [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Angry_Birds_Java [run]">
+    <configuration name="Angry_Birds_Java [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -191,7 +195,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -300,11 +304,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Angry_Birds_Java [run]" />
         <item itemvalue="Gradle.JunitTestSuite" />
         <item itemvalue="Gradle.ShowMessageTest.test" />
         <item itemvalue="Gradle.BirdCheck.test" />
         <item itemvalue="Gradle.BirdCheck" />
-        <item itemvalue="Gradle.Angry_Birds_Java [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -351,6 +355,7 @@
       <workItem from="1732709229796" duration="239000" />
       <workItem from="1732709552714" duration="136000" />
       <workItem from="1732709700499" duration="5260000" />
+      <workItem from="1732716175199" duration="2179000" />
     </task>
     <servers />
   </component>
