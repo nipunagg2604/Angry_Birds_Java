@@ -5,6 +5,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -16,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class LevelScreen implements Screen{
+    private BitmapFont font;
     private Texture background;
     private OrthographicCamera camera;
     private final Core game;
@@ -28,6 +31,7 @@ public class LevelScreen implements Screen{
     private float bgSpeed = 30;
     public int cnt=1;
     public LevelScreen(final Core game) {
+        font=new BitmapFont();
         this.game = game;
         this.bgX1=0;
         this.bgX2=width;
@@ -40,17 +44,76 @@ public class LevelScreen implements Screen{
         stage = new Stage(new ScreenViewport(camera));
         Gdx.input.setInputProcessor(stage);
 
-        Table root = new Table();
-        root.setFillParent(true);
-        root.defaults().spaceBottom(50);
-        root.defaults().spaceTop(50);
-        root.defaults().spaceRight(120);
-        root.defaults().spaceLeft(120);
-        stage.addActor(root);
-
         ImageButton imgb = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/1.png"))));
-        imgb.setSize(100, 100);
-        imgb.setPosition(90, 280);
+        ImageButton imgb2 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/2.png"))));
+        ImageButton imgb3 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/3.png"))));
+        ImageButton imgb4 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb5 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb6 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb7 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb8 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb9 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb10 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb11 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb12 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb13 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb14 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb15 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb16 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb17 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb18 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb19 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb20 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+        ImageButton imgb21 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/locklevel.png"))));
+
+        int SIZE = 70;
+        imgb.setSize(80, 80);
+        imgb2.setSize(80, 80);
+        imgb3.setSize(80, 80);
+        imgb4.setSize(SIZE, SIZE);
+        imgb5.setSize(SIZE, SIZE);
+        imgb6.setSize(SIZE, SIZE);
+        imgb7.setSize(SIZE, SIZE);
+        imgb8.setSize(SIZE, SIZE);
+        imgb9.setSize(SIZE, SIZE);
+        imgb10.setSize(SIZE, SIZE);
+        imgb11.setSize(SIZE, SIZE);
+        imgb12.setSize(SIZE, SIZE);
+        imgb13.setSize(SIZE, SIZE);
+        imgb14.setSize(SIZE, SIZE);
+        imgb15.setSize(SIZE, SIZE);
+        imgb16.setSize(SIZE, SIZE);
+        imgb17.setSize(SIZE, SIZE);
+        imgb18.setSize(SIZE, SIZE);
+        imgb19.setSize(SIZE, SIZE);
+        imgb20.setSize(SIZE, SIZE);
+        imgb21.setSize(SIZE, SIZE);
+
+        int base1 = 180;
+        float buttonWidth = imgb7.getWidth(), buttonHeight = imgb7.getHeight();
+        int h1 = 860, h2 = 620, h3 = 380;
+        int gap = 255;
+        imgb.setPosition((base1 + 0*gap - imgb.getWidth()) / 2, (850 - imgb.getHeight()) / 2);
+        imgb2.setPosition((base1 + 1*gap - imgb2.getWidth()) / 2, (850 - imgb2.getHeight()) / 2);
+        imgb3.setPosition((base1 + 2*gap - imgb3.getWidth()) / 2, (850 - imgb3.getHeight()) / 2);
+        imgb4.setPosition((base1 + 3*gap - imgb4.getWidth()) / 2, (h1 - imgb4.getHeight()) / 2);
+        imgb5.setPosition((base1 + 4*gap - imgb5.getWidth()) / 2, (h1 - imgb5.getHeight()) / 2);
+        imgb6.setPosition((base1 + 5*gap - imgb6.getWidth()) / 2, (h1 - imgb6.getHeight()) / 2);
+        imgb7.setPosition((base1 + 6*gap - buttonWidth) / 2, (h1 - buttonHeight) / 2);
+        imgb8.setPosition((base1 + 0*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb9.setPosition((base1 + 1*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb10.setPosition((base1 + 2*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb11.setPosition((base1 + 3*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb12.setPosition((base1 + 4*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb13.setPosition((base1 + 5*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb14.setPosition((base1 + 6*gap - buttonWidth) / 2, (h2 - buttonHeight) / 2);
+        imgb15.setPosition((base1 + 0*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb16.setPosition((base1 + 1*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb17.setPosition((base1 + 2*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb18.setPosition((base1 + 3*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb19.setPosition((base1 + 4*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb20.setPosition((base1 + 5*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
+        imgb21.setPosition((base1 + 6*gap - buttonWidth) / 2, (h3 - buttonHeight) / 2);
 
         imgb.addListener(new ClickListener() {
             @Override
@@ -60,12 +123,6 @@ public class LevelScreen implements Screen{
             }
         });
 
-        root.add(imgb);
-
-        ImageButton imgb2 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level2.png"))));
-        imgb2.setSize(100, 100);
-        imgb2.setPosition(270, 280);
-
         imgb2.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -73,12 +130,6 @@ public class LevelScreen implements Screen{
                 dispose();
             }
         });
-
-        root.add(imgb2);
-
-        ImageButton imgb3 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level3.png"))));
-        imgb3.setSize(100, 100);
-        imgb3.setPosition(450, 280);
 
         imgb3.addListener(new ClickListener() {
             @Override
@@ -88,12 +139,6 @@ public class LevelScreen implements Screen{
             }
         });
 
-        root.add(imgb3);
-
-        ImageButton imgb4 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level4.png"))));
-        imgb4.setSize(100, 100);
-        imgb4.setPosition(450, 280);
-
         imgb4.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -101,13 +146,6 @@ public class LevelScreen implements Screen{
                 dispose();
             }
         });
-
-        root.add(imgb4);
-
-        root.row();
-        ImageButton imgb5 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level5.png"))));
-        imgb5.setSize(100, 100);
-        imgb5.setPosition(90, 280);
 
         imgb5.addListener(new ClickListener() {
             @Override
@@ -117,102 +155,46 @@ public class LevelScreen implements Screen{
             }
         });
 
-        root.add(imgb5);
+        ImageButton imgb22 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("backbutton.png"))));
 
-        ImageButton imgb6 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level6.png"))));
-        imgb6.setSize(100, 100);
-        imgb6.setPosition(270, 280);
+        imgb22.setSize(50, 50);
+        imgb22.setPosition(4, camera.viewportHeight - imgb22.getWidth()-6);
 
-        imgb6.addListener(new ClickListener() {
+        imgb22.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-                dispose();
-            }
-        });
-
-        root.add(imgb6);
-
-        ImageButton imgb7 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level7.png"))));
-        imgb7.setSize(100, 100);
-        imgb7.setPosition(450, 280);
-
-        imgb7.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-                dispose();
-            }
-        });
-
-        root.add(imgb7);
-
-        ImageButton imgb8 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level8.png"))));
-        imgb8.setSize(100, 100);
-        imgb8.setPosition(450, 280);
-
-        imgb8.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-                dispose();
-            }
-        });
-
-        root.add(imgb8);
-
-        root.row();
-        ImageButton imgb9 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level9.png"))));
-        imgb9.setSize(100, 100);
-        imgb9.setPosition(90, 280);
-
-        imgb9.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-                dispose();
-            }
-        });
-
-        root.add(imgb9);
-
-        ImageButton imgb10 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("levelLocked.png"))));
-        imgb10.setSize(100, 100);
-        imgb10.setPosition(270, 280);
-
-        root.add(imgb10);
-
-        ImageButton imgb11 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("levelLocked.png"))));
-        imgb11.setSize(100, 100);
-        imgb11.setPosition(450, 280);
-
-        root.add(imgb11);
-
-        ImageButton imgb12 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("levelLocked.png"))));
-        imgb12.setSize(100, 100);
-        imgb12.setPosition(450, 280);
-
-        root.add(imgb12);
-
-        ImageButton imgb13 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("backbutton.png"))));
-
-        imgb13.setSize(50, 50);
-        imgb13.setPosition(4, camera.viewportHeight - imgb13.getWidth()-6);
-
-        imgb13.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-
                 game.setScreen(new HomeScreen(game));
                 dispose();
             }
         });
 
+        stage.addActor(imgb);
+        stage.addActor(imgb2);
+        stage.addActor(imgb3);
+        stage.addActor(imgb4);
+        stage.addActor(imgb5);
+        stage.addActor(imgb6);
+        stage.addActor(imgb7);
+        stage.addActor(imgb8);
+        stage.addActor(imgb9);
+        stage.addActor(imgb10);
+        stage.addActor(imgb11);
+        stage.addActor(imgb12);
         stage.addActor(imgb13);
+        stage.addActor(imgb14);
+        stage.addActor(imgb15);
+        stage.addActor(imgb16);
+        stage.addActor(imgb17);
+        stage.addActor(imgb18);
+        stage.addActor(imgb19);
+        stage.addActor(imgb20);
+        stage.addActor(imgb21);
+        //stage.addActor(imgb22);
     }
 
     @Override
     public void render(float delta) {
+        Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
         Gdx.gl.glClearColor(0, 0, 0, 0.5f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -228,6 +210,7 @@ public class LevelScreen implements Screen{
             bgX2 = bgX1 +width;
         }
         game.batch.begin();
+        Constants.pig_font.draw(game.batch, "Mouse X: " + (int) mousePosition.x + ", Y: " + (496-(int) mousePosition.y), 10, 20);
 
         game.batch.draw(background, bgX1, 0,width,height); // Draw first background
         game.batch.draw(background, bgX2, 0,width,height);
