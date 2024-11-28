@@ -55,7 +55,7 @@ public class LevelScreen implements Screen{
         imgb.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -69,7 +69,7 @@ public class LevelScreen implements Screen{
         imgb2.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -83,7 +83,7 @@ public class LevelScreen implements Screen{
         imgb3.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -97,7 +97,7 @@ public class LevelScreen implements Screen{
         imgb4.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -112,7 +112,7 @@ public class LevelScreen implements Screen{
         imgb5.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -126,7 +126,7 @@ public class LevelScreen implements Screen{
         imgb6.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -140,7 +140,7 @@ public class LevelScreen implements Screen{
         imgb7.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -154,7 +154,7 @@ public class LevelScreen implements Screen{
         imgb8.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
@@ -169,7 +169,7 @@ public class LevelScreen implements Screen{
         imgb9.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
                 dispose();
             }
         });
