@@ -10,12 +10,16 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.screens.HomeScreen;
+
+import java.io.File;
+import java.util.ArrayList;
 
 public class LevelScreen implements Screen{
     private BitmapFont font;
@@ -29,6 +33,7 @@ public class LevelScreen implements Screen{
     private float bgX1;
     private float bgX2; // Positions for two background images
     private float bgSpeed = 30;
+    private ArrayList<ImageButton> stars1, stars2, stars3;
     public int cnt=1;
     public LevelScreen(final Core game) {
         font=new BitmapFont();
@@ -43,6 +48,40 @@ public class LevelScreen implements Screen{
 
         stage = new Stage(new ScreenViewport(camera));
         Gdx.input.setInputProcessor(stage);
+
+        stars1 = new ArrayList<>();
+        stars1.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars0.png")))));
+        stars1.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars1.png")))));
+        stars1.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars2.png")))));
+        stars1.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars3.png")))));
+
+        for(int i=0; i<4; i++) {
+            stars1.get(i).setSize(70, 16);
+            stars1.get(i).setPosition(55, 388);
+        }
+
+        stars2 = new ArrayList<>();
+        stars2.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars0.png")))));
+        stars2.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars1.png")))));
+        stars2.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars2.png")))));
+        stars2.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars3.png")))));
+
+        for(int i=0; i<4; i++) {
+            stars2.get(i).setSize(70, 16);
+            stars2.get(i).setPosition(182, 388);
+        }
+
+        stars3 = new ArrayList<>();
+        stars3.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars0.png")))));
+        stars3.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars1.png")))));
+        stars3.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars2.png")))));
+        stars3.add(new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Stars/stars3.png")))));
+
+        for(int i=0; i<4; i++) {
+            stars3.get(i).setSize(70, 16);
+            stars3.get(i).setPosition(310, 388);
+        }
+
 
         ImageButton imgb = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/1.png"))));
         ImageButton imgb2 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/2.png"))));
@@ -118,7 +157,15 @@ public class LevelScreen implements Screen{
         imgb.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                io.github.angrybirdsjava.Level1Screen obj;
+                File file = new File("data.txt");
+                if(file.exists() && file.length() > 0) {
+                    obj = new io.github.angrybirdsjava.Level1Screen(game, 0, false);
+                    obj.loadData();
+                }
+                else obj = new io.github.angrybirdsjava.Level1Screen(game, 0, true);
+                game.setScreen(obj);
+                //game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true));
                 dispose();
             }
         });
@@ -126,7 +173,7 @@ public class LevelScreen implements Screen{
         imgb2.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true));
                 dispose();
             }
         });
@@ -134,7 +181,7 @@ public class LevelScreen implements Screen{
         imgb3.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true));
                 dispose();
             }
         });
@@ -175,6 +222,9 @@ public class LevelScreen implements Screen{
         stage.addActor(imgb19);
         stage.addActor(imgb20);
         stage.addActor(imgb21);
+        stage.addActor(stars1.get(2));
+        stage.addActor(stars2.get(2));
+        stage.addActor(stars3.get(2));
         //stage.addActor(imgb22);
     }
 

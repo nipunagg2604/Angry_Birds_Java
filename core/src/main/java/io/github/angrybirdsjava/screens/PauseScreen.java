@@ -1,6 +1,7 @@
 package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -26,7 +27,7 @@ public class PauseScreen implements Screen{
     private Button exitButton;
     private ImageButton resume;
 
-    public PauseScreen(final Core game, Screen old, Stage old_stage) {
+    public PauseScreen(final Core game, Screen old, InputMultiplexer inp) {
         this.game = game;
 
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
@@ -54,8 +55,12 @@ public class PauseScreen implements Screen{
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(old_stage);
-                game.setScreen(old);
+                io.github.angrybirdsjava.Level1Screen obj = ((io.github.angrybirdsjava.Level1Screen) old);
+                obj.saveData();
+                obj.world.dispose();
+                obj.dispose();
+                Gdx.input.setInputProcessor(inp);
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game));
                 dispose();
             }
         });
@@ -77,7 +82,7 @@ public class PauseScreen implements Screen{
         resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(old_stage);
+                Gdx.input.setInputProcessor(inp);
                 game.setScreen(old);
                 dispose();
             }
@@ -100,7 +105,7 @@ public class PauseScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true));
                 old.dispose();
                 dispose();
             }

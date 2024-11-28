@@ -1,1104 +1,1117 @@
-INGAME_BLOCKS_WOOD_1.webp
-level3.png
-Blocks/Wooden Blocks/vertical_wood.png
-Blocks/Wooden Blocks/horizontal_wood.png
-Blocks/Wooden Blocks/wooden_thick.png
-Blocks/Wooden Blocks/wooden_base_type_2.png
-Blocks/Wooden Blocks/wooden_base_type_1.png
-Blocks/Wooden Blocks/hor.png
-Blocks/Wooden Blocks/wooden_square.png
-Blocks/Stone Blocks/stone_square.png
-Blocks/Stone Blocks/stone_vertical.png
-Blocks/Stone Blocks/stone_horizontal.png
-Blocks/Soil/lastsoil.png
-Blocks/Soil/lastsoil2.png
-Blocks/Soil/finalsoil.png
-Blocks/Glass Blocks/glass_horizontal.png
-Blocks/Glass Blocks/glass_block_type_1.png
-Blocks/Glass Blocks/glass_block_type_2.png
-prevLevel.png
-pauseBackground.png
-trail.png
-pauseMenu.jpg
-Music/music/ab_theme_rio_boss_lite5.mp3.meta
-Music/music/ab rio win.mp3
-Music/music/ambience airport.mp3.meta
-Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3.meta
-Music/music/ambience airplane.mp3.meta
-Music/music/ambience beach.mp3.meta
-Music/music/ambience carnival.mp3.meta
-Music/music/ambience jungle.mp3.meta
-Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3
-Music/music/ambience carnival.mp3
-Music/music/ambience jungle.mp3
-Music/music/ambience beach.mp3
-Music/music/ab_theme_rio_boss_lite5.mp3
-Music/music/ab rio win.mp3.meta
-Music/music/story_music.mp3
-Music/music/story_music.mp3.meta
-Music/music/ambience airport.mp3
-Music/music/ambience airplane.mp3
-Music/music/ab rio ambience warehouse.mp3.meta
-Music/music/ab rio ambience warehouse.mp3
-Music/sfx/jewel fly 3.wav.meta
-Music/sfx/bird 01 collision a1.wav.meta
-Music/sfx/jewel fly 2.wav.meta
-Music/sfx/ball_bounce.wav
-Music/sfx/rock destroyed a3.wav.meta
-Music/sfx/scaffolding_break_a1.wav.meta
-Music/sfx/rock destroyed a2.wav.meta
-Music/sfx/level_failed_monkeys.mp3
-Music/sfx/Globe_Bird_Selection_1.wav
-Music/sfx/bird 03 collision a2.wav
-Music/sfx/sardine_can_shot.mp3.meta
-Music/sfx/scaffolding_collision_a2.wav
-Music/sfx/special group.wav
-Music/sfx/chain collision new a3.wav
-Music/sfx/bird 01 select.wav.meta
-Music/sfx/chain collision new a2.wav
-Music/sfx/scaffolding_collision_a3.wav
-Music/sfx/plant collision a1.wav
-Music/sfx/bird cage idle 2.wav.meta
-Music/sfx/bird 03 collision a3.wav
-Music/sfx/bird cage idle 3.wav.meta
-Music/sfx/bird 02 collision a2.wav.meta
-Music/sfx/bird 02 collision a3.wav.meta
-Music/sfx/Globe_Bird_Hit_3.wav.meta
-Music/sfx/Globe_Bird_Hit_2.wav.meta
-Music/sfx/monkey dies a1.wav
-Music/sfx/luggage open.wav.meta
-Music/sfx/nigel hit edit a3.wav.meta
-Music/sfx/nigel hit edit a2.wav.meta
-Music/sfx/bird 03 collision a1.wav
-Music/sfx/bird 04 collision a4.wav.meta
-Music/sfx/scaffolding_collision_a1.wav
-Music/sfx/blue hit a4.wav.meta
-Music/sfx/blue hit a5.wav.meta
-Music/sfx/luggage open.wav
-Music/sfx/jewel fly 8.wav.meta
-Music/sfx/bird 04 select.wav
-Music/sfx/rock damage a1.wav.meta
-Music/sfx/chain collision new a1.wav
-Music/sfx/scaffolding_collision_a2.wav.meta
-Music/sfx/scaffolding_collision_a3.wav.meta
-Music/sfx/bird cage idle 8.wav.meta
-Music/sfx/bird cage idle 9.wav.meta
-Music/sfx/plant collision a2.wav
-Music/sfx/bird next military a1.wav.meta
-Music/sfx/jewel collision a4.wav.meta
-Music/sfx/rock collision a3.wav.meta
-Music/sfx/rock collision a2.wav.meta
-Music/sfx/monkey dies a2.wav
-Music/sfx/bird 01 collision a4_low.wav
-Music/sfx/bird next military a2.wav
-Music/sfx/fruit collision a5.wav.meta
-Music/sfx/fruit collision a4.wav.meta
-Music/sfx/highscore.mp3.meta
-Music/sfx/bird 03 collision a4.wav
-Music/sfx/plant breaks a1.wav.meta
-Music/sfx/bounce material a5.wav.meta
-Music/sfx/bounce material a4.wav.meta
-Music/sfx/boomerang_select.wav
-Music/sfx/nigel laugh a5.wav.meta
-Music/sfx/monkeyboss hit 1.wav.meta
-Music/sfx/dog idle a1.wav.meta
-Music/sfx/bird 03 collision a1.wav.meta
-Music/sfx/bird 03 collision a5.wav
-Music/sfx/bird 01 select.wav
-Music/sfx/metal chain break a3.wav
-Music/sfx/bird cage collision a3.wav.meta
-Music/sfx/bird cage collision a2.wav.meta
-Music/sfx/bird 01 flying.wav.meta
-Music/sfx/bird next military a3.wav
-Music/sfx/balloon_pop.wav
-Music/sfx/bird shot-a1.wav.meta
-Music/sfx/bird next military a1.wav
-Music/sfx/mighty_eagle_yell.wav
-Music/sfx/dog moving loop.wav
-Music/sfx/metal chain break a1.wav
-Music/sfx/plant collision a5.wav.meta
-Music/sfx/plant collision a4.wav.meta
-Music/sfx/bigbrother_fly.wav
-Music/sfx/plant collision a5.wav
-Music/sfx/bigbrother_select.wav
-Music/sfx/dog hit a1.wav
-Music/sfx/special boost.wav.meta
-Music/sfx/wood collision a6.wav.meta
-Music/sfx/boomerang_activate.wav
-Music/sfx/lamp collision a5.wav.meta
-Music/sfx/lamp collision a4.wav.meta
-Music/sfx/fruit breaking a3.wav.meta
-Music/sfx/bird misc a1.wav.meta
-Music/sfx/fruit breaking a2.wav.meta
-Music/sfx/plant collision a4.wav
-Music/sfx/ice light collision a6.wav.meta
-Music/sfx/ice light collision a7.wav.meta
-Music/sfx/tnt box explodes.wav.meta
-Music/sfx/monkey idle a6.wav.meta
-Music/sfx/bird cage breaks 1.wav.meta
-Music/sfx/light destroyed a1.wav.meta
-Music/sfx/wood rolling.wav
-Music/sfx/bird_06_flying.wav.meta
-Music/sfx/redbird_yell02.wav.meta
-Music/sfx/redbird_yell03.wav.meta
-Music/sfx/star_3.wav
-Music/sfx/wood collision a5.wav
-Music/sfx/bird 02 collision a3.wav
-Music/sfx/ice light collision a5.wav
-Music/sfx/fruit collision a2.wav.meta
-Music/sfx/monkey idle a1.wav
-Music/sfx/Globe_Bird_Launch_3.wav
-Music/sfx/nigel laugh a2.wav.meta
-Music/sfx/nigel laugh a3.wav.meta
-Music/sfx/bird misc a7.wav
-Music/sfx/wood destroyed a1.wav.meta
-Music/sfx/jewel fly 1.wav
-Music/sfx/light destroyed a3.wav
-Music/sfx/light rolling.wav.meta
-Music/sfx/light destroyed a2.wav
-Music/sfx/Globe_Bird_Death_remove_1.wav.meta
-Music/sfx/bird misc a6.wav
-Music/sfx/cardboard box breaks a3.wav.meta
-Music/sfx/level_failed_birds.mp3.meta
-Music/sfx/bird_06_flying.wav
-Music/sfx/bird shot-a1.wav
-Music/sfx/ice light collision a4.wav
-Music/sfx/wood collision a4.wav
-Music/sfx/dog idle a1.wav
-Music/sfx/bird 02 collision a2.wav
-Music/sfx/star_2.wav
-Music/sfx/rock damage a1.wav
-Music/sfx/light damage a1.wav
-Music/sfx/mighty_eagle_fly.mp3.meta
-Music/sfx/bigbrother_select.wav.meta
-Music/sfx/lamp collision a2.wav
-Music/sfx/rock rolling.wav
-Music/sfx/light damage a3.wav
-Music/sfx/dog bark a1.wav.meta
-Music/sfx/monkeyboss laugh 1.wav.meta
-Music/sfx/blue fly loop.wav.meta
-Music/sfx/dog idle a3.wav
-Music/sfx/wood collision a6.wav
-Music/sfx/rock damage a3.wav
-Music/sfx/bird 05 collision a1.wav.meta
-Music/sfx/monkey idle a2.wav
-Music/sfx/bird cage idle 4.wav
-Music/sfx/ice light collision a6.wav
-Music/sfx/gasoline_can_explodes.wav
-Music/sfx/bird shot-a3.wav
-Music/sfx/jewel fly 2.wav
-Music/sfx/plant collision a2.wav.meta
-Music/sfx/bird misc a4.wav
-Music/sfx/bird misc a7.wav.meta
-Music/sfx/bird misc a6.wav.meta
-Music/sfx/light destroyed a1.wav
-Music/sfx/ice light collision a1.wav.meta
-Music/sfx/bird misc a5.wav
-Music/sfx/jewel fly 3.wav
-Music/sfx/wood collision a1.wav.meta
-Music/sfx/bird destroyed.wav
-Music/sfx/bird shot-a2.wav
-Music/sfx/lamp collision a2.wav.meta
-Music/sfx/monkey idle a3.wav
-Music/sfx/ice light collision a7.wav
-Music/sfx/bird cage idle 5.wav
-Music/sfx/monkey idle a1.wav.meta
-Music/sfx/bird cage breaks 6.wav.meta
-Music/sfx/slingshot_streched.wav
-Music/sfx/star_1.wav
-Music/sfx/rock damage a2.wav
-Music/sfx/bird 02 collision a1.wav
-Music/sfx/dog idle a2.wav
-Music/sfx/light damage a2.wav
-Music/sfx/dog moving loop.wav.meta
-Music/sfx/bird misc a12.wav.meta
-Music/sfx/level clear military a1.mp3.meta
-Music/sfx/star_3.mp3.meta
-Music/sfx/monkeyboss hit 4.wav
-Music/sfx/star_2.mp3.meta
-Music/sfx/bird 04 flying.wav
-Music/sfx/wood collision a3.wav
-Music/sfx/plant breaks a2.wav
-Music/sfx/bird 02 collision a5.wav
-Music/sfx/jewel fly 4.wav.meta
-Music/sfx/jewel fly 5.wav.meta
-Music/sfx/bird cage idle 1.wav
-Music/sfx/ice light collision a3.wav
-Music/sfx/redbird_yell01.wav
-Music/sfx/bird misc a11.wav
-Music/sfx/bird 03 select.wav
-Music/sfx/monkey near falling a1.wav.meta
-Music/sfx/Globe_Bird_Launch_3.wav.meta
-Music/sfx/jewel fly 7.wav
-Music/sfx/bird misc a1.wav
-Music/sfx/special egg explosion.wav
-Music/sfx/rock destroyed a2.wav
-Music/sfx/monkey dies a2.wav.meta
-Music/sfx/cardboard box breaks a1.wav
-Music/sfx/rock destroyed a3.wav
-Music/sfx/chain collision new a3.wav.meta
-Music/sfx/light damage a1.wav.meta
-Music/sfx/chain collision new a2.wav.meta
-Music/sfx/rock rolling.wav.meta
-Music/sfx/special boost.wav
-Music/sfx/jewel fly 6.wav
-Music/sfx/bird 01 flying.wav
-Music/sfx/bird misc a10.wav
-Music/sfx/lamp breaking.wav.meta
-Music/sfx/Globe_Bird_Hit_4.wav.meta
-Music/sfx/ice light collision a2.wav
-Music/sfx/boomerang_select.wav.meta
-Music/sfx/monkey idle a6.wav
-Music/sfx/wood collision a2.wav
-Music/sfx/bird 02 collision a4.wav
-Music/sfx/plant breaks a3.wav
-Music/sfx/bird cage idle 5.wav.meta
-Music/sfx/boomerang_swish.wav.meta
-Music/sfx/bird cage idle 4.wav.meta
-Music/sfx/bird 02 collision a5.wav.meta
-Music/sfx/bird 02 collision a4.wav.meta
-Music/sfx/monkeyboss hit 1.wav
-Music/sfx/monkeyboss hit 3.wav
-Music/sfx/nigel hit edit a4.wav.meta
-Music/sfx/lamp collision a4.wav
-Music/sfx/Globe_Bird_Selection_1.wav.meta
-Music/sfx/level_failed_monkeys.mp3.meta
-Music/sfx/plant breaks a1.wav
-Music/sfx/blue special.wav
-Music/sfx/monkey idle a4.wav
-Music/sfx/bird cage idle 2.wav
-Music/sfx/redbird_yell02.wav
-Music/sfx/bigbrother_yell.wav.meta
-Music/sfx/blue hit a3.wav.meta
-Music/sfx/blue hit a2.wav.meta
-Music/sfx/metal chain break a1.wav.meta
-Music/sfx/bird misc a12.wav
-Music/sfx/bird 04 collision a3.wav.meta
-Music/sfx/bird 04 collision a2.wav.meta
-Music/sfx/level start military a1.mp3.meta
-Music/sfx/bird misc a2.wav
-Music/sfx/jewel fly 4.wav
-Music/sfx/mighty_eagle_yell.wav.meta
-Music/sfx/rock destroyed a1.wav
-Music/sfx/cardboard box breaks a3.wav
-Music/sfx/jewel fly 5.wav
-Music/sfx/bird misc a3.wav
-Music/sfx/bird 01 collision a1_low.wav.meta
-Music/sfx/wood damage a1.wav.meta
-Music/sfx/bird destroyed.wav.meta
-Music/sfx/Globe_Bird_Special_Activation_3.wav.meta
-Music/sfx/Globe_Bird_Special_Activation_2.wav.meta
-Music/sfx/rock collision a4.wav.meta
-Music/sfx/rock collision a5.wav.meta
-Music/sfx/redbird_yell03.wav
-Music/sfx/monkey idle a5.wav
-Music/sfx/ice light collision a1.wav
-Music/sfx/bird cage idle 3.wav
-Music/sfx/wood collision a1.wav
-Music/sfx/star_1.wav.meta
-Music/sfx/lamp collision a5.wav
-Music/sfx/monkeyboss hit 2.wav
-Music/sfx/jewel collision a2.wav.meta
-Music/sfx/jewel collision a3.wav.meta
-Music/sfx/yellowflying.wav
-Music/sfx/bird 05 collision a5.wav.meta
-Music/sfx/bird 05 collision a4.wav.meta
-Music/sfx/bird pushing egg out.wav.meta
-Music/sfx/bird shot-a2.wav.meta
-Music/sfx/bird shot-a3.wav.meta
-Music/sfx/gamescorescreen_score_count_loop.wav.meta
-Music/sfx/blue and jewel slingshot.wav
-Music/sfx/bird 02 flying.wav.meta
-Music/sfx/rock collision a2.wav
-Music/sfx/jewel collision a3.wav
-Music/sfx/scaffolding_break_a1.wav
-Music/sfx/bounce material a4.wav
-Music/sfx/bird 05 collision a4.wav
-Music/sfx/blue fly loop.wav
-Music/sfx/jewel fly 8.wav
-Music/sfx/bird 02 flying.wav
-Music/sfx/wood destroyed a3.wav
-Music/sfx/blackfly.wav
-Music/sfx/wood rolling.wav.meta
-Music/sfx/nigel hit edit a1.wav
-Music/sfx/blue hit a1.wav
-Music/sfx/wood destroyed a2.wav
-Music/sfx/wood collision a4.wav.meta
-Music/sfx/nigel defeated flying away.wav
-Music/sfx/wood collision a5.wav.meta
-Music/sfx/bird 05 collision a5.wav
-Music/sfx/bounce material a5.wav
-Music/sfx/ice light collision a5.wav.meta
-Music/sfx/ball_bounce.wav.meta
-Music/sfx/ice light collision a4.wav.meta
-Music/sfx/gamescorescreen_score_count_loop.wav
-Music/sfx/slingshot streched.wav.meta
-Music/sfx/bird misc a3.wav.meta
-Music/sfx/fruit breaking a1.wav.meta
-Music/sfx/bird misc a2.wav.meta
-Music/sfx/jewel collision a2.wav
-Music/sfx/rock collision a3.wav
-Music/sfx/glass break.mp3
-Music/sfx/level_failed_birds.mp3
-Music/sfx/bird 01 collision a1.wav
-Music/sfx/bird 01 collision a2_low.wav
-Music/sfx/monkey falling a1.wav.meta
-Music/sfx/bird cage breaks 2.wav.meta
-Music/sfx/light destroyed a2.wav.meta
-Music/sfx/monkey idle a5.wav.meta
-Music/sfx/light destroyed a3.wav.meta
-Music/sfx/special egg.wav.meta
-Music/sfx/monkey idle a4.wav.meta
-Music/sfx/monkey falling a1.wav
-Music/sfx/bird 01 collision a3.wav
-Music/sfx/plant breaks a3.wav.meta
-Music/sfx/plant breaks a2.wav.meta
-Music/sfx/rock collision a1.wav
-Music/sfx/light rolling.wav
-Music/sfx/fruit collision a2.wav
-Music/sfx/scaffolding_break_a2.wav
-Music/sfx/monkeyboss hit 2.wav.meta
-Music/sfx/monkeyboss hit 3.wav.meta
-Music/sfx/monkey near falling a4.wav
-Music/sfx/lamp breaking.wav
-Music/sfx/blue hit a3.wav
-Music/sfx/nigel hit edit a3.wav
-Music/sfx/bird 03 collision a3.wav.meta
-Music/sfx/nigel hit edit a2.wav
-Music/sfx/blue hit a2.wav
-Music/sfx/bird 03 collision a2.wav.meta
-Music/sfx/wood destroyed a1.wav
-Music/sfx/dog idle a3.wav.meta
-Music/sfx/dog idle a2.wav.meta
-Music/sfx/bird 05 select.wav.meta
-Music/sfx/scaffolding_break_a3.wav
-Music/sfx/jewel collision a1.wav
-Music/sfx/bird 01 collision a4_low.wav.meta
-Music/sfx/bird misc a9.wav.meta
-Music/sfx/bird misc a8.wav.meta
-Music/sfx/bird 01 collision a2.wav
-Music/sfx/bird 01 collision a3_low.wav.meta
-Music/sfx/plane_loop04.wav.meta
-Music/sfx/monkeyboss defeated.wav
-Music/sfx/highscore.mp3
-Music/sfx/button.wav
-Music/sfx/mighty_eagle_thump.mp3.meta
-Music/sfx/rock collision a4.wav
-Music/sfx/bird cage idle 8.wav
-Music/sfx/nigel hit edit a1.wav.meta
-Music/sfx/bird 05 collision a2.wav
-Music/sfx/bird 02 select.wav.meta
-Music/sfx/bird misc a8.wav
-Music/sfx/mighty_eagle_thump.mp3
-Music/sfx/blue slingshot.wav.meta
-Music/sfx/blue hit a6.wav
-Music/sfx/bird cage collision a2.wav
-Music/sfx/bigbrother_yell.wav
-Music/sfx/blue hit a7.wav.meta
-Music/sfx/level clear military a2.mp3
-Music/sfx/blue hit a6.wav.meta
-Music/sfx/monkey near falling a1.wav
-Music/sfx/rock damage a3.wav.meta
-Music/sfx/rock damage a2.wav.meta
-Music/sfx/blue hit a7.wav
-Music/sfx/bird cage collision a3.wav
-Music/sfx/balloon_pop.wav.meta
-Music/sfx/bird misc a9.wav
-Music/sfx/bird 05 collision a3.wav
-Music/sfx/cardboard box collision a1.wav.meta
-Music/sfx/scaffolding_collision_a1.wav.meta
-Music/sfx/bird cage idle 9.wav
-Music/sfx/rock collision a5.wav
-Music/sfx/jewel collision a4.wav
-Music/sfx/bird next military a3.wav.meta
-Music/sfx/bird next military a2.wav.meta
-Music/sfx/bigbrother_fly.wav.meta
-Music/sfx/boomerang_swish.wav
-Music/sfx/rock collision a1.wav.meta
-Music/sfx/plane_broken.mp3
-Music/sfx/bird 01 collision a3.wav.meta
-Music/sfx/jewel fly 1.wav.meta
-Music/sfx/bird 01 collision a2.wav.meta
-Music/sfx/fruit collision a4.wav
-Music/sfx/scaffolding_break_a3.wav.meta
-Music/sfx/mighty_eagle_fly.mp3
-Music/sfx/scaffolding_break_a2.wav.meta
-Music/sfx/rock destroyed a1.wav.meta
-Music/sfx/bird 05 collision a1.wav
-Music/sfx/bird 01 collision a2_low.wav.meta
-Music/sfx/monkey near falling a4.wav.meta
-Music/sfx/blue hit a5.wav
-Music/sfx/monkey near falling a2.wav
-Music/sfx/level clear military a1.mp3
-Music/sfx/monkey near falling a3.wav
-Music/sfx/blue hit a4.wav
-Music/sfx/nigel hit edit a4.wav
-Music/sfx/ice light collision a8.wav
-Music/sfx/explosion.wav
-Music/sfx/bird 01 collision a3_low.wav
-Music/sfx/bird 05 flying.wav.meta
-Music/sfx/bird 05 select.wav
-Music/sfx/fruit collision a5.wav
-Music/sfx/monkeyboss defeated.wav.meta
-Music/sfx/bird cage idle 1.wav.meta
-Music/sfx/bird 02 collision a1.wav.meta
-Music/sfx/boomerang_activate.wav.meta
-Music/sfx/bird 01 collision a4.wav
-Music/sfx/dog moving loop.mp3
-Music/sfx/Globe_Bird_Hit_1.wav.meta
-Music/sfx/pig balloon pop.wav
-Music/sfx/flower breaking scoreitem.wav.meta
-Music/sfx/star_2.mp3
-Music/sfx/bird 02 select.wav
-Music/sfx/bird 03 select.wav.meta
-Music/sfx/metal chain break a3.wav.meta
-Music/sfx/blue hit a1.wav.meta
-Music/sfx/bird pushing egg out.wav
-Music/sfx/nigel laugh a2.wav
-Music/sfx/bird 04 collision a1.wav.meta
-Music/sfx/plane_broken.mp3.meta
-Music/sfx/level start military a2.mp3.meta
-Music/sfx/wood damage a3.wav.meta
-Music/sfx/wood damage a2.wav.meta
-Music/sfx/nigel laugh a3.wav
-Music/sfx/Globe_Bird_Special_Activation_1.wav.meta
-Music/sfx/bird 04 collision a4.wav
-Music/sfx/star_2.wav.meta
-Music/sfx/star_3.wav.meta
-Music/sfx/jewel collision a1.wav.meta
-Music/sfx/Globe_Bird_Hit_4.wav
-Music/sfx/star_3.mp3
-Music/sfx/nigel defeated flying away.wav.meta
-Music/sfx/monkeyboss laugh 1.wav
-Music/sfx/bird cage breaks 6.wav
-Music/sfx/dog moving loop.mp3.meta
-Music/sfx/special egg.wav
-Music/sfx/monkeyboss laugh 3.wav
-Music/sfx/star_1.mp3
-Music/sfx/bird cage idle 11.wav.meta
-Music/sfx/jewel fly 7.wav.meta
-Music/sfx/bird 01 collision a4.wav.meta
-Music/sfx/jewel fly 6.wav.meta
-Music/sfx/monkey near falling a3.wav.meta
-Music/sfx/monkey near falling a2.wav.meta
-Music/sfx/blue special.wav.meta
-Music/sfx/sardine_can_physics_a2.mp3
-Music/sfx/gasoline_can_explodes.wav.meta
-Music/sfx/nigel laugh a1.wav
-Music/sfx/bird 04 flying.wav.meta
-Music/sfx/nigel_evil_laugh_3.mp3
-Music/sfx/cardboard box collision a1.wav
-Music/sfx/monkey dies a1.wav.meta
-Music/sfx/bird 01 collision a1_low.wav
-Music/sfx/light damage a3.wav.meta
-Music/sfx/light damage a2.wav.meta
-Music/sfx/chain collision new a1.wav.meta
-Music/sfx/pig balloon pop.wav.meta
-Music/sfx/blue slingshot.wav
-Music/sfx/monkeyboss laugh 2.wav
-Music/sfx/bird cage breaks 1.wav
-Music/sfx/blue and jewel slingshot.wav.meta
-Music/sfx/dog bark a2.wav.meta
-Music/sfx/dog bark a1.wav
-Music/sfx/sardine_can_physics_a2.mp3.meta
-Music/sfx/Globe_Bird_Hit_3.wav
-Music/sfx/level start military a1.mp3
-Music/sfx/bird 05 collision a2.wav.meta
-Music/sfx/bird 05 collision a3.wav.meta
-Music/sfx/monkeyboss laugh 3.wav.meta
-Music/sfx/monkeyboss laugh 2.wav.meta
-Music/sfx/flower breaking scoreitem.wav
-Music/sfx/bird 04 collision a3.wav
-Music/sfx/special group.wav.meta
-Music/sfx/wood damage a2.wav
-Music/sfx/plant collision a1.wav.meta
-Music/sfx/bird 03 flying.wav.meta
-Music/sfx/dog hit a1.wav.meta
-Music/sfx/ice light collision a2.wav.meta
-Music/sfx/ice light collision a3.wav.meta
-Music/sfx/nigel_evil_laugh_3.mp3.meta
-Music/sfx/wood damage a3.wav
-Music/sfx/nigel laugh a5.wav
-Music/sfx/bird misc a4.wav.meta
-Music/sfx/fruit breaking scoreitem.wav
-Music/sfx/bird misc a5.wav.meta
-Music/sfx/wood collision a3.wav.meta
-Music/sfx/wood collision a2.wav.meta
-Music/sfx/bird 04 collision a2.wav
-Music/sfx/Globe_Bird_Special_Activation_1.wav
-Music/sfx/fruit breaking scoreitem.wav.meta
-Music/sfx/monkey idle a2.wav.meta
-Music/sfx/monkey idle a3.wav.meta
-Music/sfx/Globe_Bird_Hit_2.wav
-Music/sfx/level clear military a2.mp3.meta
-Music/sfx/star_1.mp3.meta
-Music/sfx/fruit breaking a1.wav
-Music/sfx/bird misc a10.wav.meta
-Music/sfx/bird misc a11.wav.meta
-Music/sfx/redbird_yell01.wav.meta
-Music/sfx/bird cage breaks 2.wav
-Music/sfx/bird cage idle 11.wav
-Music/sfx/fruit breaking a3.wav
-Music/sfx/dog bark a2.wav
-Music/sfx/Globe_Bird_Death_remove_1.wav
-Music/sfx/special egg explosion.wav.meta
-Music/sfx/level start military a2.mp3
-Music/sfx/Globe_Bird_Special_Activation_3.wav
-Music/sfx/nigel laugh a1.wav.meta
-Music/sfx/monkeyboss hit 4.wav.meta
-Music/sfx/sardine_can_shot.mp3
-Music/sfx/wood damage a1.wav
-Music/sfx/wood destroyed a3.wav.meta
-Music/sfx/wood destroyed a2.wav.meta
-Music/sfx/plane_loop04.wav
-Music/sfx/bird 03 collision a4.wav.meta
-Music/sfx/bird 03 collision a5.wav.meta
-Music/sfx/cardboard box breaks a1.wav.meta
-Music/sfx/Globe_Bird_Special_Activation_2.wav
-Music/sfx/bird 04 collision a1.wav
-Music/sfx/bird 04 select.wav.meta
-Music/sfx/Globe_Bird_Hit_1.wav
-Music/sfx/fruit breaking a2.wav
-Music/sfx/ice light collision a8.wav.meta
-Music/stpatrics_theme.mp3.meta
-Music/Angry Birds OST/level_complete.mp3
-Music/Angry Birds OST/game_complete.mp3
-Music/Angry Birds OST/ambient_green_jungleish.mp3
-Music/Angry Birds OST/funky_theme.mp3
-Music/Angry Birds OST/title_theme.mp3
-Music/Angry Birds OST/ambient_construction.mp3
-Music/Angry Birds OST/birds_boss.mp3
-Music/Angry Birds OST/ambient_red_savannah.mp3
-Music/Angry Birds OST/ambient_city.mp3
-Music/Angry Birds OST/birds_intro.mp3
-Music/Angry Birds OST/birds_outro.mp3
-Music/Angry Birds OST/ambient_white_dryforest.mp3
-Music/title_theme.mp3
-Music/sfx.meta
-Music/stpatrics_theme.mp3
-Music/music.meta
-level2.png
-pauseMenu.jpeg
-Level Buttons/locklevel.png
-Level Buttons/2.png
-Level Buttons/3.png
-Level Buttons/1.png
-Textures/BUTTONS.png.meta
-Textures/THEME_05_THEME_GROUND_5.png
-Textures/THEME_06_THEME_GROUND_6.png.meta
-Textures/LEVELSELECTION_SHEET_1.png.meta
-Textures/THEME_03_PARALLAX_3.png.meta
-Textures/THEME_13_PARALLAX1_13.png
-Textures/THEME_02_PARALLAX_2.png.meta
-Textures/THEME_11_THEME_11.png.meta
-Textures/THEME_11_PARALLAX_BIRTHDAY.png.meta
-Textures/THEME_06_PARALLAX_6.png
-Textures/THEME_10_THEME_GROUND_CAVE.png
-Textures/THEME_12_PARALLAX_12.png
-Textures/THEME_07_THEME_7.png.meta
-Textures/THEME_11_THEME_11.png
-Textures/THEME_09_THEME_GROUND_9.png
-Textures/SPLASHES_SHEET_3.png.meta
-Textures/THEME_03_THEME_3.png
-Textures/THEME_06_THEME_6.png
-Textures/THEME_07_PARALLAX_7.png
-Textures/THEME_10_THEME_10.png.meta
-Textures/THEME_08_THEME_8.png
-Textures/THEME_06_THEME_GROUND_6.png
-Textures/BLOCKS_1.png.meta
-Textures/SCORES.png.meta
-Textures/THEME_01_PARALLAX_1.png
-Textures/THEME_05_THEME_5.png.meta
-Textures/THEME_01_THEME_GROUND_1.png.meta
-Textures/THEME_10_THEME_10.png
-Textures/SCORES.png
-Textures/LEVELSELECTION_SHEET_4.png
-Textures/THEME_03_PARALLAX_3.png
-Textures/MENU_ELEMENTS_1.png.meta
-Textures/THEME_03_THEME_GROUND_3.png.meta
-Textures/MENU_ELEMENTS_3.png
-Textures/THEME_05_THEME_5.png
-Textures/THEME_05_PARALLAX_5.png
-Textures/THEME_04_PARALLAX_4.png.meta
-Textures/THEME_10_PARALLAX_CAVE.png
-Textures/THEME_08_PARALLAX_8.png.meta
-Textures/THEME_03_THEME_GROUND_3.png
-Textures/MENU_ELEMENTS_1.png
-Textures/THEME_09_PARALLAX_9.png.meta
-Textures/THEME_06_THEME_6.png.meta
-Textures/THEME_05_PARALLAX_5.png.meta
-Textures/MENU.png.meta
-Textures/LEVELSELECTION_SHEET_1.png
-Textures/THEME_02_PARALLAX_2.png
-Textures/THEME_08_THEME_GROUND_8.png.meta
-Textures/THEME_04_THEME_4.png.meta
-Textures/THEME_13_THEME_GROUND_13.png
-Textures/THEME_04_PARALLAX_4.png
-Textures/THEME_04_THEME_GROUND_4.png.meta
-Textures/LOSE.png
-Textures/STAR.png.meta
-Textures/THEME_12_THEME_GROUND_12.png
-Textures/BIRDS_1.png.meta
-Textures/BLOCKS_1.png
-Textures/BUTTONS.png
-Textures/MENU.png
-Textures/THEME_07_THEME_7.png
-Textures/THEME_02_THEME_2.png
-Textures/THEME_01_THEME_GROUND_1.png
-Textures/THEME_09_THEME_9.png
-Textures/THEME_10_PARALLAX_CAVE.png.meta
-Textures/THEME_01_PARALLAX_1.png.meta
-Textures/THEME_13_PARALLAX2_13.png
-Textures/MENU_LEVELSELECTION_1.png
-Textures/THEME_09_THEME_9.png.meta
-Textures/THEME_02_THEME_GROUND_2.png
-Textures/THEME_02_THEME_2.png.meta
-Textures/LOSE.png.meta
-Textures/THEME_13_PARALLAX1_13.png.meta
-Textures/THEME_13_THEME_GROUND_13.png.meta
-Textures/THEME_07_THEME_GROUND_7.png.meta
-Textures/THEME_05_THEME_GROUND_5.png.meta
-Textures/THEME_13_PARALLAX2_13.png.meta
-Textures/THEME_12_THEME_12.png
-Textures/THEME_11_THEME_GROUND_BIRTHDAY.png.meta
-Textures/THEME_09_THEME_GROUND_9.png.meta
-Textures/THEME_07_THEME_GROUND_7.png
-Textures/STAR.png
-Textures/THEME_01_THEME_1.png.meta
-Textures/LEVELSELECTION_SHEET_4.png.meta
-Textures/THEME_12_THEME_GROUND_12.png.meta
-Textures/BIRDS_1.png
-Textures/THEME_12_THEME_12.png.meta
-Textures/THEME_08_PARALLAX_8.png
-Textures/THEME_12_PARALLAX_12.png.meta
-Textures/THEME_13_THEME_13.png
-Textures/THEME_04_THEME_GROUND_4.png
-Textures/THEME_11_PARALLAX_BIRTHDAY.png
-Textures/THEME_09_PARALLAX_9.png
-Textures/SPLASHES_SHEET_3.png
-Textures/MENU_ELEMENTS_3.png.meta
-Textures/THEME_06_PARALLAX_6.png.meta
-Textures/THEME_01_THEME_1.png
-Textures/THEME_02_THEME_GROUND_2.png.meta
-Textures/THEME_13_THEME_13.png.meta
-Textures/MENU_LEVELSELECTION_1.png.meta
-Textures/THEME_10_THEME_GROUND_CAVE.png.meta
-Textures/THEME_08_THEME_GROUND_8.png
-Textures/THEME_07_PARALLAX_7.png.meta
-Textures/THEME_03_THEME_3.png.meta
-Textures/THEME_11_THEME_GROUND_BIRTHDAY.png
-Textures/THEME_08_THEME_8.png.meta
-Textures/THEME_04_THEME_4.png
-levelBackground.jpg
-crossButton.png
-pigs/Mucchad_pig.jpg
-pigs/crownpig.jpg
-pigs/crownpig.png
-pigs/normal_pig.jpg
-level1.png
-level5.png
-backbutton.png
-level4.png
-level6.png
-m_button.png
-level7.png
-PC Computer - Angry Birds Rio - Blocks & Objects.png
-emm.png
-Level_tmx_files/lastsoil.png
-Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.tsx
-Level_tmx_files/Mobile - Angry Birds - Poached E.png
-Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
-Level_tmx_files/soil.png
-Level_tmx_files/finalsoil.tsx
-Level_tmx_files/finalsoil.png
-Level_tmx_files/soil.tsx
-Level_tmx_files/level-1 copy.tmx
-Level_tmx_files/level-1.tmx
-Level_tmx_files/level-2.tmx
-Level_tmx_files/level-3.tmx
-skin1/font-title-export.fnt
-skin1/biological-attack-ui.json
-skin1/biological-attack-ui.atlas
-skin1/biological-attack-ui.png
-skin1/font-export.fnt
-PathPoint.png
-pauseButton.png
-levelLocked.png
-nextLevel.png
-restart.png
-hs_err_pid127614.log
-exitButton.png
-loadingBackground.jpg
-Loadingscreen/background.jpg
-resume.png
-restartButton.png
-elementGlass032.png
-trail.webp
-Slings/sling3.png
-Slings/sling2.png
-Slings/rect.png
-Slings/slingshot2.png
-Slings/sling.png
-Slings/slinghalf1.png
-Slings/slinghalf2.png
-Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
-Level_tmx_files copy/level-1.tmx
-resumeButton.png
-Homescreen/exit_button.png
-Homescreen/help_button.png
+Homescreen/sound_button.png
 Homescreen/music_button.png
 Homescreen/setting_button.png
-Homescreen/home_screen_bg.jpg
-Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
-Homescreen/stop_image.jpg
-Homescreen/sound_button.png
 Homescreen/play_button.png
-Homescreen/text.png
+Homescreen/help_button.png
+Homescreen/stop_image.jpg
+Homescreen/exit_button.png
 Homescreen/image.png
-libgdx.png
-cross.png
-bgg.jpg
-gameOver.png
+Homescreen/text.png
+Homescreen/0c323af8-e16b-4575-adba-c484a51f71c1.png
+Homescreen/home_screen_bg.jpg
 bgg2.jpg
-bg2.png
-stars5.png
-skin4/clean-crispy-ui.json
-skin4/clean-crispy-ui.atlas
-skin4/clean-crispy-ui.png
-skin4/font-export.fnt
-birds/yellow.png
-birds/yellow.jpg
-birds/black.png
-birds/bluebird.jpg
-birds/redbird.png
-birds/redbird.jpg
-skin3/neon-ui.json
-skin3/font-pressed-export.fnt
-skin3/neon-ui.png
-skin3/font-over-export.fnt
-skin3/font-export.fnt
-skin3/neon-ui.atlas
-blackdot.png
-stars4.png
-assets 2.txt
-level9.png
-glass.png
-Fonts/angrybirds-regular.bmp
-Fonts/angrybirds-regular.ttf
-effects/explosion.p
-effects/particle.png
-skin2/neon-ui.json
-skin2/font-pressed-export.fnt
-skin2/neon-ui.png
-skin2/font-over-export.fnt
-skin2/font-export.fnt
-skin2/neon-ui.atlas
-stars.png
-level8.png
-skin5/font-title-export.fnt
-skin5/level-plane-ui.png
-skin5/level-plane-ui.atlas
-skin5/level-plane-ui.json
-skin5/font-subtitle-export.fnt
-skin5/font-export.fnt
-assets 3.txt
-stars3.png
-Themes/Theme-4.png
-Themes/Theme-5.png
-Themes/Theme-2.png
-Themes/Theme-3.png
-Themes/Theme-1.png
-Tilesets/INGAME_BLOCKS_WOOD_1.webp
-Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
-Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
-Tilesets/level-1.tmx
-Gamescreen/background.jpg
-lightGrayDot.png
-stars2.png
-effects2/images/star_1.png
-effects2/images/note-4.png
-effects2/images/dash.png
-effects2/images/note-5.png
-effects2/images/star_2.png
-effects2/images/note-2.png
-effects2/images/note-3.png
-effects2/images/note-1.png
-effects2/images/snow-flake.png
-effects2/images/pentagram-glow.png
-effects2/images/pentagram.png
+levelBackground.jpg
+hs_err_pid127614.log
+skin1/font-title-export.fnt
+skin1/biological-attack-ui.atlas
+skin1/biological-attack-ui.json
+skin1/biological-attack-ui.png
+skin1/font-export.fnt
+effects2/images/glass-4.png
+effects2/images/rain.png
 effects2/images/spark.png
 effects2/images/rain-cinematic.png
-effects2/images/circle4.png
-effects2/images/cloud_1.png
-effects2/images/explosion-1.png
-effects2/images/circle1.png
-effects2/images/circle3.png
-effects2/images/explosion-2.png
-effects2/images/explosion-3.png
-effects2/images/rect.png
-effects2/images/circle2.png
-effects2/images/gore.png
-effects2/images/glass-4.png
+effects2/images/note-2.png
+effects2/images/particle.png
 effects2/images/glass-5.png
+effects2/images/pentagram.png
+effects2/images/star-real.png
+effects2/images/circle1.png
+effects2/images/firework.png
+effects2/images/snow-flake.png
+effects2/images/thrust-1.png
+effects2/images/circle3.png
 effects2/images/neutron-full.png
-effects2/images/blob.png
-effects2/images/glass-6.png
-effects2/images/glass-2.png
-effects2/images/glass-3.png
-effects2/images/rain-blurred.png
+effects2/images/explosion-2.png
+effects2/images/thrust-2.png
+effects2/images/dash.png
 effects2/images/glass-1.png
+effects2/images/note-3.png
 effects2/images/diamond.png
 effects2/images/line.png
-effects2/images/particle.png
-effects2/images/neutron.png
-effects2/images/thrust-3.png
 effects2/images/spark-colored.png
-effects2/images/star-real.png
-effects2/images/thrust-2.png
-effects2/images/rain.png
-effects2/images/firework.png
-effects2/images/thrust-1.png
-effects2/packs/Particle Park Stink/Particle Park Stink License.txt
-effects2/packs/Particle Park Stink/circle2.png
-effects2/packs/Particle Park Stink/Particle Park Stink.p
-effects2/packs/Particle Park Trail/Particle Park Trail License.txt
+effects2/images/star_2.png
+effects2/images/pentagram-glow.png
+effects2/images/blob.png
+effects2/images/star_1.png
+effects2/images/explosion-3.png
+effects2/images/glass-2.png
+effects2/images/glass-3.png
+effects2/images/thrust-3.png
+effects2/images/explosion-1.png
+effects2/images/neutron.png
+effects2/images/note-4.png
+effects2/images/rect.png
+effects2/images/glass-6.png
+effects2/images/cloud_1.png
+effects2/images/note-5.png
+effects2/images/note-1.png
+effects2/images/rain-blurred.png
+effects2/images/gore.png
+effects2/images/circle4.png
+effects2/images/circle2.png
+effects2/effects/glass-4.png
+effects2/effects/rain.png
+effects2/effects/Particle Park Fireworks Tracer.p
+effects2/effects/Particle Park Pentagram Glitchy.p
+effects2/effects/spark.png
+effects2/effects/Particle Park Snow Flakes.p
+effects2/effects/Particle Park Sparks.p
+effects2/effects/rain-cinematic.png
+effects2/effects/myexplosion.p
+effects2/effects/note-2.png
+effects2/effects/Particle Park Thruster Pixel.p
+effects2/effects/particle.png
+effects2/effects/glass-5.png
+effects2/effects/Particle Park Muzzle Flash With Smoke.p
+effects2/effects/pentagram.png
+effects2/effects/Particle Park Hallucinogen Full.p
+effects2/effects/Particle Park Glass.p
+effects2/effects/star-real.png
+effects2/effects/Particle Park Stink.p
+effects2/effects/circle1.png
+effects2/effects/firework.png
+effects2/effects/Particle Park Fireball Blue.p
+effects2/effects/mysmoke.p
+effects2/effects/Particle Park Star.p
+effects2/effects/snow-flake.png
+effects2/effects/Particle Park Fireworks.p
+effects2/effects/thrust-1.png
+effects2/effects/Particle Park Fireball.p
+effects2/effects/circle3.png
+effects2/effects/neutron-full.png
+effects2/effects/Particle Park Splash.p
+effects2/effects/explosion-2.png
+effects2/effects/thrust-2.png
+effects2/effects/Particle Park Muzzle Flash.p
+effects2/effects/dash.png
+effects2/effects/Particle Park Explosion Enemy.p
+effects2/effects/glass-1.png
+effects2/effects/note-3.png
+effects2/effects/diamond.png
+effects2/effects/Particle Park Blood.p
+effects2/effects/line.png
+effects2/effects/spark-colored.png
+effects2/effects/Particle Park Thruster.p
+effects2/effects/star_2.png
+effects2/effects/pentagram-glow.png
+effects2/effects/Particle Park Rain Cinematic.p
+effects2/effects/Particle Park Trail Pixel.p
+effects2/effects/Particle Park Flame.p
+effects2/effects/blob.png
+effects2/effects/Particle Park Trail Fart.p
+effects2/effects/Particle Park Smoke Trail.p
+effects2/effects/Particle Park Dust.p
+effects2/effects/star_1.png
+effects2/effects/explosion-3.png
+effects2/effects/glass-2.png
+effects2/effects/Particle Park Flame Pixel.p
+effects2/effects/Particle Park Explosion Small.p
+effects2/effects/Particle Park Star Trail.p
+effects2/effects/glass-3.png
+effects2/effects/Particle Park Hallucinogen.p
+effects2/effects/thrust-3.png
+effects2/effects/explosion-1.png
+effects2/effects/Particle Park Smoke.p
+effects2/effects/Particle Park Smoke Train.p
+effects2/effects/Particle Park Burnout.p
+effects2/effects/neutron.png
+effects2/effects/Particle Park Explosion.p
+effects2/effects/Particle Park Splash Pixel.p
+effects2/effects/note-4.png
+effects2/effects/rect.png
+effects2/effects/Particle Park Starlight.p
+effects2/effects/Particle Park Rain.p
+effects2/effects/Particle Park Pentagram.p
+effects2/effects/Particle Park Dust Right.p
+effects2/effects/Particle Park Trail.p
+effects2/effects/glass-6.png
+effects2/effects/cloud_1.png
+effects2/effects/note-5.png
+effects2/effects/myglass.p
+effects2/effects/note-1.png
+effects2/effects/rain-blurred.png
+effects2/effects/Particle Park Fireworks Tracer With Dazzler.p
+effects2/effects/Particle Park Dust Left.p
+effects2/effects/gore.png
+effects2/effects/circle4.png
+effects2/effects/circle2.png
+effects2/effects/Particle Park Laser.p
+effects2/effects/Particle Park Thrust.p
 effects2/packs/Particle Park Trail/circle3.png
+effects2/packs/Particle Park Trail/Particle Park Trail License.txt
 effects2/packs/Particle Park Trail/Particle Park Trail.p
-effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel.p
-effects2/packs/Particle Park Thruster Pixel/rect.png
-effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel License.txt
-effects2/packs/Particle Park Muzzle Flash With Smoke/dash.png
-effects2/packs/Particle Park Muzzle Flash With Smoke/circle3.png
-effects2/packs/Particle Park Muzzle Flash With Smoke/circle2.png
-effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke License.txt
-effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke.p
-effects2/packs/Particle Park Pentagram Glitchy/pentagram.png
-effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy.p
-effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy License.txt
-effects2/packs/Particle Park Splash/Particle Park Splash License.txt
-effects2/packs/Particle Park Splash/Particle Park Splash.p
-effects2/packs/Particle Park Splash/circle1.png
-effects2/packs/Particle Park Smoke/Particle Park Smoke License.txt
-effects2/packs/Particle Park Smoke/circle2.png
-effects2/packs/Particle Park Smoke/Particle Park Smoke.p
-effects2/packs/Particle Park Dust Left/Particle Park Dust Left.p
-effects2/packs/Particle Park Dust Left/cloud_1.png
-effects2/packs/Particle Park Dust Left/Particle Park Dust Left License.txt
-effects2/packs/Particle Park Pentagram/pentagram-glow.png
-effects2/packs/Particle Park Pentagram/Particle Park Pentagram.p
-effects2/packs/Particle Park Pentagram/Particle Park Pentagram License.txt
-effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail.p
-effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail License.txt
-effects2/packs/Particle Park Smoke Trail/cloud_1.png
-effects2/packs/Particle Park Muzzle Flash/dash.png
-effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash License.txt
-effects2/packs/Particle Park Muzzle Flash/circle2.png
-effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash.p
-effects2/packs/Particle Park Burnout/cloud_1.png
-effects2/packs/Particle Park Burnout/Particle Park Burnout.p
-effects2/packs/Particle Park Burnout/Particle Park Burnout License.txt
-effects2/packs/Particle Park Starlight/Particle Park Starlight.p
-effects2/packs/Particle Park Starlight/circle2.png
-effects2/packs/Particle Park Starlight/Particle Park Starlight License.txt
-effects2/packs/Particle Park Starlight/spark-colored.png
-effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler.p
-effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler License.txt
-effects2/packs/Particle Park Fireworks Tracer With Dazzler/firework.png
-effects2/packs/Particle Park Sparks/Particle Park Sparks License.txt
-effects2/packs/Particle Park Sparks/Particle Park Sparks.p
-effects2/packs/Particle Park Sparks/circle3.png
-effects2/packs/Particle Park Sparks/circle2.png
-effects2/packs/Particle Park Dust Right/Particle Park Dust Right License.txt
-effects2/packs/Particle Park Dust Right/Particle Park Dust Right.p
-effects2/packs/Particle Park Dust Right/cloud_1.png
-effects2/packs/Particle Park Flame Pixel/rect.png
-effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel License.txt
-effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel.p
-effects2/packs/Particle Park Blood/circle1.png
-effects2/packs/Particle Park Blood/gore.png
-effects2/packs/Particle Park Blood/blob.png
-effects2/packs/Particle Park Blood/Particle Park Blood.p
-effects2/packs/Particle Park Blood/Particle Park Blood License.txt
-effects2/packs/Particle Park Star/star_1.png
-effects2/packs/Particle Park Star/Particle Park Star License.txt
-effects2/packs/Particle Park Star/Particle Park Star.p
-effects2/packs/Particle Park Explosion/Particle Park Explosion.p
-effects2/packs/Particle Park Explosion/explosion-1.png
-effects2/packs/Particle Park Explosion/explosion-2.png
-effects2/packs/Particle Park Explosion/explosion-3.png
-effects2/packs/Particle Park Explosion/circle2.png
-effects2/packs/Particle Park Explosion/Particle Park Explosion License.txt
-effects2/packs/Particle Park Explosion Enemy/explosion-1.png
-effects2/packs/Particle Park Explosion Enemy/explosion-2.png
-effects2/packs/Particle Park Explosion Enemy/explosion-3.png
-effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy.p
-effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy License.txt
-effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small License.txt
-effects2/packs/Particle Park Explosion Small/explosion-1.png
-effects2/packs/Particle Park Explosion Small/explosion-2.png
-effects2/packs/Particle Park Explosion Small/explosion-3.png
-effects2/packs/Particle Park Explosion Small/circle2.png
-effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small.p
-effects2/packs/Particle Park Thruster/Particle Park Thruster.p
-effects2/packs/Particle Park Thruster/Particle Park Thruster License.txt
-effects2/packs/Particle Park Thruster/thrust-3.png
-effects2/packs/Particle Park Thruster/thrust-2.png
-effects2/packs/Particle Park Thruster/thrust-1.png
-effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart.p
-effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart License.txt
-effects2/packs/Particle Park Trail Fart/circle2.png
-effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic.p
-effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic License.txt
-effects2/packs/Particle Park Rain Cinematic/rain-cinematic.png
-effects2/packs/Particle Park Flame/circle4.png
-effects2/packs/Particle Park Flame/Particle Park Flame.p
-effects2/packs/Particle Park Flame/circle3.png
-effects2/packs/Particle Park Flame/Particle Park Flame License.txt
-effects2/packs/Particle Park Fireworks/Particle Park Fireworks.p
-effects2/packs/Particle Park Fireworks/Particle Park Fireworks License.txt
-effects2/packs/Particle Park Fireworks/firework.png
-effects2/packs/Particle Park Glass/Particle Park Glass License.txt
-effects2/packs/Particle Park Glass/glass-4.png
-effects2/packs/Particle Park Glass/glass-5.png
-effects2/packs/Particle Park Glass/glass-6.png
-effects2/packs/Particle Park Glass/glass-2.png
-effects2/packs/Particle Park Glass/glass-3.png
-effects2/packs/Particle Park Glass/glass-1.png
-effects2/packs/Particle Park Glass/Particle Park Glass.p
-effects2/packs/Particle Park Snow Flakes/snow-flake.png
-effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes.p
-effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes License.txt
 effects2/packs/Particle Park Splash Pixel/Particle Park Splash Pixel License.txt
 effects2/packs/Particle Park Splash Pixel/Particle Park Splash Pixel.p
 effects2/packs/Particle Park Splash Pixel/rect.png
-effects2/packs/Particle Park Smoke Train/circle1.png
-effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train License.txt
-effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train.p
-effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen License.txt
-effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen.p
-effects2/packs/Particle Park Hallucinogen/neutron-full.png
-effects2/packs/Particle Park Hallucinogen/neutron.png
-effects2/packs/Particle Park Star Trail/Particle Park Star Trail License.txt
-effects2/packs/Particle Park Star Trail/star-real.png
-effects2/packs/Particle Park Star Trail/Particle Park Star Trail.p
-effects2/packs/Particle Park Laser/circle2.png
-effects2/packs/Particle Park Laser/Particle Park Laser.p
-effects2/packs/Particle Park Laser/Particle Park Laser License.txt
+effects2/packs/Particle Park Smoke/Particle Park Smoke.p
+effects2/packs/Particle Park Smoke/Particle Park Smoke License.txt
+effects2/packs/Particle Park Smoke/circle2.png
+effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel.p
+effects2/packs/Particle Park Thruster Pixel/rect.png
+effects2/packs/Particle Park Thruster Pixel/Particle Park Thruster Pixel License.txt
+effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel.p
+effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel License.txt
+effects2/packs/Particle Park Trail Pixel/rect.png
+effects2/packs/Particle Park Fireworks/firework.png
+effects2/packs/Particle Park Fireworks/Particle Park Fireworks.p
+effects2/packs/Particle Park Fireworks/Particle Park Fireworks License.txt
+effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue.p
+effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue License.txt
+effects2/packs/Particle Park Fireball Blue/thrust-1.png
+effects2/packs/Particle Park Fireball Blue/thrust-2.png
+effects2/packs/Particle Park Fireball Blue/thrust-3.png
+effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart.p
+effects2/packs/Particle Park Trail Fart/Particle Park Trail Fart License.txt
+effects2/packs/Particle Park Trail Fart/circle2.png
+effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash.p
+effects2/packs/Particle Park Muzzle Flash/dash.png
+effects2/packs/Particle Park Muzzle Flash/Particle Park Muzzle Flash License.txt
+effects2/packs/Particle Park Muzzle Flash/circle2.png
+effects2/packs/Particle Park Blood/circle1.png
+effects2/packs/Particle Park Blood/Particle Park Blood License.txt
+effects2/packs/Particle Park Blood/Particle Park Blood.p
+effects2/packs/Particle Park Blood/blob.png
+effects2/packs/Particle Park Blood/gore.png
+effects2/packs/Particle Park Explosion Enemy/explosion-2.png
+effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy.p
+effects2/packs/Particle Park Explosion Enemy/explosion-3.png
+effects2/packs/Particle Park Explosion Enemy/explosion-1.png
+effects2/packs/Particle Park Explosion Enemy/Particle Park Explosion Enemy License.txt
+effects2/packs/Particle Park Burnout/Particle Park Burnout License.txt
+effects2/packs/Particle Park Burnout/Particle Park Burnout.p
+effects2/packs/Particle Park Burnout/cloud_1.png
+effects2/packs/Particle Park Thruster/thrust-1.png
+effects2/packs/Particle Park Thruster/thrust-2.png
+effects2/packs/Particle Park Thruster/Particle Park Thruster.p
+effects2/packs/Particle Park Thruster/thrust-3.png
+effects2/packs/Particle Park Thruster/Particle Park Thruster License.txt
+effects2/packs/Particle Park Dust Left/Particle Park Dust Left License.txt
+effects2/packs/Particle Park Dust Left/cloud_1.png
+effects2/packs/Particle Park Dust Left/Particle Park Dust Left.p
+effects2/packs/Particle Park Rain/Particle Park Rain License.txt
+effects2/packs/Particle Park Rain/Particle Park Rain.p
+effects2/packs/Particle Park Rain/rain-blurred.png
+effects2/packs/Particle Park Stink/Particle Park Stink.p
+effects2/packs/Particle Park Stink/Particle Park Stink License.txt
+effects2/packs/Particle Park Stink/circle2.png
+effects2/packs/Particle Park Starlight/Particle Park Starlight License.txt
+effects2/packs/Particle Park Starlight/spark-colored.png
+effects2/packs/Particle Park Starlight/Particle Park Starlight.p
+effects2/packs/Particle Park Starlight/circle2.png
+effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes.p
+effects2/packs/Particle Park Snow Flakes/snow-flake.png
+effects2/packs/Particle Park Snow Flakes/Particle Park Snow Flakes License.txt
+effects2/packs/Particle Park Glass/glass-4.png
+effects2/packs/Particle Park Glass/glass-5.png
+effects2/packs/Particle Park Glass/Particle Park Glass.p
+effects2/packs/Particle Park Glass/glass-1.png
+effects2/packs/Particle Park Glass/glass-2.png
+effects2/packs/Particle Park Glass/Particle Park Glass License.txt
+effects2/packs/Particle Park Glass/glass-3.png
+effects2/packs/Particle Park Glass/glass-6.png
+effects2/packs/Particle Park Pentagram/pentagram-glow.png
+effects2/packs/Particle Park Pentagram/Particle Park Pentagram License.txt
+effects2/packs/Particle Park Pentagram/Particle Park Pentagram.p
 effects2/packs/Particle Park Hallucinogen Full/Particle Park Hallucinogen Full.p
 effects2/packs/Particle Park Hallucinogen Full/neutron-full.png
 effects2/packs/Particle Park Hallucinogen Full/Particle Park Hallucinogen Full License.txt
-effects2/packs/Particle Park Rain/rain-blurred.png
-effects2/packs/Particle Park Rain/Particle Park Rain License.txt
-effects2/packs/Particle Park Rain/Particle Park Rain.p
-effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue.p
-effects2/packs/Particle Park Fireball Blue/Particle Park Fireball Blue License.txt
-effects2/packs/Particle Park Fireball Blue/thrust-3.png
-effects2/packs/Particle Park Fireball Blue/thrust-2.png
-effects2/packs/Particle Park Fireball Blue/thrust-1.png
-effects2/packs/Particle Park Thrust/Particle Park Thrust License.txt
-effects2/packs/Particle Park Thrust/Particle Park Thrust.p
-effects2/packs/Particle Park Thrust/thrust-3.png
-effects2/packs/Particle Park Thrust/thrust-2.png
-effects2/packs/Particle Park Thrust/thrust-1.png
-effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer License.txt
-effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer.p
-effects2/packs/Particle Park Fireworks Tracer/firework.png
-effects2/packs/Particle Park Dust/cloud_1.png
+effects2/packs/Particle Park Dust Right/Particle Park Dust Right License.txt
+effects2/packs/Particle Park Dust Right/Particle Park Dust Right.p
+effects2/packs/Particle Park Dust Right/cloud_1.png
+effects2/packs/Particle Park Hallucinogen/neutron-full.png
+effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen.p
+effects2/packs/Particle Park Hallucinogen/neutron.png
+effects2/packs/Particle Park Hallucinogen/Particle Park Hallucinogen License.txt
 effects2/packs/Particle Park Dust/Particle Park Dust.p
 effects2/packs/Particle Park Dust/Particle Park Dust License.txt
-effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel License.txt
-effects2/packs/Particle Park Trail Pixel/rect.png
-effects2/packs/Particle Park Trail Pixel/Particle Park Trail Pixel.p
-effects2/packs/Particle Park Fireball/Particle Park Fireball License.txt
-effects2/packs/Particle Park Fireball/Particle Park Fireball.p
-effects2/packs/Particle Park Fireball/thrust-3.png
-effects2/packs/Particle Park Fireball/thrust-2.png
+effects2/packs/Particle Park Dust/cloud_1.png
+effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail.p
+effects2/packs/Particle Park Smoke Trail/Particle Park Smoke Trail License.txt
+effects2/packs/Particle Park Smoke Trail/cloud_1.png
+effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small License.txt
+effects2/packs/Particle Park Explosion Small/explosion-2.png
+effects2/packs/Particle Park Explosion Small/explosion-3.png
+effects2/packs/Particle Park Explosion Small/Particle Park Explosion Small.p
+effects2/packs/Particle Park Explosion Small/explosion-1.png
+effects2/packs/Particle Park Explosion Small/circle2.png
+effects2/packs/Particle Park Explosion/explosion-2.png
+effects2/packs/Particle Park Explosion/explosion-3.png
+effects2/packs/Particle Park Explosion/Particle Park Explosion License.txt
+effects2/packs/Particle Park Explosion/explosion-1.png
+effects2/packs/Particle Park Explosion/Particle Park Explosion.p
+effects2/packs/Particle Park Explosion/circle2.png
+effects2/packs/Particle Park Sparks/Particle Park Sparks.p
+effects2/packs/Particle Park Sparks/circle3.png
+effects2/packs/Particle Park Sparks/Particle Park Sparks License.txt
+effects2/packs/Particle Park Sparks/circle2.png
+effects2/packs/Particle Park Star Trail/star-real.png
+effects2/packs/Particle Park Star Trail/Particle Park Star Trail License.txt
+effects2/packs/Particle Park Star Trail/Particle Park Star Trail.p
+effects2/packs/Particle Park Flame/circle3.png
+effects2/packs/Particle Park Flame/Particle Park Flame.p
+effects2/packs/Particle Park Flame/Particle Park Flame License.txt
+effects2/packs/Particle Park Flame/circle4.png
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler License.txt
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/firework.png
+effects2/packs/Particle Park Fireworks Tracer With Dazzler/Particle Park Fireworks Tracer With Dazzler.p
+effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel License.txt
+effects2/packs/Particle Park Flame Pixel/Particle Park Flame Pixel.p
+effects2/packs/Particle Park Flame Pixel/rect.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke License.txt
+effects2/packs/Particle Park Muzzle Flash With Smoke/Particle Park Muzzle Flash With Smoke.p
+effects2/packs/Particle Park Muzzle Flash With Smoke/circle3.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/dash.png
+effects2/packs/Particle Park Muzzle Flash With Smoke/circle2.png
+effects2/packs/Particle Park Laser/Particle Park Laser License.txt
+effects2/packs/Particle Park Laser/circle2.png
+effects2/packs/Particle Park Laser/Particle Park Laser.p
+effects2/packs/Particle Park Smoke Train/circle1.png
+effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train License.txt
+effects2/packs/Particle Park Smoke Train/Particle Park Smoke Train.p
+effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer.p
+effects2/packs/Particle Park Fireworks Tracer/firework.png
+effects2/packs/Particle Park Fireworks Tracer/Particle Park Fireworks Tracer License.txt
+effects2/packs/Particle Park Rain Cinematic/rain-cinematic.png
+effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic License.txt
+effects2/packs/Particle Park Rain Cinematic/Particle Park Rain Cinematic.p
 effects2/packs/Particle Park Fireball/thrust-1.png
-effects2/effects/Particle Park Dust Left.p
-effects2/effects/star_1.png
-effects2/effects/note-4.png
-effects2/effects/dash.png
-effects2/effects/note-5.png
-effects2/effects/Particle Park Trail Fart.p
-effects2/effects/star_2.png
-effects2/effects/Particle Park Fireworks Tracer With Dazzler.p
-effects2/effects/Particle Park Thruster.p
-effects2/effects/Particle Park Dust Right.p
-effects2/effects/Particle Park Fireworks.p
-effects2/effects/note-2.png
-effects2/effects/Particle Park Smoke Trail.p
-effects2/effects/note-3.png
-effects2/effects/Particle Park Rain Cinematic.p
-effects2/effects/note-1.png
-effects2/effects/Particle Park Splash.p
-effects2/effects/snow-flake.png
-effects2/effects/Particle Park Thruster Pixel.p
-effects2/effects/Particle Park Sparks.p
-effects2/effects/pentagram-glow.png
-effects2/effects/Particle Park Hallucinogen Full.p
-effects2/effects/pentagram.png
-effects2/effects/spark.png
-effects2/effects/Particle Park Fireball Blue.p
-effects2/effects/rain-cinematic.png
-effects2/effects/Particle Park Explosion.p
-effects2/effects/circle4.png
-effects2/effects/cloud_1.png
-effects2/effects/Particle Park Dust.p
-effects2/effects/Particle Park Splash Pixel.p
-effects2/effects/explosion-1.png
-effects2/effects/Particle Park Starlight.p
-effects2/effects/Particle Park Flame.p
-effects2/effects/Particle Park Snow Flakes.p
-effects2/effects/circle1.png
-effects2/effects/Particle Park Fireball.p
-effects2/effects/circle3.png
-effects2/effects/explosion-2.png
-effects2/effects/Particle Park Star.p
-effects2/effects/Particle Park Fireworks Tracer.p
-effects2/effects/explosion-3.png
-effects2/effects/rect.png
-effects2/effects/circle2.png
-effects2/effects/gore.png
-effects2/effects/glass-4.png
-effects2/effects/Particle Park Trail Pixel.p
-effects2/effects/glass-5.png
-effects2/effects/myexplosion.p
-effects2/effects/Particle Park Hallucinogen.p
-effects2/effects/neutron-full.png
-effects2/effects/blob.png
-effects2/effects/glass-6.png
-effects2/effects/mysmoke.p
-effects2/effects/Particle Park Smoke.p
-effects2/effects/Particle Park Stink.p
-effects2/effects/Particle Park Explosion Enemy.p
-effects2/effects/Particle Park Pentagram.p
-effects2/effects/glass-2.png
-effects2/effects/Particle Park Smoke Train.p
-effects2/effects/Particle Park Blood.p
-effects2/effects/glass-3.png
-effects2/effects/rain-blurred.png
-effects2/effects/glass-1.png
-effects2/effects/Particle Park Explosion Small.p
-effects2/effects/Particle Park Pentagram Glitchy.p
-effects2/effects/diamond.png
-effects2/effects/myglass.p
-effects2/effects/Particle Park Glass.p
-effects2/effects/Particle Park Laser.p
-effects2/effects/Particle Park Muzzle Flash.p
-effects2/effects/Particle Park Flame Pixel.p
-effects2/effects/Particle Park Trail.p
-effects2/effects/line.png
-effects2/effects/particle.png
-effects2/effects/neutron.png
-effects2/effects/Particle Park Thrust.p
-effects2/effects/thrust-3.png
-effects2/effects/spark-colored.png
-effects2/effects/Particle Park Burnout.p
-effects2/effects/star-real.png
-effects2/effects/thrust-2.png
-effects2/effects/Particle Park Rain.p
-effects2/effects/rain.png
-effects2/effects/firework.png
-effects2/effects/Particle Park Star Trail.p
-effects2/effects/Particle Park Muzzle Flash With Smoke.p
-effects2/effects/thrust-1.png
+effects2/packs/Particle Park Fireball/Particle Park Fireball.p
+effects2/packs/Particle Park Fireball/thrust-2.png
+effects2/packs/Particle Park Fireball/thrust-3.png
+effects2/packs/Particle Park Fireball/Particle Park Fireball License.txt
+effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy.p
+effects2/packs/Particle Park Pentagram Glitchy/pentagram.png
+effects2/packs/Particle Park Pentagram Glitchy/Particle Park Pentagram Glitchy License.txt
+effects2/packs/Particle Park Thrust/thrust-1.png
+effects2/packs/Particle Park Thrust/thrust-2.png
+effects2/packs/Particle Park Thrust/thrust-3.png
+effects2/packs/Particle Park Thrust/Particle Park Thrust License.txt
+effects2/packs/Particle Park Thrust/Particle Park Thrust.p
+effects2/packs/Particle Park Star/Particle Park Star.p
+effects2/packs/Particle Park Star/Particle Park Star License.txt
+effects2/packs/Particle Park Star/star_1.png
+effects2/packs/Particle Park Splash/circle1.png
+effects2/packs/Particle Park Splash/Particle Park Splash.p
+effects2/packs/Particle Park Splash/Particle Park Splash License.txt
+assets 2.txt
+Textures/THEME_02_THEME_2.png
+Textures/THEME_05_THEME_GROUND_5.png
+Textures/THEME_05_THEME_5.png.meta
+Textures/THEME_08_PARALLAX_8.png.meta
+Textures/THEME_04_THEME_GROUND_4.png
+Textures/THEME_01_THEME_GROUND_1.png.meta
+Textures/SCORES.png
+Textures/LEVELSELECTION_SHEET_1.png
+Textures/THEME_03_PARALLAX_3.png.meta
+Textures/THEME_03_THEME_GROUND_3.png
+Textures/THEME_06_THEME_GROUND_6.png
+Textures/THEME_07_THEME_GROUND_7.png
+Textures/STAR.png
+Textures/THEME_01_PARALLAX_1.png.meta
+Textures/THEME_02_PARALLAX_2.png.meta
+Textures/SPLASHES_SHEET_3.png
+Textures/THEME_05_PARALLAX_5.png.meta
+Textures/BIRDS_1.png.meta
+Textures/THEME_13_THEME_13.png
+Textures/THEME_13_THEME_GROUND_13.png
+Textures/THEME_08_THEME_8.png
+Textures/THEME_10_THEME_10.png
+Textures/THEME_11_THEME_11.png.meta
+Textures/BUTTONS.png.meta
+Textures/THEME_11_THEME_GROUND_BIRTHDAY.png
+Textures/THEME_10_THEME_GROUND_CAVE.png
+Textures/THEME_04_PARALLAX_4.png.meta
+Textures/THEME_01_THEME_1.png.meta
+Textures/THEME_09_THEME_GROUND_9.png
+Textures/THEME_12_THEME_GROUND_12.png.meta
+Textures/THEME_04_THEME_4.png
+Textures/THEME_04_PARALLAX_4.png
+Textures/THEME_08_THEME_8.png.meta
+Textures/MENU_ELEMENTS_1.png
+Textures/THEME_03_PARALLAX_3.png
+Textures/THEME_03_THEME_3.png
+Textures/THEME_03_THEME_GROUND_3.png.meta
+Textures/THEME_10_THEME_GROUND_CAVE.png.meta
+Textures/THEME_06_THEME_6.png.meta
+Textures/THEME_07_PARALLAX_7.png.meta
+Textures/THEME_04_THEME_GROUND_4.png.meta
+Textures/THEME_13_THEME_13.png.meta
+Textures/THEME_09_THEME_9.png
+Textures/LEVELSELECTION_SHEET_1.png.meta
+Textures/LOSE.png.meta
+Textures/THEME_10_THEME_10.png.meta
+Textures/THEME_11_PARALLAX_BIRTHDAY.png
+Textures/THEME_10_PARALLAX_CAVE.png
+Textures/THEME_01_THEME_1.png
+Textures/THEME_08_THEME_GROUND_8.png
+Textures/MENU_ELEMENTS_3.png.meta
+Textures/THEME_04_THEME_4.png.meta
+Textures/THEME_13_PARALLAX1_13.png
+Textures/THEME_05_PARALLAX_5.png
+Textures/THEME_02_THEME_GROUND_2.png.meta
+Textures/THEME_13_THEME_GROUND_13.png.meta
+Textures/BIRDS_1.png
+Textures/THEME_10_PARALLAX_CAVE.png.meta
+Textures/THEME_01_THEME_GROUND_1.png
+Textures/THEME_13_PARALLAX2_13.png
+Textures/THEME_02_THEME_2.png.meta
+Textures/THEME_07_THEME_7.png.meta
+Textures/THEME_01_PARALLAX_1.png
+Textures/THEME_08_PARALLAX_8.png
+Textures/THEME_11_THEME_11.png
+Textures/BUTTONS.png
+Textures/SCORES.png.meta
+Textures/THEME_12_PARALLAX_12.png
+Textures/THEME_05_THEME_5.png
+Textures/THEME_09_PARALLAX_9.png
+Textures/MENU.png
+Textures/SPLASHES_SHEET_3.png.meta
+Textures/MENU.png.meta
+Textures/LEVELSELECTION_SHEET_4.png.meta
+Textures/STAR.png.meta
+Textures/MENU_LEVELSELECTION_1.png
+Textures/THEME_06_PARALLAX_6.png
+Textures/BLOCKS_1.png.meta
+Textures/THEME_05_THEME_GROUND_5.png.meta
+Textures/THEME_02_PARALLAX_2.png
+Textures/THEME_07_THEME_7.png
+Textures/LOSE.png
+Textures/THEME_09_THEME_GROUND_9.png.meta
+Textures/THEME_12_THEME_12.png.meta
+Textures/BLOCKS_1.png
+Textures/MENU_LEVELSELECTION_1.png.meta
+Textures/LEVELSELECTION_SHEET_4.png
+Textures/THEME_06_THEME_6.png
+Textures/THEME_11_THEME_GROUND_BIRTHDAY.png.meta
+Textures/THEME_08_THEME_GROUND_8.png.meta
+Textures/THEME_03_THEME_3.png.meta
+Textures/THEME_09_PARALLAX_9.png.meta
+Textures/THEME_06_PARALLAX_6.png.meta
+Textures/MENU_ELEMENTS_3.png
+Textures/THEME_06_THEME_GROUND_6.png.meta
+Textures/THEME_12_THEME_12.png
+Textures/THEME_07_THEME_GROUND_7.png.meta
+Textures/THEME_02_THEME_GROUND_2.png
+Textures/THEME_09_THEME_9.png.meta
+Textures/THEME_13_PARALLAX2_13.png.meta
+Textures/THEME_12_PARALLAX_12.png.meta
+Textures/THEME_07_PARALLAX_7.png
+Textures/THEME_11_PARALLAX_BIRTHDAY.png.meta
+Textures/THEME_13_PARALLAX1_13.png.meta
+Textures/THEME_12_THEME_GROUND_12.png
+Textures/MENU_ELEMENTS_1.png.meta
+Level Buttons/2.png
+Level Buttons/locklevel.png
+Level Buttons/3.png
+Level Buttons/1.png
+level8.png
+Stars/stars1.png
+Stars/stars2.png
+Stars/stars0.png
+Stars/stars3.png
+birds/bluebird.jpg
+birds/yellow.jpg
+birds/yellow.png
+birds/black.png
+birds/redbird.png
+birds/redbird.jpg
+m_button.png
+pauseBackground.png
+data.txt
+elementGlass032.png
+pigs/crownpig.png
+pigs/Mucchad_pig.jpg
+pigs/normal_pig.jpg
+pigs/crownpig.jpg
+gameOver.png
+skin4/clean-crispy-ui.atlas
+skin4/clean-crispy-ui.png
+skin4/clean-crispy-ui.json
+skin4/font-export.fnt
+levelLocked.png
+crossButton.png
+stars2.png
+exitButton.png
+level4.png
+Level_tmx_files copy/level-1.tmx
+Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
+PathPoint.png
+Fonts/angrybirds-regular.bmp
+Fonts/angrybirds-regular.ttf
+level2.png
+level6.png
+Level_tmx_files/level-3.tmx
+Level_tmx_files/soil.png
+Level_tmx_files/level-2.tmx
+Level_tmx_files/finalsoil.tsx
+Level_tmx_files/soil.tsx
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.tsx
+Level_tmx_files/finalsoil.png
+Level_tmx_files/level-1 copy.tmx
+Level_tmx_files/lastsoil.png
+Level_tmx_files/level-1.tmx
+Level_tmx_files/Mobile - Angry Birds - Poached E.png
+Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
+restart.png
+level1.png
+Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
+Tilesets/INGAME_BLOCKS_WOOD_1.webp
+Tilesets/level-1.tmx
+Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
+effects/explosion.p
+effects/particle.png
+blackdot.png
+trail.webp
+backbutton.png
+prevLevel.png
+assets 3.txt
+nextLevel.png
+loadingBackground.jpg
+pauseMenu.jpg
+cross.png
+trail.png
+bgg.jpg
+Blocks/Glass Blocks/glass_block_type_2.png
+Blocks/Glass Blocks/glass_horizontal.png
+Blocks/Glass Blocks/glass_block_type_1.png
+Blocks/Soil/lastsoil2.png
+Blocks/Soil/finalsoil.png
+Blocks/Soil/lastsoil.png
+Blocks/Wooden Blocks/wooden_base_type_2.png
+Blocks/Wooden Blocks/horizontal_wood.png
+Blocks/Wooden Blocks/vertical_wood.png
+Blocks/Wooden Blocks/wooden_thick.png
+Blocks/Wooden Blocks/hor.png
+Blocks/Wooden Blocks/wooden_square.png
+Blocks/Wooden Blocks/wooden_base_type_1.png
+Blocks/Stone Blocks/stone_vertical.png
+Blocks/Stone Blocks/stone_horizontal.png
+Blocks/Stone Blocks/stone_square.png
+stars4.png
+skin3/font-pressed-export.fnt
+skin3/neon-ui.png
+skin3/neon-ui.json
+skin3/font-over-export.fnt
+skin3/neon-ui.atlas
+skin3/font-export.fnt
+Themes/Theme-7.png
+Themes/Theme-5.png
+Themes/Theme-4.png
+Themes/Theme-6.png
+Themes/Theme-9.png
+Themes/Theme-12.png
+Themes/Theme-3.png
+Themes/Theme-2.png
+Themes/Theme-8.png
+Themes/Theme-11.png
+Themes/Theme-1.png
+Themes/Theme-10.png
+glass.png
+level5.png
+PC Computer - Angry Birds Rio - Blocks & Objects.png
+skin2/font-pressed-export.fnt
+skin2/neon-ui.png
+skin2/neon-ui.json
+skin2/font-over-export.fnt
+skin2/neon-ui.atlas
+skin2/font-export.fnt
+INGAME_BLOCKS_WOOD_1.webp
+hs_err_pid27703.log
+stars.png
+stars5.png
+libgdx.png
+resume.png
+stars3.png
+level3.png
+emm.png
+pauseButton.png
+restartButton.png
+pauseMenu.jpeg
+Slings/slinghalf1.png
+Slings/slingshot2.png
+Slings/sling3.png
+Slings/sling2.png
+Slings/slinghalf2.png
+Slings/rect.png
+Slings/sling.png
+Loadingscreen/background.jpg
+bg2.png
+skin5/font-title-export.fnt
+skin5/level-plane-ui.atlas
+skin5/level-plane-ui.png
+skin5/level-plane-ui.json
+skin5/font-subtitle-export.fnt
+skin5/font-export.fnt
+resumeButton.png
+level9.png
+Music/sfx.meta
+Music/music/ab rio ambience warehouse.mp3
+Music/music/ambience jungle.mp3.meta
+Music/music/ab rio win.mp3.meta
+Music/music/ambience airplane.mp3.meta
+Music/music/story_music.mp3.meta
+Music/music/ambience carnival.mp3
+Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3.meta
+Music/music/ANGRY_BIRDS_FINAL_MASTERED.mp3
+Music/music/ambience beach.mp3
+Music/music/story_music.mp3
+Music/music/ambience jungle.mp3
+Music/music/ambience airport.mp3
+Music/music/ab rio ambience warehouse.mp3.meta
+Music/music/ambience airport.mp3.meta
+Music/music/ambience airplane.mp3
+Music/music/ambience beach.mp3.meta
+Music/music/ambience carnival.mp3.meta
+Music/music/ab_theme_rio_boss_lite5.mp3
+Music/music/ab_theme_rio_boss_lite5.mp3.meta
+Music/music/ab rio win.mp3
+Music/title_theme.mp3
+Music/music.meta
+Music/sfx/bird 04 flying.wav
+Music/sfx/bird 01 collision a3_low.wav
+Music/sfx/wood destroyed a2.wav
+Music/sfx/fruit breaking scoreitem.wav
+Music/sfx/light damage a2.wav
+Music/sfx/monkeyboss laugh 3.wav.meta
+Music/sfx/bird 01 collision a3.wav
+Music/sfx/jewel fly 4.wav
+Music/sfx/nigel_evil_laugh_3.mp3
+Music/sfx/monkey idle a3.wav
+Music/sfx/bigbrother_yell.wav
+Music/sfx/nigel hit edit a1.wav.meta
+Music/sfx/rock collision a2.wav.meta
+Music/sfx/ball_bounce.wav
+Music/sfx/dog idle a2.wav
+Music/sfx/scaffolding_collision_a1.wav.meta
+Music/sfx/plant collision a4.wav.meta
+Music/sfx/ice light collision a6.wav.meta
+Music/sfx/monkeyboss hit 4.wav
+Music/sfx/plant collision a5.wav
+Music/sfx/special boost.wav
+Music/sfx/wood rolling.wav
+Music/sfx/bird cage collision a2.wav.meta
+Music/sfx/sardine_can_physics_a2.mp3.meta
+Music/sfx/mighty_eagle_thump.mp3
+Music/sfx/blue and jewel slingshot.wav
+Music/sfx/bird 04 collision a1.wav.meta
+Music/sfx/bird 02 collision a1.wav
+Music/sfx/jewel collision a4.wav
+Music/sfx/light damage a2.wav.meta
+Music/sfx/Globe_Bird_Special_Activation_3.wav
+Music/sfx/dog idle a1.wav.meta
+Music/sfx/bird shot-a2.wav.meta
+Music/sfx/rock destroyed a1.wav
+Music/sfx/bird misc a7.wav.meta
+Music/sfx/dog idle a1.wav
+Music/sfx/plant breaks a3.wav.meta
+Music/sfx/wood collision a1.wav.meta
+Music/sfx/bird next military a1.wav.meta
+Music/sfx/bird_06_flying.wav.meta
+Music/sfx/chain collision new a2.wav.meta
+Music/sfx/jewel collision a3.wav
+Music/sfx/bird 03 flying.wav.meta
+Music/sfx/bird next military a3.wav
+Music/sfx/wood destroyed a3.wav.meta
+Music/sfx/Globe_Bird_Death_remove_1.wav.meta
+Music/sfx/bird 03 select.wav
+Music/sfx/monkey near falling a1.wav.meta
+Music/sfx/jewel fly 5.wav
+Music/sfx/dog moving loop.mp3
+Music/sfx/balloon_pop.wav
+Music/sfx/bird cage idle 11.wav
+Music/sfx/bird 01 collision a4_low.wav.meta
+Music/sfx/Globe_Bird_Hit_4.wav.meta
+Music/sfx/bounce material a4.wav
+Music/sfx/jewel fly 8.wav
+Music/sfx/monkey idle a2.wav.meta
+Music/sfx/bird 05 collision a5.wav
+Music/sfx/Globe_Bird_Launch_3.wav.meta
+Music/sfx/monkey near falling a2.wav.meta
+Music/sfx/wood destroyed a1.wav.meta
+Music/sfx/light damage a3.wav.meta
+Music/sfx/bird cage idle 4.wav
+Music/sfx/slingshot_streched.wav
+Music/sfx/light destroyed a2.wav.meta
+Music/sfx/bird destroyed.wav.meta
+Music/sfx/blue hit a4.wav.meta
+Music/sfx/bird 05 collision a1.wav
+Music/sfx/monkey idle a5.wav.meta
+Music/sfx/rock damage a1.wav
+Music/sfx/bird 03 collision a1.wav.meta
+Music/sfx/wood collision a5.wav
+Music/sfx/jewel collision a1.wav
+Music/sfx/pig balloon pop.wav.meta
+Music/sfx/monkeyboss hit 3.wav.meta
+Music/sfx/boomerang_activate.wav
+Music/sfx/blue hit a1.wav
+Music/sfx/light destroyed a1.wav
+Music/sfx/cardboard box breaks a1.wav
+Music/sfx/ice light collision a2.wav
+Music/sfx/gasoline_can_explodes.wav
+Music/sfx/bird 02 collision a5.wav
+Music/sfx/monkey falling a1.wav
+Music/sfx/scaffolding_break_a3.wav
+Music/sfx/lamp breaking.wav
+Music/sfx/plant collision a4.wav
+Music/sfx/bird 02 collision a1.wav.meta
+Music/sfx/bird 01 collision a2.wav.meta
+Music/sfx/bird misc a12.wav.meta
+Music/sfx/jewel fly 6.wav.meta
+Music/sfx/nigel_evil_laugh_3.mp3.meta
+Music/sfx/bird 04 select.wav
+Music/sfx/jewel fly 3.wav
+Music/sfx/rock collision a3.wav
+Music/sfx/jewel fly 4.wav.meta
+Music/sfx/bird_06_flying.wav
+Music/sfx/bird cage idle 8.wav.meta
+Music/sfx/cardboard box breaks a1.wav.meta
+Music/sfx/light destroyed a3.wav
+Music/sfx/bird 04 collision a2.wav
+Music/sfx/light damage a3.wav
+Music/sfx/ice light collision a4.wav
+Music/sfx/monkey near falling a4.wav.meta
+Music/sfx/monkey falling a1.wav.meta
+Music/sfx/bird misc a7.wav
+Music/sfx/bird shot-a3.wav.meta
+Music/sfx/plant breaks a1.wav.meta
+Music/sfx/dog bark a2.wav.meta
+Music/sfx/bird 05 collision a4.wav.meta
+Music/sfx/level clear military a1.mp3.meta
+Music/sfx/nigel defeated flying away.wav
+Music/sfx/flower breaking scoreitem.wav.meta
+Music/sfx/bird 04 collision a2.wav.meta
+Music/sfx/blackfly.wav
+Music/sfx/bird cage breaks 1.wav.meta
+Music/sfx/Globe_Bird_Selection_1.wav
+Music/sfx/wood collision a3.wav.meta
+Music/sfx/explosion.wav
+Music/sfx/bird next military a1.wav
+Music/sfx/blue hit a5.wav
+Music/sfx/chain collision new a3.wav.meta
+Music/sfx/bird 05 collision a2.wav.meta
+Music/sfx/ice light collision a1.wav.meta
+Music/sfx/dog bark a1.wav.meta
+Music/sfx/metal chain break a3.wav
+Music/sfx/star_3.wav
+Music/sfx/monkey near falling a4.wav
+Music/sfx/highscore.mp3.meta
+Music/sfx/bird 05 collision a5.wav.meta
+Music/sfx/ice light collision a3.wav
+Music/sfx/bird 01 collision a1.wav.meta
+Music/sfx/bird 05 collision a3.wav.meta
+Music/sfx/bird 02 collision a4.wav.meta
+Music/sfx/bird 01 collision a1_low.wav.meta
+Music/sfx/monkey idle a2.wav
+Music/sfx/monkey near falling a2.wav
+Music/sfx/bird 01 collision a2.wav
+Music/sfx/level clear military a2.mp3.meta
+Music/sfx/monkeyboss laugh 1.wav
+Music/sfx/chain collision new a2.wav
+Music/sfx/rock rolling.wav
+Music/sfx/bird 01 collision a1_low.wav
+Music/sfx/bird 03 collision a4.wav
+Music/sfx/fruit collision a5.wav
+Music/sfx/monkeyboss defeated.wav.meta
+Music/sfx/jewel collision a3.wav.meta
+Music/sfx/jewel fly 1.wav
+Music/sfx/star_2.mp3.meta
+Music/sfx/bird cage idle 9.wav
+Music/sfx/Globe_Bird_Launch_3.wav
+Music/sfx/dog hit a1.wav
+Music/sfx/bird 02 collision a2.wav
+Music/sfx/star_2.mp3
+Music/sfx/blue and jewel slingshot.wav.meta
+Music/sfx/scaffolding_collision_a3.wav.meta
+Music/sfx/blue special.wav.meta
+Music/sfx/bird 02 flying.wav
+Music/sfx/metal chain break a1.wav.meta
+Music/sfx/bigbrother_fly.wav
+Music/sfx/monkey near falling a3.wav.meta
+Music/sfx/Globe_Bird_Special_Activation_2.wav
+Music/sfx/flower breaking scoreitem.wav
+Music/sfx/bird cage idle 1.wav
+Music/sfx/fruit breaking a1.wav.meta
+Music/sfx/monkeyboss laugh 3.wav
+Music/sfx/mighty_eagle_fly.mp3
+Music/sfx/bird 02 select.wav
+Music/sfx/Globe_Bird_Death_remove_1.wav
+Music/sfx/special egg.wav
+Music/sfx/level_failed_monkeys.mp3
+Music/sfx/star_1.wav
+Music/sfx/blue hit a1.wav.meta
+Music/sfx/bird 05 flying.wav.meta
+Music/sfx/plant collision a2.wav
+Music/sfx/star_3.wav.meta
+Music/sfx/nigel laugh a5.wav
+Music/sfx/tnt box explodes.wav.meta
+Music/sfx/bird misc a12.wav
+Music/sfx/bird 04 flying.wav.meta
+Music/sfx/light damage a1.wav.meta
+Music/sfx/bigbrother_select.wav
+Music/sfx/bird misc a6.wav.meta
+Music/sfx/ice light collision a1.wav
+Music/sfx/rock rolling.wav.meta
+Music/sfx/level clear military a2.mp3
+Music/sfx/rock collision a4.wav.meta
+Music/sfx/bird cage idle 3.wav
+Music/sfx/redbird_yell01.wav
+Music/sfx/bird 02 collision a5.wav.meta
+Music/sfx/rock destroyed a3.wav
+Music/sfx/plane_broken.mp3
+Music/sfx/sardine_can_physics_a2.mp3
+Music/sfx/bird 01 flying.wav
+Music/sfx/light destroyed a1.wav.meta
+Music/sfx/bird cage idle 5.wav
+Music/sfx/fruit breaking a1.wav
+Music/sfx/wood collision a3.wav
+Music/sfx/bird 02 select.wav.meta
+Music/sfx/fruit collision a2.wav.meta
+Music/sfx/yellowflying.wav
+Music/sfx/plane_loop04.wav.meta
+Music/sfx/wood damage a3.wav.meta
+Music/sfx/bird 03 collision a3.wav.meta
+Music/sfx/bird 04 collision a1.wav
+Music/sfx/bird cage collision a3.wav
+Music/sfx/rock destroyed a2.wav.meta
+Music/sfx/plant collision a2.wav.meta
+Music/sfx/mighty_eagle_yell.wav
+Music/sfx/bird destroyed.wav
+Music/sfx/blue slingshot.wav
+Music/sfx/monkeyboss defeated.wav
+Music/sfx/Globe_Bird_Hit_1.wav.meta
+Music/sfx/ice light collision a5.wav
+Music/sfx/bird 03 select.wav.meta
+Music/sfx/bounce material a4.wav.meta
+Music/sfx/light rolling.wav.meta
+Music/sfx/bird 02 flying.wav.meta
+Music/sfx/button.wav
+Music/sfx/monkey idle a1.wav
+Music/sfx/bird cage collision a3.wav.meta
+Music/sfx/wood rolling.wav.meta
+Music/sfx/balloon_pop.wav.meta
+Music/sfx/monkeyboss hit 2.wav
+Music/sfx/Globe_Bird_Hit_2.wav
+Music/sfx/nigel laugh a1.wav.meta
+Music/sfx/bird shot-a2.wav
+Music/sfx/Globe_Bird_Special_Activation_1.wav
+Music/sfx/Globe_Bird_Hit_3.wav.meta
+Music/sfx/dog moving loop.mp3.meta
+Music/sfx/bird 03 collision a2.wav
+Music/sfx/plant collision a5.wav.meta
+Music/sfx/bird 01 collision a1.wav
+Music/sfx/redbird_yell01.wav.meta
+Music/sfx/bird 01 collision a4_low.wav
+Music/sfx/dog idle a3.wav
+Music/sfx/ice light collision a2.wav.meta
+Music/sfx/bird shot-a1.wav.meta
+Music/sfx/monkey dies a1.wav
+Music/sfx/monkey idle a5.wav
+Music/sfx/wood collision a2.wav
+Music/sfx/dog idle a2.wav.meta
+Music/sfx/wood collision a4.wav
+Music/sfx/monkey dies a2.wav.meta
+Music/sfx/blue hit a4.wav
+Music/sfx/wood collision a4.wav.meta
+Music/sfx/bird 04 collision a3.wav.meta
+Music/sfx/luggage open.wav.meta
+Music/sfx/bird 05 collision a4.wav
+Music/sfx/bird 01 flying.wav.meta
+Music/sfx/monkeyboss hit 3.wav
+Music/sfx/wood collision a6.wav.meta
+Music/sfx/rock collision a1.wav
+Music/sfx/jewel fly 5.wav.meta
+Music/sfx/blue fly loop.wav.meta
+Music/sfx/bird misc a11.wav
+Music/sfx/fruit breaking a2.wav
+Music/sfx/slingshot streched.wav.meta
+Music/sfx/fruit breaking a3.wav
+Music/sfx/redbird_yell02.wav
+Music/sfx/plant collision a1.wav.meta
+Music/sfx/rock collision a5.wav
+Music/sfx/rock collision a1.wav.meta
+Music/sfx/jewel collision a2.wav
+Music/sfx/chain collision new a3.wav
+Music/sfx/glass break.mp3
+Music/sfx/monkey idle a4.wav
+Music/sfx/bird 04 collision a4.wav.meta
+Music/sfx/bounce material a5.wav.meta
+Music/sfx/special egg explosion.wav
+Music/sfx/boomerang_swish.wav
+Music/sfx/bird misc a3.wav.meta
+Music/sfx/bird 01 select.wav.meta
+Music/sfx/star_1.mp3
+Music/sfx/blue hit a3.wav.meta
+Music/sfx/plant collision a1.wav
+Music/sfx/star_3.mp3
+Music/sfx/bird misc a4.wav
+Music/sfx/nigel laugh a3.wav
+Music/sfx/bird 05 select.wav.meta
+Music/sfx/monkey dies a2.wav
+Music/sfx/monkeyboss laugh 2.wav.meta
+Music/sfx/bird 01 collision a3_low.wav.meta
+Music/sfx/bird 03 collision a4.wav.meta
+Music/sfx/mighty_eagle_fly.mp3.meta
+Music/sfx/ice light collision a8.wav.meta
+Music/sfx/rock destroyed a2.wav
+Music/sfx/bird 02 collision a3.wav.meta
+Music/sfx/ball_bounce.wav.meta
+Music/sfx/scaffolding_break_a1.wav
+Music/sfx/chain collision new a1.wav
+Music/sfx/nigel hit edit a4.wav
+Music/sfx/Globe_Bird_Special_Activation_3.wav.meta
+Music/sfx/bird shot-a1.wav
+Music/sfx/bird 05 select.wav
+Music/sfx/rock collision a4.wav
+Music/sfx/jewel fly 1.wav.meta
+Music/sfx/nigel laugh a2.wav
+Music/sfx/bird 04 select.wav.meta
+Music/sfx/plant breaks a1.wav
+Music/sfx/bird 02 collision a2.wav.meta
+Music/sfx/dog hit a1.wav.meta
+Music/sfx/bird misc a3.wav
+Music/sfx/nigel hit edit a4.wav.meta
+Music/sfx/bird 04 collision a4.wav
+Music/sfx/scaffolding_collision_a3.wav
+Music/sfx/fruit breaking a3.wav.meta
+Music/sfx/bird 03 collision a3.wav
+Music/sfx/bird cage idle 4.wav.meta
+Music/sfx/rock collision a5.wav.meta
+Music/sfx/ice light collision a7.wav.meta
+Music/sfx/fruit breaking scoreitem.wav.meta
+Music/sfx/blue hit a7.wav
+Music/sfx/level_failed_monkeys.mp3.meta
+Music/sfx/star_3.mp3.meta
+Music/sfx/light damage a1.wav
+Music/sfx/bird shot-a3.wav
+Music/sfx/nigel laugh a5.wav.meta
+Music/sfx/blue special.wav
+Music/sfx/bird 05 collision a2.wav
+Music/sfx/special egg explosion.wav.meta
+Music/sfx/jewel fly 6.wav
+Music/sfx/ice light collision a6.wav
+Music/sfx/bird misc a6.wav
+Music/sfx/bird 03 collision a5.wav
+Music/sfx/nigel hit edit a2.wav
+Music/sfx/boomerang_select.wav.meta
+Music/sfx/jewel fly 7.wav.meta
+Music/sfx/rock damage a1.wav.meta
+Music/sfx/redbird_yell02.wav.meta
+Music/sfx/nigel hit edit a2.wav.meta
+Music/sfx/monkeyboss laugh 1.wav.meta
+Music/sfx/bird cage idle 11.wav.meta
+Music/sfx/bird misc a1.wav
+Music/sfx/monkeyboss laugh 2.wav
+Music/sfx/Globe_Bird_Hit_2.wav.meta
+Music/sfx/fruit collision a5.wav.meta
+Music/sfx/scaffolding_break_a2.wav.meta
+Music/sfx/rock collision a2.wav
+Music/sfx/blue hit a5.wav.meta
+Music/sfx/nigel laugh a2.wav.meta
+Music/sfx/monkey idle a1.wav.meta
+Music/sfx/fruit breaking a2.wav.meta
+Music/sfx/plant breaks a3.wav
+Music/sfx/rock damage a2.wav
+Music/sfx/nigel hit edit a1.wav
+Music/sfx/jewel fly 8.wav.meta
+Music/sfx/metal chain break a3.wav.meta
+Music/sfx/luggage open.wav
+Music/sfx/cardboard box breaks a3.wav
+Music/sfx/mighty_eagle_thump.mp3.meta
+Music/sfx/ice light collision a7.wav
+Music/sfx/Globe_Bird_Special_Activation_1.wav.meta
+Music/sfx/bird cage idle 2.wav.meta
+Music/sfx/blue fly loop.wav
+Music/sfx/rock destroyed a1.wav.meta
+Music/sfx/bird cage idle 9.wav.meta
+Music/sfx/jewel collision a1.wav.meta
+Music/sfx/bird misc a10.wav.meta
+Music/sfx/monkey idle a6.wav.meta
+Music/sfx/lamp collision a4.wav
+Music/sfx/bird pushing egg out.wav
+Music/sfx/Globe_Bird_Hit_1.wav
+Music/sfx/jewel collision a4.wav.meta
+Music/sfx/plane_loop04.wav
+Music/sfx/bird misc a1.wav.meta
+Music/sfx/bird cage breaks 6.wav
+Music/sfx/blue hit a3.wav
+Music/sfx/fruit collision a4.wav
+Music/sfx/cardboard box collision a1.wav.meta
+Music/sfx/jewel fly 2.wav
+Music/sfx/bird pushing egg out.wav.meta
+Music/sfx/bird misc a2.wav
+Music/sfx/bird misc a8.wav.meta
+Music/sfx/sardine_can_shot.mp3
+Music/sfx/gamescorescreen_score_count_loop.wav
+Music/sfx/bird cage idle 3.wav.meta
+Music/sfx/light destroyed a3.wav.meta
+Music/sfx/monkey idle a4.wav.meta
+Music/sfx/scaffolding_break_a2.wav
+Music/sfx/bounce material a5.wav
+Music/sfx/dog moving loop.wav.meta
+Music/sfx/scaffolding_collision_a2.wav
+Music/sfx/chain collision new a1.wav.meta
+Music/sfx/bird 01 collision a2_low.wav
+Music/sfx/redbird_yell03.wav.meta
+Music/sfx/monkey idle a3.wav.meta
+Music/sfx/bird next military a3.wav.meta
+Music/sfx/cardboard box collision a1.wav
+Music/sfx/rock destroyed a3.wav.meta
+Music/sfx/lamp collision a4.wav.meta
+Music/sfx/jewel fly 3.wav.meta
+Music/sfx/wood damage a1.wav.meta
+Music/sfx/blue hit a2.wav.meta
+Music/sfx/monkeyboss hit 1.wav.meta
+Music/sfx/bigbrother_yell.wav.meta
+Music/sfx/light destroyed a2.wav
+Music/sfx/bird 02 collision a4.wav
+Music/sfx/fruit collision a2.wav
+Music/sfx/wood collision a6.wav
+Music/sfx/level clear military a1.mp3
+Music/sfx/level start military a2.mp3.meta
+Music/sfx/special boost.wav.meta
+Music/sfx/bird misc a4.wav.meta
+Music/sfx/bird 01 collision a4.wav
+Music/sfx/ice light collision a8.wav
+Music/sfx/redbird_yell03.wav
+Music/sfx/blue hit a2.wav
+Music/sfx/rock damage a2.wav.meta
+Music/sfx/monkey idle a6.wav
+Music/sfx/jewel fly 7.wav
+Music/sfx/bird 01 collision a3.wav.meta
+Music/sfx/lamp collision a5.wav.meta
+Music/sfx/wood damage a3.wav
+Music/sfx/blue hit a6.wav
+Music/sfx/bird cage breaks 2.wav.meta
+Music/sfx/bird misc a8.wav
+Music/sfx/wood damage a1.wav
+Music/sfx/wood collision a2.wav.meta
+Music/sfx/wood destroyed a3.wav
+Music/sfx/bird misc a11.wav.meta
+Music/sfx/Globe_Bird_Selection_1.wav.meta
+Music/sfx/level start military a1.mp3.meta
+Music/sfx/dog idle a3.wav.meta
+Music/sfx/plane_broken.mp3.meta
+Music/sfx/lamp breaking.wav.meta
+Music/sfx/bird 05 collision a1.wav.meta
+Music/sfx/plant breaks a2.wav
+Music/sfx/level_failed_birds.mp3.meta
+Music/sfx/Globe_Bird_Special_Activation_2.wav.meta
+Music/sfx/ice light collision a4.wav.meta
+Music/sfx/bird misc a9.wav
+Music/sfx/nigel laugh a3.wav.meta
+Music/sfx/monkey near falling a1.wav
+Music/sfx/rock collision a3.wav.meta
+Music/sfx/bird cage breaks 6.wav.meta
+Music/sfx/wood damage a2.wav
+Music/sfx/blue hit a7.wav.meta
+Music/sfx/dog bark a1.wav
+Music/sfx/monkeyboss hit 4.wav.meta
+Music/sfx/nigel laugh a1.wav
+Music/sfx/nigel hit edit a3.wav.meta
+Music/sfx/cardboard box breaks a3.wav.meta
+Music/sfx/rock damage a3.wav
+Music/sfx/bird cage idle 1.wav.meta
+Music/sfx/bird misc a5.wav.meta
+Music/sfx/highscore.mp3
+Music/sfx/bird next military a2.wav
+Music/sfx/wood destroyed a1.wav
+Music/sfx/wood damage a2.wav.meta
+Music/sfx/scaffolding_break_a1.wav.meta
+Music/sfx/monkeyboss hit 1.wav
+Music/sfx/wood collision a1.wav
+Music/sfx/bird misc a10.wav
+Music/sfx/bigbrother_select.wav.meta
+Music/sfx/jewel collision a2.wav.meta
+Music/sfx/wood collision a5.wav.meta
+Music/sfx/special group.wav.meta
+Music/sfx/pig balloon pop.wav
+Music/sfx/bird 03 collision a1.wav
+Music/sfx/monkeyboss hit 2.wav.meta
+Music/sfx/jewel fly 2.wav.meta
+Music/sfx/Globe_Bird_Hit_3.wav
+Music/sfx/bird 01 collision a4.wav.meta
+Music/sfx/dog moving loop.wav
+Music/sfx/bird 03 collision a2.wav.meta
+Music/sfx/lamp collision a2.wav.meta
+Music/sfx/lamp collision a2.wav
+Music/sfx/mighty_eagle_yell.wav.meta
+Music/sfx/nigel defeated flying away.wav.meta
+Music/sfx/star_2.wav
+Music/sfx/level start military a1.mp3
+Music/sfx/lamp collision a5.wav
+Music/sfx/ice light collision a3.wav.meta
+Music/sfx/boomerang_select.wav
+Music/sfx/bigbrother_fly.wav.meta
+Music/sfx/wood destroyed a2.wav.meta
+Music/sfx/bird next military a2.wav.meta
+Music/sfx/special group.wav
+Music/sfx/level start military a2.mp3
+Music/sfx/bird 05 collision a3.wav
+Music/sfx/blue hit a6.wav.meta
+Music/sfx/monkey near falling a3.wav
+Music/sfx/light rolling.wav
+Music/sfx/bird cage idle 8.wav
+Music/sfx/bird 01 select.wav
+Music/sfx/bird misc a2.wav.meta
+Music/sfx/boomerang_swish.wav.meta
+Music/sfx/bird 03 collision a5.wav.meta
+Music/sfx/bird cage breaks 1.wav
+Music/sfx/level_failed_birds.mp3
+Music/sfx/special egg.wav.meta
+Music/sfx/bird cage idle 2.wav
+Music/sfx/bird cage collision a2.wav
+Music/sfx/monkey dies a1.wav.meta
+Music/sfx/plant breaks a2.wav.meta
+Music/sfx/dog bark a2.wav
+Music/sfx/scaffolding_break_a3.wav.meta
+Music/sfx/rock damage a3.wav.meta
+Music/sfx/scaffolding_collision_a2.wav.meta
+Music/sfx/gamescorescreen_score_count_loop.wav.meta
+Music/sfx/star_2.wav.meta
+Music/sfx/star_1.mp3.meta
+Music/sfx/bird misc a9.wav.meta
+Music/sfx/star_1.wav.meta
+Music/sfx/bird 01 collision a2_low.wav.meta
+Music/sfx/sardine_can_shot.mp3.meta
+Music/sfx/nigel hit edit a3.wav
+Music/sfx/bird cage breaks 2.wav
+Music/sfx/blue slingshot.wav.meta
+Music/sfx/metal chain break a1.wav
+Music/sfx/bird 04 collision a3.wav
+Music/sfx/fruit collision a4.wav.meta
+Music/sfx/bird cage idle 5.wav.meta
+Music/sfx/bird 02 collision a3.wav
+Music/sfx/Globe_Bird_Hit_4.wav
+Music/sfx/ice light collision a5.wav.meta
+Music/sfx/scaffolding_collision_a1.wav
+Music/sfx/boomerang_activate.wav.meta
+Music/sfx/gasoline_can_explodes.wav.meta
+Music/sfx/bird misc a5.wav
+Music/Angry Birds OST/ambient_construction.mp3
+Music/Angry Birds OST/title_theme.mp3
+Music/Angry Birds OST/funky_theme.mp3
+Music/Angry Birds OST/birds_intro.mp3
+Music/Angry Birds OST/ambient_red_savannah.mp3
+Music/Angry Birds OST/ambient_city.mp3
+Music/Angry Birds OST/ambient_white_dryforest.mp3
+Music/Angry Birds OST/game_complete.mp3
+Music/Angry Birds OST/level_complete.mp3
+Music/Angry Birds OST/birds_outro.mp3
+Music/Angry Birds OST/ambient_green_jungleish.mp3
+Music/Angry Birds OST/birds_boss.mp3
+Music/stpatrics_theme.mp3.meta
+Music/stpatrics_theme.mp3
+Gamescreen/background.jpg
+lightGrayDot.png
+level7.png

@@ -22,13 +22,13 @@ import java.util.ArrayList;
 
 public class Structures implements Serializable {
     public String block_type;
-    private TmxMapLoader tileloader;
-    private TiledMap tileMap;
-    private World world;
-    private BodyDef bodyDef = new BodyDef();
-    private PolygonShape shape = new PolygonShape();
-    private FixtureDef fixtureDef = new FixtureDef();
-    private Body body;
+    private transient TmxMapLoader tileloader;
+    private transient TiledMap tileMap;
+    private transient World world;
+    private transient BodyDef bodyDef = new BodyDef();
+    private transient PolygonShape shape = new PolygonShape();
+    private transient FixtureDef fixtureDef = new FixtureDef();
+    private transient Body body;
     private int index_in_tmx;
     private float strength;
     private float damage;
@@ -182,5 +182,4 @@ public class Structures implements Serializable {
 
         return rectangles;
     }
-
 }
