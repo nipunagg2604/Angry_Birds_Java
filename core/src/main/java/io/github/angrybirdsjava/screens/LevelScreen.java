@@ -23,11 +23,15 @@ public class LevelScreen implements Screen{
     private Button backButton;
     private int height=Gdx.graphics.getHeight();
     private int width=Gdx.graphics.getWidth();
-
+    private float bgX1;
+    private float bgX2; // Positions for two background images
+    private float bgSpeed = 30;
+    public int cnt=1;
     public LevelScreen(final Core game) {
         this.game = game;
-
-        background = new Texture(Gdx.files.internal("levelBackground.jpg"));
+        this.bgX1=0;
+        this.bgX2=width;
+        background = new Texture(Gdx.files.internal("bgg.jpg"));
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
@@ -44,7 +48,7 @@ public class LevelScreen implements Screen{
         root.defaults().spaceLeft(120);
         stage.addActor(root);
 
-        ImageButton imgb = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("level1.png"))));
+        ImageButton imgb = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Level Buttons/1.png"))));
         imgb.setSize(100, 100);
         imgb.setPosition(90, 280);
 
@@ -198,6 +202,7 @@ public class LevelScreen implements Screen{
         imgb13.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+
                 game.setScreen(new HomeScreen(game));
                 dispose();
             }
@@ -213,8 +218,20 @@ public class LevelScreen implements Screen{
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
+        bgX1 -= bgSpeed * delta;
+        bgX2 -= bgSpeed * delta;
+
+        if (bgX1 + width <= 0) {
+            bgX1 = bgX2 + width;
+        }
+        if (bgX2 + width <= 0) {
+            bgX2 = bgX1 +width;
+        }
         game.batch.begin();
-        game.batch.draw(background, 0, 0, width, height);
+
+        game.batch.draw(background, bgX1, 0,width,height); // Draw first background
+        game.batch.draw(background, bgX2, 0,width,height);
+//        game.batch.draw(background, 0, 0, width, height);
         game.batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());

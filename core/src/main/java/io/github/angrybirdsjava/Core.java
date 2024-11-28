@@ -18,7 +18,11 @@ public class Core extends Game {
     public void create() {
         batch = new SpriteBatch();
 //        setScreen(new HomeScreen(this));
+<<<<<<< Updated upstream
         setScreen(new io.github.angrybirdsjava.ThemeScreen(this));
+=======
+        setScreen(new io.github.angrybirdsjava.LevelScreen(this));
+>>>>>>> Stashed changes
 //        dispose();
     }
 
