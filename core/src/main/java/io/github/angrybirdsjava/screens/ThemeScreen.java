@@ -30,10 +30,10 @@ public class ThemeScreen implements Screen{
     private float start=199;
     private float end=300;
 
-    private float gap=250;
+    private float gap=230;
 
     private float buttonwidth=400;
-    private float buttonheight=340;
+    private float buttonheight=280;
 
     ImageButton imgb;
     ImageButton imgb2;
@@ -53,7 +53,7 @@ public class ThemeScreen implements Screen{
 
         bgX1=0;
         bgX2=width;
-        background = new Texture("Gamescreen/background.jpg");
+        background = new Texture("bgg.jpg");
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
@@ -67,13 +67,13 @@ public class ThemeScreen implements Screen{
         imgb3 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-3.png"))));
         imgb4 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-4.png"))));
         imgb5 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb6 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb7 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb8 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb9 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb10 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb11 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
-        imgb12 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-5.png"))));
+        imgb6 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-6.png"))));
+        imgb7 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-7.png"))));
+        imgb8 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-8.png"))));
+        imgb9 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-9.png"))));
+        imgb10 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-10.png"))));
+        imgb11 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-11.png"))));
+        imgb12 = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Themes/Theme-12.png"))));
 
 
         imgb.setSize(buttonwidth,buttonheight);
@@ -89,18 +89,18 @@ public class ThemeScreen implements Screen{
         imgb11.setSize(buttonwidth,buttonheight);
         imgb12.setSize(buttonwidth,buttonheight);
 
-        imgb.setPosition((start - imgb.getWidth()) / 2, (590 - buttonheight) / 2);
-        imgb2.setPosition((start+gap - imgb2.getWidth()) / 2, (590 - buttonheight) / 2);
-        imgb3.setPosition((start+2*gap - imgb3.getWidth()) / 2, (590 - buttonheight)/2);
-        imgb4.setPosition((start+3*gap - imgb4.getWidth()) / 2, (590 - buttonheight) / 2);
-        imgb5.setPosition((start+4*gap - imgb5.getWidth()) / 2, (590 - imgb5.getHeight()) / 2);
-        imgb6.setPosition((start+5*gap - imgb6.getWidth()) / 2, (590 - imgb6.getHeight()) / 2);
-        imgb7.setPosition((start+6*gap - imgb7.getWidth()) / 2, (590 - imgb7.getHeight()) / 2);
-        imgb8.setPosition((start+7*gap - imgb8.getWidth()) / 2, (590 - imgb8.getHeight()) / 2);
-        imgb9.setPosition((start+8*gap - imgb9.getWidth()) / 2, (590 - imgb9.getHeight()) / 2);
-        imgb10.setPosition((start+9*gap - imgb10.getWidth()) / 2, (590 - imgb10.getHeight()) / 2);
-        imgb11.setPosition((start+10*gap - imgb11.getWidth()) / 2, (590 - imgb11.getHeight()) / 2);
-        imgb12.setPosition((start+11*gap - imgb12.getWidth()) / 2, (590 - imgb12.getHeight()) / 2);
+        imgb.setPosition((start - imgb.getWidth()) / 2, (570 - buttonheight) / 2);
+        imgb2.setPosition((start+gap - imgb2.getWidth()) / 2, (570 - buttonheight) / 2);
+        imgb3.setPosition((start+2*gap - imgb3.getWidth()) / 2, (570 - buttonheight)/2);
+        imgb4.setPosition((start+3*gap - imgb4.getWidth()) / 2, (570 - buttonheight) / 2);
+        imgb5.setPosition((start+4*gap - imgb5.getWidth()) / 2, (570 - imgb5.getHeight()) / 2);
+        imgb6.setPosition((start+5*gap - imgb6.getWidth()) / 2, (570 - imgb6.getHeight()) / 2);
+        imgb7.setPosition((start+6*gap - imgb7.getWidth()) / 2, (570 - imgb7.getHeight()) / 2);
+        imgb8.setPosition((start+7*gap - imgb8.getWidth()) / 2, (570 - imgb8.getHeight()) / 2);
+        imgb9.setPosition((start+8*gap - imgb9.getWidth()) / 2, (570 - imgb9.getHeight()) / 2);
+        imgb10.setPosition((start+9*gap - imgb10.getWidth()) / 2, (570 - imgb10.getHeight()) / 2);
+        imgb11.setPosition((start+10*gap - imgb11.getWidth()) / 2, (570 - imgb11.getHeight()) / 2);
+        imgb12.setPosition((start+11*gap - imgb12.getWidth()) / 2, (570 - imgb12.getHeight()) / 2);
 
 
 //        imgb.addListener(new ClickListener() {
@@ -185,19 +185,19 @@ public class ThemeScreen implements Screen{
                 // Scroll objects based on drag direction
                 start+=d;
                 if (start>=199) start=199;
-                if (start<=-1007) start=-1007;
-                imgb.setPosition((start - imgb.getWidth()) / 2, (590 - imgb.getHeight()) / 2);
-                imgb2.setPosition((start+gap - imgb2.getWidth()) / 2, (590 - imgb2.getHeight()) / 2);
-                imgb3.setPosition((start+2*gap - imgb3.getWidth()) / 2, (590 - imgb3.getHeight()) / 2);
-                imgb4.setPosition((start+3*gap - imgb4.getWidth()) / 2, (590 - imgb4.getHeight()) / 2);
-                imgb5.setPosition((start+4*gap - imgb5.getWidth()) / 2, (590 - imgb5.getHeight()) / 2);
-                imgb6.setPosition((start+5*gap - imgb6.getWidth()) / 2, (590 - imgb6.getHeight()) / 2);
-                imgb7.setPosition((start+6*gap - imgb7.getWidth()) / 2, (590 - imgb7.getHeight()) / 2);
-                imgb8.setPosition((start+7*gap - imgb8.getWidth()) / 2, (590 - imgb8.getHeight()) / 2);
-                imgb9.setPosition((start+8*gap - imgb9.getWidth()) / 2, (590 - imgb9.getHeight()) / 2);
-                imgb10.setPosition((start+9*gap - imgb10.getWidth()) / 2, (590 - imgb10.getHeight()) / 2);
-                imgb11.setPosition((start+10*gap - imgb11.getWidth()) / 2, (590 - imgb11.getHeight()) / 2);
-                imgb12.setPosition((start+11*gap - imgb12.getWidth()) / 2, (590 - imgb12.getHeight()) / 2);
+                if (start<=-780) start=-780;
+                imgb.setPosition((start - imgb.getWidth()) / 2, (570 - imgb.getHeight()) / 2);
+                imgb2.setPosition((start+gap - imgb2.getWidth()) / 2, (570 - imgb2.getHeight()) / 2);
+                imgb3.setPosition((start+2*gap - imgb3.getWidth()) / 2, (570 - imgb3.getHeight()) / 2);
+                imgb4.setPosition((start+3*gap - imgb4.getWidth()) / 2, (570 - imgb4.getHeight()) / 2);
+                imgb5.setPosition((start+4*gap - imgb5.getWidth()) / 2, (570 - imgb5.getHeight()) / 2);
+                imgb6.setPosition((start+5*gap - imgb6.getWidth()) / 2, (570 - imgb6.getHeight()) / 2);
+                imgb7.setPosition((start+6*gap - imgb7.getWidth()) / 2, (570 - imgb7.getHeight()) / 2);
+                imgb8.setPosition((start+7*gap - imgb8.getWidth()) / 2, (570 - imgb8.getHeight()) / 2);
+                imgb9.setPosition((start+8*gap - imgb9.getWidth()) / 2, (570 - imgb9.getHeight()) / 2);
+                imgb10.setPosition((start+9*gap - imgb10.getWidth()) / 2, (570 - imgb10.getHeight()) / 2);
+                imgb11.setPosition((start+10*gap - imgb11.getWidth()) / 2, (570 - imgb11.getHeight()) / 2);
+                imgb12.setPosition((start+11*gap - imgb12.getWidth()) / 2, (570 - imgb12.getHeight()) / 2);
 
 
             }
