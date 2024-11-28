@@ -156,7 +156,7 @@ public class Level1Screen implements Screen, InputProcessor {
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
-            crown_pig = (new Crown_Pig(world,5f,0f)).addpig(world, 743, 305, 15);
+            crown_pig = (new Crown_Pig(world,5f,0f)).addpig(world, 793, 305, 15);
             pigbodies.add(crown_pig);
             birds.add(redbirdbody);
             birds.add(yellowirdbody);
