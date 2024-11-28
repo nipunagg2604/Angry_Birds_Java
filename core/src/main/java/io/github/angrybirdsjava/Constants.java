@@ -49,24 +49,24 @@ public class Constants {
         score_map.add(new HashMap<>());
 
         star_map.get(0).put(1,0);
-        star_map.get(0).put(2,0);
-        star_map.get(0).put(3,0);
+        star_map.get(0).put(2,-1);
+        star_map.get(0).put(3,-1);
         star_map.get(1).put(1,0);
-        star_map.get(1).put(2,0);
-        star_map.get(1).put(3,0);
+        star_map.get(1).put(2,-1);
+        star_map.get(1).put(3,-1);
         star_map.get(2).put(1,0);
-        star_map.get(2).put(2,0);
-        star_map.get(2).put(3,0);
+        star_map.get(2).put(2,-1);
+        star_map.get(2).put(3,-1);
 
         score_map.get(0).put(1,0);
-        score_map.get(0).put(2,0);
-        score_map.get(0).put(3,0);
+        score_map.get(0).put(2,-1);
+        score_map.get(0).put(3,-1);
         score_map.get(1).put(1,0);
-        score_map.get(1).put(2,0);
-        score_map.get(1).put(3,0);
+        score_map.get(1).put(2,-1);
+        score_map.get(1).put(3,-1);
         score_map.get(2).put(1,0);
-        score_map.get(2).put(2,0);
-        score_map.get(2).put(3,0);
+        score_map.get(2).put(2,-1);
+        score_map.get(2).put(3,-1);
 
 
 
