@@ -7,6 +7,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Constants {
     public static float ppm=13f;
 
@@ -27,12 +31,45 @@ public class Constants {
     public static int lev2_total=0;
     public static int lev3_total=0;
 
+    public static ArrayList<Map<Integer,Integer> > star_map=new ArrayList<>();
+    public static ArrayList<Map<Integer,Integer> > score_map=new ArrayList<>();
+
+
     static {
         wooden_font = createfont("e29126",28);
         glass_font = createfont("3490b8",28);
         stone_font = createfont("a0a0a0",28);
         pig_font = createfont("6be248",28);
         score_font = createfont("000000",40);
+        star_map.add(new HashMap<>());
+        star_map.add(new HashMap<>());
+        star_map.add(new HashMap<>());
+        score_map.add(new HashMap<>());
+        score_map.add(new HashMap<>());
+        score_map.add(new HashMap<>());
+
+        star_map.get(0).put(1,0);
+        star_map.get(0).put(2,0);
+        star_map.get(0).put(3,0);
+        star_map.get(1).put(1,0);
+        star_map.get(1).put(2,0);
+        star_map.get(1).put(3,0);
+        star_map.get(2).put(1,0);
+        star_map.get(2).put(2,0);
+        star_map.get(2).put(3,0);
+
+        score_map.get(0).put(1,0);
+        score_map.get(0).put(2,0);
+        score_map.get(0).put(3,0);
+        score_map.get(1).put(1,0);
+        score_map.get(1).put(2,0);
+        score_map.get(1).put(3,0);
+        score_map.get(2).put(1,0);
+        score_map.get(2).put(2,0);
+        score_map.get(2).put(3,0);
+
+
+
     }
     public static BitmapFont createfont(String hex,int size)  {
         BitmapFont angryfont;

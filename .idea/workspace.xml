@@ -12,57 +12,44 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Core.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/ThemeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/LevelScreen$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/PauseScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/PauseScreen$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/blocks/Structures.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/blocks/Structures.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/pigs/Crown_Pig.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/pigs/Crown_Pig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/ContactDetect.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/ContactDetect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/screens/EndScreen$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Core.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen$1.class.uniqueId28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen$2.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen$3.class.uniqueId21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/EndScreen.class.uniqueId34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/HomeScreen$1.class.uniqueId14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/HomeScreen$2.class.uniqueId37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/HomeScreen$3.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/HomeScreen$4.class.uniqueId19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/HomeScreen.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$1.class.uniqueId31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$2.class.uniqueId7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen$3.class.uniqueId26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level1Screen.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$1.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$10.class.uniqueId29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$2.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$3.class.uniqueId33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$4.class.uniqueId27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$5.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$6.class.uniqueId36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$7.class.uniqueId20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$8.class.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen$9.class.uniqueId25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LevelScreen.class.uniqueId24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/LoadingScreen.class.uniqueId30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen$1.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen$2.class.uniqueId23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen$3.class.uniqueId9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen$4.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/PauseScreen.class.uniqueId6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$1.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$2.class.uniqueId32" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$3.class.uniqueId18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$4.class.uniqueId35" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$5.class.uniqueId22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$6.class.uniqueId8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen.class.uniqueId15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Core.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen$1.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/ThemeScreen.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/ThemeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/ThemeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/build/tmp/compileJava/compileTransaction/stash-dir/Lwjgl3Launcher.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/blocks/Structures.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/blocks/Structures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/pigs/Crown_Pig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/pigs/Crown_Pig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/ContactDetect.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/ContactDetect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/EndScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/EndScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/LevelScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/LevelScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/PauseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/PauseScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lwjgl3/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

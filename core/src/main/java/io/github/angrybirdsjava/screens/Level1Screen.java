@@ -42,6 +42,9 @@ import java.util.Vector;
 //import java.util.stream.GathererOp;
 
 public class Level1Screen implements Screen, InputProcessor {
+    private int themeindex;
+    private ShowMessage endtrack=null;
+
     private Texture background;
     private SpriteBatch batch;
     private OrthographicCamera camera;
@@ -110,7 +113,8 @@ public class Level1Screen implements Screen, InputProcessor {
 
     private Vector2 dragPositionglobal=new Vector2(103,190);
 //    public Level1Screen(final Core game, boolean flag){
-    public Level1Screen(final Core game){
+    public Level1Screen(final Core game,int themeindex){
+        this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
         ppm = Constants.ppm;
@@ -152,7 +156,7 @@ public class Level1Screen implements Screen, InputProcessor {
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
-            crown_pig = (new Crown_Pig(world,5f,0f)).addpig(world, 793, 305, 15);
+            crown_pig = (new Crown_Pig(world,5f,0f)).addpig(world, 743, 305, 15);
             pigbodies.add(crown_pig);
             birds.add(redbirdbody);
             birds.add(yellowirdbody);
@@ -341,20 +345,11 @@ public class Level1Screen implements Screen, InputProcessor {
 
         stage.addActor(button);
 
-        ImageButton end = new ImageButton(new TextureRegionDrawable(new Texture("nextLevel.png")));
-        end.setSize(50, 50);
-        end.setPosition(905, 440);
+        if (Sounds.isSound){
+            Sounds.intromusic.play();
+            Sounds.intromusic.setVolume(0.8f);
+        }
 
-        end.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new EndScreen(game));
-                dispose();
-            }
-        });
-        Sounds.intromusic.play();
-        Sounds.intromusic.setVolume(0.8f);
-        stage.addActor(end);
     }
     public void checkbird(){
         if (birds.size()<1) {
@@ -394,6 +389,28 @@ public class Level1Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+
+        if (birds.size()==0 || pigbodies.size()==0){
+            if (endtrack==null) endtrack=new ShowMessage("end","end",0,0,5);
+            else{
+                endtrack.update(delta);
+                if (endtrack.isFinished()==true){
+                    int totalscore=Constants.score_map.get(themeindex).get(1);
+                    if (totalscore < Constants.lev1_total/4 && totalscore>=0){
+                        Constants.star_map.get(themeindex).put(1,0);
+                    }else if (totalscore >=Constants.lev1_total/4 && totalscore<Constants.lev1_total/2){
+                        Constants.star_map.get(themeindex).put(1,1);
+                    } else if (totalscore >=Constants.lev1_total/2 && totalscore<(Constants.lev1_total*3)/4){
+                        Constants.star_map.get(themeindex).put(1,2);
+                    }else if (totalscore >=(Constants.lev1_total*3)/4 && totalscore<=Constants.lev1_total){
+                        Constants.star_map.get(themeindex).put(1,3);
+                    }game.setScreen(new EndScreen(game));
+                }
+            }
+        }
+
+
+
         camera.update();
         renderer.setView(camera);
         renderer.render();
@@ -401,8 +418,7 @@ public class Level1Screen implements Screen, InputProcessor {
         b2dr.render(world,camera.combined);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-//        Constants.angryfont.draw(batch, "2400", 100, 100);
-//        particleEffectblast.draw(batch,delta);
+
         if (currentbirdbody!=null &&  (((String)(currentbirdbody.getUserData())).equals("black")
                 || ((String)(currentbirdbody.getUserData())).equals("blackbird"))){
             ParticleEffect particleEffect=new ParticleEffect();
@@ -423,7 +439,8 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.lev1_total+=100;
+
+                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+100);
                 ShowMessage show=new ShowMessage("glass","100",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
                 ParticleEffect particleEffect=new ParticleEffect();
@@ -444,7 +461,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.lev1_total+=300;
+                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -456,7 +473,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.lev1_total+=300;
+                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -467,24 +484,28 @@ public class Level1Screen implements Screen, InputProcessor {
             if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
                 a.add(2,"null");
-                b.getFixtureList().get(0).setUserData(a);
-                Constants.lev1_total+=300;
+                b.getFixtureList().get(0).setUserData(a);Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+1000);
+
                 ShowMessage show=new ShowMessage("wood","1000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
         }
-        for (Body b:pigbodies){
+        Iterator<Body> iterator1 = pigbodies.iterator();
+        while (iterator1.hasNext()) {
+            Body b = iterator1.next();
             ArrayList a=(ArrayList) b.getFixtureList().get(0).getUserData();
             if (a.size()<4) continue;
             if (((String)(a.get(3))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(3);
                 a.add(3,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.lev1_total+=5000;
+                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+5000);
                 ShowMessage show=new ShowMessage("pig","5000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
+                iterator1.remove();
             }
         }
+
 
 
         Iterator<ParticleEffect> iterator = effects.iterator();

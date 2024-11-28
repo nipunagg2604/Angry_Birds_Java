@@ -16,7 +16,7 @@ public class Crown_Pig {
     private static Body body;
     private static float ppm= Constants.ppm;
     private float strength;
-    private float damage;
+    public float damage;
     private transient World world;
     public Crown_Pig(World world,float strength,float damage) {
         this.world = world;

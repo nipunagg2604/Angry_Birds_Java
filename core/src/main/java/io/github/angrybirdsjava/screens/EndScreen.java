@@ -42,7 +42,7 @@ public class EndScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new Level1Screen(game));
+                game.setScreen(new Level1Screen(game,0));
                 dispose();
             }
         });
@@ -56,7 +56,7 @@ public class EndScreen implements Screen{
         prevLevel.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new Level1Screen(game));
+                game.setScreen(new Level1Screen(game,0));
                 dispose();
             }
         });
@@ -70,7 +70,7 @@ public class EndScreen implements Screen{
         nextLevel.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new Level1Screen(game));
+                game.setScreen(new Level1Screen(game,0));
                 dispose();
             }
         });

@@ -139,6 +139,7 @@ public class ContactDetect implements ContactListener {
                     pig.applyDamage(fixtureA,3f);
                 }else if (type2.equals("Red")){
                     Red_Bird birdclass=(Red_Bird) (arr2.get(1));
+//                    System.out.println(pig.damage);
                     pig.applyDamage(fixtureA,2.5f);
                 }else if (type2.equals("Yellow")){
                     Yellow_Bird birdclass=(Yellow_Bird) (arr2.get(1));
@@ -157,6 +158,7 @@ public class ContactDetect implements ContactListener {
                     pig.applyDamage(fixtureB,3f);
                 }else if (type1.equals("Red")){
                     Red_Bird birdclass=(Red_Bird) (arr1.get(1));
+//                    System.out.println(pig.damage);
                     pig.applyDamage(fixtureB,2.5f);
                 }else if (type1.equals("Yellow")){
                     Yellow_Bird birdclass=(Yellow_Bird) (arr1.get(1));

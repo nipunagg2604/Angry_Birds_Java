@@ -21,7 +21,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Structures implements Serializable {
-    private String block_type;
+    public String block_type;
     private TmxMapLoader tileloader;
     private TiledMap tileMap;
     private World world;

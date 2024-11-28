@@ -100,7 +100,7 @@ public class PauseScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
+                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0));
                 old.dispose();
                 dispose();
             }

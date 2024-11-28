@@ -712,6 +712,7 @@ Level_tmx_files/soil.png
 Level_tmx_files/finalsoil.tsx
 Level_tmx_files/finalsoil.png
 Level_tmx_files/soil.tsx
+Level_tmx_files/level-1 copy.tmx
 Level_tmx_files/level-1.tmx
 Level_tmx_files/level-2.tmx
 Level_tmx_files/level-3.tmx
@@ -759,6 +760,7 @@ cross.png
 bgg.jpg
 gameOver.png
 bgg2.jpg
+bg2.png
 stars5.png
 skin4/clean-crispy-ui.json
 skin4/clean-crispy-ui.atlas
