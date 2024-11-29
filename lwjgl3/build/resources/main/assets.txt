@@ -411,6 +411,7 @@ Textures/THEME_11_PARALLAX_BIRTHDAY.png.meta
 Textures/THEME_13_PARALLAX1_13.png.meta
 Textures/THEME_12_THEME_GROUND_12.png
 Textures/MENU_ELEMENTS_1.png.meta
+data02.txt
 Level Buttons/2.png
 Level Buttons/locklevel.png
 Level Buttons/3.png
@@ -426,10 +427,12 @@ birds/yellow.png
 birds/black.png
 birds/redbird.png
 birds/redbird.jpg
+dangerabove.png
 m_button.png
 pauseBackground.png
 data.txt
 elementGlass032.png
+dangerabove.webp
 pigs/crownpig.png
 pigs/Mucchad_pig.jpg
 pigs/normal_pig.jpg
@@ -442,24 +445,56 @@ skin4/font-export.fnt
 levelLocked.png
 crossButton.png
 stars2.png
+progress.txt
 exitButton.png
 level4.png
+Buttons/save.png
+Buttons/plainbutton.png
+Buttons/mainmenu.png
+Buttons/music.png
+Buttons/pauseButton.png
+Buttons/restartButton.png
+Buttons/resumeButton.png
+Buttons/load.png
 Level_tmx_files copy/level-1.tmx
 Level_tmx_files copy/Mobile - Angry Birds - Poached Eggs Theme 1.png
 PathPoint.png
 Fonts/angrybirds-regular.bmp
 Fonts/angrybirds-regular.ttf
+EndScreen/MENU_RESULT_1.png
+EndScreen/emptymiddle.png
+EndScreen/leftstar2.png
+EndScreen/rightstar.png
+EndScreen/emptyright.png
+EndScreen/emtpyleft.png
+EndScreen/middlestar2.png
+EndScreen/endscreen.jpg
+EndScreen/middlestar.png
+EndScreen/LOSE.png
+EndScreen/rightstar2.png
+EndScreen/MENU_ELEMENTS_3.png
+EndScreen/leftstar.png
 level2.png
+data23.txt
 level6.png
+Level_tmx_files/bgg2.jpg
+Level_tmx_files/level-2_3.tmx
 Level_tmx_files/level-3.tmx
 Level_tmx_files/soil.png
+Level_tmx_files/level-1_3.tmx
 Level_tmx_files/level-2.tmx
+Level_tmx_files/dangerabove.png
+Level_tmx_files/dangerabove.webp
 Level_tmx_files/finalsoil.tsx
 Level_tmx_files/soil.tsx
 Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.tsx
+Level_tmx_files/level-3_3.tmx
 Level_tmx_files/finalsoil.png
+Level_tmx_files/level-3_2.tmx
+Level_tmx_files/level-1_2.tmx
 Level_tmx_files/level-1 copy.tmx
 Level_tmx_files/lastsoil.png
+Level_tmx_files/level-2_2.tmx
 Level_tmx_files/level-1.tmx
 Level_tmx_files/Mobile - Angry Birds - Poached E.png
 Level_tmx_files/Mobile - Angry Birds - Poached Eggs Theme 1.png
@@ -471,8 +506,10 @@ Tilesets/level-1.tmx
 Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
 effects/explosion.p
 effects/particle.png
+data13.txt
 blackdot.png
 trail.webp
+data01.txt
 backbutton.png
 prevLevel.png
 assets 3.txt
@@ -494,9 +531,12 @@ Blocks/Wooden Blocks/vertical_wood.png
 Blocks/Wooden Blocks/wooden_thick.png
 Blocks/Wooden Blocks/hor.png
 Blocks/Wooden Blocks/wooden_square.png
+Blocks/Wooden Blocks/wooden_thick_vertical.png
 Blocks/Wooden Blocks/wooden_base_type_1.png
 Blocks/Stone Blocks/stone_vertical.png
+Blocks/Stone Blocks/stone_thick_horizontal.png
 Blocks/Stone Blocks/stone_horizontal.png
+Blocks/Stone Blocks/stone_thick_vertical.png
 Blocks/Stone Blocks/stone_square.png
 stars4.png
 skin3/font-pressed-export.fnt
@@ -534,8 +574,22 @@ libgdx.png
 resume.png
 stars3.png
 level3.png
+Endscreen/MENU_RESULT_1.png
+Endscreen/emptymiddle.png
+Endscreen/leftstar2.png
+Endscreen/rightstar.png
+Endscreen/emptyright.png
+Endscreen/emtpyleft.png
+Endscreen/middlestar2.png
+Endscreen/endscreen.jpg
+Endscreen/middlestar.png
+Endscreen/LOSE.png
+Endscreen/rightstar2.png
+Endscreen/MENU_ELEMENTS_3.png
+Endscreen/leftstar.png
 emm.png
 pauseButton.png
+data03.txt
 restartButton.png
 pauseMenu.jpeg
 Slings/slinghalf1.png

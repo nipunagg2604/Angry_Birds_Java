@@ -11,10 +11,10 @@ In this project, we built our game using the LibGDX framework. We utilized the S
 * Then open the project in Intellij and follow the next steps to run it, <br>
 * Extend the Gradle tab on the right side of your window. <br>
 * Expand the tasks of your project and then select: lwjgl3 -> Tasks -> application -> run: <br><br>
-![WhatsApp Image 2024-10-25 at 12 05 11](https://github.com/user-attachments/assets/d9e95710-2c27-411f-91a9-52ff681b639d)
+  ![WhatsApp Image 2024-10-25 at 12 05 11](https://github.com/user-attachments/assets/d9e95710-2c27-411f-91a9-52ff681b639d)
 
 
-# Online resources  <br> 
+# Online resources  <br>
 1.) https://libgdx.com/wiki/
 <br>
 2.) https://www.youtube.com/watch?v=a8MPxzkwBwo&list=PLZm85UZQLd2SXQzsF-a0-pPF6IWDDdrXt
@@ -28,3 +28,11 @@ In this project, we built our game using the LibGDX framework. We utilized the S
 6.) Sprites - https://angrybirds.fandom.com/wiki/Angry_Birds_(game)/Gallery
 <br>
 7.) Font - https://www.fontspace.com/category/angry-birds
+8.) https://youtu.be/D0b2mcq4PJA?si=OXqVCUvYaTL63x0P
+9.) https://youtu.be/2PqwxYVlivA?si=lVVIPW34K6bAy_Bz
+10.) https://youtu.be/A_-rxTO5138?si=v1zd4mT4j5DLmkmv
+11.) https://youtu.be/OlPg6C6O-Cg?si=wtENM9gw3JCPtPNv
+12.) https://youtu.be/LCLa-rgR_MA?si=Yah4_h5ps5qDCMQ2
+13.) https://libgdx.com/wiki/start/demos-and-tutorials
+14.) https://youtu.be/VHaFoym7OBg?si=--sFJeeGVPUaiZ4Y
+15.) https://youtu.be/hcM-R-YOKkQ?si=Hq4yEJcwwesHKXo1

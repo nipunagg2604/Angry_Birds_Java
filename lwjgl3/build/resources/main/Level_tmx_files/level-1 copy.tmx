@@ -3,19 +3,12 @@
  <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
   <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
  </tileset>
+ <tileset firstgid="2443" name="bgg2" tilewidth="32" tileheight="32" tilecount="532" columns="28">
+  <image source="bgg2.jpg" width="900" height="626"/>
+ </tileset>
  <layer id="3" name="sky" width="56" height="16">
   <data encoding="base64" compression="zlib">
-   eJzt1Vs2FWAYx+GPvd0lopJJiJxVFE2iklOYBKVzTUKF2uwtOhgAOW6nlMMkqHRQ3XoG0AS+tfa71nP5u/pfvLN5IczxkXkWWGSJZVbIssoa62wwG0lXlR/CBaqpoZY66mmgkSYuUsF5KvPj6V4ywihjvOI1KcaZIE2GYZ7zIqKuKBFCMacooZTTnOEsZZyjnBMUcjIRT3eXIe5xnwc85BGPecJTnjHAIHci6r7xnUN+8JNf/OaIP/zlH/sc8DWirj0Zwi066KSLbnq4TS999HOdG9xMxtPFskNuv/9362ywySe2+MwXttlhlz2yrLIWUddU4Cdyics008IVrtJKG9eop4HGgni6NBkmecMU07zlHe/5wAwpxpmIqBtK5MQsd3HfMWjKr6g=
-  </data>
- </layer>
- <layer id="7" name="ground" width="56" height="16">
-  <data encoding="base64" compression="zlib">
-   eJztytcRgmAUROGLP22YQ3EqBmzDiFCcigHaMJ4yvDN7Zr6XnTVTSimllFL/VCeYddFDHwMMMUITLbSD398OexyQ4YgcBdbYYOv498EXFptFaCAgxpP9hbfjX4IZ5lhgiRQrjDHB1PGvxBU33PFAhRonnHFx/PsB6yWOaA==
-  </data>
- </layer>
- <layer id="9" name="trees" width="56" height="16">
-  <data encoding="base64" compression="zlib">
-   eJzty0cuRmEAQNEv4Z/onUXonUXonY3onUXonUXonY3onbGzCZGXvJuc4Q0hLi4u7m9qTQqhjXY66KSLbnropY9+BmiimZakaLxHHHPCKWecc8ElV1xzwy37HHAYkbcsOYRyKqikimpqqKWOehpopJgSSpOj8S6zwiprrLPBJltss8MueyywyFJE3vRECBlkkkU2OeSSRz4FFFJECqmkJaLxjjDKGONMMMkU08wwyxzzDDLEcETeR5545oVX3njng0+++OaHO+55iMgbFxf3f/0CuJHGtg==
+   eJzF1UODnQcAQNHXeGZi27Zt27arpEaKpA3bOHWDNmwntm3btm3r/Ir5Fmd9lzcyLBSayjSmM4OZzGI2c5jLPOazgIUsYjFLWMoylrOClaxiNWtYyzrWExnFvQ1sZBOb2cJWtrGdHexkF7vZw172sZ8DHOQQhznCUY5xnBOc5BSnA+id4SznOM8FLnKJy1zhKte4zg1ucovb3OEu97jPAx7yiMc84SnPeB5A7wUvecVr3hAKD4XeIRrRiUFMYhGbOIQRTgRxiUd8EpCQRCQmCUlJRvLwqO+lICWpSE0a0pKO9GQgI5nITBayko3s5CAnuchNHvKSj/wUoCCFKBxArwhFKUZxSlCSUpSmDGUpR3kqUJFKVKYKValGdWpQk1rUpg51qUf9AHoNaEgjGtOEpjSjOS1oSSta04a2tKM9HehIJzrTha50ozvv8h7v80EAvQ/pQU8+4mM+4VM+43O+4Eu+4mt68Q3f8h3f05s+/MCP9KUf/RnAQAYF0PuJnxnMEIYyjOGMYCSj+IVf+Y3f+YM/+Yu/Gc0YxjKOf/iX8UxgIpMC6E1mCv/xP5FMZRrTmcFMZjGbOcxlHvNZwEIWsZglLGUZy1nBSlaxOoDeGtayjvVsYCOb2MwWtrKN7exgJ7vYzR72so/9HOAghzjMEY5yjOMB9E5wklOc5gxnOcd5LnCRS1zmCle5xnVucJNb3OYOd7nHfR7wkEc8DqD3hKc84zkveMkrXvOGUIT/Eo3oxCAmsYhNHMIIJ4K4xCM+CUhIIhJHRH0vCUlJRnJSkJJUpCYNaUlHejKQkUxkJgtZyUZ2cpCTXOQmD3nJR/4AegUoSCEKU4SiFKM4JShJKUpThrKUozwVqEglKlOFqlSjOjWoSS1qB9CrQ13qUZ8GNKQRjWlCU5rRnBa0pBWtaUNb2tGeDnSkE53pQle60T2A3lv8sd3s
   </data>
  </layer>
  <objectgroup id="10" name="ground">
@@ -51,11 +44,6 @@
  <objectgroup id="26" name="stone_vertical"/>
  <objectgroup id="27" name="stone_horizontal"/>
  <objectgroup id="25" name="soil"/>
- <layer id="8" name="grass" width="56" height="16">
-  <data encoding="base64" compression="zlib">
-   eJzty8cNgFAQxNC9/ArJmVrJmZZwF2ilsfSONlNKKaWU8lUazDLkKFCiQo0GLTr0iBAjCX6+GQtWbNhx4MSFGw9eDBgxOfqUUv/1ARw7QaE=
-  </data>
- </layer>
  <objectgroup id="14" name="slingshot"/>
  <objectgroup id="28" name="trisoil"/>
 </map>

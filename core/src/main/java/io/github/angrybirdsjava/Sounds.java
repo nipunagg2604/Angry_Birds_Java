@@ -40,5 +40,9 @@ public class Sounds {
     public static Sound glass_destroy=Gdx.audio.newSound(Gdx.files.internal("Music/sfx/glass break.mp3"));
     public static Sound stone_destroy=Gdx.audio.newSound(Gdx.files.internal("Music/sfx/rock damage a3.wav"));
 
+    public static Sound star1=Gdx.audio.newSound(Gdx.files.internal("Music/sfx/star_1.wav"));
+    public static Sound star2=Gdx.audio.newSound(Gdx.files.internal("Music/sfx/star_2.mp3"));
+    public static Sound star3=Gdx.audio.newSound(Gdx.files.internal("Music/sfx/star_3.wav"));
+
 
 }

@@ -11,10 +11,13 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import io.github.angrybirdsjava.Constants;
-import io.github.angrybirdsjava.Core;
+import io.github.angrybirdsjava.*;
 import io.github.angrybirdsjava.LevelScreen;
-import io.github.angrybirdsjava.Sounds;
+import io.github.angrybirdsjava.ThemeScreen;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class HomeScreen implements Screen {
     final Core game;
@@ -32,6 +35,8 @@ public class HomeScreen implements Screen {
     ImageButton exit_button;
     ImageButton music_button;
     ImageButton sound_button;
+    ImageButton save_button;
+    ImageButton load_button;
     private float bgX1;
     private float bgX2; // Positions for two background images
     private float bgSpeed = 50;
@@ -54,9 +59,11 @@ public class HomeScreen implements Screen {
         this.text=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/text.png"))));
         this.image=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/image.png"))));
         this.help_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/help_button.png"))));
-        this.music_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/music_button.png"))));
+        this.music_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Buttons/music.png"))));
         this.sound_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/sound_button.png"))));
         this.exit_button=new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Homescreen/exit_button.png"))));
+        this.save_button = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Buttons/save.png"))));
+        this.load_button = new ImageButton(new TextureRegionDrawable(new Texture(Gdx.files.internal("Buttons/load.png"))));
         Gdx.input.setInputProcessor(stage);
 
         Sounds.music.play();
@@ -71,6 +78,8 @@ public class HomeScreen implements Screen {
 
         this.settingsButton.setSize(60,60);
         this.exit_button.setSize(60,60);
+        this.save_button.setSize(60,60);
+        this.load_button.setSize(60,60);
         this.help_button.setSize(60,60);
         this.music_button.setSize(60,60);
         this.sound_button.setSize(60,60);
@@ -78,10 +87,25 @@ public class HomeScreen implements Screen {
         this.text.setSize(450,160);
         this.image.setSize(307,158);
         this.exit_button.setVisible(false);
+        this.save_button.setVisible(false);
+        this.load_button.setVisible(false);
         this.help_button.setVisible(false);
         this.music_button.setVisible(false);
         this.sound_button.setVisible(false);
 
+        save_button.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent changeEvent, Actor actor) {
+                saveProgress();
+            }
+        });
+        load_button.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent changeEvent, Actor actor) {
+                File file = new File("progress.txt");
+                if(file.exists() && file.length() > 0) {loadProgress(); Constants.isLoaded = true;}
+            }
+        });
         music_button.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 Sounds.button_click.play(1f);
@@ -110,6 +134,8 @@ public class HomeScreen implements Screen {
                 sound_button.setVisible(issettingsopen);
                 music_button.setVisible(issettingsopen);
                 help_button.setVisible(issettingsopen);
+                save_button.setVisible(issettingsopen);
+                load_button.setVisible(issettingsopen);
 //                game.setScreen(new LoadingScreen(game));
 //                dispose();
             }
@@ -117,7 +143,7 @@ public class HomeScreen implements Screen {
         playButtton.addListener(new ChangeListener() {
             public void changed(ChangeEvent event, Actor actor) {
                 Sounds.button_click.play(1f);
-                game.setScreen(new LevelScreen(game));
+                game.setScreen(new ThemeScreen(game, 0));
                 dispose();
             }
         });
@@ -129,6 +155,8 @@ public class HomeScreen implements Screen {
                 (settingsButton.getY()));
         music_button.setPosition((settingsButton.getX())+240, settingsButton.getY());
         sound_button.setPosition((settingsButton.getX())+320, settingsButton.getY());
+        save_button.setPosition((settingsButton.getX())+400, settingsButton.getY());
+        load_button.setPosition((settingsButton.getX())+480, settingsButton.getY());
         playButtton.setPosition((472- (playButtton.getWidth()) / 2),
                 180-(playButtton.getHeight()/ 2));
         text.setPosition((470 - (text.getWidth()) / 2),
@@ -143,6 +171,40 @@ public class HomeScreen implements Screen {
         stage.addActor(exit_button);
         stage.addActor(music_button);
         stage.addActor(sound_button);
+        stage.addActor(save_button);
+        stage.addActor(load_button);
+    }
+
+    public void saveProgress() {
+        try {
+            FileOutputStream fout = new FileOutputStream("progress.txt");
+            ObjectOutputStream oout = new ObjectOutputStream(fout);
+
+            oout.writeObject(Constants.star_map);
+            oout.writeObject(Constants.score_map);
+
+            oout.close();
+            fout.close();
+        }catch (IOException e) {
+            System.out.println("HomeScreen Serialization Error!");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void loadProgress() {
+        try {
+            FileInputStream fin = new FileInputStream("progress.txt");
+            ObjectInputStream oin = new ObjectInputStream(fin);
+
+            Constants.star_map = ((ArrayList<Map<Integer,Integer>>) oin.readObject());
+            Constants.score_map = ((ArrayList<Map<Integer,Integer>>) oin.readObject());
+
+            oin.close();
+            fin.close();
+        }catch (Exception e) {
+            System.out.println("HomeScreen Deserialization Error!");
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

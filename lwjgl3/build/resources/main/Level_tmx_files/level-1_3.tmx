@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.90" orientation="orthogonal" renderorder="right-down" width="56" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="32" nextobjectid="52">
+ <tileset firstgid="1" name="Mobile - Angry Birds - Poached Eggs Theme 1" tilewidth="32" tileheight="32" tilecount="2442" columns="111">
+  <image source="Mobile - Angry Birds - Poached Eggs Theme 1.png" width="3554" height="710"/>
+ </tileset>
+ <tileset firstgid="2443" name="bgg2" tilewidth="32" tileheight="32" tilecount="532" columns="28">
+  <image source="bgg2.jpg" width="900" height="626"/>
+ </tileset>
+ <tileset firstgid="2975" name="dangerabove" tilewidth="32" tileheight="32" tilecount="702" columns="39">
+  <image source="dangerabove.png" width="1248" height="598"/>
+ </tileset>
+ <layer id="3" name="sky" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzt1NPbHwQYx+G3We87s9lmW822bau1rTXbtlGzbdt2s5pX82p29x/xO+m6OrhPn+vzPXnyRgkKykd+ClCQQhSmCEUpRnFKUJJSlKYMZSlHeSpQkUpUpgpVqUZ1alCTWtSmDnWpR30a0JBGNCZvANqa0JRmNKcFLfmRVvxEa9rQlp9pxy+0pwMd6URnutCVbnSnBz3pRW/60Jd+9GcAAxnEYIYwlGEBahvOCEYyitGMYSzjGM8EJjKJyUxhKtP4ld+YzgxmMovZzGEu85jPAhayiMUsYSnLWM4KVrKK1QFqW8Na1rGeDWxkE5vZwla2sZ0d7GQXu9nDXvaxnwMc5BCHOcJRjnGcE5zkFKc5w1l+5xznucDFALVd4jJXuMo1rnODP7jJLW5zh7vc4z4P+JO/eMgjHvOEpzzjOS/4m394ySte84a3vOM9H/jIJz4HqO0LXwkKDgr6hlCEJgxhCUd4IhCRSEQmCsGEEJVoRCcGMYlFbOIQl3jEJwHfkpBEJCYJSUlGclKQMjgwbalITRrSko70ZCAjmchMFrKSjezk4Dtykovv+YHc5CEv+chPAQpSiMIUoSjFKE4JSlKK0pShbIDaylGeClSkEpWpQlWqUZ0a1KQWtalDXepRnwY0pBGNaUJTmtGcFrTkR1rxE61pQ1t+ph2/0J4OAWrrSCc604WudKM7PehJL3rTh770oz8DGMggBjOEoQxjOCMYyShGM4axjGM8E5jIJCYzhalM49cAtf3GdGYwk1nMZg5zmcd8FrCQRSxmCUtZxnJWsJJVrGYNa1nHejawkU1sZgtb2cZ2drCTXexmT4Da9rKP/RzgIIc4zBGOcozjnOAkpzjNGc7yO+c4zwUuconLXOEq17jODf7gJre4zR3uco/7PODPALX9xUMe8ZgnPOUZz3nB3/zDS17xmje85R3v+cBHPvGZL3wlKMTvIxShCUNYwhGeCEQkEpGJQjAhIYFpi+pONKITg5jEIjZxiEs84pOAb0lIIhKThKQkIzkpSEkqUpOGtKQjPRnISCYyk4WsZCM7OfiOnCGBacvF9/xAbvKQl3zkpwAFKURhilCUYhSnBCUpRWnKUJZylKcCFalEZapQlWpUpwY1qUVt6lCXegFq+3/ff3vfv+5fxds=
+  </data>
+ </layer>
+ <layer id="29" name="ground" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBgDgAAAQ==
+  </data>
+ </layer>
+ <layer id="30" name="trees" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBgDgAAAQ==
+  </data>
+ </layer>
+ <objectgroup id="10" name="ground">
+  <object id="5" x="3.0099" y="390.649" width="1785.71" height="123.651"/>
+ </objectgroup>
+ <objectgroup id="11" name="wooden_vertical">
+  <object id="15" x="708.775" y="326.545" width="9.83146" height="26.6854"/>
+  <object id="16" x="876.612" y="326.545" width="9.83146" height="27.3876"/>
+  <object id="22" x="754" y="254" width="14" height="98.5"/>
+  <object id="23" x="823.242" y="254" width="14" height="98.5"/>
+  <object id="34" x="757" y="177" width="11.2" height="65.3"/>
+  <object id="42" x="818.32" y="177" width="11.2" height="65.3"/>
+  <object id="43" x="789.534" y="127.809" width="9.12921" height="32.3034"/>
+ </objectgroup>
+ <objectgroup id="16" name="wooden_horizontal">
+  <object id="47" x="782.755" y="295.064" width="30.0429" height="13.9485"/>
+  <object id="44" x="779.536" y="340.129" width="34.3348" height="13.8361"/>
+  <object id="25" x="779" y="232.444" width="30.1966" height="9.83146"/>
+  <object id="40" x="759.337" y="160.815" width="68.8202" height="16.1517"/>
+  <object id="24" x="748.854" y="242.978" width="96.7763" height="11.236"/>
+ </objectgroup>
+ <objectgroup id="15" name="base">
+  <object id="11" x="680.317" y="353.844" width="238.163" height="29.2827"/>
+ </objectgroup>
+ <objectgroup id="18" name="stone_square"/>
+ <objectgroup id="19" name="wooden_square"/>
+ <objectgroup id="20" name="wooden_thick_horizontal"/>
+ <objectgroup id="23" name="glass_vertical">
+  <object id="45" x="803.09" y="309.408" width="9.65665" height="30.4942"/>
+  <object id="46" x="782.755" y="309.408" width="9.65665" height="30.4942"/>
+ </objectgroup>
+ <objectgroup id="24" name="glass_horizontal"/>
+ <objectgroup id="26" name="stone_vertical"/>
+ <objectgroup id="27" name="stone_horizontal"/>
+ <objectgroup id="25" name="soil"/>
+ <layer id="31" name="grass" width="56" height="16">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAPBgDgAAAQ==
+  </data>
+ </layer>
+ <objectgroup id="14" name="slingshot"/>
+ <objectgroup id="28" name="trisoil"/>
+</map>

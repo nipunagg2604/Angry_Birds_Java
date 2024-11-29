@@ -1,5 +1,10 @@
 package io.github.angrybirdsjava;
 
+import com.badlogic.gdx.graphics.Pixmap;
+import io.github.angrybirdsjava.*;
+
+import com.badlogic.gdx.graphics.Pixmap;
+import io.github.angrybirdsjava.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -42,6 +47,7 @@ import java.util.Vector;
 //import java.util.stream.GathererOp;
 
 public class Level1Screen implements Screen, InputProcessor {
+    private String filename;
     private int themeindex;
     private ShowMessage endtrack=null;
 
@@ -110,10 +116,34 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
-
+    private int thistotal=0;
     private Vector2 dragPositionglobal=new Vector2(103,190);
-//    public Level1Screen(final Core game, boolean flag){
-    public Level1Screen(final Core game,int themeindex, boolean flag){
+
+
+    io.github.angrybirdsjava.PauseScreen pauseScreen;
+    EndScreen endScreen=null;
+    boolean ispause=false;
+    boolean isend=false;
+    int cnt=1;
+
+    //Darken Texture
+    Texture blankTexture;
+
+
+
+    public Level1Screen(final Core game,int themeindex, boolean flag, String filename){
+        this.filename = filename;
+        //Darken
+        Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+
+        pixmap.setColor(Color.WHITE);
+        pixmap.fill(); // Fill the pixmap with the color
+
+        blankTexture = new Texture(pixmap);
+
+        // Dispose the pixmap to free memory
+        pixmap.dispose();
+
         this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
@@ -149,10 +179,10 @@ public class Level1Screen implements Screen, InputProcessor {
         camera.setToOrtho(false, width, height);
 
         if(flag) {
-            rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();
-            rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1.tmx").return_array();;
-            base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1.tmx").return_array();;
-            glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,"Level_tmx_files/level-1.tmx").return_array();;
+            rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,filename).return_array();
+            rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,filename).return_array();;
+            base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,filename).return_array();;
+            glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,filename).return_array();;
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
@@ -306,7 +336,7 @@ public class Level1Screen implements Screen, InputProcessor {
         buttonStyle.up = buttonDrawable;
         buttonStyle.down = buttonDrawable;
         mapLoader=new TmxMapLoader();
-        tiledMap = mapLoader.load("Level_tmx_files/level-1.tmx");
+        tiledMap = mapLoader.load(filename);
         renderer = new OrthogonalTiledMapRenderer(tiledMap);
 
         button = new Button(buttonStyle);
@@ -317,7 +347,9 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 System.out.println("Button Clicked!");
-                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
+                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level1Screen.this,inputMultiplexer, filename);
+                ispause=true;
+//                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
             }
         });
 
@@ -389,22 +421,32 @@ public class Level1Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-
         if (birds.size()==0 || pigbodies.size()==0){
             if (endtrack==null) endtrack=new ShowMessage("end","end",0,0,5);
             else{
                 endtrack.update(delta);
-                if (endtrack.isFinished()==true){
-                    int totalscore=Constants.score_map.get(themeindex).get(1);
-                    if (totalscore < Constants.lev1_total/4 && totalscore>=0){
-                        Constants.star_map.get(themeindex).put(1,0);
-                    }else if (totalscore >=Constants.lev1_total/4 && totalscore<Constants.lev1_total/2){
-                        Constants.star_map.get(themeindex).put(1,1);
-                    } else if (totalscore >=Constants.lev1_total/2 && totalscore<(Constants.lev1_total*3)/4){
-                        Constants.star_map.get(themeindex).put(1,2);
-                    }else if (totalscore >=(Constants.lev1_total*3)/4 && totalscore<=Constants.lev1_total){
-                        Constants.star_map.get(themeindex).put(1,3);
-                    }game.setScreen(new EndScreen(game));
+                if (endtrack.isFinished()==true && endtrack.type.equals("end")){
+                    endtrack.type="fin";
+                    int star=0;
+                    if (thistotal>Constants.score_map.get(themeindex).get(1)){
+                        Constants.score_map.get(themeindex).put(1,thistotal);
+                        if (thistotal < Constants.lev1_total/4 && thistotal>=0){
+                            Constants.star_map.get(themeindex).put(1,0);
+                            star=0;
+                        }else if (thistotal >=Constants.lev1_total/4 && thistotal<Constants.lev1_total/2){
+                            Constants.star_map.get(themeindex).put(1,1);
+                            star=1;
+                        } else if (thistotal >=Constants.lev1_total/2 && thistotal<(Constants.lev1_total*3)/4){
+                            Constants.star_map.get(themeindex).put(1,2);
+                            star=2;
+                        }else if (thistotal >=(Constants.lev1_total*3)/4 && thistotal<=Constants.lev1_total){
+                            Constants.star_map.get(themeindex).put(1,3);
+                            star=3;
+                        }
+                    }if (endScreen==null){
+                        endScreen=new EndScreen(game,thistotal,star,1, filename);
+                        isend=true;
+                    }
                 }
             }
         }
@@ -440,7 +482,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
 
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+100);
+                thistotal+=100;
                 ShowMessage show=new ShowMessage("glass","100",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
                 ParticleEffect particleEffect=new ParticleEffect();
@@ -461,7 +503,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
+                thistotal+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -473,7 +515,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
+                thistotal+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -484,7 +526,8 @@ public class Level1Screen implements Screen, InputProcessor {
             if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
                 a.add(2,"null");
-                b.getFixtureList().get(0).setUserData(a);Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+1000);
+                b.getFixtureList().get(0).setUserData(a);
+                thistotal+=1000;
 
                 ShowMessage show=new ShowMessage("wood","1000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
@@ -499,7 +542,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(3);
                 a.add(3,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+5000);
+                thistotal+=5000;
                 ShowMessage show=new ShowMessage("pig","5000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
                 iterator1.remove();
@@ -726,10 +769,31 @@ public class Level1Screen implements Screen, InputProcessor {
             }
         }
 
-        Constants.score_font.draw(batch,"Score : "+Integer.toString(Constants.lev1_total),390,470);
+        Constants.score_font.draw(batch,"Score : "+Integer.toString(thistotal),390,470);
+        if (ispause || isend){
+            batch.setColor(0, 0, 0, 0.6f); // Semi-transparent black
+            batch.draw(blankTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.setColor(Color.WHITE);
+        }
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
+
+        if (ispause){
+            pauseScreen.stage.act();
+            pauseScreen.stage.draw();
+        }
+        if (isend){
+            Gdx.input.setInputProcessor(endScreen.stage);
+            if (cnt==1){
+                endScreen.showstars();
+                cnt++;
+            }
+            endScreen.stage.act(delta);
+            endScreen.stage.draw();
+
+        }
+
     }
     public Body createsling (int x,int y,float width,float height) {
         BodyDef baseDef = new BodyDef();
@@ -791,7 +855,10 @@ public class Level1Screen implements Screen, InputProcessor {
     public void saveData()
     {
         try {
-            FileOutputStream fout = new FileOutputStream("data.txt");
+            FileOutputStream fout;
+            if(themeindex == 0) fout = new FileOutputStream("data01.txt");
+            else if(themeindex == 1) fout = new FileOutputStream("data11.txt");
+            else fout = new FileOutputStream("data21.txt");
             ObjectOutputStream oout = new ObjectOutputStream(fout);
 
             ArrayList<ArrayList<Body>> arr = new ArrayList<>();
@@ -889,7 +956,10 @@ public class Level1Screen implements Screen, InputProcessor {
     public void loadData()
     {
         try {
-            FileInputStream fin = new FileInputStream("data.txt");
+            FileInputStream fin;
+            if(themeindex == 0) fin = new FileInputStream("data01.txt");
+            else if(themeindex == 1) fin = new FileInputStream("data11.txt");
+            else fin = new FileInputStream("data21.txt");
             ObjectInputStream oin = new ObjectInputStream(fin);
 
 
@@ -981,7 +1051,6 @@ public class Level1Screen implements Screen, InputProcessor {
                 float velY = ((float) oin.readObject());
                 float ang = ((float) oin.readObject());
                 float angle = ((float) oin.readObject());
-                System.out.println("Hello");
                 int type = ((int) oin.readObject());
                 float grvScl = ((float) oin.readObject());
                 float radius = ((float) oin.readObject());

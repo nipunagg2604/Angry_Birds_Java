@@ -48,12 +48,14 @@ public class ThemeScreen implements Screen{
     ImageButton imgb11;
     ImageButton imgb12;
 
-    public ThemeScreen(final Core game) {
+    public ThemeScreen(final Core game, int theme_index) {
         this.game = game;
 
         bgX1=0;
         bgX2=width;
-        background = new Texture("bgg.jpg");
+        if(theme_index == 0) background = new Texture("bgg.jpg");
+        else if(theme_index == 1) background = new Texture("bgg2.jpg");
+        else background = new Texture("dangerabove.png");
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
@@ -103,37 +105,38 @@ public class ThemeScreen implements Screen{
         imgb12.setPosition((start+11*gap - imgb12.getWidth()) / 2, (570 - imgb12.getHeight()) / 2);
 
 
-//        imgb.addListener(new ClickListener() {
-//            @Override
-//            public void clicked(InputEvent event, float x, float y) {
-//                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-//                dispose();
-//            }
-//        });
-//
-//        imgb2.addListener(new ClickListener() {
-//            @Override
-//            public void clicked(InputEvent event, float x, float y) {
-//                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-//                dispose();
-//            }
-//        });
-//
-//        imgb3.addListener(new ClickListener() {
-//            @Override
-//            public void clicked(InputEvent event, float x, float y) {
-//                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-//                dispose();
-//            }
-//        });
-//
-//        imgb4.addListener(new ClickListener() {
-//            @Override
-//            public void clicked(InputEvent event, float x, float y) {
-//                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game));
-//                dispose();
-//            }
-//        });
+        imgb.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game, 0));
+                dispose();
+            }
+        });
+
+        imgb2.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game, 0));
+                dispose();
+            }
+        });
+
+        imgb3.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                System.out.println("sdafasdfa");
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game, 1));
+                dispose();
+            }
+        });
+
+        imgb4.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game, 2));
+                dispose();
+            }
+        });
 //
 //        imgb5.addListener(new ClickListener() {
 //            @Override
