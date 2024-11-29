@@ -63,7 +63,7 @@ public class Crown_Pig implements Serializable {
         shape.setRadius(radius/ppm);
 
         fixtureDef.shape = shape;
-        fixtureDef.density = 2.0f;  // Adjust density for mass
+        fixtureDef.density = 1.0f;  // Adjust density for mass
         fixtureDef.friction = 0.5f; // Adjust friction as needed
         fixtureDef.restitution = 0.2f; // Bounciness
         body.setLinearDamping(0);

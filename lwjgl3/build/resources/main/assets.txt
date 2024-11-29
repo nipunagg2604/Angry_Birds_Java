@@ -732,6 +732,8 @@ Level_tmx_files/soil.png
 Level_tmx_files/finalsoil.tsx
 Level_tmx_files/finalsoil.png
 Level_tmx_files/soil.tsx
+Level_tmx_files/bgg2.jpg
+Level_tmx_files/level-1_2.tmx
 Level_tmx_files/level-1 copy.tmx
 Level_tmx_files/level-1.tmx
 Level_tmx_files/level-2.tmx
