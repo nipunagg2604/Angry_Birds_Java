@@ -2,6 +2,7 @@ package io.github.angrybirdsjava.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -16,8 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import io.github.angrybirdsjava.Constants;
-import io.github.angrybirdsjava.Core;
+import io.github.angrybirdsjava.*;
 import io.github.angrybirdsjava.Level1Screen;
 import io.github.angrybirdsjava.ThemeScreen;
 
@@ -26,7 +26,7 @@ public class EndScreen implements Screen{
     private Texture blurBackground;
     private OrthographicCamera camera;
     private final Core game;
-    private Stage stage;
+    public Stage stage;
     private int cnt=1;
     private int starstotal;
     public EndScreen(final Core game,int total_score,int starscount,int level) {
@@ -113,39 +113,125 @@ public class EndScreen implements Screen{
         stage.getRoot().setScale(0f);
 
     }
-    public void showstars(int starstotal){
+    public void showstars(){
         Image leftstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/leftstar2.png")));
         Image middlestar=new Image(new TextureRegionDrawable(new Texture("EndScreen/middlestar2.png")));
         Image rightstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/rightstar2.png")));
-        //290 190
-        leftstar.setSize(1,1);
-        //405 210
-        middlestar.setSize(1,1);
-        //520 190
-        rightstar.setSize(1,1);
+        leftstar.setSize(130,130);
+        middlestar.setSize(130,130);
+        rightstar.setSize(130,130);
+
+        leftstar.setScale(0f);
+        middlestar.setScale(0f);
+        rightstar.setScale(0f);
 
         leftstar.setPosition(290,190);
         middlestar.setPosition(405,210);
         rightstar.setPosition(520,190);
+
+        leftstar.setOrigin(leftstar.getWidth()/2,leftstar.getHeight()/2);
+        middlestar.setOrigin(middlestar.getWidth()/2,middlestar.getHeight()/2);
+        rightstar.setOrigin(rightstar.getWidth()/2,rightstar.getHeight()/2);
+
         stage.addActor(leftstar);
-        stage.addActor(middlestar);
-        stage.addActor(rightstar);
+
         stage.getRoot().addAction(Actions.sequence(
                 Actions.scaleTo(1f, 1f, 0.5f)
 
         ));
-        System.out.println(starstotal);
         if(starstotal==1){
-            leftstar.addAction(Actions.sequence(
-                Actions.delay(1f),
-                    Actions.scaleTo(180f, 180f, 1f),
-                    Actions.scaleTo(130f, 130f, 1f)
-            ));
+            if (Sounds.isSound){
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.run(()-> Sounds.star1.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f)
+                ));
+            }else{
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f)
+                ));
+            }
+
+        }if(starstotal==2){
+            if (Sounds.isSound){
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.run(()-> Sounds.star1.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(middlestar))
+                ));
+                middlestar.addAction(Actions.sequence(
+                        Actions.run(()-> Sounds.star2.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(1f)
+                ));
+            }else {
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(middlestar))
+                ));
+                middlestar.addAction(Actions.sequence(
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(1f)
+                ));
+            }
+
         }
-//        stage.addAction(Actions.sequence(
-//                Actions.delay(1f),
-//
-//        ));
+        if(starstotal==3){
+            if (Sounds.isSound){
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.run(()-> Sounds.star1.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(middlestar))
+                ));
+                middlestar.addAction(Actions.sequence(
+                        Actions.run(()-> Sounds.star2.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(rightstar))
+                ));
+                rightstar.addAction(Actions.sequence(
+                        Actions.run(()-> Sounds.star3.play(1f)),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f)
+                ));
+            }else{
+                leftstar.addAction(Actions.sequence(
+                        Actions.delay(1f),
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(middlestar))
+                ));
+                middlestar.addAction(Actions.sequence(
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f),
+                        Actions.delay(0.4f),
+                        Actions.run(() -> stage.addActor(rightstar))
+                ));
+                rightstar.addAction(Actions.sequence(
+                        Actions.scaleTo(1.5f, 1.5f, 0.35f),
+                        Actions.scaleTo(1f, 1f, 0.1f)
+                ));
+            }
+
+        }
+
+
     }
 
     @Override
@@ -160,7 +246,7 @@ public class EndScreen implements Screen{
 
         game.batch.end();
         if (cnt==5){
-            showstars(starstotal);
+            showstars();
         }
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();

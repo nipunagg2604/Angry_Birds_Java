@@ -28,7 +28,7 @@ public class Constants {
     public static BitmapFont score_font;
     public static BitmapFont score_black_font;
 
-    public static int lev1_total=0;
+    public static int lev1_total=9600;
     public static int lev2_total=0;
     public static int lev3_total=0;
 

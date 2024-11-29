@@ -1,5 +1,7 @@
 package io.github.angrybirdsjava;
 
+import com.badlogic.gdx.graphics.Pixmap;
+import io.github.angrybirdsjava.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -113,17 +115,30 @@ public class Level1Screen implements Screen, InputProcessor {
     private int thistotal=0;
     private Vector2 dragPositionglobal=new Vector2(103,190);
 
-    //PAUSE SCREEN ATTRIBUTES
-    private Texture pauseMenu;
-    private Stage pausestage;
-    private ImageButton resumeButton;
-    private ImageButton restartButton;
-    private ImageButton exitButton;
-    private ImageButton resume;
 
     io.github.angrybirdsjava.PauseScreen pauseScreen;
+    EndScreen endScreen=null;
     boolean ispause=false;
+    boolean isend=false;
+    int cnt=1;
+
+    //Darken Texture
+    Texture blankTexture;
+
+
+
     public Level1Screen(final Core game,int themeindex, boolean flag){
+        //Darken
+        Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+
+        pixmap.setColor(Color.WHITE);
+        pixmap.fill(); // Fill the pixmap with the color
+
+        blankTexture = new Texture(pixmap);
+
+        // Dispose the pixmap to free memory
+        pixmap.dispose();
+
         this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
@@ -329,7 +344,6 @@ public class Level1Screen implements Screen, InputProcessor {
                 System.out.println("Button Clicked!");
                 pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level1Screen.this,inputMultiplexer);
                 ispause=true;
-
 //                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
             }
         });
@@ -402,15 +416,15 @@ public class Level1Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-
         if (birds.size()==0 || pigbodies.size()==0){
             if (endtrack==null) endtrack=new ShowMessage("end","end",0,0,5);
             else{
                 endtrack.update(delta);
-                if (endtrack.isFinished()==true){
+                if (endtrack.isFinished()==true && endtrack.type.equals("end")){
+                    endtrack.type="fin";
+                    int star=0;
                     if (thistotal>Constants.score_map.get(themeindex).get(1)){
                         Constants.score_map.get(themeindex).put(1,thistotal);
-                        int star=0;
                         if (thistotal < Constants.lev1_total/4 && thistotal>=0){
                             Constants.star_map.get(themeindex).put(1,0);
                             star=0;
@@ -423,9 +437,11 @@ public class Level1Screen implements Screen, InputProcessor {
                         }else if (thistotal >=(Constants.lev1_total*3)/4 && thistotal<=Constants.lev1_total){
                             Constants.star_map.get(themeindex).put(1,3);
                             star=3;
-                        }//game.setScreen(new EndScreen(game,thistotal,star));
+                        }
+                    }if (endScreen==null){
+                        endScreen=new EndScreen(game,thistotal,star,1);
+                        isend=true;
                     }
-
                 }
             }
         }
@@ -748,14 +764,29 @@ public class Level1Screen implements Screen, InputProcessor {
             }
         }
 
-        Constants.score_font.draw(batch,"Score : "+Integer.toString(Constants.lev1_total),390,470);
+        Constants.score_font.draw(batch,"Score : "+Integer.toString(thistotal),390,470);
+        if (ispause || isend){
+            batch.setColor(0, 0, 0, 0.6f); // Semi-transparent black
+            batch.draw(blankTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.setColor(Color.WHITE);
+        }
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
-        if (ispause){
 
+        if (ispause){
             pauseScreen.stage.act();
             pauseScreen.stage.draw();
+        }
+        if (isend){
+            Gdx.input.setInputProcessor(endScreen.stage);
+            if (cnt==1){
+                endScreen.showstars();
+                cnt++;
+            }
+            endScreen.stage.act(delta);
+            endScreen.stage.draw();
+
         }
 
     }
@@ -1009,7 +1040,6 @@ public class Level1Screen implements Screen, InputProcessor {
                 float velY = ((float) oin.readObject());
                 float ang = ((float) oin.readObject());
                 float angle = ((float) oin.readObject());
-                System.out.println("Hello");
                 int type = ((int) oin.readObject());
                 float grvScl = ((float) oin.readObject());
                 float radius = ((float) oin.readObject());
