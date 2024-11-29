@@ -423,7 +423,7 @@ public class Level1Screen implements Screen, InputProcessor {
                         }else if (thistotal >=(Constants.lev1_total*3)/4 && thistotal<=Constants.lev1_total){
                             Constants.star_map.get(themeindex).put(1,3);
                             star=3;
-                        }game.setScreen(new EndScreen(game,thistotal,star,1));
+                        }//game.setScreen(new EndScreen(game,thistotal,star));
                     }
 
                 }
