@@ -698,8 +698,21 @@ pigs/normal_pig.jpg
 level1.png
 level5.png
 backbutton.png
+Buttons/plainbutton.png
+Buttons/restartButton.png
+Buttons/mainmenu.png
 level4.png
 level6.png
+EndScreen/middlestar.png
+EndScreen/emtpyleft.png
+EndScreen/MENU_RESULT_1.png
+EndScreen/MENU_ELEMENTS_3.png
+EndScreen/endscreen.jpg
+EndScreen/LOSE.png
+EndScreen/emptyright.png
+EndScreen/emptymiddle.png
+EndScreen/rightstar.png
+EndScreen/leftstar.png
 m_button.png
 level7.png
 PC Computer - Angry Birds Rio - Blocks & Objects.png
