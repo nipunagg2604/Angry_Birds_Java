@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -108,19 +109,43 @@ public class EndScreen implements Screen{
         Label Gameover=new Label("GAME OVER",labelStyle);
         Gameover.setPosition(350, 335);
         stage.addActor(Gameover);
+        stage.getRoot().setOrigin(Gdx.graphics.getWidth() / 2f, Gdx.graphics.getHeight() / 2f);
+        stage.getRoot().setScale(0f);
 
     }
     public void showstars(int starstotal){
-        Image leftstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/leftstar.png")));
-        Image middlestar=new Image(new TextureRegionDrawable(new Texture("EndScreen/middlestar.png")));
-        Image rightstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/rightstar.png")));
+        Image leftstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/leftstar2.png")));
+        Image middlestar=new Image(new TextureRegionDrawable(new Texture("EndScreen/middlestar2.png")));
+        Image rightstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/rightstar2.png")));
+        //290 190
+        leftstar.setSize(1,1);
+        //405 210
+        middlestar.setSize(1,1);
+        //520 190
+        rightstar.setSize(1,1);
 
-
-        stage.addAction(Actions.sequence(
-                Actions.delay(2f),
-                Actions.scaleBy(0.1f,0.1f,2f)
+        leftstar.setPosition(290,190);
+        middlestar.setPosition(405,210);
+        rightstar.setPosition(520,190);
+        stage.addActor(leftstar);
+        stage.addActor(middlestar);
+        stage.addActor(rightstar);
+        stage.getRoot().addAction(Actions.sequence(
+                Actions.scaleTo(1f, 1f, 0.5f)
 
         ));
+        System.out.println(starstotal);
+        if(starstotal==1){
+            leftstar.addAction(Actions.sequence(
+                Actions.delay(1f),
+                    Actions.scaleTo(180f, 180f, 1f),
+                    Actions.scaleTo(130f, 130f, 1f)
+            ));
+        }
+//        stage.addAction(Actions.sequence(
+//                Actions.delay(1f),
+//
+//        ));
     }
 
     @Override
@@ -136,8 +161,6 @@ public class EndScreen implements Screen{
         game.batch.end();
         if (cnt==5){
             showstars(starstotal);
-            System.out.println("hellow");
-            cnt++;
         }
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();

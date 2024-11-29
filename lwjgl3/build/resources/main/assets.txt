@@ -711,6 +711,9 @@ EndScreen/endscreen.jpg
 EndScreen/LOSE.png
 EndScreen/emptyright.png
 EndScreen/emptymiddle.png
+EndScreen/leftstar2.png
+EndScreen/rightstar2.png
+EndScreen/middlestar2.png
 EndScreen/rightstar.png
 EndScreen/leftstar.png
 m_button.png
