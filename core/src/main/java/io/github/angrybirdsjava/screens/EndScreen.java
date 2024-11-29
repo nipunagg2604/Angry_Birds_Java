@@ -22,11 +22,11 @@ public class EndScreen implements Screen{
     private Stage stage;
     private ImageButton stars;
 
-    public EndScreen(final Core game) {
+    public EndScreen(final Core game,int total_score,int stars) {
         this.game = game;
 
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
-        endMenu = new Texture(Gdx.files.internal("pauseMenu.jpg"));
+        endMenu = new Texture(Gdx.files.internal("Ecnscreen/endscreen.jpg"));
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 960, 496);
@@ -35,7 +35,7 @@ public class EndScreen implements Screen{
         stage = new Stage(new ScreenViewport(camera));
         Gdx.input.setInputProcessor(stage);
 
-        ImageButton restartButton = new ImageButton(new TextureRegionDrawable(new Texture("restartButton.png")));
+        ImageButton restartButton = new ImageButton(new TextureRegionDrawable(new Texture("Buttons/restartButton.png")));
         restartButton.setSize(60, 60);
         restartButton.setPosition(500 - restartButton.getWidth(), 235 - restartButton.getWidth());
 
@@ -49,7 +49,7 @@ public class EndScreen implements Screen{
 
         stage.addActor(restartButton);
 
-        ImageButton prevLevel = new ImageButton(new TextureRegionDrawable(new Texture("prevLevel.png")));
+        ImageButton mainmenu = new ImageButton(new TextureRegionDrawable(new Texture("prevLevel.png")));
         prevLevel.setSize(60, 60);
         prevLevel.setPosition(365 - restartButton.getWidth(), 235 - restartButton.getWidth());
 

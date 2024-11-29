@@ -20,7 +20,7 @@ public class PauseScreen implements Screen{
     private Texture blurBackground;
     private OrthographicCamera camera;
     private final Core game;
-    private Stage stage;
+    public Stage stage;
     private Button button;
     private Button resumeButton;
     private Button restartButton;
@@ -150,6 +150,8 @@ public class PauseScreen implements Screen{
         imgb3.setSize(150, 30);
         imgb3.setPosition(exitButton.getX() + 95, exitButton.getY() + 5);
         stage.addActor(imgb3);
+
+        Gdx.input.setInputProcessor(stage);
     }
 
     @Override

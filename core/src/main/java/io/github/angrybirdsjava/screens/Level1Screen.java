@@ -110,9 +110,19 @@ public class Level1Screen implements Screen, InputProcessor {
     private Vector2 slingOrigin=new Vector2(114,203);
     private boolean isDragging;
     private boolean isLaunched;
-
+    private int thistotal=0;
     private Vector2 dragPositionglobal=new Vector2(103,190);
-//    public Level1Screen(final Core game, boolean flag){
+
+    //PAUSE SCREEN ATTRIBUTES
+    private Texture pauseMenu;
+    private Stage pausestage;
+    private ImageButton resumeButton;
+    private ImageButton restartButton;
+    private ImageButton exitButton;
+    private ImageButton resume;
+
+    io.github.angrybirdsjava.PauseScreen pauseScreen;
+    boolean ispause=false;
     public Level1Screen(final Core game,int themeindex, boolean flag){
         this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
@@ -317,7 +327,10 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 System.out.println("Button Clicked!");
-                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
+                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level1Screen.this,inputMultiplexer);
+                ispause=true;
+
+//                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
             }
         });
 
@@ -395,16 +408,24 @@ public class Level1Screen implements Screen, InputProcessor {
             else{
                 endtrack.update(delta);
                 if (endtrack.isFinished()==true){
-                    int totalscore=Constants.score_map.get(themeindex).get(1);
-                    if (totalscore < Constants.lev1_total/4 && totalscore>=0){
-                        Constants.star_map.get(themeindex).put(1,0);
-                    }else if (totalscore >=Constants.lev1_total/4 && totalscore<Constants.lev1_total/2){
-                        Constants.star_map.get(themeindex).put(1,1);
-                    } else if (totalscore >=Constants.lev1_total/2 && totalscore<(Constants.lev1_total*3)/4){
-                        Constants.star_map.get(themeindex).put(1,2);
-                    }else if (totalscore >=(Constants.lev1_total*3)/4 && totalscore<=Constants.lev1_total){
-                        Constants.star_map.get(themeindex).put(1,3);
-                    }game.setScreen(new EndScreen(game));
+                    if (thistotal>Constants.score_map.get(themeindex).get(1)){
+                        Constants.score_map.get(themeindex).put(1,thistotal);
+                        int star=0;
+                        if (thistotal < Constants.lev1_total/4 && thistotal>=0){
+                            Constants.star_map.get(themeindex).put(1,0);
+                            star=0;
+                        }else if (thistotal >=Constants.lev1_total/4 && thistotal<Constants.lev1_total/2){
+                            Constants.star_map.get(themeindex).put(1,1);
+                            star=1;
+                        } else if (thistotal >=Constants.lev1_total/2 && thistotal<(Constants.lev1_total*3)/4){
+                            Constants.star_map.get(themeindex).put(1,2);
+                            star=2;
+                        }else if (thistotal >=(Constants.lev1_total*3)/4 && thistotal<=Constants.lev1_total){
+                            Constants.star_map.get(themeindex).put(1,3);
+                            star=3;
+                        }game.setScreen(new EndScreen(game,thistotal,star));
+                    }
+
                 }
             }
         }
@@ -440,7 +461,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
 
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+100);
+                thistotal+=100;
                 ShowMessage show=new ShowMessage("glass","100",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
                 ParticleEffect particleEffect=new ParticleEffect();
@@ -461,7 +482,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
+                thistotal+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -473,7 +494,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(2);
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+300);
+                thistotal+=300;
                 ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
@@ -484,7 +505,8 @@ public class Level1Screen implements Screen, InputProcessor {
             if (((String)(a.get(2))).equals("flag") && ((String)(a.get(1))).equals("false")){
                 a.remove(2);
                 a.add(2,"null");
-                b.getFixtureList().get(0).setUserData(a);Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+1000);
+                b.getFixtureList().get(0).setUserData(a);
+                thistotal+=1000;
 
                 ShowMessage show=new ShowMessage("wood","1000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
@@ -499,7 +521,7 @@ public class Level1Screen implements Screen, InputProcessor {
                 a.remove(3);
                 a.add(3,"null");
                 b.getFixtureList().get(0).setUserData(a);
-                Constants.score_map.get(themeindex).put(1,Constants.score_map.get(themeindex).get(1)+5000);
+                thistotal+=5000;
                 ShowMessage show=new ShowMessage("pig","5000",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
                 iterator1.remove();
@@ -730,6 +752,12 @@ public class Level1Screen implements Screen, InputProcessor {
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
+        if (ispause){
+
+            pauseScreen.stage.act();
+            pauseScreen.stage.draw();
+        }
+
     }
     public Body createsling (int x,int y,float width,float height) {
         BodyDef baseDef = new BodyDef();
