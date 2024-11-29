@@ -26,6 +26,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import io.github.angrybirdsjava.birds.Black_Bird;
+import io.github.angrybirdsjava.birds.Blue_Bird;
 import io.github.angrybirdsjava.birds.Red_Bird;
 import io.github.angrybirdsjava.birds.Yellow_Bird;
 import io.github.angrybirdsjava.blocks.Structures;
@@ -85,6 +86,7 @@ public class Level3Screen implements Screen, InputProcessor {
     private TextureRegion redbird;
     private TextureRegion yellowbird;
     private TextureRegion blackbird;
+    private TextureRegion bluebird;
     private int traj_index =0;
     private ArrayList<Vector2> array=new ArrayList();
     private Texture sling;
@@ -113,6 +115,7 @@ public class Level3Screen implements Screen, InputProcessor {
     private Body redbirdbody;
     private Body yellowirdbody;
     private Body blackbirdbody;
+    private Body bluebirdbody;
     private String currentbird="nul";
     private Body currentbirdbody=null;
     private ContactDetect detect=new ContactDetect();
@@ -126,6 +129,8 @@ public class Level3Screen implements Screen, InputProcessor {
 
     io.github.angrybirdsjava.PauseScreen pauseScreen;
     boolean ispause=false;
+
+    private ArrayList<Body> bluebirds=new ArrayList<>();
     public Level3Screen(final Core game,int themeindex, boolean flag){
         this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
@@ -136,6 +141,7 @@ public class Level3Screen implements Screen, InputProcessor {
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
         blackbird=new TextureRegion(new Texture("birds/black.png"));
+        bluebird=new TextureRegion(new Texture("birds/bluebird.jpg"));
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
 
@@ -168,9 +174,11 @@ public class Level3Screen implements Screen, InputProcessor {
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
+            bluebirdbody = (new Blue_Bird()).createbird(world, 20, 150, 13f);
             birds.add(redbirdbody);
             birds.add(yellowirdbody);
             birds.add(blackbirdbody);
+            birds.add(bluebirdbody);
             crown_pig=(new Crown_Pig(world,5f,0f)).addpig(world,498,377,15);
             crown_pig2=(new Crown_Pig(world,5f,0f)).addpig(world,682,319,15);
             crown_pig3=(new Crown_Pig(world,5f,0f)).addpig(world,906,272,15);
@@ -334,11 +342,21 @@ public class Level3Screen implements Screen, InputProcessor {
                     }
                 }
                 if (((String)(currentbirdbody.getUserData())).equals("yellow")){
-                    if (Sounds.isSound) Sounds.explosion.play(1f);
                     currentbirdbody.setUserData("yellowbird");
                     Vector2 velocity=currentbirdbody.getLinearVelocity();
                     velocity.scl(3);
                     currentbirdbody.setLinearVelocity(velocity);
+                }
+                if (((String)(currentbirdbody.getUserData())).equals("blue")){
+                    currentbirdbody.setUserData("bluebird");
+                    for (int i=0;i<3;i++){
+                        System.out.println("im here");
+                        Body splitbird=(new Blue_Bird()).createsplitbird(currentbirdbody,i,world,11f);
+                        System.out.println("im here 2");
+                        bluebirds.add(splitbird);
+                    }Constants.bodiestodestroy.add(currentbirdbody);
+                    currentbirdbody=bluebirds.get(0);
+                    bluebirdbody=null;
                 }
                 return true;
             }
@@ -437,7 +455,13 @@ public class Level3Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-
+        if (Constants.bodiestodestroy.size()!=0){
+            for (Body b:Constants.bodiestodestroy){
+                System.out.println("hellow");
+                world.destroyBody(b);
+            }
+        }
+        Constants.bodiestodestroy.clear();
         if (birds.size()==0 || pigbodies.size()==0){
             if (endtrack==null) endtrack=new ShowMessage("end","end",0,0,5);
             else{
@@ -734,17 +758,13 @@ public class Level3Screen implements Screen, InputProcessor {
             batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
         }
 
-//        batch.draw(sling,57,128,185,90);
         batch.draw(slinghalf1,117,128,35,110);
 
 
         slingbody=createsling(151,171,20,45);
         float length = slinghalf1pos.cpy().dst(dragPositionglobal);
         float angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf1pos.cpy().y, dragPositionglobal.x - slinghalf1pos.cpy().x) * MathUtils.radiansToDegrees;;
-//        if (angleprint>0){
-//            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;
-//        }
-//        System.out.println(angleprint);
+
         if (dragPositionglobal.y > slinghalf1pos.y) {
             batch.draw(
                     slingrubber,
@@ -782,13 +802,7 @@ public class Level3Screen implements Screen, InputProcessor {
                 actualtrajectory.add(v.cpy().scl(ppm));
             }
         }
-//        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
-//            System.out.println("points : "+actualtrajectory);
-//            System.out.println("calculated : "+trajectory);
-//            System.out.println("actual velocity : "+actualvelocity);
-//            System.out.println("cal velocity : "+calvel);
-//            cnt++;
-//        }
+
         for (Vector2 q:array){
             batch.draw(blackpoint,q.x,q.y,6f,6f);
         }
@@ -804,7 +818,6 @@ public class Level3Screen implements Screen, InputProcessor {
 
 
         v=(Vector2) yellowirdbody.getPosition();
-        //System.out.println(v);
         angle=MathUtils.radiansToDegrees * yellowirdbody.getAngle();
         batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm-22.5f , 15f, 15f, 45, 45, 1, 1, angle);
 
@@ -823,7 +836,27 @@ public class Level3Screen implements Screen, InputProcessor {
             if (a.get(0)!="null") {
                 actualtrajectory.add(v.cpy().scl(ppm));
             }
-        }length = slinghalf2pos.cpy().dst(dragPositionglobal);
+        }
+        if (bluebirdbody!=null){
+            v=(Vector2) bluebirdbody.getPosition();
+            angle=MathUtils.radiansToDegrees * bluebirdbody.getAngle();
+            batch.draw(bluebird, (v.x)*ppm -15, (v.y)*ppm - 20, 17.5f, 17.5f, 25, 25, 1, 1, angle);
+
+            if (isLaunched){
+                ArrayList a=(ArrayList) bluebirdbody.getFixtureList().get(0).getUserData();
+                if (a.get(0)!="null") {
+                    actualtrajectory.add(v.cpy().scl(ppm));
+                }
+            }
+        }
+        for (Body b:bluebirds){
+            v=(Vector2) b.getPosition();
+            angle=MathUtils.radiansToDegrees * b.getAngle();
+            batch.draw(bluebird, (v.x)*ppm -15, (v.y)*ppm - 20, 17.5f, 17.5f, 25, 25, 1, 1, angle);
+
+        }
+
+        length = slinghalf2pos.cpy().dst(dragPositionglobal);
         angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf2pos.cpy().y, dragPositionglobal.x - slinghalf2pos.cpy().x) * MathUtils.radiansToDegrees;;
 //        if (angleprint>0){
 //            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;

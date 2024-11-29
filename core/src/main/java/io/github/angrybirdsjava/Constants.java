@@ -6,6 +6,7 @@ import com.badlogic.gdx.audio.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.physics.box2d.Body;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +36,8 @@ public class Constants {
     public static ArrayList<Map<Integer,Integer> > star_map=new ArrayList<>();
     public static ArrayList<Map<Integer,Integer> > score_map=new ArrayList<>();
 
+    public static ArrayList<Body> bodiestodestroy=new ArrayList<>();
+    public static ArrayList<Body> bodiestoadd=new ArrayList<>();
 
     static {
         wooden_font = createfont(Color.WHITE,"e29126",28);

@@ -19,7 +19,7 @@ public class Core extends Game {
         batch = new SpriteBatch();
 //        setScreen(new HomeScreen(this));
 //        setScreen(new EndScreen(this,0,0,1));
-        setScreen(new io.github.angrybirdsjava.Level1Screen(this,0,true));
+        setScreen(new io.github.angrybirdsjava.Level3Screen(this,0,true));
 //        dispose();
     }
 

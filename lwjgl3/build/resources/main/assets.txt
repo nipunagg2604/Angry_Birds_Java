@@ -583,6 +583,7 @@ Level Buttons/locklevel.png
 Level Buttons/2.png
 Level Buttons/3.png
 Level Buttons/1.png
+hs_err_pid45929.log
 Textures/BUTTONS.png.meta
 Textures/THEME_05_THEME_GROUND_5.png
 Textures/THEME_06_THEME_GROUND_6.png.meta
@@ -697,11 +698,13 @@ pigs/crownpig.png
 pigs/normal_pig.jpg
 level1.png
 level5.png
+hs_err_pid47108.log
 backbutton.png
 Buttons/plainbutton.png
 Buttons/restartButton.png
 Buttons/mainmenu.png
 level4.png
+hs_err_pid46598.log
 level6.png
 EndScreen/middlestar.png
 EndScreen/emtpyleft.png
@@ -717,6 +720,7 @@ EndScreen/middlestar2.png
 EndScreen/rightstar.png
 EndScreen/leftstar.png
 m_button.png
+hs_err_pid44205.log
 level7.png
 PC Computer - Angry Birds Rio - Blocks & Objects.png
 emm.png
@@ -737,6 +741,8 @@ skin1/biological-attack-ui.json
 skin1/biological-attack-ui.atlas
 skin1/biological-attack-ui.png
 skin1/font-export.fnt
+hs_err_pid44260.log
+hs_err_pid47341.log
 Stars/stars3.png
 Stars/stars2.png
 Stars/stars0.png
@@ -754,6 +760,7 @@ Loadingscreen/background.jpg
 resume.png
 restartButton.png
 elementGlass032.png
+hs_err_pid44888.log
 trail.webp
 Slings/sling3.png
 Slings/sling2.png
@@ -779,6 +786,7 @@ Homescreen/image.png
 libgdx.png
 cross.png
 bgg.jpg
+hs_err_pid46862.log
 gameOver.png
 bgg2.jpg
 bg2.png
@@ -803,7 +811,10 @@ blackdot.png
 stars4.png
 assets 2.txt
 level9.png
+hs_err_pid44814.log
+hs_err_pid45317.log
 glass.png
+hs_err_pid47515.log
 Fonts/angrybirds-regular.bmp
 Fonts/angrybirds-regular.ttf
 effects/explosion.p
@@ -840,10 +851,15 @@ Tilesets/INGAME_BLOCKS_WOOD_1.webp
 Tilesets/PC Computer - Angry Birds Rio - Blocks & Objects.png
 Tilesets/Mobile - Angry Birds - Poached Eggs Theme 1.png
 Tilesets/level-1.tmx
+hs_err_pid45887.log
 Gamescreen/background.jpg
 lightGrayDot.png
 stars2.png
 data.txt
+hs_err_pid47670.log
+hs_err_pid46552.log
+hs_err_pid46180.log
+hs_err_pid45099.log
 effects2/images/star_1.png
 effects2/images/note-4.png
 effects2/images/dash.png
