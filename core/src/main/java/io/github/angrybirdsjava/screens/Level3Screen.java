@@ -1,5 +1,8 @@
 package io.github.angrybirdsjava;
 
+import com.badlogic.gdx.graphics.Pixmap;
+import io.github.angrybirdsjava.*;
+
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -26,7 +29,6 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import io.github.angrybirdsjava.birds.Black_Bird;
-import io.github.angrybirdsjava.birds.Blue_Bird;
 import io.github.angrybirdsjava.birds.Red_Bird;
 import io.github.angrybirdsjava.birds.Yellow_Bird;
 import io.github.angrybirdsjava.blocks.Structures;
@@ -39,10 +41,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
-
+import io.github.angrybirdsjava.birds.Blue_Bird;
 //import java.util.stream.GathererOp;
 
 public class Level3Screen implements Screen, InputProcessor {
+    private String filename;
     private int themeindex;
     private ShowMessage endtrack=null;
 
@@ -76,7 +79,7 @@ public class Level3Screen implements Screen, InputProcessor {
     private TextureRegion glass_vertical;
     private TextureRegion glass_horizontal;
     private TextureRegion soil;
-
+    private TextureRegion bluebird;
     private Texture pathpoint=new Texture("lightGrayDot.png");
     private Texture blackpoint=new Texture("trail.png");
     private ArrayList<Vector2> trajectory=new ArrayList();
@@ -86,7 +89,6 @@ public class Level3Screen implements Screen, InputProcessor {
     private TextureRegion redbird;
     private TextureRegion yellowbird;
     private TextureRegion blackbird;
-    private TextureRegion bluebird;
     private int traj_index =0;
     private ArrayList<Vector2> array=new ArrayList();
     private Texture sling;
@@ -101,7 +103,8 @@ public class Level3Screen implements Screen, InputProcessor {
     private Body body;
     ShapeRenderer s=new ShapeRenderer();
     private ArrayList<ParticleEffect> effects=new ArrayList();
-
+    private Body bluebirdbody;
+    private ArrayList<Body> bluebirds=new ArrayList<>();
     private Body crown_pig;
     private Body crown_pig2;
     private Body crown_pig3;
@@ -115,7 +118,6 @@ public class Level3Screen implements Screen, InputProcessor {
     private Body redbirdbody;
     private Body yellowirdbody;
     private Body blackbirdbody;
-    private Body bluebirdbody;
     private String currentbird="nul";
     private Body currentbirdbody=null;
     private ContactDetect detect=new ContactDetect();
@@ -128,10 +130,20 @@ public class Level3Screen implements Screen, InputProcessor {
     private Vector2 dragPositionglobal=new Vector2(103,190);
 
     io.github.angrybirdsjava.PauseScreen pauseScreen;
+    EndScreen endScreen=null;
     boolean ispause=false;
+    boolean isend=false;
+    int cnt=1;
 
-    private ArrayList<Body> bluebirds=new ArrayList<>();
-    public Level3Screen(final Core game,int themeindex, boolean flag){
+    Texture blankTexture;
+    public Level3Screen(final Core game,int themeindex, boolean flag, String filename){
+        this.filename = filename;
+        Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+        pixmap.setColor(Color.WHITE);
+        pixmap.fill();
+        blankTexture = new Texture(pixmap);
+        pixmap.dispose();
+
         this.themeindex=themeindex;
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
@@ -141,7 +153,6 @@ public class Level3Screen implements Screen, InputProcessor {
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
         blackbird=new TextureRegion(new Texture("birds/black.png"));
-        bluebird=new TextureRegion(new Texture("birds/bluebird.jpg"));
         this.game = game;
         background = new Texture("Gamescreen/background.jpg");
 
@@ -160,17 +171,18 @@ public class Level3Screen implements Screen, InputProcessor {
         slinghalf1=new Texture(Gdx.files.internal("Slings/slinghalf1.png"));
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
+        bluebird=new TextureRegion(new Texture("birds/bluebird.jpg"));
 
         if(flag) {
-            rectangles_ver=new Structures("wooden_vertical",world, 6, 0, 0.3f, 0.2f, "Level_tmx_files/level-3.tmx").return_array();
-            rectangles_hor=new Structures("wooden_horizontal",world, 6, 0, 0.3f, 0.2f, "Level_tmx_files/level-3.tmx").return_array();;
-            wooden_squares=new Structures("wooden_square",world, 10, 0, 0.3f, 0.3f, "Level_tmx_files/level-3.tmx").return_array();;
-            stone_squares=new Structures("stone_square",world, 1000, 0, 0.4f, 0.2f, "Level_tmx_files/level-3.tmx").return_array();;
-            thick_hor=new Structures("wooden_thick_horizontal",world, 12, 0, 0.3f, 0.3f, "Level_tmx_files/level-3.tmx").return_array();;
-            base_objetcs=new Structures("wooden_base",world, 50, 0, 0.6f, 0.3f, "Level_tmx_files/level-3.tmx").return_array();;
-            glass_verticals=new Structures("glass_vertical",world, 2, 0, 0.2f, 0.1f, "Level_tmx_files/level-3.tmx").return_array();;
-            glass_horizontals=new Structures("glass_horizontal",world, 2, 0, 0.2f, 0.1f, "Level_tmx_files/level-3.tmx").return_array();;
-            soils=new Structures("soil",world, 1000, 0, 0.2f, 0.1f, "Level_tmx_files/level-3.tmx").return_array();;
+            rectangles_ver=new Structures("wooden_vertical",world, 6, 0, 0.3f, 0.2f, filename).return_array();
+            rectangles_hor=new Structures("wooden_horizontal",world, 6, 0, 0.3f, 0.2f, filename).return_array();;
+            wooden_squares=new Structures("wooden_square",world, 10, 0, 0.3f, 0.3f, filename).return_array();;
+            stone_squares=new Structures("stone_square",world, 1000, 0, 0.4f, 0.2f, filename).return_array();;
+            thick_hor=new Structures("wooden_thick_horizontal",world, 12, 0, 0.3f, 0.3f, filename).return_array();;
+            base_objetcs=new Structures("wooden_base",world, 50, 0, 0.6f, 0.3f, filename).return_array();;
+            glass_verticals=new Structures("glass_vertical",world, 2, 0, 0.2f, 0.1f, filename).return_array();;
+            glass_horizontals=new Structures("glass_horizontal",world, 2, 0, 0.2f, 0.1f, filename).return_array();;
+            soils=new Structures("soil",world, 1000, 0, 0.2f, 0.1f, filename).return_array();;
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
@@ -371,7 +383,7 @@ public class Level3Screen implements Screen, InputProcessor {
         buttonStyle.up = buttonDrawable;
         buttonStyle.down = buttonDrawable;
         mapLoader=new TmxMapLoader();
-        tiledMap = mapLoader.load("Level_tmx_files/level-3.tmx");
+        tiledMap = mapLoader.load(filename);
         renderer = new OrthogonalTiledMapRenderer(tiledMap);
 
         button = new Button(buttonStyle);
@@ -382,7 +394,7 @@ public class Level3Screen implements Screen, InputProcessor {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 System.out.println("Button Clicked!");
-                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level3Screen.this,inputMultiplexer);
+                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level3Screen.this,inputMultiplexer, filename);
                 ispause=true;
 
 //                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
@@ -455,6 +467,7 @@ public class Level3Screen implements Screen, InputProcessor {
     public void render(float delta) {
         ScreenUtils.clear(0, 0, 0.2f, 1);
         Vector3 mousePosition = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+
         if (Constants.bodiestodestroy.size()!=0){
             for (Body b:Constants.bodiestodestroy){
                 System.out.println("hellow");
@@ -466,25 +479,29 @@ public class Level3Screen implements Screen, InputProcessor {
             if (endtrack==null) endtrack=new ShowMessage("end","end",0,0,5);
             else{
                 endtrack.update(delta);
-                if (endtrack.isFinished()==true){
-                    if (thistotal>Constants.score_map.get(themeindex).get(2)){
-                        Constants.score_map.get(themeindex).put(2,thistotal);
-                        int star=0;
-                        if (thistotal < Constants.lev2_total/4 && thistotal>=0){
-                            Constants.star_map.get(themeindex).put(2,0);
-                            star=0;
-                        }else if (thistotal >=Constants.lev2_total/4 && thistotal<Constants.lev2_total/2){
-                            Constants.star_map.get(themeindex).put(2,1);
-                            star=1;
-                        } else if (thistotal >=Constants.lev2_total/2 && thistotal<(Constants.lev2_total*3)/4){
-                            Constants.star_map.get(themeindex).put(2,2);
-                            star=2;
-                        }else if (thistotal >=(Constants.lev2_total*3)/4 && thistotal<=Constants.lev2_total){
-                            Constants.star_map.get(themeindex).put(2,3);
-                            star=3;
-                        }//game.setScreen(new EndScreen(game,thistotal,star));
+                if (endtrack.isFinished()==true && endtrack.type.equals("end")){
+                    endtrack.type="fin";
+                    int star=0;
+                    if (thistotal>Constants.score_map.get(themeindex).get(3)) {
+                        Constants.score_map.get(themeindex).put(3, thistotal);
+                        if (thistotal < Constants.lev3_total / 4 && thistotal >= 0) {
+                            Constants.star_map.get(themeindex).put(3, 0);
+                            star = 0;
+                        } else if (thistotal >= Constants.lev3_total / 4 && thistotal < Constants.lev3_total / 2) {
+                            Constants.star_map.get(themeindex).put(3, 1);
+                            star = 1;
+                        } else if (thistotal >= Constants.lev3_total / 2 && thistotal < (Constants.lev3_total * 3) / 4) {
+                            Constants.star_map.get(themeindex).put(3, 2);
+                            star = 2;
+                        } else if (thistotal >= (Constants.lev3_total * 3) / 4 && thistotal <= Constants.lev3_total) {
+                            Constants.star_map.get(themeindex).put(3, 3);
+                            star = 3;
+                        }
+                        if (endScreen == null) {
+                            endScreen = new EndScreen(game, thistotal, star, 1, filename);
+                            isend = true;
+                        }
                     }
-
                 }
             }
         }
@@ -598,7 +615,7 @@ public class Level3Screen implements Screen, InputProcessor {
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
                 thistotal+=600;
-                ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                ShowMessage show=new ShowMessage("wood","600",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
         }
@@ -610,7 +627,7 @@ public class Level3Screen implements Screen, InputProcessor {
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
                 thistotal+=600;
-                ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                ShowMessage show=new ShowMessage("wood","600",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
         }
@@ -622,7 +639,7 @@ public class Level3Screen implements Screen, InputProcessor {
                 a.add(2,"null");
                 b.getFixtureList().get(0).setUserData(a);
                 thistotal+=1500;
-                ShowMessage show=new ShowMessage("wood","300",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
+                ShowMessage show=new ShowMessage("stone","1500",b.getPosition().cpy().scl(ppm).x,b.getPosition().cpy().scl(ppm).y,2f);
                 showmessages.add(show);
             }
         }
@@ -758,13 +775,17 @@ public class Level3Screen implements Screen, InputProcessor {
             batch.draw(crownpig, (v.x)*ppm -15, (v.y)*ppm - 15, 15, 15, 30, 30, 1, 1, angle);
         }
 
+//        batch.draw(sling,57,128,185,90);
         batch.draw(slinghalf1,117,128,35,110);
 
 
         slingbody=createsling(151,171,20,45);
         float length = slinghalf1pos.cpy().dst(dragPositionglobal);
         float angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf1pos.cpy().y, dragPositionglobal.x - slinghalf1pos.cpy().x) * MathUtils.radiansToDegrees;;
-
+//        if (angleprint>0){
+//            angleprint = MathUtils.atan2(slinghalf1pos.cpy().y-dragPositionglobal.y ,  slinghalf1pos.cpy().x-dragPositionglobal.x ) * MathUtils.radiansToDegrees;
+//        }
+//        System.out.println(angleprint);
         if (dragPositionglobal.y > slinghalf1pos.y) {
             batch.draw(
                     slingrubber,
@@ -802,7 +823,13 @@ public class Level3Screen implements Screen, InputProcessor {
                 actualtrajectory.add(v.cpy().scl(ppm));
             }
         }
-
+//        if (isLaunched==false && currentbird.equals("null") && cnt==1) {
+//            System.out.println("points : "+actualtrajectory);
+//            System.out.println("calculated : "+trajectory);
+//            System.out.println("actual velocity : "+actualvelocity);
+//            System.out.println("cal velocity : "+calvel);
+//            cnt++;
+//        }
         for (Vector2 q:array){
             batch.draw(blackpoint,q.x,q.y,6f,6f);
         }
@@ -818,6 +845,7 @@ public class Level3Screen implements Screen, InputProcessor {
 
 
         v=(Vector2) yellowirdbody.getPosition();
+        //System.out.println(v);
         angle=MathUtils.radiansToDegrees * yellowirdbody.getAngle();
         batch.draw(yellowbird, (v.x)*ppm -22.5f, (v.y)*ppm-22.5f , 15f, 15f, 45, 45, 1, 1, angle);
 
@@ -841,7 +869,6 @@ public class Level3Screen implements Screen, InputProcessor {
             v=(Vector2) bluebirdbody.getPosition();
             angle=MathUtils.radiansToDegrees * bluebirdbody.getAngle();
             batch.draw(bluebird, (v.x)*ppm -15, (v.y)*ppm - 20, 17.5f, 17.5f, 25, 25, 1, 1, angle);
-
             if (isLaunched){
                 ArrayList a=(ArrayList) bluebirdbody.getFixtureList().get(0).getUserData();
                 if (a.get(0)!="null") {
@@ -853,8 +880,8 @@ public class Level3Screen implements Screen, InputProcessor {
             v=(Vector2) b.getPosition();
             angle=MathUtils.radiansToDegrees * b.getAngle();
             batch.draw(bluebird, (v.x)*ppm -15, (v.y)*ppm - 20, 17.5f, 17.5f, 25, 25, 1, 1, angle);
-
         }
+
 
         length = slinghalf2pos.cpy().dst(dragPositionglobal);
         angleprint = MathUtils.atan2(dragPositionglobal.y - slinghalf2pos.cpy().y, dragPositionglobal.x - slinghalf2pos.cpy().x) * MathUtils.radiansToDegrees;;
@@ -917,13 +944,20 @@ public class Level3Screen implements Screen, InputProcessor {
                     Constants.wooden_font.draw(batch,show.message,show.position.x,show.position.y);
                 }else if (show.type.equals("pig")){
                     Constants.pig_font.draw(batch,show.message,show.position.x,show.position.y);
+                }else if(show.type.equals("stone")) {
+                    Constants.stone_font.draw(batch,show.message,show.position.x,show.position.y);
                 }
             }else {
                 i.remove();
             }
         }
 
-        Constants.score_font.draw(batch,"Score : "+Integer.toString(Constants.lev1_total),390,470);
+        Constants.score_font.draw(batch,"Score : "+Integer.toString(thistotal),390,470);
+        if (ispause || isend){
+            batch.setColor(0, 0, 0, 0.6f); // Semi-transparent black
+            batch.draw(blankTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.setColor(Color.WHITE);
+        }
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
@@ -932,7 +966,15 @@ public class Level3Screen implements Screen, InputProcessor {
             pauseScreen.stage.act();
             pauseScreen.stage.draw();
         }
-
+        if (isend){
+            Gdx.input.setInputProcessor(endScreen.stage);
+            if (cnt==1){
+                endScreen.showstars();
+                cnt++;
+            }
+            endScreen.stage.act(delta);
+            endScreen.stage.draw();
+        }
     }
     public Body createsling (int x,int y,float width,float height) {
         BodyDef baseDef = new BodyDef();
@@ -995,7 +1037,10 @@ public class Level3Screen implements Screen, InputProcessor {
     public void saveData()
     {
         try {
-            FileOutputStream fout = new FileOutputStream("data.txt");
+            FileOutputStream fout;
+            if(themeindex == 0) fout = new FileOutputStream("data03.txt");
+            else if(themeindex == 1) fout = new FileOutputStream("data13.txt");
+            else fout = new FileOutputStream("data23.txt");
             ObjectOutputStream oout = new ObjectOutputStream(fout);
 
             ArrayList<ArrayList<Body>> arr = new ArrayList<>();
@@ -1055,6 +1100,13 @@ public class Level3Screen implements Screen, InputProcessor {
             arr2.add(yellowirdbody);
             arr2.add(blackbirdbody);
             oout.writeObject(currentbird);
+            oout.writeObject(bluebirds.size());
+            if(bluebirdbody != null) arr2.add(bluebirdbody);
+            if(bluebirds.size() > 0) {
+                for (Body b : bluebirds) {
+                    arr2.add(b);
+                }
+            }
             ArrayList<String> ar1 = new ArrayList<>();
             for(Body b: birds) {
                 String s = ((String) b.getUserData());
@@ -1106,7 +1158,10 @@ public class Level3Screen implements Screen, InputProcessor {
     public void loadData()
     {
         try {
-            FileInputStream fin = new FileInputStream("data.txt");
+            FileInputStream fin;
+            if(themeindex == 0) fin = new FileInputStream("data03.txt");
+            else if(themeindex == 1) fin = new FileInputStream("data13.txt");
+            else fin = new FileInputStream("data23.txt");
             ObjectInputStream oin = new ObjectInputStream(fin);
 
 
@@ -1198,9 +1253,14 @@ public class Level3Screen implements Screen, InputProcessor {
             float crownPigDamage3 = ((float) oin.readObject());
             float crownPigStrength3 = ((float) oin.readObject());
             currentbird = ((String) oin.readObject());
+            int sz = ((int) oin.readObject());
+            int num;
+            if(sz == 0) num = 7;
+            else num = 9;
+
             ArrayList<String> ar1 = ((ArrayList<String>) oin.readObject());
 
-            for(int i=0; i<6; i++) {
+            for(int i=0; i<num; i++) {
                 float posX = ((float) oin.readObject());
                 float posY = ((float) oin.readObject());
                 float velX = ((float) oin.readObject());
@@ -1237,17 +1297,25 @@ public class Level3Screen implements Screen, InputProcessor {
                 else if(i==3) redbirdbody = (new Red_Bird()).addBird(world, posX, posY, velX, velY, ang, angle, type, grvScl, radius, density, friction, restitution, categoryBits, maskBits, groupIndex, isAwake, isSlAl, isFxdRotation, isBullet, userData, userData2);
                 else if(i==4) yellowirdbody = (new Yellow_Bird()).addBird(world, posX, posY, velX, velY, ang, angle, type, grvScl, radius, density, friction, restitution, categoryBits, maskBits, groupIndex, isAwake, isSlAl, isFxdRotation, isBullet, userData, userData2);
                 else if(i==5) blackbirdbody = (new Black_Bird()).addBird(world, posX, posY, velX, velY, ang, angle, type, grvScl, radius, density, friction, restitution, categoryBits, maskBits, groupIndex, isAwake, isSlAl, isFxdRotation, isBullet, userData, userData2);
+                if(i==6 && num == 7) {
+                    bluebirdbody = (new Blue_Bird()).addBird(world, posX, posY, velX, velY, ang, angle, type, grvScl, radius, density, friction, restitution, categoryBits, maskBits, groupIndex, isAwake, isSlAl, isFxdRotation, isBullet, userData, userData2);
+                }else if(i==6 || i==7 || i==8) {
+                    Body b = (new Blue_Bird()).addBird(world, posX, posY, velX, velY, ang, angle, type, grvScl, radius, density, friction, restitution, categoryBits, maskBits, groupIndex, isAwake, isSlAl, isFxdRotation, isBullet, userData, userData2);
+                    bluebirds.add(b);
+                }
             }
 
             for(String s: ar1) {
                 if(s.equals("red")) birds.add(redbirdbody);
-                if(s.equals("yellow")) birds.add(yellowirdbody);
-                if(s.equals("black")) birds.add(blackbirdbody);
+                if(s.equals("yellow") || s.equals("yellowbird")) birds.add(yellowirdbody);
+                if(s.equals("black") || s.equals("blackbird")) birds.add(blackbirdbody);
+                if(s.equals("blue") || s.equals("bluebird")) birds.add(bluebirdbody);
             }
 
             if(currentbird.equals("red")) currentbirdbody = redbirdbody;
             else if(currentbird.equals("black")) currentbirdbody = blackbirdbody;
             else if(currentbird.equals("yellow")) currentbirdbody = yellowirdbody;
+            else if(currentbird.equals("blue")) currentbirdbody = bluebirdbody;
 
             isDragging = ((boolean) oin.readObject());
             isLaunched = ((boolean) oin.readObject());

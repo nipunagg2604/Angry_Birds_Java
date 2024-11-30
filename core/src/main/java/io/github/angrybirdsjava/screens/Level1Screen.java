@@ -2,6 +2,9 @@ package io.github.angrybirdsjava;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import io.github.angrybirdsjava.*;
+
+import com.badlogic.gdx.graphics.Pixmap;
+import io.github.angrybirdsjava.*;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -44,6 +47,7 @@ import java.util.Vector;
 //import java.util.stream.GathererOp;
 
 public class Level1Screen implements Screen, InputProcessor {
+    private String filename;
     private int themeindex;
     private ShowMessage endtrack=null;
 
@@ -127,7 +131,8 @@ public class Level1Screen implements Screen, InputProcessor {
 
 
 
-    public Level1Screen(final Core game,int themeindex, boolean flag){
+    public Level1Screen(final Core game,int themeindex, boolean flag, String filename){
+        this.filename = filename;
         //Darken
         Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
 
@@ -150,6 +155,8 @@ public class Level1Screen implements Screen, InputProcessor {
         wooden_hor=new TextureRegion(new Texture("Blocks/Wooden Blocks/horizontal_wood.png"));
         wooden_ver=new TextureRegion(new Texture("Blocks/Wooden Blocks/vertical_wood.png"));
         base=new TextureRegion(new Texture("Blocks/Wooden Blocks/wooden_base_type_2.png"));
+//        crown_pig=(new Crown_Pig(world,10f,0f)).addpig(world,793,315,15);
+//        pigbodies.add(crown_pig);
         redbird=new TextureRegion(new Texture("birds/redbird.jpg"));
         yellowbird=new TextureRegion(new Texture("birds/yellow.jpg"));
         blackbird=new TextureRegion(new Texture("birds/black.png"));
@@ -159,15 +166,23 @@ public class Level1Screen implements Screen, InputProcessor {
         slinghalf2=new Texture(Gdx.files.internal("Slings/slinghalf2.png"));
         slingrubber=new TextureRegion(new Texture("Slings/rect.png"));
         crownpig=new TextureRegion(new Texture("pigs/crownpig.jpg"));
+        //particleEffectblast.load(Gdx.files.internal("effects2/effects/Particle Park Explosion.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectblast.scaleEffect(2);
+
+        //particleEffectsmoke.load(Gdx.files.internal("effects2/effects/mysmoke.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectsmoke.scaleEffect(1);
+
+        //particleEffectglass.load(Gdx.files.internal("effects2/effects/myglass.p"),Gdx.files.internal("effects2/images"));
+        //particleEffectglass.scaleEffect(0.4f);
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, width, height);
 
         if(flag) {
-            rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1_2.tmx").return_array();
-            rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,"Level_tmx_files/level-1_2.tmx").return_array();;
-            base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,"Level_tmx_files/level-1_2.tmx").return_array();;
-            glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,"Level_tmx_files/level-1_2.tmx").return_array();;
+            rectangles_ver=new Structures("wooden_vertical",world,6f,0f, 0.3f,0.2f,filename).return_array();
+            rectangles_hor=new Structures("wooden_horizontal",world,6f,0f, 0.3f,0.2f,filename).return_array();;
+            base_objetcs=new Structures("wooden_base",world,10f,0f,0.6f,0.3f ,filename).return_array();;
+            glass_blocks=new Structures("glass_vertical",world,2f,0f,0.2f, 0.1f,filename).return_array();;
             redbirdbody = (new Red_Bird()).createbird(world, 114, 203, 15);
             blackbirdbody = (new Black_Bird()).createbird(world, 60, 160, 17.5f);
             yellowirdbody = (new Yellow_Bird()).createbird(world, 89, 152, 15f);
@@ -321,7 +336,7 @@ public class Level1Screen implements Screen, InputProcessor {
         buttonStyle.up = buttonDrawable;
         buttonStyle.down = buttonDrawable;
         mapLoader=new TmxMapLoader();
-        tiledMap = mapLoader.load("Level_tmx_files/level-1_2.tmx");
+        tiledMap = mapLoader.load(filename);
         renderer = new OrthogonalTiledMapRenderer(tiledMap);
 
         button = new Button(buttonStyle);
@@ -332,7 +347,7 @@ public class Level1Screen implements Screen, InputProcessor {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 System.out.println("Button Clicked!");
-                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level1Screen.this,inputMultiplexer);
+                pauseScreen= new io.github.angrybirdsjava.PauseScreen(game,Level1Screen.this,inputMultiplexer, filename);
                 ispause=true;
 //                game.setScreen(new io.github.angrybirdsjava.PauseScreen(game, Level1Screen.this, inputMultiplexer));
             }
@@ -429,8 +444,9 @@ public class Level1Screen implements Screen, InputProcessor {
                             star=3;
                         }
                     }if (endScreen==null){
-                        endScreen=new EndScreen(game,thistotal,star,1);
+                        endScreen=new EndScreen(game,thistotal,star,1, filename);
                         isend=true;
+                        Constants.star_map.get(themeindex).put(2, 0);
                     }
                 }
             }
@@ -840,7 +856,10 @@ public class Level1Screen implements Screen, InputProcessor {
     public void saveData()
     {
         try {
-            FileOutputStream fout = new FileOutputStream("data.txt");
+            FileOutputStream fout;
+            if(themeindex == 0) fout = new FileOutputStream("data01.txt");
+            else if(themeindex == 1) fout = new FileOutputStream("data11.txt");
+            else fout = new FileOutputStream("data21.txt");
             ObjectOutputStream oout = new ObjectOutputStream(fout);
 
             ArrayList<ArrayList<Body>> arr = new ArrayList<>();
@@ -938,7 +957,10 @@ public class Level1Screen implements Screen, InputProcessor {
     public void loadData()
     {
         try {
-            FileInputStream fin = new FileInputStream("data.txt");
+            FileInputStream fin;
+            if(themeindex == 0) fin = new FileInputStream("data01.txt");
+            else if(themeindex == 1) fin = new FileInputStream("data11.txt");
+            else fin = new FileInputStream("data21.txt");
             ObjectInputStream oin = new ObjectInputStream(fin);
 
 

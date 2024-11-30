@@ -9,14 +9,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.screens.HomeScreen;
 
 public class PauseScreen implements Screen{
-    private Texture pauseMenu;
     private Texture blurBackground;
     private OrthographicCamera camera;
     private final Core game;
@@ -25,13 +26,13 @@ public class PauseScreen implements Screen{
     private Button resumeButton;
     private Button restartButton;
     private Button exitButton;
+    private Button saveButton;
     private ImageButton resume;
 
-    public PauseScreen(final Core game, Screen old, InputMultiplexer inp) {
+    public PauseScreen(final Core game, Screen old, InputMultiplexer inp, String filename) {
         this.game = game;
 
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
-        pauseMenu = new Texture(Gdx.files.internal("pauseMenu.jpeg"));
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 960, 496);
@@ -39,6 +40,11 @@ public class PauseScreen implements Screen{
 
         stage = new Stage(new ScreenViewport(camera));
         Gdx.input.setInputProcessor(stage);
+
+        Image pauseMenu = new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("pauseMenu.jpeg"))));
+        pauseMenu.setSize(460, 270);
+        pauseMenu.setPosition(250, 130);
+        stage.addActor(pauseMenu);
 
         Texture buttonTexture = new Texture(Gdx.files.internal("crossButton.png"));
         TextureRegionDrawable buttonDrawable = new TextureRegionDrawable(buttonTexture);
@@ -60,7 +66,7 @@ public class PauseScreen implements Screen{
                 obj.world.dispose();
                 obj.dispose();
                 Gdx.input.setInputProcessor(inp);
-                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.LevelScreen(game, 0));
                 dispose();
             }
         });
@@ -76,8 +82,8 @@ public class PauseScreen implements Screen{
         buttonStyle2.down = buttonDrawable2;
 
         resumeButton = new Button(buttonStyle2);
-        resumeButton.setSize(40, 40);
-        resumeButton.setPosition(335 - resumeButton.getWidth(), 355 - resumeButton.getWidth());
+        resumeButton.setSize(33, 33);
+        resumeButton.setPosition(328 - resumeButton.getWidth(), 366 - resumeButton.getWidth());
 
         resumeButton.addListener(new ClickListener() {
             @Override
@@ -99,13 +105,15 @@ public class PauseScreen implements Screen{
         buttonStyle3.down = buttonDrawable3;
 
         restartButton = new Button(buttonStyle3);
-        restartButton.setSize(40, 40);
-        restartButton.setPosition(335 - restartButton.getWidth(), 285 - restartButton.getWidth());
+        restartButton.setSize(33, 33);
+        restartButton.setPosition(328 - restartButton.getWidth(), 310 - restartButton.getWidth());
 
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true));
+                if(old instanceof io.github.angrybirdsjava.Level1Screen) game.setScreen(new io.github.angrybirdsjava.Level1Screen(game,0, true, filename));
+                else if(old instanceof io.github.angrybirdsjava.Level2Screen) game.setScreen(new io.github.angrybirdsjava.Level2Screen(game,0, true, filename));
+                else game.setScreen(new io.github.angrybirdsjava.Level3Screen(game,0, true, filename));
                 old.dispose();
                 dispose();
             }
@@ -114,7 +122,7 @@ public class PauseScreen implements Screen{
         stage.addActor(restartButton);
 
 
-        Texture buttonTexture4 = new Texture(Gdx.files.internal("exitButton.png"));
+        Texture buttonTexture4 = new Texture(Gdx.files.internal("Buttons/mainmenu.png"));
         TextureRegionDrawable buttonDrawable4 = new TextureRegionDrawable(buttonTexture4);
 
         Button.ButtonStyle buttonStyle4 = new Button.ButtonStyle();
@@ -122,13 +130,13 @@ public class PauseScreen implements Screen{
         buttonStyle4.down = buttonDrawable4;
 
         exitButton = new Button(buttonStyle4);
-        exitButton.setSize(40, 40);
-        exitButton.setPosition(335 - exitButton.getWidth(), 220 - exitButton.getWidth());
+        exitButton.setSize(33, 33);
+        exitButton.setPosition(328 - exitButton.getWidth(), 254 - exitButton.getWidth());
 
         exitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new HomeScreen(game));
+                game.setScreen(new io.github.angrybirdsjava.ThemeScreen(game, 0));
                 old.dispose();
                 dispose();
             }
@@ -136,20 +144,62 @@ public class PauseScreen implements Screen{
 
         stage.addActor(exitButton);
 
-        ImageButton imgb = new ImageButton(new TextureRegionDrawable(new Texture("resume.png")));
-        imgb.setSize(120, 20);
-        imgb.setPosition(resumeButton.getX() + 70, resumeButton.getY() + 10);
-        stage.addActor(imgb);
+        Texture buttonTexture5 = new Texture(Gdx.files.internal("Buttons/save.png"));
+        TextureRegionDrawable buttonDrawable5 = new TextureRegionDrawable(buttonTexture5);
 
-        ImageButton imgb2 = new ImageButton(new TextureRegionDrawable(new Texture("restart.png")));
-        imgb2.setSize(120, 20);
-        imgb2.setPosition(restartButton.getX() + 70, restartButton.getY() + 10);
-        stage.addActor(imgb2);
+        Button.ButtonStyle buttonStyle5 = new Button.ButtonStyle();
+        buttonStyle5.up = buttonDrawable5;
+        buttonStyle5.down = buttonDrawable5;
 
-        ImageButton imgb3 = new ImageButton(new TextureRegionDrawable(new Texture("emm.png")));
-        imgb3.setSize(150, 30);
-        imgb3.setPosition(exitButton.getX() + 95, exitButton.getY() + 5);
-        stage.addActor(imgb3);
+        saveButton = new Button(buttonStyle5);
+        saveButton.setSize(33, 33);
+        saveButton.setPosition(328 - saveButton.getWidth(), 200 - saveButton.getWidth());
+
+        saveButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                io.github.angrybirdsjava.Level1Screen obj = null;
+                io.github.angrybirdsjava.Level2Screen obj2 = null;
+                io.github.angrybirdsjava.Level3Screen obj3 = null;
+                if(old instanceof io.github.angrybirdsjava.Level1Screen) {
+                    obj = ((io.github.angrybirdsjava.Level1Screen) old);
+                    obj.saveData();
+                    obj.dispose();
+                }
+                else if(old instanceof io.github.angrybirdsjava.Level2Screen) {
+                    obj2 = ((io.github.angrybirdsjava.Level2Screen) old);
+                    obj2.saveData();
+                    obj2.dispose();
+                }
+                else {
+                    obj3 = ((io.github.angrybirdsjava.Level3Screen) old);
+                    obj3.saveData();
+                    obj3.dispose();
+                }
+                Gdx.input.setInputProcessor(inp);
+                game.setScreen(new io.github.angrybirdsjava.ThemeScreen(game, 0));
+                dispose();
+            }
+        });
+        stage.addActor(saveButton);
+
+        Label.LabelStyle labelStyle = new Label.LabelStyle();
+        labelStyle.font = Constants.pause_font;
+        Label resume=new Label("RESUME",labelStyle);
+        resume.setPosition(resumeButton.getX() + 70, resumeButton.getY() + 7);
+        stage.addActor(resume);
+
+        Label restart=new Label("RESTART",labelStyle);
+        restart.setPosition(restartButton.getX() + 70, restartButton.getY() + 7);
+        stage.addActor(restart);
+
+        Label emm=new Label("EXIT TO MAIN MENU",labelStyle);
+        emm.setPosition(exitButton.getX() + 70, exitButton.getY() + 7);
+        stage.addActor(emm);
+
+        Label save=new Label("SAVE GAME",labelStyle);
+        save.setPosition(saveButton.getX() + 70, saveButton.getY() + 7);
+        stage.addActor(save);
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -163,7 +213,6 @@ public class PauseScreen implements Screen{
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         game.batch.draw(blurBackground, 0, 0, 960, 496);
-        game.batch.draw(pauseMenu, 250, 130, 460, 270);  // Draw the background image (adjust size if needed)
         game.batch.end();
 
         stage.act(Gdx.graphics.getDeltaTime());
@@ -193,7 +242,7 @@ public class PauseScreen implements Screen{
 
     @Override
     public void dispose() {
-        pauseMenu.dispose();
+        //pauseMenu.dispose();
         blurBackground.dispose();
         stage.dispose();
     }

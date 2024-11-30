@@ -28,10 +28,13 @@ public class Constants {
     public static BitmapFont pig_font;
     public static BitmapFont score_font;
     public static BitmapFont score_black_font;
+    public static BitmapFont pause_font;
 
     public static int lev1_total=9600;
-    public static int lev2_total=0;
-    public static int lev3_total=0;
+    public static int lev2_total=23000;
+    public static int lev3_total=26000;
+
+    public static boolean isLoaded = false;
 
     public static ArrayList<Map<Integer,Integer> > star_map=new ArrayList<>();
     public static ArrayList<Map<Integer,Integer> > score_map=new ArrayList<>();
@@ -46,6 +49,7 @@ public class Constants {
         pig_font = createfont(Color.WHITE,"6be248",28);
         score_font = createfont(Color.WHITE,"000000",40);
         score_black_font = createfont(Color.valueOf("25211C"),"fff3e5",50);
+        pause_font = createfont(Color.valueOf("25211C"),"fff3e5",18);
         star_map.add(new HashMap<>());
         star_map.add(new HashMap<>());
         star_map.add(new HashMap<>());
@@ -64,14 +68,14 @@ public class Constants {
         star_map.get(2).put(3,-1);
 
         score_map.get(0).put(1,0);
-        score_map.get(0).put(2,-1);
-        score_map.get(0).put(3,-1);
+        score_map.get(0).put(2,0);
+        score_map.get(0).put(3,0);
         score_map.get(1).put(1,0);
-        score_map.get(1).put(2,-1);
-        score_map.get(1).put(3,-1);
+        score_map.get(1).put(2,0);
+        score_map.get(1).put(3,0);
         score_map.get(2).put(1,0);
-        score_map.get(2).put(2,-1);
-        score_map.get(2).put(3,-1);
+        score_map.get(2).put(2,0);
+        score_map.get(2).put(3,0);
 
 
 

@@ -138,6 +138,9 @@ public class Structures implements Serializable {
         else if (block_type.equals("wooden_square")) array = tileMap.getLayers().get(8).getObjects().getByType(RectangleMapObject.class);
         else if (block_type.equals("wooden_thick_horizontal")) array = tileMap.getLayers().get(9).getObjects().getByType(RectangleMapObject.class);
         else if (block_type.equals("trisoil")) array = tileMap.getLayers().get(17).getObjects().getByType(RectangleMapObject.class);
+        else if(block_type.equals("wooden_thick_vertical")) array = tileMap.getLayers().get(18).getObjects().getByType(RectangleMapObject.class);
+        else if(block_type.equals("stone_thick_vertical")) array = tileMap.getLayers().get(19).getObjects().getByType(RectangleMapObject.class);
+        else if(block_type.equals("stone_thick_horizontal")) array = tileMap.getLayers().get(20).getObjects().getByType(RectangleMapObject.class);
 
         for(MapObject object: array) {
             com.badlogic.gdx.math.Rectangle rect = ((RectangleMapObject) object).getRectangle();
@@ -154,10 +157,10 @@ public class Structures implements Serializable {
             fixtureDef.shape = shape;
             fixtureDef.friction = 0.5f;  // Moderate friction
             fixtureDef.restitution = 0.3f;
-            if(block_type.equals("stone_square") || block_type.equals("stone_horizontal") || block_type.equals("stone_vertical")) fixtureDef.density = 3f;
+            if(block_type.equals("stone_square") || block_type.equals("stone_horizontal") || block_type.equals("stone_vertical") || block_type.equals("stone_thick_vertical") || block_type.equals("stone_thick_horizontal")) fixtureDef.density = 3f;
             if(block_type.equals("glass_horizontal") || block_type.equals("glass_vertical")) fixtureDef.density = 1.2f;
             if(block_type.equals("wooden_horizontal") || block_type.equals("wooden_vertical")  )fixtureDef.density = 1.8f;
-            if (block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square")) fixtureDef.density = 2f;
+            if (block_type.equals("wooden_thick_horizontal") || block_type.equals("wooden_square") || block_type.equals("wooden_thick_vertical")) fixtureDef.density = 2f;
             if(block_type.equals("wooden_base") || block_type.equals("soil") || block_type.equals("trisoil")) fixtureDef.density = 10f;
             body.setLinearDamping(0);
             body.setUserData(a);

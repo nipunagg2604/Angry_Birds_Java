@@ -29,7 +29,7 @@ public class EndScreen implements Screen{
     public Stage stage;
     private int cnt=1;
     private int starstotal;
-    public EndScreen(final Core game,int total_score,int starscount,int level) {
+    public EndScreen(final Core game,int total_score,int starscount,int level, String filename) {
         this.game = game;
         this.starstotal=starscount;
         blurBackground = new Texture(Gdx.files.internal("pauseBackground.png"));
@@ -55,7 +55,7 @@ public class EndScreen implements Screen{
         restartButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new Level1Screen(game,0, true));
+                game.setScreen(new Level1Screen(game,0, true, filename));
                 dispose();
             }
         });
@@ -69,7 +69,7 @@ public class EndScreen implements Screen{
         mainmenu.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new ThemeScreen(game));
+                game.setScreen(new ThemeScreen(game, 0));
                 dispose();
             }
         });
@@ -83,9 +83,9 @@ public class EndScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if (level==1){
-                    game.setScreen(new Level1Screen(game,0, true));
+                    game.setScreen(new Level1Screen(game,0, true, filename));
                 }else if (level==2){
-                    game.setScreen(new Level1Screen(game,0, true));
+                    game.setScreen(new Level1Screen(game,0, true, filename));
                 }
                 dispose();
             }

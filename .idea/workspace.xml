@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b4ce246-0718-416e-ac3a-2468c4106e44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Level_tmx_files/level-1 copy.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Level_tmx_files/level-1 copy.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Level_tmx_files/level-2.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Level_tmx_files/level-2.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Core.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/classes/java/main/io/github/angrybirdsjava/Level1Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-$projectVersion.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Core.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level3Screen$1.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level3Screen$2.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/compileTransaction/stash-dir/Level3Screen.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/io/github/angrybirdsjava/screens/Level1Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/Level_tmx_files/level-1 copy.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/Level_tmx_files/level-1 copy.tmx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/build/resources/main/assets.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
