@@ -474,7 +474,7 @@ public class Level2Screen implements Screen, InputProcessor {
                             star=3;
                         }
                         if (endScreen==null){
-                            endScreen=new EndScreen(game,thistotal,star,1, filename);
+                            endScreen=new EndScreen(game,thistotal,star,2, filename);
                             isend=true;
                             Constants.star_map.get(themeindex).put(3, 0);
                         }

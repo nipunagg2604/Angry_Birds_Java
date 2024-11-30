@@ -498,7 +498,7 @@ public class Level3Screen implements Screen, InputProcessor {
                             star = 3;
                         }
                         if (endScreen == null) {
-                            endScreen = new EndScreen(game, thistotal, star, 1, filename);
+                            endScreen = new EndScreen(game, thistotal, star, 3, filename);
                             isend = true;
                         }
                     }

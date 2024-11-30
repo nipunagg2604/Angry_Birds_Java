@@ -19,6 +19,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.angrybirdsjava.*;
 import io.github.angrybirdsjava.Level1Screen;
+import io.github.angrybirdsjava.Level2Screen;
+import io.github.angrybirdsjava.Level3Screen;
 import io.github.angrybirdsjava.ThemeScreen;
 
 public class EndScreen implements Screen{
@@ -83,9 +85,9 @@ public class EndScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 if (level==1){
-                    game.setScreen(new Level1Screen(game,0, true, filename));
+                    game.setScreen(new Level2Screen(game,0, true, filename));
                 }else if (level==2){
-                    game.setScreen(new Level1Screen(game,0, true, filename));
+                    game.setScreen(new Level3Screen(game,0, true, filename));
                 }
                 dispose();
             }
