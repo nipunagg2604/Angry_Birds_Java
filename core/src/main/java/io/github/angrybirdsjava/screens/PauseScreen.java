@@ -89,6 +89,21 @@ public class PauseScreen implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.input.setInputProcessor(inp);
+                io.github.angrybirdsjava.Level1Screen obj = null;
+                io.github.angrybirdsjava.Level2Screen obj2 = null;
+                io.github.angrybirdsjava.Level3Screen obj3 = null;
+                if(old instanceof io.github.angrybirdsjava.Level1Screen) {
+                    obj = ((io.github.angrybirdsjava.Level1Screen) old);
+                    obj.ispause=false;
+                }
+                else if(old instanceof io.github.angrybirdsjava.Level2Screen) {
+                    obj2 = ((io.github.angrybirdsjava.Level2Screen) old);
+                    obj2.ispause=false;
+                }
+                else {
+                    obj3 = ((io.github.angrybirdsjava.Level3Screen) old);
+                    obj3.ispause=false;
+                }
                 game.setScreen(old);
                 dispose();
             }

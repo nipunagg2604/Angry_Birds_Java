@@ -317,7 +317,6 @@ public class Level1Screen implements Screen, InputProcessor {
                     }
                 }
                 if (((String)(currentbirdbody.getUserData())).equals("yellow")){
-                    if (Sounds.isSound) Sounds.explosion.play(1f);
                     currentbirdbody.setUserData("yellowbird");
                     Vector2 velocity=currentbirdbody.getLinearVelocity();
                     velocity.scl(3);
