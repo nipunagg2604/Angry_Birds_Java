@@ -92,16 +92,17 @@ public class EndScreen implements Screen{
                 dispose();
             }
         });
+
         stage.addActor(nextLevel);
-        Image leftempty=new Image(new TextureRegionDrawable(new Texture("EndScreen/emtpyleft.png")));
+        Image leftempty=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/emtpyleft.png"))));
         leftempty.setSize(80, 80);
         leftempty.setPosition(310,210);
         stage.addActor(leftempty);
-        Image middleempty=new Image(new TextureRegionDrawable(new Texture("EndScreen/emptymiddle.png")));
+        Image middleempty=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/emptymiddle.png"))));
         middleempty.setSize(80, 80);
         middleempty.setPosition(430,230);
         stage.addActor(middleempty);
-        Image rightempty=new Image(new TextureRegionDrawable(new Texture("EndScreen/emptyright.png")));
+        Image rightempty=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/emptyright.png"))));
         rightempty.setSize(80, 80);
         rightempty.setPosition(550,210);
         stage.addActor(rightempty);
@@ -116,9 +117,9 @@ public class EndScreen implements Screen{
 
     }
     public void showstars(){
-        Image leftstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/leftstar2.png")));
-        Image middlestar=new Image(new TextureRegionDrawable(new Texture("EndScreen/middlestar2.png")));
-        Image rightstar=new Image(new TextureRegionDrawable(new Texture("EndScreen/rightstar2.png")));
+        Image leftstar=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/leftstar.png"))));
+        Image middlestar=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/middlestar.png"))));
+        Image rightstar=new Image(new TextureRegionDrawable(new Texture(Gdx.files.internal("Endscreen/rightstar.png"))));
         leftstar.setSize(130,130);
         middlestar.setSize(130,130);
         rightstar.setSize(130,130);
